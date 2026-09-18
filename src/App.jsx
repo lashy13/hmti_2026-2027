@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Divisions from "./components/Divisions";
 import Contact from "./components/Contact";
-import Events from "./components/Events";
+import Events from "./components/events";
 import AboutHmti from "./components/AboutHmti";
 import Aspirasi from "./components/Aspirasi";
 
 // ================= DIVISION PAGES =================
-import Ristek from "./Pages/divisions/Ristek";
+import Ristek from "./Pages/divisions/RISTEK";
 import PSDM from "./Pages/divisions/PSDM";
 import Ekraf from "./Pages/divisions/Ekraf";
 import Advokasi from "./Pages/divisions/Advokasi";
@@ -20,6 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
         {/* ================= HOME ================= */}
         <Route
           path="/"
@@ -133,6 +134,7 @@ function App() {
             </>
           }
         />
+
       </Routes>
     </BrowserRouter>
   );
