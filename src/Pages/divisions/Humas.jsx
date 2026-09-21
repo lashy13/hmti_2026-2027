@@ -1,92 +1,72 @@
-import "../../styles/Humas.css";
-import "../../styles/DivisionPage.css";
+import DivisionPage from "../../components/DivisionPage";
+import "../../styles/Warnadiv.css";
+
 function Humas() {
   return (
-    <main className="division-page humas-page">
-
-      <section className="division-hero">
-        <span className="division-label">HMTI UMP / DIVISION</span>
-
-        <h1>HUMAS</h1>
-
-        <h2>Hubungan Masyarakat</h2>
-
-        <p>
-          Departemen yang berfokus pada hubungan internal,
-          eksternal, komunikasi, dan membangun relasi HMTI
-          dengan berbagai pihak.
-        </p>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">01 / ABOUT</span>
-
-        <h2>Mengenal Humas</h2>
-
-        <p>
-          Humas berperan dalam membangun komunikasi dan hubungan
-          yang baik antara HMTI dengan mahasiswa maupun pihak eksternal.
-        </p>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">02 / PROGRAM KERJA</span>
-
-        <h2>Program Kerja</h2>
-
-        <div className="proker-grid">
-          <div className="proker-card">
-            <span>01</span>
-            <h3>Partnership</h3>
-            <p>
-              Membangun kerja sama dengan berbagai pihak.
-            </p>
-          </div>
-
-          <div className="proker-card">
-            <span>02</span>
-            <h3>Relations</h3>
-            <p>
-              Mengembangkan hubungan dan komunikasi eksternal.
-            </p>
-          </div>
-
-          <div className="proker-card">
-            <span>03</span>
-            <h3>Public Relations</h3>
-            <p>
-              Menjaga citra dan komunikasi organisasi.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">03 / ACTIVITIES</span>
-
-        <h2>Kegiatan Humas</h2>
-
-        <div className="gallery">
-          <div className="gallery-item">FOTO 01</div>
-          <div className="gallery-item">FOTO 02</div>
-          <div className="gallery-item">FOTO 03</div>
-        </div>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">04 / MEMBERS</span>
-
-        <h2>Member Humas</h2>
-
-        <div className="members">
-          <div className="member">MEMBER 01</div>
-          <div className="member">MEMBER 02</div>
-          <div className="member">MEMBER 03</div>
-          <div className="member">MEMBER 04</div>
-        </div>
-      </section>
-
-    </main>
+    <DivisionPage
+      division="HUMAS"
+      number="01"
+      category="PUBLIC RELATIONS"
+      subtitle="HUBUNGAN MASYARAKAT"
+      description="HUMAS merupakan divisi HMTI yang berfokus pada komunikasi, hubungan eksternal, dan membangun citra positif organisasi."
+      aboutTitle="COMMUNICATION"
+      aboutText={[
+        "HUMAS menjadi penghubung antara HMTI dengan pihak internal maupun eksternal untuk membangun komunikasi yang baik.",
+        "Melalui berbagai kegiatan, HUMAS menjaga hubungan, menyampaikan informasi, dan memperluas jaringan organisasi.",
+      ]}
+      programs={[
+        {
+          number: "01",
+          title: "MEDIA RELATION",
+          category: "PUBLIC RELATIONS",
+          description:
+            "Membangun dan menjaga hubungan komunikasi HMTI dengan pihak eksternal.",
+          image: "/images/study-club.jpg",
+        },
+        {
+          number: "02",
+          title: "PARTNERSHIP",
+          category: "COLLABORATION",
+          description:
+            "Membangun kerja sama dengan organisasi, komunitas, dan pihak terkait.",
+          image: "/images/study-club.jpg",
+        },
+        {
+          number: "03",
+          title: "PUBLICATION",
+          category: "COMMUNICATION",
+          description:
+            "Menyampaikan informasi dan kegiatan HMTI kepada mahasiswa dan masyarakat.",
+          image: "/images/study-club.jpg",
+        },
+      ]}
+      members={[
+        {
+          id: 1,
+          name: "Nama Anggota 1",
+          role: "Head of Division",
+          photo: "/images/member-1.jpg",
+        },
+        {
+          id: 2,
+          name: "Nama Anggota 2",
+          role: "Secretary",
+          photo: "/images/member-2.jpg",
+        },
+        {
+          id: 3,
+          name: "Nama Anggota 3",
+          role: "Public Relations Staff",
+          photo: "/images/member-3.jpg",
+        },
+        {
+          id: 4,
+          name: "Nama Anggota 4",
+          role: "Partnership Staff",
+          photo: "/images/member-4.jpg",
+        },
+      ]}
+    />
   );
 }
 

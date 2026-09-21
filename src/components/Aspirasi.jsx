@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-
-import logoUmp from "../assets/logo-ump.png";
-import logoIf from "../assets/ti-logo.png";
-
 import "../styles/aspirasi.css";
 
 function Aspirasi() {
@@ -279,52 +275,6 @@ function Aspirasi() {
       </main>
 
 
-      {/* =========================
-          FOOTER
-      ========================== */}
-      <footer className="aspirasi-footer">
-
-        {/* LOGO */}
-        <div className="aspirasi-footer-brand">
-
-          <div className="aspirasi-footer-logos">
-
-            <img
-              src={logoUmp}
-              alt="Logo Universitas Muhammadiyah Purwokerto"
-            />
-
-            <div className="aspirasi-footer-divider"></div>
-
-            <img
-              src={logoIf}
-              alt="Logo Teknik Informatika"
-            />
-
-          </div>
-
-
-          <div className="aspirasi-footer-text">
-
-            <strong>
-              HMTI UMP
-            </strong>
-
-            <span>
-              Teknik Informatika
-            </span>
-
-          </div>
-
-        </div>
-
-
-        {/* COPYRIGHT */}
-        <div className="aspirasi-footer-copy">
-          © 2026 HMTI UMP. All rights reserved.
-        </div>
-
-      </footer>
 
     </div>
   );

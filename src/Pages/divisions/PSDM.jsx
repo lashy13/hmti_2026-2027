@@ -1,91 +1,72 @@
-import "../../styles/PSDM.css";
-import "../../styles/DivisionPage.css";
+import DivisionPage from "../../components/DivisionPage";
+import "../../styles/Warnadiv.css";
+
 function PSDM() {
   return (
-    <main className="division-page psdm-page">
-
-      <section className="division-hero">
-        <span className="division-label">HMTI UMP / DIVISION</span>
-
-        <h1>PSDM</h1>
-
-        <h2>Pengembangan Sumber Daya Mahasiswa</h2>
-
-        <p>
-          Departemen yang berfokus pada pengembangan potensi,
-          karakter, dan kemampuan mahasiswa Teknik Informatika.
-        </p>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">01 / ABOUT</span>
-
-        <h2>Mengenal PSDM</h2>
-
-        <p>
-          PSDM menjadi wadah untuk mengembangkan kemampuan mahasiswa
-          melalui kegiatan pembinaan, pelatihan, dan pengembangan organisasi.
-        </p>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">02 / PROGRAM KERJA</span>
-
-        <h2>Program Kerja</h2>
-
-        <div className="proker-grid">
-          <div className="proker-card">
-            <span>01</span>
-            <h3>Leadership</h3>
-            <p>
-              Pengembangan kemampuan kepemimpinan mahasiswa.
-            </p>
-          </div>
-
-          <div className="proker-card">
-            <span>02</span>
-            <h3>Training</h3>
-            <p>
-              Pelatihan untuk meningkatkan kemampuan mahasiswa.
-            </p>
-          </div>
-
-          <div className="proker-card">
-            <span>03</span>
-            <h3>Pengembangan</h3>
-            <p>
-              Program pengembangan potensi mahasiswa.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">03 / ACTIVITIES</span>
-
-        <h2>Kegiatan PSDM</h2>
-
-        <div className="gallery">
-          <div className="gallery-item">FOTO 01</div>
-          <div className="gallery-item">FOTO 02</div>
-          <div className="gallery-item">FOTO 03</div>
-        </div>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">04 / MEMBERS</span>
-
-        <h2>Member PSDM</h2>
-
-        <div className="members">
-          <div className="member">MEMBER 01</div>
-          <div className="member">MEMBER 02</div>
-          <div className="member">MEMBER 03</div>
-          <div className="member">MEMBER 04</div>
-        </div>
-      </section>
-
-    </main>
+    <DivisionPage
+      division="PSDM"
+      number="03"
+      category="HUMAN RESOURCE"
+      subtitle="PENGEMBANGAN SUMBER DAYA MAHASISWA"
+      description="PSDM merupakan divisi HMTI yang berfokus pada pengembangan potensi, kapasitas, dan kualitas anggota organisasi."
+      aboutTitle="HUMAN DEVELOPMENT"
+      aboutText={[
+        "PSDM menjadi ruang pengembangan anggota HMTI melalui kegiatan yang mendukung peningkatan kemampuan dan pengalaman organisasi.",
+        "Program PSDM dirancang untuk membangun anggota yang aktif, bertanggung jawab, dan mampu berkembang bersama organisasi.",
+      ]}
+      programs={[
+        {
+          number: "01",
+          title: "UPGRADING",
+          category: "DEVELOPMENT",
+          description:
+            "Kegiatan peningkatan kemampuan dan wawasan anggota HMTI.",
+          image: "/images/study-club.jpg",
+        },
+        {
+          number: "02",
+          title: "TRAINING",
+          category: "LEARNING",
+          description:
+            "Pelatihan untuk meningkatkan keterampilan dan kapasitas anggota.",
+          image: "/images/study-club.jpg",
+        },
+        {
+          number: "03",
+          title: "ORGANIZATIONAL",
+          category: "LEADERSHIP",
+          description:
+            "Kegiatan yang mendukung pengembangan kemampuan berorganisasi dan kepemimpinan.",
+          image: "/images/study-club.jpg",
+        },
+      ]}
+      members={[
+        {
+          id: 1,
+          name: "Nama Anggota 1",
+          role: "Head of Division",
+          photo: "/images/member-1.jpg",
+        },
+        {
+          id: 2,
+          name: "Nama Anggota 2",
+          role: "Secretary",
+          photo: "/images/member-2.jpg",
+        },
+        {
+          id: 3,
+          name: "Nama Anggota 3",
+          role: "Development Staff",
+          photo: "/images/member-3.jpg",
+        },
+        {
+          id: 4,
+          name: "Nama Anggota 4",
+          role: "Training Staff",
+          photo: "/images/member-4.jpg",
+        },
+      ]}
+    />
   );
 }
 

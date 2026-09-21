@@ -1,0 +1,30 @@
+.ristek-page {
+  --accent: #00d9ff;
+  --accent-soft: rgba(0, 217, 255, 0.15);
+}
+
+.humas-page {
+  --accent: #a855f7;
+  --accent-soft: rgba(168, 85, 247, 0.15);
+}
+
+.kominfo-page {
+  --accent: #22c55e;
+  --accent-soft: rgba(34, 197, 94, 0.15);
+}
+
+.advokasi-page {
+  --accent: #ff3d81;
+  --accent-soft: rgba(255, 61, 129, 0.15);
+}
+
+
+.ekraf-page {
+  --accent: #f59e0b;
+  --accent-soft: rgba(245, 158, 11, 0.15);
+}
+
+.psdm-page {
+  --accent: #1683ff;
+  --accent-soft: rgba(22, 131, 255, 0.16);
+}

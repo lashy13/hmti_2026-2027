@@ -1,27 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Divisions from "./components/Divisions";
-import Contact from "./components/Contact";
-import Events from "./components/events";
 import AboutHmti from "./components/AboutHmti";
+import Divisions from "./components/Divisions";
+import Events from "./components/events";
+import Contact from "./components/Contact";
 import Aspirasi from "./components/Aspirasi";
 
-// ================= DIVISION PAGES =================
-import Ristek from "./Pages/divisions/RISTEK";
-import PSDM from "./Pages/divisions/PSDM";
-import Ekraf from "./Pages/divisions/Ekraf";
-import Advokasi from "./Pages/divisions/Advokasi";
-import Kominfo from "./Pages/divisions/Kominfo";
-import Humas from "./Pages/divisions/Humas";
+// =========================
+// DIVISION PAGES
+// =========================
+import Ristek from "./Pages/Divisions/Ristek";
+import Humas from "./Pages/Divisions/Humas";
+import Kominfo from "./Pages/Divisions/Kominfo";
+import PSDM from "./Pages/Divisions/PSDM";
+import Advokasi from "./Pages/Divisions/Advokasi";
+import Ekraf from "./Pages/Divisions/Ekraf";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* ================= HOME ================= */}
+        {/* =========================
+            HOME
+        ========================= */}
         <Route
           path="/"
           element={
@@ -30,25 +33,15 @@ function App() {
               <Hero />
               <AboutHmti />
               <Events />
-              <Contact />
               <Aspirasi />
+              <Contact />
             </>
           }
         />
 
-        {/* ================= HMTI ================= */}
-        <Route
-          path="/hmti"
-          element={
-            <>
-              <Navbar />
-              <Contact />
-              <Aspirasi />
-            </>
-          }
-        />
-
-        {/* ================= DIVISIONS ================= */}
+        {/* =========================
+            DIVISIONS
+        ========================= */}
         <Route
           path="/divisions"
           element={
@@ -59,7 +52,9 @@ function App() {
           }
         />
 
-        {/* ================= RISTEK ================= */}
+        {/* =========================
+            RISTEK
+        ========================= */}
         <Route
           path="/divisions/ristek"
           element={
@@ -70,51 +65,9 @@ function App() {
           }
         />
 
-        {/* ================= PSDM ================= */}
-        <Route
-          path="/divisions/psdm"
-          element={
-            <>
-              <Navbar />
-              <PSDM />
-            </>
-          }
-        />
-
-        {/* ================= EKRAF ================= */}
-        <Route
-          path="/divisions/ekraf"
-          element={
-            <>
-              <Navbar />
-              <Ekraf />
-            </>
-          }
-        />
-
-        {/* ================= ADVOKASI ================= */}
-        <Route
-          path="/divisions/advokasi"
-          element={
-            <>
-              <Navbar />
-              <Advokasi />
-            </>
-          }
-        />
-
-        {/* ================= KOMINFO ================= */}
-        <Route
-          path="/divisions/kominfo"
-          element={
-            <>
-              <Navbar />
-              <Kominfo />
-            </>
-          }
-        />
-
-        {/* ================= HUMAS ================= */}
+        {/* =========================
+            HUMAS
+        ========================= */}
         <Route
           path="/divisions/humas"
           element={
@@ -125,16 +78,75 @@ function App() {
           }
         />
 
-        {/* ================= EVENTS ================= */}
+        {/* =========================
+            KOMINFO
+        ========================= */}
+        <Route
+          path="/divisions/kominfo"
+          element={
+            <>
+              <Navbar />
+              <Kominfo />
+            </>
+          }
+        />
+
+        {/* =========================
+            PSDM
+        ========================= */}
+        <Route
+          path="/divisions/psdm"
+          element={
+            <>
+              <Navbar />
+              <PSDM />
+            </>
+          }
+        />
+
+        {/* =========================
+            ADVOKASI
+        ========================= */}
+        <Route
+          path="/divisions/advokasi"
+          element={
+            <>
+              <Navbar />
+              <Advokasi />
+            </>
+          }
+        />
+
+        {/* =========================
+            EKRAF
+        ========================= */}
+        <Route
+          path="/divisions/ekraf"
+          element={
+            <>
+              <Navbar />
+              <Ekraf />
+            </>
+          }
+        />
+
+        {/* =========================
+            EVENTS
+        ========================= */}
         <Route
           path="/events"
           element={
             <>
               <Navbar />
+              <Events />
             </>
           }
         />
 
+        {/* =========================
+            404
+        ========================= */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,107 +1,96 @@
-import "../../styles/Ristek.css";
-import "../../styles/DivisionPage.css";
+import DivisionPage from "../../components/DivisionPage";
+import "../../styles/Warnadiv.css";
+import webHmti from "../../assets/image.png"
 function Ristek() {
   return (
-    <main className="division-page">
-
-      <section className="division-page-hero">
-        <span className="division-page-label">
-          HMTI UMP / DIVISION
-        </span>
-
-        <h1>RISTEK</h1>
-
-        <h2>Riset dan Teknologi</h2>
-
-        <p>
-          Departemen yang berfokus pada riset, teknologi,
-          inovasi, serta pengembangan kemampuan mahasiswa
-          Teknik Informatika.
-        </p>
-      </section>
-
-      <section className="division-page-section">
-        <span className="division-section-label">
-          01 / ABOUT
-        </span>
-
-        <h2>Mengenal RISTEK</h2>
-
-        <p>
-          RISTEK merupakan departemen yang menjadi wadah
-          mahasiswa Teknik Informatika untuk mengembangkan
-          kemampuan di bidang teknologi, riset, inovasi,
-          dan pengembangan keterampilan.
-        </p>
-      </section>
-
-      <section className="division-page-section">
-        <span className="division-section-label">
-          02 / PROGRAM KERJA
-        </span>
-
-        <h2>Program Kerja</h2>
-
-        <div className="division-proker-grid">
-
-          <div className="division-proker-card">
-            <span>01</span>
-            <h3>Web HMTI</h3>
-            <p>
-              Pengembangan dan pemeliharaan website HMTI.
-            </p>
-          </div>
-
-          <div className="division-proker-card">
-            <span>02</span>
-            <h3>NITRO</h3>
-            <p>
-              Wadah kegiatan dan kompetisi teknologi.
-            </p>
-          </div>
-
-          <div className="division-proker-card">
-            <span>03</span>
-            <h3>Study Club</h3>
-            <p>
-              Pengembangan kemampuan mahasiswa melalui
-              kegiatan belajar bersama.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      <section className="division-page-section">
-        <span className="division-section-label">
-          03 / ACTIVITIES
-        </span>
-
-        <h2>Kegiatan RISTEK</h2>
-
-        <div className="division-gallery">
-          <div className="division-gallery-item">FOTO 01</div>
-          <div className="division-gallery-item">FOTO 02</div>
-          <div className="division-gallery-item">FOTO 03</div>
-        </div>
-      </section>
-
-      <section className="division-page-section">
-        <span className="division-section-label">
-          04 / MEMBERS
-        </span>
-
-        <h2>Member RISTEK</h2>
-
-        <div className="division-members">
-          <div className="division-member">MEMBER 01</div>
-          <div className="division-member">MEMBER 02</div>
-          <div className="division-member">MEMBER 03</div>
-          <div className="division-member">MEMBER 04</div>
-        </div>
-      </section>
-
-    </main>
+    <DivisionPage
+      division="RISTEK"
+      number="06"
+      category="TECHNOLOGY"
+      subtitle="RISET DAN TEKNOLOGI"
+      description="RISTEK merupakan divisi HMTI yang berfokus pada pengembangan teknologi, riset, dan peningkatan kemampuan mahasiswa dalam bidang informatika."
+      aboutTitle="TECHNOLOGY"
+      aboutText={[
+        "RISTEK menjadi bagian dari HMTI yang mendorong mahasiswa untuk tidak hanya menggunakan teknologi, tetapi juga memahami dan mengembangkan teknologi.",
+        "Melalui berbagai kegiatan dan program kerja, RISTEK menjadi ruang bagi mahasiswa untuk belajar, bereksperimen, dan berkolaborasi.",
+      ]}
+      programs={[
+        {
+          number: "01",
+          title: "WEB HMTI",
+          category: "DIGITAL DEVELOPMENT",
+          description:
+            "Pengembangan dan pengelolaan website HMTI sebagai media informasi, dokumentasi, dan representasi digital organisasi.",
+          image: webHmti,
+        },
+        {
+          number: "02",
+          title: "NITRO",
+          category: "TECHNOLOGY & COMPETITION",
+          description:
+            "Wadah kegiatan dan kompetisi teknologi untuk mengembangkan kemampuan, kreativitas, dan pengalaman mahasiswa.",
+          image: webHmti,
+        },
+        {
+          number: "03",
+          title: "STUDY CLUB",
+          category: "LEARNING",
+          description:
+            "Kegiatan belajar bersama untuk meningkatkan kemampuan dan pengetahuan mahasiswa di bidang informatika.",
+          image: webHmti,
+        },
+      ]}
+      members={[
+        {
+          id: 1,
+          name: "Ahmad Fauzi",
+          role: "Head of Division",
+          photo: webHmti,
+        },
+        {
+          id: 2,
+          name: "Siti Rahma",
+          role: "Secretary & Treasurer",
+          photo: "/images/member-2.jpg",
+        },
+        {
+          id: 3,
+          name: "Rizky Pratama",
+          role: "Ketua PJ Web HMTI",
+          photo: "/images/member-3.jpg",
+        },
+        {
+          id: 4,
+          name: "Dinda Lestari",
+          role: "UI/UX Designer",
+          photo: "/images/member-4.jpg",
+        },
+        {
+          id: 5,
+          name: "Budi Santoso",
+          role: "Research Lead",
+          photo: "/images/member-5.jpg",
+        },
+        {
+          id: 6,
+          name: "Anisa Putri",
+          role: "Nitro Competition Staff",
+          photo: "/images/member-6.jpg",
+        },
+        {
+          id: 7,
+          name: "Fajar Nugraha",
+          role: "Study Club Coordinator",
+          photo: "/images/member-7.jpg",
+        },
+        {
+          id: 8,
+          name: "Dewi Melati",
+          role: "Technology Staff",
+          photo: "/images/member-8.jpg",
+        },
+      ]}
+    />
   );
 }
 

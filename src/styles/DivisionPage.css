@@ -1,327 +1,815 @@
-/* =========================================================
-   DIVISION PAGE - GLOBAL STYLE
-========================================================= */
+/* =====================================================
+   DIVISION PAGE
+===================================================== */
 
 .division-page {
+  --accent: #00d9ff;
+  --accent-soft: rgba(0, 217, 255, 0.15);
+
   min-height: 100vh;
-  background: #050816;
-  color: white;
+  padding: 120px 7% 0;
+
+  background: #050812;
+  color: #f5f7ff;
+
   overflow: hidden;
+  font-family: inherit;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
 
-.division-page-hero {
-  position: relative;
-  min-height: 75vh;
-  padding: 150px 8% 100px;
+/* =====================================================
+   BACK
+===================================================== */
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.division-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 
-  background:
-    radial-gradient(
-      circle at 80% 30%,
-      var(--division-glow),
-      transparent 35%
-    ),
-    #050816;
-}
+  margin-bottom: 70px;
 
-.division-page-label,
-.division-section-label {
-  color: var(--division-color);
-  font-size: 9px;
+  color: #8d9bb8;
+  text-decoration: none;
+
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
+
+  transition: 0.3s ease;
 }
 
-.division-page-hero h1 {
-  margin: 25px 0 10px;
+.division-back:hover {
+  color: var(--accent);
+  transform: translateX(-5px);
+}
 
-  font-size: clamp(70px, 10vw, 140px);
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.division-hero {
+  min-height: 560px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 80px;
+  align-items: center;
+
+  padding-bottom: 120px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.division-hero-content {
+  max-width: 720px;
+}
+
+
+/* LABEL */
+
+.division-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+
+/* TITLE */
+
+.division-hero h1 {
+  margin: 0;
+
+  font-size: clamp(70px, 10vw, 150px);
   line-height: 0.85;
-  letter-spacing: -7px;
+
   font-weight: 800;
-
-  background: linear-gradient(
-    90deg,
-    #ffffff,
-    var(--division-color)
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: -7px;
 }
 
-.division-page-hero h2 {
-  margin: 0 0 25px;
-
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 20px;
-  font-weight: 500;
+.division-hero h1 span {
+  color: var(--accent);
 }
 
-.division-page-hero p {
-  max-width: 600px;
 
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 14px;
-  line-height: 1.8;
+/* SUBTITLE */
+
+.division-hero h3 {
+  margin: 30px 0 20px;
+
+  color: #b9c5db;
+
+  font-size: 16px;
+  letter-spacing: 5px;
 }
 
-/* =========================================================
-   SECTION
-========================================================= */
 
-.division-page-section {
-  position: relative;
-  padding: 110px 8%;
+/* DESCRIPTION */
 
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
+.division-hero p {
+  max-width: 650px;
 
-.division-page-section h2 {
-  margin: 20px 0 30px;
+  margin: 0;
 
-  font-size: clamp(40px, 6vw, 70px);
-  line-height: 1;
-  letter-spacing: -4px;
-}
+  color: #8995ad;
 
-.division-page-section > p {
-  max-width: 700px;
-
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.9;
 }
 
-/* =========================================================
-   PROKER
-========================================================= */
 
-.division-proker-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+/* =====================================================
+   HERO BOX
+===================================================== */
 
-  margin-top: 50px;
-}
+.division-hero-box {
+  min-height: 430px;
 
-.division-proker-card {
   position: relative;
 
-  min-height: 230px;
-  padding: 25px;
+  display: flex;
+  flex-direction: column;
 
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--accent-soft);
+
+  background: radial-gradient(
+    circle at center,
+    var(--accent-soft),
+    transparent 60%
+  );
+
+  overflow: hidden;
+}
+
+
+/* INNER FRAME */
+
+.division-hero-box::before {
+  content: "";
+
+  position: absolute;
+  inset: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  pointer-events: none;
+}
+
+
+/* CIRCLE */
+
+.hero-circle {
+  width: 190px;
+  height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--accent);
+
+  color: var(--accent);
+
+  font-size: 100px;
+  font-weight: 800;
+
+  box-shadow:
+    0 0 60px var(--accent-soft),
+    inset 0 0 40px var(--accent-soft);
+}
+
+
+/* HERO BOX TEXT */
+
+.division-hero-box > span {
+  position: relative;
+
+  margin-top: 35px;
+
+  color: #65728c;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
+
+.division-section,
+.division-program,
+.division-members {
+  padding: 120px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: var(--accent);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  font-size: clamp(45px, 6vw, 85px);
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.section-title h2 strong {
+  color: var(--accent);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.division-section {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 100px;
+}
+
+.section-text {
+  max-width: 700px;
+
+  padding-top: 50px;
+}
+
+.section-text p {
+  margin: 0 0 30px;
+
+  color: #8d99b1;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =====================================================
+   PROGRAM
+===================================================== */
+
+/* =====================================================
+   PROGRAM
+===================================================== */
+
+.program-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =====================================================
+   PROGRAM CARD WITH IMAGE
+===================================================== */
+
+.program-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.program-card {
+  min-height: 330px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
-  border-radius: 20px;
+  padding: 35px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background-color: #080e1c;
+  background-size: cover;
+  background-position: center;
+
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   overflow: hidden;
 
   transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    background 0.4s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.division-proker-card::before {
-  content: "";
-
+/* OVERLAY GAMBAR */
+.program-overlay {
   position: absolute;
-  width: 180px;
-  height: 180px;
+  inset: 0;
 
-  top: -90px;
-  right: -70px;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 8, 18, 0.98) 0%,
+      rgba(5, 8, 18, 0.75) 45%,
+      rgba(5, 8, 18, 0.25) 100%
+    );
 
-  border-radius: 50%;
-
-  background: var(--division-glow);
-  filter: blur(40px);
-
-  transition: transform 0.5s ease;
+  transition: 0.35s ease;
 }
 
-.division-proker-card:hover {
-  transform: translateY(-7px);
-
-  border-color: var(--division-color);
-
-  background: rgba(255, 255, 255, 0.045);
+/* ISI CARD */
+.program-content {
+  position: relative;
+  z-index: 2;
 }
 
-.division-proker-card:hover::before {
-  transform: scale(1.5);
-}
-
-.division-proker-card span {
+/* NUMBER */
+.program-number {
   position: absolute;
-  top: 22px;
-  left: 25px;
+  top: 25px;
+  right: 25px;
 
-  color: var(--division-color);
+  z-index: 2;
+
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 45px;
+  font-weight: 800;
+}
+
+/* CATEGORY */
+.program-category {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
-.division-proker-card h3 {
-  position: relative;
-  z-index: 2;
+/* TITLE */
+.program-card h3 {
+  margin: 0 0 15px;
 
-  margin: 0 0 8px;
+  color: #fff;
 
-  font-size: 24px;
+  font-size: 30px;
+  letter-spacing: -1px;
 }
 
-.division-proker-card p {
-  position: relative;
-  z-index: 2;
-
+/* DESCRIPTION */
+.program-card p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: #c0c8d8;
 
-  font-size: 11px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.division-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-
-  margin-top: 50px;
+/* HOVER */
+.program-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
 }
 
-.division-gallery-item {
-  height: 250px;
+.program-card:hover .program-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 8, 18, 0.95) 0%,
+      var(--accent-soft) 100%
+    );
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
 
-  border-radius: 18px;
+.program-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
 
   background:
     linear-gradient(
-      135deg,
-      var(--division-glow),
-      rgba(255, 255, 255, 0.02)
+      to top,
+      rgba(5, 8, 18, 0.98) 0%,
+      rgba(5, 8, 18, 0.82) 38%,
+      rgba(5, 8, 18, 0.35) 75%,
+      rgba(5, 8, 18, 0.15) 100%
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1;
 
-  color: rgba(255, 255, 255, 0.3);
-
-  font-size: 9px;
-  letter-spacing: 3px;
-
-  transition:
-    transform 0.4s ease,
-    border-color 0.4s ease;
+  transition: 0.4s ease;
 }
 
-.division-gallery-item:hover {
-  transform: translateY(-5px);
-  border-color: var(--division-color);
+/* =====================================================
+   ACCENT GLOW
+===================================================== */
+
+.program-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -100px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: var(--accent-soft);
+
+  filter: blur(10px);
+
+  opacity: 0.8;
+
+  z-index: 1;
+
+  transition: 0.4s ease;
 }
 
-/* =========================================================
+/* =====================================================
+   PROGRAM CONTENT
+===================================================== */
+
+.program-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.program-number {
+  position: absolute;
+
+  top: 25px;
+  right: 28px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 45px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.program-category {
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.program-card h3 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.program-card p {
+  margin: 0;
+
+  color: #aab4c8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.program-card:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--accent);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35),
+    0 0 30px var(--accent-soft);
+}
+
+.program-card:hover::before {
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 8, 18, 0.96) 0%,
+      rgba(5, 8, 18, 0.70) 40%,
+      var(--division-soft) 100%
+    );
+}
+
+.program-card:hover::after {
+  transform: scale(1.5);
+
+  opacity: 1;
+}
+
+
+/* =====================================================
    MEMBERS
-========================================================= */
+===================================================== */
 
-.division-members {
+.members-grid {
+  margin-top: 70px;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
 
-  margin-top: 50px;
+  gap: 18px;
 }
 
-.division-member {
-  min-height: 180px;
 
-  display: flex;
-  align-items: flex-end;
+/* MEMBER CARD */
 
-  padding: 20px;
+.member-card {
+  min-height: 390px;
 
-  border-radius: 18px;
+  position: relative;
 
-  background: rgba(255, 255, 255, 0.025);
+  background: #080e1c;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 
-  color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
 
   transition:
-    transform 0.4s ease,
-    border-color 0.4s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.division-member:hover {
-  transform: translateY(-5px);
-  border-color: var(--division-color);
+.member-card:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--accent);
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
-@media (max-width: 900px) {
+/* MEMBER PHOTO */
 
-  .division-proker-grid {
-    grid-template-columns: 1fr 1fr;
+.member-photo {
+  width: 100%;
+  height: 260px;
+
+  background-size: cover;
+  background-position: center;
+  background-color: #101827;
+
+  filter: grayscale(100%);
+
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+.member-card:hover .member-photo {
+  filter: grayscale(0%);
+
+  transform: scale(1.04);
+}
+
+
+/* MEMBER INFO */
+
+.member-info {
+  position: relative;
+
+  padding: 20px 22px;
+}
+
+.member-info > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.member-info h3 {
+  margin: 0 0 7px;
+
+  font-size: 18px;
+}
+
+.member-info p {
+  margin: 0;
+
+  color: #77849d;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.division-footer {
+  padding: 120px 0 100px;
+}
+
+.division-footer > span {
+  color: var(--accent);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.division-footer h2 {
+  margin: 25px 0 0;
+
+  font-size: clamp(55px, 8vw, 120px);
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+}
+
+.division-footer h2 strong {
+  color: var(--accent);
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .division-page {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
-  .division-members {
+  .division-hero {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .division-hero-box {
+    min-height: 350px;
+  }
+
+  .division-section {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .section-text {
+    padding-top: 0;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .members-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
 @media (max-width: 600px) {
-
-  .division-page-hero {
-    padding: 120px 25px 80px;
+  .division-page {
+    padding-top: 100px;
   }
 
-  .division-page-section {
-    padding: 80px 25px;
+  .division-back {
+    margin-bottom: 45px;
   }
 
-  .division-page-hero h1 {
-    font-size: 65px;
+  .division-hero {
+    padding-bottom: 80px;
+  }
+
+  .division-hero h1 {
+    font-size: 70px;
+
     letter-spacing: -4px;
   }
 
-  .division-proker-grid {
-    grid-template-columns: 1fr;
+  .division-hero h3 {
+    font-size: 12px;
+
+    letter-spacing: 3px;
   }
 
-  .division-gallery {
-    grid-template-columns: 1fr;
+  .division-hero p {
+    font-size: 14px;
   }
 
+  .division-hero-box {
+    min-height: 280px;
+  }
+
+  .hero-circle {
+    width: 130px;
+    height: 130px;
+
+    font-size: 70px;
+  }
+
+  .division-section,
+  .division-program,
   .division-members {
-    grid-template-columns: 1fr 1fr;
+    padding: 80px 0;
   }
 
+  .section-title h2 {
+    font-size: 48px;
+  }
+
+  .program-grid {
+    margin-top: 45px;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-card {
+    min-height: 420px;
+  }
+
+  .member-photo {
+    height: 290px;
+  }
+
+  .division-footer {
+    padding: 80px 0;
+  }
+
+  .division-footer h2 {
+    font-size: 65px;
+  }
 }

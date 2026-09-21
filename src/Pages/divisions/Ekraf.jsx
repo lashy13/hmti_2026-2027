@@ -1,91 +1,71 @@
-import "../../styles/Ekraf.css";
-import "../../styles/DivisionPage.css";
+import DivisionPage from "../../components/DivisionPage";
+import "../../styles/Warnadiv.css";
+
 function Ekraf() {
   return (
-    <main className="division-page ekraf-page">
-
-      <section className="division-hero">
-        <span className="division-label">HMTI UMP / DIVISION</span>
-
-        <h1>EKRAF</h1>
-
-        <h2>Ekonomi Kreatif</h2>
-
-        <p>
-          Departemen yang menjadi wadah kreativitas mahasiswa
-          dalam menghasilkan karya dan mengembangkan potensi kreatif.
-        </p>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">01 / ABOUT</span>
-
-        <h2>Mengenal Ekraf</h2>
-
-        <p>
-          Ekraf berfokus pada pengembangan kreativitas mahasiswa
-          melalui kegiatan yang menghasilkan karya dan inovasi.
-        </p>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">02 / PROGRAM KERJA</span>
-
-        <h2>Program Kerja</h2>
-
-        <div className="proker-grid">
-          <div className="proker-card">
-            <span>01</span>
-            <h3>Creative Project</h3>
-            <p>
-              Pengembangan karya kreatif mahasiswa.
-            </p>
-          </div>
-
-          <div className="proker-card">
-            <span>02</span>
-            <h3>Workshop</h3>
-            <p>
-              Kegiatan pengembangan kemampuan kreatif.
-            </p>
-          </div>
-
-          <div className="proker-card">
-            <span>03</span>
-            <h3>Product</h3>
-            <p>
-              Pengembangan produk kreatif mahasiswa.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">03 / ACTIVITIES</span>
-
-        <h2>Kegiatan Ekraf</h2>
-
-        <div className="gallery">
-          <div className="gallery-item">FOTO 01</div>
-          <div className="gallery-item">FOTO 02</div>
-          <div className="gallery-item">FOTO 03</div>
-        </div>
-      </section>
-
-      <section className="division-section">
-        <span className="section-label">04 / MEMBERS</span>
-
-        <h2>Member Ekraf</h2>
-
-        <div className="members">
-          <div className="member">MEMBER 01</div>
-          <div className="member">MEMBER 02</div>
-          <div className="member">MEMBER 03</div>
-          <div className="member">MEMBER 04</div>
-        </div>
-      </section>
-
-    </main>
+    <DivisionPage
+      division="EKRAF"
+      number="05"
+      category="CREATIVE ECONOMY"
+      subtitle="EKONOMI KREATIF"
+      description="EKRAF merupakan divisi HMTI yang berfokus pada pengembangan kreativitas, minat, bakat, dan potensi anggota."
+      aboutTitle="CREATIVE SPACE"
+      aboutText={[
+        "EKRAF menjadi ruang bagi mahasiswa untuk mengembangkan kreativitas dan potensi melalui berbagai kegiatan kreatif.",
+        "Melalui program kerja yang kolaboratif, EKRAF mendorong anggota untuk menghasilkan karya dan pengalaman baru.",
+      ]}
+      programs={[
+        {
+          number: "01",
+          title: "CREATIVE PROJECT",
+          category: "CREATIVITY",
+          description:
+            "Mengembangkan berbagai proyek kreatif yang melibatkan anggota HMTI.",
+          image: "/images/study-club.jpg",
+        },
+        {
+          number: "02",
+          title: "TALENT",
+          category: "INTEREST & TALENT",
+          description: "Menjadi wadah pengembangan minat dan bakat mahasiswa.",
+          image: "/images/study-club.jpg",
+        },
+        {
+          number: "03",
+          title: "CREATIVE EVENT",
+          category: "EVENT",
+          description:
+            "Mengadakan kegiatan kreatif untuk membangun pengalaman dan kolaborasi.",
+          image: "/images/study-club.jpg",
+        },
+      ]}
+      members={[
+        {
+          id: 1,
+          name: "Nama Anggota 1",
+          role: "Head of Division",
+          photo: "/images/member-1.jpg",
+        },
+        {
+          id: 2,
+          name: "Nama Anggota 2",
+          role: "Secretary",
+          photo: "/images/member-2.jpg",
+        },
+        {
+          id: 3,
+          name: "Nama Anggota 3",
+          role: "Creative Staff",
+          photo: "/images/member-3.jpg",
+        },
+        {
+          id: 4,
+          name: "Nama Anggota 4",
+          role: "Event Staff",
+          photo: "/images/member-4.jpg",
+        },
+      ]}
+    />
   );
 }
 
