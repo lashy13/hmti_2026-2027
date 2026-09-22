@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import "../styles/DivisionPage.css";
 
 function DivisionPage({
@@ -9,132 +10,249 @@ function DivisionPage({
   description,
   aboutTitle,
   aboutText,
-  programs,
-  members,
+  programs = [],
+  members = [],
 }) {
   return (
-    <main className={`division-page ${division.toLowerCase()}-page`}>
-      {/* BACK */}
-      <Link to="/divisions" className="division-back">
-        ← BACK TO DIVISIONS
-      </Link>
+    <div className="division-page">
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section className="division-hero">
+
+        <div className="division-hero-number">
+          {number}
+        </div>
+
         <div className="division-hero-content">
-          <span className="division-label">
-            {number} / 06 — {category}
+
+          <span className="division-category">
+            {category}
           </span>
 
           <h1>
             {division}
-            <span>.</span>
           </h1>
 
-          <h3>{subtitle}</h3>
+          <h2>
+            {subtitle}
+          </h2>
 
-          <p>{description}</p>
+          <p>
+            {description}
+          </p>
+
         </div>
 
-        <div className="division-hero-box">
-          <div className="hero-circle">{division.charAt(0)}</div>
-
-          <span>{category} • HMTI</span>
-        </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="division-section">
-        <div className="section-title">
-          <span>01 — ABOUT</span>
+
+      {/* =====================================================
+          ABOUT
+      ===================================================== */}
+
+      <section className="division-about">
+
+        <div className="division-about-title">
+
+          <span>
+            ABOUT
+          </span>
 
           <h2>
-            DEVELOPING
-            <br />
-            <strong>{aboutTitle}.</strong>
+            {aboutTitle}
           </h2>
+
         </div>
 
-        <div className="section-text">
-          {aboutText.map((text, index) => (
-            <p key={index}>{text}</p>
+
+        <div className="division-about-text">
+
+          {aboutText?.map((text, index) => (
+            <p key={index}>
+              {text}
+            </p>
           ))}
+
         </div>
+
       </section>
 
-      {/* PROGRAM */}
-      {/* PROGRAM */}
-      <section className="division-program">
-        <div className="section-title">
-          <span>02 — PROGRAM KERJA</span>
+
+      {/* =====================================================
+          PROGRAMS
+      ===================================================== */}
+
+      <section className="division-programs">
+
+        <div className="section-heading">
+
+          <span>
+            PROGRAMS
+          </span>
 
           <h2>
-            OUR
-            <br />
-            <strong>PROGRAMS.</strong>
+            OUR PROGRAMS
           </h2>
+
         </div>
 
-        <div className="program-grid">
-          {programs.map((program) => (
-            <article
-              className="program-card"
-              key={program.number}
-              style={{
-                backgroundImage: `url(${program.image})`,
-              }}
-            >
-              <div className="program-overlay"></div>
 
-              <span className="program-number">{program.number}</span>
+        <div className="program-list">
 
-              <div className="program-content">
-                <span className="program-category">{program.category}</span>
+          {programs.map((program) => {
 
-                <h3>{program.title}</h3>
+            // Kalau link tidak diberikan,
+            // card tidak diarahkan ke halaman lain.
+            const hasLink = Boolean(program.link);
 
-                <p>{program.description}</p>
+            const cardContent = (
+              <>
+                {/* PROGRAM NUMBER */}
+
+                <div className="program-number">
+                  {program.number}
+                </div>
+
+
+                {/* PROGRAM IMAGE */}
+
+                {program.image && (
+                  <div className="program-image">
+
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                    />
+
+                  </div>
+                )}
+
+
+                {/* PROGRAM CONTENT */}
+
+                <div className="program-content">
+
+                  <span className="program-category">
+                    {program.category}
+                  </span>
+
+                  <h3>
+                    {program.title}
+                  </h3>
+
+                  <p>
+                    {program.description}
+                  </p>
+
+                </div>
+
+
+                {/* ARROW */}
+
+                {hasLink && (
+                  <div className="program-arrow">
+                    →
+                  </div>
+                )}
+              </>
+            );
+
+
+            // Kalau program punya link,
+            // seluruh card menjadi clickable.
+            if (hasLink) {
+              return (
+                <Link
+                  key={program.number}
+                  to={program.link}
+                  className="program-card"
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+
+
+            // Kalau tidak ada link,
+            // tetap tampil sebagai card biasa.
+            return (
+              <div
+                key={program.number}
+                className="program-card"
+              >
+                {cardContent}
               </div>
-            </article>
-          ))}
+            );
+
+          })}
+
         </div>
+
       </section>
-      {/* MEMBERS */}
+
+
+      {/* =====================================================
+          MEMBERS
+      ===================================================== */}
+
       <section className="division-members">
-        <div className="section-title">
-          <span>03 — OUR TEAM</span>
+
+        <div className="section-heading">
+
+          <span>
+            OUR TEAM
+          </span>
 
           <h2>
-            {division}
-            <br />
-            <strong>MEMBERS.</strong>
+            MEMBERS
           </h2>
+
         </div>
+
 
         <div className="members-grid">
+
           {members.map((member) => (
-            <article className="member-card" key={member.id}>
-              <div
-                className="member-photo"
-                style={{
-                  backgroundImage: `url(${member.photo})`,
-                }}
-              />
+
+            <div
+              className="member-card"
+              key={member.id}
+            >
+
+              <div className="member-photo">
+
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                />
+
+              </div>
+
 
               <div className="member-info">
-                <span>{String(member.id).padStart(2, "0")}</span>
 
-                <h3>{member.name}</h3>
+                <h3>
+                  {member.name}
+                </h3>
 
-                <p>{member.role}</p>
+                <p>
+                  {member.role}
+                </p>
+
               </div>
-            </article>
+
+            </div>
+
           ))}
+
         </div>
+
       </section>
 
-      {/* FOOTER */}
-    </main>
+    </div>
   );
 }
 
