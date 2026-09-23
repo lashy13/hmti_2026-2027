@@ -1,7 +1,7 @@
 import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
 
-import humasImage from "../../../assets/image.png";
+import humasImage from "../../../assets/logo/image.png";
 
 function Humas() {
   return (

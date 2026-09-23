@@ -1,3 +1,5 @@
+// Aspirasi.jsx
+
 import { useState } from "react";
 
 import "../styles/aspirasi.css";
@@ -14,10 +16,12 @@ function Aspirasi() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -68,25 +72,23 @@ function Aspirasi() {
   };
 
   return (
-    <div className="aspirasi-page">
+    <section
+      className="aspirasi-page"
+      id="aspirasi"
+    >
 
-      {/* BACKGROUND GLOW */}
+      {/* BACKGROUND */}
+
       <div className="aspirasi-glow glow-one"></div>
       <div className="aspirasi-glow glow-two"></div>
 
 
-      {/* =========================
-          TOP BAR
-      ========================== */}
-     
+      {/* MAIN */}
 
-
-      {/* =========================
-          MAIN
-      ========================== */}
       <main className="aspirasi-main">
 
         {/* HEADER */}
+
         <div className="aspirasi-heading">
 
           <span className="aspirasi-eyebrow">
@@ -108,20 +110,22 @@ function Aspirasi() {
         </div>
 
 
-        {/* =========================
-            FORM
-        ========================== */}
+        {/* FORM */}
+
         <section className="aspirasi-card">
 
-          {/* CARD HEADER */}
           <div className="aspirasi-card-header">
 
             <div>
-              <span>ASPIRATION FORM</span>
+
+              <span>
+                ASPIRATION FORM
+              </span>
 
               <h2>
                 Ceritakan kepada kami.
               </h2>
+
             </div>
 
             <div className="aspirasi-number">
@@ -136,12 +140,10 @@ function Aspirasi() {
             onSubmit={handleSubmit}
           >
 
-            {/* =========================
-                NAMA + NIM
-            ========================== */}
+            {/* NAMA + NIM */}
+
             <div className="aspirasi-form-row">
 
-              {/* NAMA KIRI */}
               <div className="aspirasi-field">
 
                 <label htmlFor="nama">
@@ -161,7 +163,6 @@ function Aspirasi() {
               </div>
 
 
-              {/* NIM KANAN */}
               <div className="aspirasi-field">
 
                 <label htmlFor="nim">
@@ -183,9 +184,8 @@ function Aspirasi() {
             </div>
 
 
-            {/* =========================
-                EMAIL
-            ========================== */}
+            {/* EMAIL */}
+
             <div className="aspirasi-field">
 
               <label htmlFor="email">
@@ -205,9 +205,8 @@ function Aspirasi() {
             </div>
 
 
-            {/* =========================
-                ASPIRASI
-            ========================== */}
+            {/* ASPIRASI */}
+
             <div className="aspirasi-field">
 
               <label htmlFor="aspirasi">
@@ -227,9 +226,8 @@ function Aspirasi() {
             </div>
 
 
-            {/* =========================
-                BOTTOM FORM
-            ========================== */}
+            {/* BOTTOM */}
+
             <div className="aspirasi-form-bottom">
 
               <p>
@@ -248,7 +246,9 @@ function Aspirasi() {
                   : "KIRIM ASPIRASI"
                 }
 
-                <span>→</span>
+                <span>
+                  →
+                </span>
 
               </button>
 
@@ -256,6 +256,7 @@ function Aspirasi() {
 
 
             {/* STATUS */}
+
             {status && (
               <div
                 className={`aspirasi-status ${
@@ -274,9 +275,7 @@ function Aspirasi() {
 
       </main>
 
-
-
-    </div>
+    </section>
   );
 }
 

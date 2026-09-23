@@ -1,7 +1,7 @@
 import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
 
-import webHmti from "../../../assets/image.png";
+import webHmti from "../../../assets/logo/image.png";
 
 function Ristek() {
   return (

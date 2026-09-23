@@ -1,219 +1,474 @@
 /* =========================================================
-   NAVBAR UTAMA (CLEAN & FIXED)
+   NAVBAR UTAMA
 ========================================================= */
+
 .navbar {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+
   z-index: 1000;
+
   width: calc(100% - 60px);
   max-width: 1350px;
   height: 75px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 25px;
+
   background: rgba(5, 8, 22, 0.85);
+
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+
+  box-sizing: border-box;
 }
 
+
 /* =========================================================
-   BRAND CONTAINER (LOGO KIRI)
+   BRAND CONTAINER
 ========================================================= */
+
 .brand-container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+
+/* =========================================================
+   BRAND UMP
+========================================================= */
+
 .brand-ump {
   display: flex;
   align-items: center;
   gap: 10px;
+
   text-decoration: none;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
 }
 
 .logo-ump {
   width: 36px;
   height: 36px;
+
   object-fit: contain;
   flex-shrink: 0;
 }
 
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
 .logo-divider {
   width: 1px;
   height: 32px;
+
   background: rgba(255, 255, 255, 0.15);
+
   margin: 0 4px;
 }
 
-/* TEKS UMP */
+
+/* =========================================================
+   TEKS UMP
+========================================================= */
+
 .ump-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   line-height: 1.15;
 }
 
 .ump-text strong {
   color: #ffffff;
+
   font-size: 13.5px;
   font-weight: 700;
+
   white-space: nowrap;
 }
 
 .ump-muhammadiyah {
   font-size: 8px;
   font-weight: 600;
+
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #1683ff);
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #1683ff
+  );
+
   -webkit-background-clip: text;
   background-clip: text;
+
   -webkit-text-fill-color: transparent;
+
   white-space: nowrap;
 }
 
 .ump-text small {
   color: rgba(255, 255, 255, 0.4);
+
   font-size: 7.5px;
+
   white-space: nowrap;
 }
 
-/* LOGO TEKNIK INFORMATIKA BARU */
-.brand-if-full {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo-if-img {
-  height: 36px;
-  width: auto;
-  object-fit: contain;
-}
 
 /* =========================================================
-   NAV LINKS (MENU KANAN)
+   BRAND HMTI
 ========================================================= */
-.nav-links {
+
+.brand-if {
   display: flex;
   align-items: center;
-  gap: 22px;
-}
+  gap: 10px;
 
-.nav-links a {
-  position: relative;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  font-weight: 500;
   text-decoration: none;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
 
-.nav-links a:hover {
-  color: #ffffff;
-}
+  background: none;
+  border: none;
+  padding: 0;
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
-  width: 0;
-  height: 1px;
-  transform: translateX(-50%);
-  background: #1683ff;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* =========================================================
-   RESPONSIVE HP / TABLET
-========================================================= */
-@media (max-width: 1050px) {
-  .ump-text small {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    width: calc(100% - 20px);
-    height: 65px;
-    padding: 0 15px;
-  }
-  .brand-ump {
-    display: none;
-  }
-  .logo-divider {
-    display: none;
-  }
-  .nav-links {
-    gap: 12px;
-  }
-  .nav-links a {
-    font-size: 11px;
-  }
+  cursor: pointer;
 }
 
 
-/* Perbaikan ukuran logo HMTI agar tidak raksasa */
+/* LOGO HMTI */
+
 .logo-if {
   width: 36px !important;
   height: 36px !important;
+
   object-fit: contain !important;
+
   flex-shrink: 0 !important;
 }
 
 
 /* =========================================================
-   TAMBAHAN KELAS BRAND-TEXT UNTUK SUSUNAN KE BAWAH
+   TEKS TEKNIK INFORMATIKA
 ========================================================= */
-.brand-if {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
 
 .brand-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   line-height: 1.15;
 }
 
 .brand-text strong {
   color: #ffffff;
+
   font-size: 13.5px;
   font-weight: 700;
+
   white-space: nowrap;
 }
 
 .if-tagline {
   font-size: 8px;
   font-weight: 600;
+
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #1683ff);
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #1683ff
+  );
+
   -webkit-background-clip: text;
   background-clip: text;
+
   -webkit-text-fill-color: transparent;
+
   white-space: nowrap;
 }
 
 .brand-text small {
   color: rgba(255, 255, 255, 0.4);
+
   font-size: 7.5px;
+
   white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   LINK + BUTTON
+========================================================= */
+
+.nav-links a,
+.nav-links button {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  background: transparent;
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   GARIS BAWAH
+========================================================= */
+
+.nav-links a::after,
+.nav-links button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: #1683ff;
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links button:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+
+.nav-links a.active,
+.nav-links button.active {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BRAND HOVER
+========================================================= */
+
+.brand-ump:hover,
+.brand-if:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   RESPONSIVE 1050px
+========================================================= */
+
+@media (max-width: 1050px) {
+  .ump-text small {
+    display: none;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    width: calc(100% - 30px);
+
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    height: 65px;
+
+    padding: 0 15px;
+
+    border-radius: 14px;
+  }
+
+  /* Sembunyikan brand UMP */
+  .brand-ump {
+    display: none;
+  }
+
+  .logo-divider {
+    display: none;
+  }
+
+  /* Navbar HMTI */
+  .brand-if {
+    gap: 8px;
+  }
+
+  .logo-if {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .brand-text strong {
+    font-size: 11px;
+  }
+
+  .if-tagline {
+    font-size: 6.5px;
+  }
+
+  /* Menu */
+  .nav-links {
+    gap: 11px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 10px;
+  }
+
+  .nav-links a::after,
+  .nav-links button::after {
+    bottom: -4px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE KECIL
+========================================================= */
+
+@media (max-width: 550px) {
+  .navbar {
+    height: 58px;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .logo-if {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .nav-links {
+    gap: 7px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 8px;
+  }
 }

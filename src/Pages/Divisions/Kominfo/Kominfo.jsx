@@ -1,7 +1,7 @@
 import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
 
-import kominfoImage from "../../../assets/image.png";
+import kominfoImage from "../../../assets/logo/image.png";
 
 function Kominfo() {
   return (

@@ -1,8 +1,8 @@
-import imgHackwins from "../assets/image.png";
-import imgMewins from "../assets/image.png";
-import imgWebDesign from "../assets/image.png";
-import imgNetwork from "../assets/image.png";
-import imgHackathon from "../assets/image.png";
+import imgHackwins from "../assets/logo/image.png";
+import imgMewins from "../assets/logo/image.png";
+import imgWebDesign from "../assets/logo/image.png";
+import imgNetwork from "../assets/logo/image.png";
+import imgHackathon from "../assets/logo/image.png";
 
 const events = [
   {
