@@ -483,3 +483,45 @@
   }
 
 }
+.anggota-page {
+  position: relative;
+}
+
+.anggota-back-button {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  background: rgba(5, 8, 18, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: all 0.3s ease;
+}
+
+.anggota-back-button:hover {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: #2563eb;
+  transform: translateX(-3px);
+}
+
+.back-arrow {
+  font-size: 18px;
+  line-height: 1;
+} 

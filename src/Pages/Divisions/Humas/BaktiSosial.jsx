@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/bakti-sosial.jpg";
+
 function BaktiSosial() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function BaktiSosial() {
       implementation="BERKALA"
       location="MASYARAKAT"
       participants="ANGGOTA HMTI"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Bakti Sosial",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

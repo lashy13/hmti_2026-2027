@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/safari-humas.jpg";
+
 function SafariHumas() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function SafariHumas() {
       implementation="1–3 HARI"
       location="LUAR KOTA"
       participants="PENGURUS HMTI"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Safari Humas",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

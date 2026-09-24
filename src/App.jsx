@@ -1,177 +1,378 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 
-import logoUmp from "../assets/logo/logo-ump.png";
-import logoIf from "../assets/logo/logo-hmti.png";
+import { useEffect } from "react";
 
-import "../styles/navbar.css";
+// =====================================================
+// COMPONENTS
+// =====================================================
 
-function Navbar() {
-  const navigate = useNavigate();
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import AboutHmti from "./components/AboutHmti";
+import Events from "./components/events";
+import Contact from "./components/Contact";
+import Aspirasi from "./components/Aspirasi";
+import Divisions from "./components/Divisions";
+import Anggota from "./components/Anggota";
+
+// =====================================================
+// PRESTASI
+// =====================================================
+
+import Prestasi from "./Pages/Prestasi/Prestasi";
+import PrestasiDetail from "./Pages/Prestasi/PrestasiDetail";
+
+// =====================================================
+// DIVISIONS
+// =====================================================
+
+import Ristek from "./Pages/Divisions/Ristek/Ristek";
+import Humas from "./Pages/Divisions/Humas/Humas";
+import Kominfo from "./Pages/Divisions/Kominfo/Kominfo";
+import Advokasi from "./Pages/Divisions/Advokasi/Advokasi";
+import PSDM from "./Pages/Divisions/PSDM/PSDM";
+import Ekraf from "./Pages/Divisions/Ekraf/Ekraf";
+
+// =====================================================
+// RISTEK PROGRAMS
+// =====================================================
+
+import WebHmti from "./Pages/Divisions/Ristek/WebHmti";
+import Nitro from "./Pages/Divisions/Ristek/Nitro";
+import StudyClub from "./Pages/Divisions/Ristek/StudyClub";
+
+// =====================================================
+// HUMAS PROGRAMS
+// =====================================================
+
+import StudiBanding from "./Pages/Divisions/Humas/StudiBanding";
+import SafariHumas from "./Pages/Divisions/Humas/SafariHumas";
+import BaktiSosial from "./Pages/Divisions/Humas/BaktiSosial";
+
+// =====================================================
+// ADVOKASI PROGRAMS
+// =====================================================
+
+import DiskusiUmum from "./Pages/Divisions/Advokasi/DiskusiUmum";
+import SAKTI from "./Pages/Divisions/Advokasi/Sakti";
+import HariWajibPDH from "./Pages/Divisions/Advokasi/HariWajibPDH";
+import LDP from "./Pages/Divisions/Advokasi/Ldp";
+import KotakAspirasi from "./Pages/Divisions/Advokasi/KotakAspirasi";
+
+// =====================================================
+// PSDM PROGRAMS
+// =====================================================
+
+import OSMA from "./Pages/Divisions/PSDM/OSMA";
+import PengurusMuda from "./Pages/Divisions/PSDM/PengurusMuda";
+import LDO from "./Pages/Divisions/PSDM/LDO";
+import ITEsport from "./Pages/Divisions/PSDM/ITEsport";
+
+// =====================================================
+// EKRAF PROGRAMS
+// =====================================================
+
+import OpenPoPdhKorsa from "./Pages/Divisions/Ekraf/OpenPoPdhKorsa";
+import ManajemenMediaSosial from "./Pages/Divisions/Ekraf/ManajemenMediaSosial";
+import Merchandise from "./Pages/Divisions/Ekraf/Merchandise";
+import WaroengEkraf from "./Pages/Divisions/Ekraf/WaroengEkraf";
+
+
+// =====================================================
+// HOME PAGE
+// =====================================================
+
+function Home() {
   const location = useLocation();
 
-  const goToSection = (sectionId) => {
-    // Kalau sedang di halaman Home
-    if (location.pathname === "/") {
-      const section = document.getElementById(sectionId);
+  useEffect(() => {
+    const target = location.state?.scrollTo;
 
-      if (section) {
-        section.scrollIntoView({
+    if (!target) {
+      return;
+    }
+
+    // Beri waktu React untuk menyelesaikan render
+    const timer = setTimeout(() => {
+      const element = document.getElementById(target);
+
+      if (element) {
+        element.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
       }
 
-      return;
-    }
+      // Hapus state setelah digunakan
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+      );
+    }, 150);
 
-    // Kalau sedang berada di halaman lain,
-    // kembali ke Home lalu scroll ke section
-    navigate("/", {
-      state: {
-        scrollTo: sectionId,
-      },
-    });
-  };
-
-  const goHome = () => {
-    if (location.pathname === "/") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else {
-      navigate("/");
-    }
-  };
+    return () => clearTimeout(timer);
+  }, [location]);
 
   return (
-    <nav className="navbar">
+    <main>
 
-      {/* =========================
-          BRAND
-      ========================= */}
+      <Hero />
 
-      <div className="brand-container">
+      <AboutHmti />
 
-        <button
-          className="brand-ump"
-          onClick={goHome}
-        >
-          <img
-            src={logoUmp}
-            alt="Logo UMP"
-            className="logo-ump"
-          />
+      <Events />
 
-          <div className="ump-text">
-            <strong>Universitas</strong>
-            <span className="ump-muhammadiyah">
-              Muhammadiyah
-            </span>
-            <small>Purwokerto</small>
-          </div>
-        </button>
+      <Aspirasi />
 
-        <div className="logo-divider"></div>
+      <Contact />
 
-        <button
-          className="brand-if"
-          onClick={goHome}
-        >
-          <img
-            src={logoIf}
-            alt="Logo HMTI"
-            className="logo-if"
-          />
-
-          <div className="brand-text">
-            <strong>Teknik Informatika</strong>
-
-            <span className="if-tagline">
-              smart • creative • progressive
-            </span>
-
-            <small>
-              Universitas Muhammadiyah Purwokerto
-            </small>
-          </div>
-        </button>
-
-      </div>
-
-
-      {/* =========================
-          MENU
-      ========================= */}
-
-      <div className="nav-links">
-
-        {/* HOME */}
-        <button
-          type="button"
-          onClick={goHome}
-        >
-          Home
-        </button>
-
-
-        {/* ABOUT */}
-        <button
-          type="button"
-          onClick={() => goToSection("about")}
-        >
-          About
-        </button>
-
-
-        {/* DIVISI */}
-        <Link to="/divisions">
-          Divisi
-        </Link>
-
-
-        {/* PRESTASI */}
-        <Link to="/prestasi">
-          Prestasi
-        </Link>
-
-
-        {/* EVENT */}
-        <button
-          type="button"
-          onClick={() => goToSection("events")}
-        >
-          Event
-        </button>
-
-
-        {/* ASPIRASI */}
-        <button
-          type="button"
-          onClick={() => goToSection("aspirasi")}
-        >
-          Aspirasi
-        </button>
-
-
-        {/* CONTACT */}
-        <button
-          type="button"
-          onClick={() => goToSection("contact")}
-        >
-          Contact
-        </button>
-
-
-        {/* ANGGOTA */}
-        <Link to="/anggota">
-          Anggota
-        </Link>
-
-      </div>
-
-    </nav>
+    </main>
   );
 }
 
-export default Navbar;
+
+// =====================================================
+// APP
+// =====================================================
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Navbar />
+
+      <Routes>
+
+        {/* =================================================
+            HOME
+        ================================================= */}
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+
+        {/* =================================================
+            HMTI
+        ================================================= */}
+
+        <Route
+          path="/hmti"
+          element={<Navigate to="/" replace />}
+        />
+
+
+        {/* =================================================
+            DIVISIONS
+        ================================================= */}
+
+        <Route
+          path="/divisions"
+          element={<Divisions />}
+        />
+
+
+        {/* =================================================
+            PRESTASI
+        ================================================= */}
+
+        <Route
+          path="/prestasi"
+          element={<Prestasi />}
+        />
+
+        <Route
+          path="/prestasi/:id"
+          element={<PrestasiDetail />}
+        />
+
+
+        {/* =================================================
+            ANGGOTA
+        ================================================= */}
+
+        <Route
+          path="/anggota"
+          element={<Anggota />}
+        />
+
+
+        {/* =================================================
+            RISTEK
+        ================================================= */}
+
+        <Route
+          path="/divisions/ristek"
+          element={<Ristek />}
+        />
+
+        <Route
+          path="/divisions/ristek/web-hmti"
+          element={<WebHmti />}
+        />
+
+        <Route
+          path="/divisions/ristek/nitro"
+          element={<Nitro />}
+        />
+
+        <Route
+          path="/divisions/ristek/study-club"
+          element={<StudyClub />}
+        />
+
+
+        {/* =================================================
+            HUMAS
+        ================================================= */}
+
+        <Route
+          path="/divisions/humas"
+          element={<Humas />}
+        />
+
+        <Route
+          path="/divisions/humas/studi-banding"
+          element={<StudiBanding />}
+        />
+
+        <Route
+          path="/divisions/humas/safari-humas"
+          element={<SafariHumas />}
+        />
+
+        <Route
+          path="/divisions/humas/bakti-sosial"
+          element={<BaktiSosial />}
+        />
+
+
+        {/* =================================================
+            KOMINFO
+        ================================================= */}
+
+        <Route
+          path="/divisions/kominfo"
+          element={<Kominfo />}
+        />
+
+
+        {/* =================================================
+            ADVOKASI
+        ================================================= */}
+
+        <Route
+          path="/divisions/advokasi"
+          element={<Advokasi />}
+        />
+
+        <Route
+          path="/divisions/advokasi/diskusi-umum"
+          element={<DiskusiUmum />}
+        />
+
+        <Route
+          path="/divisions/advokasi/sakti"
+          element={<SAKTI />}
+        />
+
+        <Route
+          path="/divisions/advokasi/hari-wajib-pdh"
+          element={<HariWajibPDH />}
+        />
+
+        <Route
+          path="/divisions/advokasi/ldp"
+          element={<LDP />}
+        />
+
+        <Route
+          path="/divisions/advokasi/kotak-aspirasi"
+          element={<KotakAspirasi />}
+        />
+
+
+        {/* =================================================
+            PSDM
+        ================================================= */}
+
+        <Route
+          path="/divisions/psdm"
+          element={<PSDM />}
+        />
+
+        <Route
+          path="/divisions/psdm/osma-ospek"
+          element={<OSMA />}
+        />
+
+        <Route
+          path="/divisions/psdm/pengurus-muda"
+          element={<PengurusMuda />}
+        />
+
+        <Route
+          path="/divisions/psdm/ldo"
+          element={<LDO />}
+        />
+
+        <Route
+          path="/divisions/psdm/it-esport"
+          element={<ITEsport />}
+        />
+
+
+        {/* =================================================
+            EKRAF
+        ================================================= */}
+
+        <Route
+          path="/divisions/ekraf"
+          element={<Ekraf />}
+        />
+
+        <Route
+          path="/divisions/ekraf/open-po-pdh-korsa"
+          element={<OpenPoPdhKorsa />}
+        />
+
+        <Route
+          path="/divisions/ekraf/manajemen-media-sosial"
+          element={<ManajemenMediaSosial />}
+        />
+
+        <Route
+          path="/divisions/ekraf/merchandise"
+          element={<Merchandise />}
+        />
+
+        <Route
+          path="/divisions/ekraf/waroeng-ekraf"
+          element={<WaroengEkraf />}
+        />
+
+
+        {/* =================================================
+            404
+        ================================================= */}
+
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
+}
+
+export default App;

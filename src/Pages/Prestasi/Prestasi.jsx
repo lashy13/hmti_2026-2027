@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 
 import "../../styles/Prestasi.css";
 
-// import prestasi1 from "../../assets/prestasi/prestasi-1.jpg";
-// import prestasi2 from "../../assets/prestasi/prestasi-2.jpg";
-// import prestasi3 from "../../assets/prestasi/prestasi-3.jpg";
-
 function Prestasi() {
 
   const prestasiData = [
@@ -15,7 +11,6 @@ function Prestasi() {
       title: "Juara 1 Hackathon",
       year: "2026",
       category: "Technology Competition",
-    //   image: prestasi1,
     },
 
     {
@@ -23,7 +18,6 @@ function Prestasi() {
       title: "Juara 2 Web Development",
       year: "2026",
       category: "Web Development",
-    //   image: prestasi2,
     },
 
     {
@@ -31,12 +25,26 @@ function Prestasi() {
       title: "Juara 3 Cybersecurity Competition",
       year: "2026",
       category: "Cybersecurity",
-    //   image: prestasi3,
     },
   ];
 
   return (
     <main className="prestasi-page">
+
+      {/* =========================================
+          BACK BUTTON
+      ========================================= */}
+
+      <div className="prestasi-back">
+        <Link
+          to="/"
+          className="prestasi-back-button"
+        >
+          <span>←</span>
+          <span>BACK TO HOME</span>
+        </Link>
+      </div>
+
 
       {/* =========================================
           HEADER

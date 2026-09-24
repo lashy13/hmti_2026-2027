@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/ldo.jpg";
+
 function LDO() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function LDO() {
       implementation="Sesuai Jadwal PSDM"
       location="Universitas Muhammadiyah Purwokerto"
       participants="Mahasiswa Teknik Informatika"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Latihan Dasar Organisasi",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

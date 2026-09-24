@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/ldp.jpg";
+
 function Ldp() {
   return (
     <ProkerDetail
@@ -16,6 +19,14 @@ function Ldp() {
       location="Ruangan yang telah ditentukan"
 
       participants="Pengurus HMTI"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab LDP",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

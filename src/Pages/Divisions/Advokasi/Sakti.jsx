@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/sakti.jpg";
+
 function Sakti() {
   return (
     <ProkerDetail
@@ -16,6 +19,14 @@ function Sakti() {
       location="Universitas Muhammadiyah Purwokerto"
 
       participants="Mahasiswa Teknik Informatika FTS UMP"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab SAKTI",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

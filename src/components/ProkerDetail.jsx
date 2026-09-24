@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/ProkerDetail.css";
 
 function ProkerDetail({
@@ -9,20 +9,19 @@ function ProkerDetail({
   implementation = "",
   location = "",
   participants = "",
+  pj = [],
 }) {
-  // =====================================================
-  // DIVISION PATH
-  // Contoh:
-  // RISTEK   -> /divisions/ristek
-  // HUMAS    -> /divisions/humas
-  // ADVOKASI -> /divisions/advokasi
-  // PSDM     -> /divisions/psdm
-  // EKRAF    -> /divisions/ekraf
-  // =====================================================
+  const navigate = useNavigate();
 
   const divisionPath = String(division)
     .trim()
     .toLowerCase();
+
+  const handleBack = () => {
+    navigate(`/divisions/${divisionPath}`, {
+      replace: true,
+    });
+  };
 
   return (
     <main className="proker-detail">
@@ -93,10 +92,7 @@ function ProkerDetail({
 
         <div className="proker-info-grid">
 
-          {/* IMPLEMENTATION */}
-
           <div className="proker-info-card">
-
             <span>
               IMPLEMENTATION
             </span>
@@ -104,14 +100,10 @@ function ProkerDetail({
             <h3>
               {implementation}
             </h3>
-
           </div>
 
 
-          {/* LOCATION */}
-
           <div className="proker-info-card">
-
             <span>
               LOCATION
             </span>
@@ -119,14 +111,10 @@ function ProkerDetail({
             <h3>
               {location}
             </h3>
-
           </div>
 
 
-          {/* PARTICIPANTS */}
-
           <div className="proker-info-card">
-
             <span>
               PARTICIPANTS
             </span>
@@ -134,7 +122,6 @@ function ProkerDetail({
             <h3>
               {participants}
             </h3>
-
           </div>
 
         </div>
@@ -143,17 +130,77 @@ function ProkerDetail({
 
 
       {/* =====================================================
+          PERSON IN CHARGE
+      ===================================================== */}
+
+      {pj.length > 0 && (
+        <section className="proker-pj-section">
+
+          <div className="proker-section-label">
+            PERSON IN CHARGE
+          </div>
+
+          <div className="proker-pj-grid">
+
+            {pj.map((person, index) => (
+              <div
+                className="proker-pj"
+                key={index}
+              >
+
+                <div className="proker-pj-photo">
+
+                  {person.photo ? (
+                    <img
+                      src={person.photo}
+                      alt={person.name}
+                    />
+                  ) : (
+                    <div className="proker-pj-placeholder">
+                      PJ
+                    </div>
+                  )}
+
+                </div>
+
+                <div className="proker-pj-info">
+
+                  <span>
+                    PENANGGUNG JAWAB
+                  </span>
+
+                  <h3>
+                    {person.name}
+                  </h3>
+
+                  <p>
+                    {person.position}
+                  </p>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+        </section>
+      )}
+
+
+      {/* =====================================================
           BACK TO DIVISION
       ===================================================== */}
 
       <section className="proker-back">
 
-        <Link
-          to={`/divisions/${divisionPath}`}
+        <button
+          type="button"
           className="proker-back-button"
+          onClick={handleBack}
         >
           ← BACK TO {division}
-        </Link>
+        </button>
 
       </section>
 

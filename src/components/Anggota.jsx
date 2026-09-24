@@ -1,5 +1,5 @@
-
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "../styles/Anggota.css";
 
 // =====================================================
@@ -18,6 +18,8 @@ import "../styles/Anggota.css";
 // =====================================================
 
 function Anggota() {
+  const navigate = useNavigate();
+
   // ===================================================
   // DATA ANGGOTA
   // ===================================================
@@ -28,69 +30,72 @@ function Anggota() {
       nama: "Nama Ketua",
       jabatan: "Ketua HMTI",
       divisi: "BPH",
-    //   foto: ketua,
+      // foto: ketua,
     },
     {
       id: 2,
       nama: "Nama Wakil",
       jabatan: "Wakil Ketua HMTI",
       divisi: "BPH",
-    //   foto: wakil,
+      // foto: wakil,
     },
     {
       id: 3,
       nama: "Nama Anggota 1",
       jabatan: "Anggota",
       divisi: "RISTEK",
-    //   foto: anggota1,
+      // foto: anggota1,
     },
     {
       id: 4,
       nama: "Nama Anggota 2",
       jabatan: "Anggota",
       divisi: "PSDM",
-    //   foto: anggota2,
+      // foto: anggota2,
     },
     {
       id: 5,
       nama: "Nama Anggota 3",
       jabatan: "Anggota",
       divisi: "EKRAF",
-    //   foto: anggota3,
+      // foto: anggota3,
     },
     {
       id: 6,
       nama: "Nama Anggota 4",
       jabatan: "Anggota",
       divisi: "HUMAS",
-    //   foto: anggota4,
+      // foto: anggota4,
     },
   ];
 
   return (
     <main className="anggota-page">
 
-      {/* =================================================
-          HERO
-      ================================================= */}
+      {/* BACK BUTTON */}
+      <button
+        className="anggota-back-button"
+        onClick={() => navigate(-1)}
+      >
+        <span className="back-arrow">←</span>
+        Back
+      </button>
 
+      {/* HERO */}
       <section className="anggota-hero">
 
         <div className="anggota-hero-glow"></div>
 
         <motion.div
           className="anggota-hero-content"
-
           initial={{
             opacity: 0,
             y: 40,
           }}
-
           animate={{
             opacity: 1,
             y: 0,
           }}
-
           transition={{
             duration: 0.8,
           }}
@@ -116,34 +121,25 @@ function Anggota() {
 
       </section>
 
-
-      {/* =================================================
-          MEMBER SECTION
-      ================================================= */}
-
+      {/* MEMBER SECTION */}
       <section className="anggota-section">
 
         <div className="anggota-container">
 
           {/* HEADER */}
-
           <motion.div
             className="anggota-section-header"
-
             initial={{
               opacity: 0,
               y: 30,
             }}
-
             whileInView={{
               opacity: 1,
               y: 0,
             }}
-
             viewport={{
               once: true,
             }}
-
             transition={{
               duration: 0.7,
             }}
@@ -172,9 +168,7 @@ function Anggota() {
 
           </motion.div>
 
-
           {/* MEMBER GRID */}
-
           <div className="anggota-grid">
 
             {anggota.map((item, index) => (
@@ -182,22 +176,18 @@ function Anggota() {
               <motion.article
                 className="anggota-card"
                 key={item.id}
-
                 initial={{
                   opacity: 0,
                   y: 40,
                 }}
-
                 whileInView={{
                   opacity: 1,
                   y: 0,
                 }}
-
                 viewport={{
                   once: true,
                   amount: 0.15,
                 }}
-
                 transition={{
                   duration: 0.5,
                   delay: index * 0.05,
@@ -205,7 +195,6 @@ function Anggota() {
               >
 
                 {/* FOTO */}
-
                 <div className="anggota-photo">
 
                   <img
@@ -222,9 +211,7 @@ function Anggota() {
 
                 </div>
 
-
                 {/* INFO */}
-
                 <div className="anggota-info">
 
                   <span className="anggota-divisi">

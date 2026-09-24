@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/it-esport.jpg";
+
 function ITEsport() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function ITEsport() {
       implementation="Sesuai Jadwal PSDM"
       location="Universitas Muhammadiyah Purwokerto"
       participants="Mahasiswa Teknik Informatika"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab IT Esport",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

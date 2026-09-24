@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/pengurus-muda.jpg";
+
 function PengurusMuda() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function PengurusMuda() {
       implementation="Menyesuaikan Program Kerja"
       location="Universitas Muhammadiyah Purwokerto"
       participants="Mahasiswa Teknik Informatika"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Pengurus Muda",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

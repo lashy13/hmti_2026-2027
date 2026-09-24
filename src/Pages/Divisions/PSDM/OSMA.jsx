@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/osma-ospek-prodi.jpg";
+
 function OSMA() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function OSMA() {
       implementation="Awal Tahun Akademik"
       location="Universitas Muhammadiyah Purwokerto"
       participants="Mahasiswa Baru Teknik Informatika"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab OSMA / OSPEK Prodi",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

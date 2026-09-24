@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/hari-wajib-pdh.jpg";
+
 function HariWajibPDH() {
   return (
     <ProkerDetail
@@ -16,6 +19,14 @@ function HariWajibPDH() {
       location="Lingkungan Universitas Muhammadiyah Purwokerto"
 
       participants="Mahasiswa Teknik Informatika FTS UMP"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Hari Wajib PDH",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

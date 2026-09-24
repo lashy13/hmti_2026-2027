@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/studi-banding.jpg";
+
 function StudiBanding() {
   return (
     <ProkerDetail
@@ -12,6 +15,14 @@ function StudiBanding() {
       implementation="BERKALA"
       location="KAMPUS MITRA"
       participants="PENGURUS HMTI"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Studi Banding",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

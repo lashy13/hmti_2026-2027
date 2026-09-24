@@ -1,4 +1,3 @@
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logoUmp from "../assets/logo/logo-ump.png";
@@ -10,12 +9,10 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // =====================================================
-  // SCROLL KE SECTION
-  // =====================================================
-
+  // ============================================
+  // PINDAH KE SECTION DI HOME
+  // ============================================
   const goToSection = (id) => {
-    // Kalau sudah berada di Home
     if (location.pathname === "/") {
       const section = document.getElementById(id);
 
@@ -29,8 +26,6 @@ function Navbar() {
       return;
     }
 
-    // Kalau sedang di halaman lain,
-    // pindah ke Home sambil membawa tujuan section
     navigate("/", {
       state: {
         scrollTo: id,
@@ -38,19 +33,30 @@ function Navbar() {
     });
   };
 
+  // ============================================
+  // HOME
+  // ============================================
+  const goHome = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <nav className="navbar">
 
-      {/* =================================================
+      {/* ========================================
           BRAND
-      ================================================= */}
+      ======================================== */}
 
       <div className="brand-container">
 
-        {/* LOGO UMP */}
-
         <Link to="/" className="brand-ump">
-
           <img
             src={logoUmp}
             alt="Logo UMP"
@@ -58,33 +64,19 @@ function Navbar() {
           />
 
           <div className="ump-text">
-
-            <strong>
-              Universitas
-            </strong>
+            <strong>Universitas</strong>
 
             <span className="ump-muhammadiyah">
               Muhammadiyah
             </span>
 
-            <small>
-              Purwokerto
-            </small>
-
+            <small>Purwokerto</small>
           </div>
-
         </Link>
-
-
-        {/* DIVIDER */}
 
         <div className="logo-divider"></div>
 
-
-        {/* LOGO HMTI */}
-
         <Link to="/" className="brand-if">
-
           <img
             src={logoIf}
             alt="Logo HMTI"
@@ -92,10 +84,7 @@ function Navbar() {
           />
 
           <div className="brand-text">
-
-            <strong>
-              Teknik Informatika
-            </strong>
+            <strong>Teknik Informatika</strong>
 
             <span className="if-tagline">
               smart • creative • progressive
@@ -104,37 +93,28 @@ function Navbar() {
             <small>
               Universitas Muhammadiyah Purwokerto
             </small>
-
           </div>
-
         </Link>
 
       </div>
 
 
-      {/* =================================================
+      {/* ========================================
           NAVIGATION
-      ================================================= */}
+      ======================================== */}
 
       <div className="nav-links">
 
         {/* HOME */}
-
-        <Link
-          to="/"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          }}
+        <button
+          type="button"
+          onClick={goHome}
         >
           Home
-        </Link>
+        </button>
 
 
         {/* ASPIRASI */}
-
         <button
           type="button"
           onClick={() => goToSection("aspirasi")}
@@ -144,22 +124,27 @@ function Navbar() {
 
 
         {/* ABOUT */}
-        {/* DIVISI */}
+        <button
+          type="button"
+          onClick={() => goToSection("about")}
+        >
+          About
+        </button>
 
+
+        {/* DIVISI */}
         <Link to="/divisions">
           Divisi
         </Link>
 
 
         {/* PRESTASI */}
-
         <Link to="/prestasi">
           Prestasi
         </Link>
 
 
         {/* EVENT */}
-
         <button
           type="button"
           onClick={() => goToSection("events")}
@@ -169,7 +154,6 @@ function Navbar() {
 
 
         {/* CONTACT */}
-
         <button
           type="button"
           onClick={() => goToSection("contact")}
@@ -179,7 +163,6 @@ function Navbar() {
 
 
         {/* ANGGOTA */}
-
         <Link to="/anggota">
           Anggota
         </Link>

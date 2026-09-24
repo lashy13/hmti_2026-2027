@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/web-hmti.jpg";
+
 function WebHmti() {
   return (
     <ProkerDetail
@@ -10,6 +13,14 @@ function WebHmti() {
       implementation="Berkala"
       location="UMP"
       participants="Anggota HMTI"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab WEB HMTI",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

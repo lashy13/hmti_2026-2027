@@ -1,5 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
+// import foto PJ
+// import fotoPJ from "../../../assets/pj/kotak-aspirasi.jpg";
+
 function KotakAspirasi() {
   return (
     <ProkerDetail
@@ -16,6 +19,14 @@ function KotakAspirasi() {
       location="Lingkungan Universitas Muhammadiyah Purwokerto"
 
       participants="Mahasiswa Teknik Informatika FTS UMP"
+
+      pj={[
+        {
+          name: "Nama PJ",
+          position: "Penanggung Jawab Kotak Aspirasi",
+          // photo: fotoPJ,
+        },
+      ]}
     />
   );
 }

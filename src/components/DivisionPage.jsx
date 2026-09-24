@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../styles/DivisionPage.css";
 
@@ -12,7 +12,10 @@ function DivisionPage({
   aboutText,
   programs = [],
   members = [],
+  backTo = "/divisions",
 }) {
+  const navigate = useNavigate();
+
   return (
     <div className="division-page">
 
@@ -21,6 +24,17 @@ function DivisionPage({
       ===================================================== */}
 
       <section className="division-hero">
+
+        {/* BACK BUTTON */}
+        <button
+          type="button"
+          className="division-back-button"
+          onClick={() => navigate(backTo, { replace: true })}
+        >
+          <span>←</span>
+          <span>BACK</span>
+        </button>
+
 
         <div className="division-hero-number">
           {number}
@@ -104,20 +118,14 @@ function DivisionPage({
 
           {programs.map((program) => {
 
-            // Kalau link tidak diberikan,
-            // card tidak diarahkan ke halaman lain.
             const hasLink = Boolean(program.link);
 
             const cardContent = (
               <>
-                {/* PROGRAM NUMBER */}
-
                 <div className="program-number">
                   {program.number}
                 </div>
 
-
-                {/* PROGRAM IMAGE */}
 
                 {program.image && (
                   <div className="program-image">
@@ -130,8 +138,6 @@ function DivisionPage({
                   </div>
                 )}
 
-
-                {/* PROGRAM CONTENT */}
 
                 <div className="program-content">
 
@@ -150,19 +156,16 @@ function DivisionPage({
                 </div>
 
 
-                {/* ARROW */}
-
                 {hasLink && (
                   <div className="program-arrow">
                     →
                   </div>
                 )}
+
               </>
             );
 
 
-            // Kalau program punya link,
-            // seluruh card menjadi clickable.
             if (hasLink) {
               return (
                 <Link
@@ -176,8 +179,6 @@ function DivisionPage({
             }
 
 
-            // Kalau tidak ada link,
-            // tetap tampil sebagai card biasa.
             return (
               <div
                 key={program.number}

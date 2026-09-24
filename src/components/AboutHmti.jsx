@@ -1,10 +1,8 @@
-// AboutHmti.jsx
-
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import imgPlaceholder from "../assets/logo/image.png";
-import "../styles/aboutHmti.css";
+import "../styles/about.css";
 
 function AboutHmti() {
   const navigate = useNavigate();
@@ -36,34 +34,38 @@ function AboutHmti() {
       position: "SEKRETARIS 2",
       image: imgPlaceholder,
       description:
-        "Membantu dan berkoordinasi dalam pengelolaan administrasi serta kearsipan dokumen organisasi.",
+        "Membantu pengelolaan administrasi serta kearsipan dokumen organisasi.",
     },
     {
       name: "Nama Bendahara 1",
       position: "BENDAHARA 1",
       image: imgPlaceholder,
       description:
-        "Mengelola keuangan organisasi secara tertib, transparan, dan bertanggung jawab atas sirkulasi dana.",
+        "Mengelola keuangan organisasi secara tertib, transparan, dan bertanggung jawab.",
     },
     {
       name: "Nama Bendahara 2",
       position: "BENDAHARA 2",
       image: imgPlaceholder,
       description:
-        "Membantu pengelolaan dana, pembukuan kas, dan menyusun laporan keuangan kegiatan.",
+        "Membantu pengelolaan dana, pembukuan kas, dan laporan keuangan kegiatan.",
     },
   ];
 
   return (
     <>
-      {/* ==================================================
-          HMTI INTRODUCTION
-      ================================================== */}
+      {/* =====================================================
+          ABOUT HMTI
+      ===================================================== */}
 
-      <section className="hmti-section" id="about">
-
+      <section
+        className="hmti-section"
+        id="about"
+        style={{
+          scrollMarginTop: "120px",
+        }}
+      >
         <div className="hmti-header">
-
           <div className="hmti-title">
             <span className="hmti-mini">
               HIMPUNAN MAHASISWA
@@ -91,22 +93,30 @@ function AboutHmti() {
               bagi mahasiswa Teknik Informatika.
             </p>
           </div>
-
         </div>
 
-
-        {/* VISI MISI */}
+        {/* =====================================================
+            VISI MISI
+        ===================================================== */}
 
         <motion.div
           className="hmti-visimisi"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
         >
-
           <div className="visimisi-column">
-
             <span className="visimisi-number">
               01
             </span>
@@ -121,12 +131,9 @@ function AboutHmti() {
               non-akademik yang berkualitas, solid, serta berdaya
               saing.
             </p>
-
           </div>
 
-
           <div className="visimisi-column">
-
             <span className="visimisi-number">
               02
             </span>
@@ -152,24 +159,17 @@ function AboutHmti() {
                 pihak luar.
               </li>
             </ul>
-
           </div>
-
         </motion.div>
-
       </section>
 
-
-      {/* ==================================================
+      {/* =====================================================
           BPH
-      ================================================== */}
+      ===================================================== */}
 
       <section className="bph-section">
-
         <div className="bph-header">
-
           <div>
-
             <span className="about-mini">
               STRUKTUR ORGANISASI
             </span>
@@ -179,7 +179,6 @@ function AboutHmti() {
               <br />
               <span>HMTI.</span>
             </h2>
-
           </div>
 
           <p>
@@ -188,16 +187,14 @@ function AboutHmti() {
             organisasi HMTI berjalan dengan baik sesuai dengan
             tujuan yang telah ditetapkan.
           </p>
-
         </div>
 
-
-        {/* BPH MEMBERS */}
+        {/* =====================================================
+            BPH MEMBERS
+        ===================================================== */}
 
         <div className="bph-grid">
-
           {bphMembers.map((member, index) => (
-
             <motion.div
               className="bph-card"
               key={index}
@@ -217,9 +214,7 @@ function AboutHmti() {
                 delay: index * 0.1,
               }}
             >
-
               <div className="bph-photo">
-
                 <img
                   src={member.image}
                   alt={member.name}
@@ -228,12 +223,9 @@ function AboutHmti() {
                 <span className="bph-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-
               </div>
 
-
               <div className="bph-info">
-
                 <span>
                   {member.position}
                 </span>
@@ -245,19 +237,14 @@ function AboutHmti() {
                 <p>
                   {member.description}
                 </p>
-
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
 
-
-        {/* ==================================================
+        {/* =====================================================
             DIVISIONS CTA
-        ================================================== */}
+        ===================================================== */}
 
         <motion.div
           className="hmti-divisions-cta"
@@ -276,9 +263,7 @@ function AboutHmti() {
             duration: 0.7,
           }}
         >
-
           <div className="division-cta-content">
-
             <span className="division-mini">
               HMTI ORGANIZATIONAL STRUCTURE
             </span>
@@ -296,9 +281,7 @@ function AboutHmti() {
               jalannya organisasi.
             </p>
 
-
             <div className="division-list">
-
               <div className="division-item">
                 <span>01</span>
                 <strong>PSDM</strong>
@@ -328,27 +311,18 @@ function AboutHmti() {
                 <span>06</span>
                 <strong>HUMAS</strong>
               </div>
-
             </div>
-
           </div>
 
-
           <button
+            type="button"
             className="division-button"
             onClick={() => navigate("/divisions")}
           >
-            <span>
-              EXPLORE DIVISIONS
-            </span>
-
-            <strong>
-              →
-            </strong>
+            <span>EXPLORE DIVISIONS</span>
+            <strong>→</strong>
           </button>
-
         </motion.div>
-
       </section>
     </>
   );
