@@ -15,7 +15,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutHmti from "./components/AboutHmti";
-import Events from "./components/Events"; // <-- Diperbetulkan kepada Events (huruf besar)
+import Events from "./components/Events"; // <-- Diperbetulkan kepada Events (huruf besar)Expand commentComment on line R18Code has comments. Press enter to view.
 import Contact from "./components/Contact";
 import Aspirasi from "./components/Aspirasi";
 import Divisions from "./components/Divisions";
@@ -244,5 +244,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
