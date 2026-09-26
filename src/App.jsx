@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutHmti from "./components/AboutHmti";
+import Events from "./components/Events";
 import Contact from "./components/Contact";
 import Aspirasi from "./components/Aspirasi";
 import Divisions from "./components/Divisions";
@@ -132,7 +133,7 @@ function Home() {
     <main>
       <Hero />
       <AboutHmti />
-    
+      <Events />
       <Aspirasi />
       <Contact />
     </main>
