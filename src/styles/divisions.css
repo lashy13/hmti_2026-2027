@@ -176,6 +176,7 @@
 .divisions-header h2 span {
   background: linear-gradient(90deg, #ffffff, #1683ff, #00d9ff);
 
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 

@@ -16,25 +16,37 @@ function DivisionPage({
 }) {
   const navigate = useNavigate();
 
+  // Membuat class berdasarkan nama divisi
+  // RISTEK -> ristek-page
+  // HUMAS -> humas-page
+  // KOMINFO -> kominfo-page
+  const divisionClass = `${division
+    ?.toLowerCase()
+    .replace(/\s+/g, "-")}-page`;
+
   return (
-    <div className="division-page">
+    <div className={`division-page ${divisionClass}`}>
+
+      {/* =====================================================
+          BACK BUTTON
+      ===================================================== */}
+
+      <div className="division-back">
+        <button
+          type="button"
+          onClick={() => navigate(backTo, { replace: true })}
+        >
+          <span>←</span>
+          <span>BACK</span>
+        </button>
+      </div>
+
 
       {/* =====================================================
           HERO
       ===================================================== */}
 
       <section className="division-hero">
-
-        {/* BACK BUTTON */}
-        <button
-          type="button"
-          className="division-back-button"
-          onClick={() => navigate(backTo, { replace: true })}
-        >
-          <span>←</span>
-          <span>BACK</span>
-        </button>
-
 
         <div className="division-hero-number">
           {number}
@@ -69,26 +81,30 @@ function DivisionPage({
 
       <section className="division-about">
 
-        <div className="division-about-title">
+        <div className="division-about-inner">
 
-          <span>
-            ABOUT
-          </span>
+          <div className="division-about-title">
 
-          <h2>
-            {aboutTitle}
-          </h2>
+            <span className="division-about-label">
+              ABOUT
+            </span>
 
-        </div>
+            <h2>
+              {aboutTitle}
+            </h2>
+
+          </div>
 
 
-        <div className="division-about-text">
+          <div className="division-about-text">
 
-          {aboutText?.map((text, index) => (
-            <p key={index}>
-              {text}
-            </p>
-          ))}
+            {aboutText?.map((text, index) => (
+              <p key={index}>
+                {text}
+              </p>
+            ))}
+
+          </div>
 
         </div>
 
@@ -101,94 +117,104 @@ function DivisionPage({
 
       <section className="division-programs">
 
-        <div className="section-heading">
+        <div className="division-section-inner">
 
-          <span>
-            PROGRAMS
-          </span>
+          <div className="division-section-heading">
 
-          <h2>
-            OUR PROGRAMS
-          </h2>
+            <span>
+              PROGRAMS
+            </span>
 
-        </div>
+            <h2>
+              OUR PROGRAMS
+            </h2>
 
-
-        <div className="program-list">
-
-          {programs.map((program) => {
-
-            const hasLink = Boolean(program.link);
-
-            const cardContent = (
-              <>
-                <div className="program-number">
-                  {program.number}
-                </div>
+          </div>
 
 
-                {program.image && (
-                  <div className="program-image">
+          <div className="program-list">
 
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                    />
+            {programs.map((program) => {
+
+              const hasLink = Boolean(program.link);
+
+              const cardContent = (
+                <>
+                  {/* PROGRAM IMAGE */}
+
+                  {program.image && (
+                    <div className="program-image">
+
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                      />
+
+                    </div>
+                  )}
+
+
+                  {/* PROGRAM CONTENT */}
+
+                  <div className="program-content">
+
+                    <span className="program-category">
+                      {program.category}
+                    </span>
+
+                    <div className="program-number">
+                      {program.number}
+                    </div>
+
+                    <h3>
+                      {program.title}
+                    </h3>
+
+                    <p>
+                      {program.description}
+                    </p>
+
+                    {hasLink && (
+                      <span className="program-arrow">
+                        →
+                      </span>
+                    )}
 
                   </div>
-                )}
+
+                </>
+              );
 
 
-                <div className="program-content">
+              /* PROGRAM DENGAN LINK */
 
-                  <span className="program-category">
-                    {program.category}
-                  </span>
-
-                  <h3>
-                    {program.title}
-                  </h3>
-
-                  <p>
-                    {program.description}
-                  </p>
-
-                </div>
+              if (hasLink) {
+                return (
+                  <Link
+                    key={program.number}
+                    to={program.link}
+                    className="program-card"
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
 
 
-                {hasLink && (
-                  <div className="program-arrow">
-                    →
-                  </div>
-                )}
+              /* PROGRAM TANPA LINK */
 
-              </>
-            );
-
-
-            if (hasLink) {
               return (
-                <Link
+                <div
                   key={program.number}
-                  to={program.link}
                   className="program-card"
                 >
                   {cardContent}
-                </Link>
+                </div>
               );
-            }
 
+            })}
 
-            return (
-              <div
-                key={program.number}
-                className="program-card"
-              >
-                {cardContent}
-              </div>
-            );
-
-          })}
+          </div>
 
         </div>
 
@@ -201,53 +227,57 @@ function DivisionPage({
 
       <section className="division-members">
 
-        <div className="section-heading">
+        <div className="division-section-inner">
 
-          <span>
-            OUR TEAM
-          </span>
+          <div className="division-section-heading">
 
-          <h2>
-            MEMBERS
-          </h2>
+            <span>
+              OUR TEAM
+            </span>
 
-        </div>
+            <h2>
+              MEMBERS
+            </h2>
+
+          </div>
 
 
-        <div className="members-grid">
+          <div className="members-grid">
 
-          {members.map((member) => (
+            {members.map((member) => (
 
-            <div
-              className="member-card"
-              key={member.id}
-            >
+              <div
+                className="member-card"
+                key={member.id}
+              >
 
-              <div className="member-photo">
+                <div className="member-photo">
 
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                />
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                  />
+
+                </div>
+
+
+                <div className="member-info">
+
+                  <h3>
+                    {member.name}
+                  </h3>
+
+                  <p>
+                    {member.role}
+                  </p>
+
+                </div>
 
               </div>
 
+            ))}
 
-              <div className="member-info">
-
-                <h3>
-                  {member.name}
-                </h3>
-
-                <p>
-                  {member.role}
-                </p>
-
-              </div>
-
-            </div>
-
-          ))}
+          </div>
 
         </div>
 

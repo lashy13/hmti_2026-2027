@@ -19,7 +19,7 @@ function PrestasiDetail() {
       category: "Technology Competition",
       competition: "National Hackathon Competition",
 
-    //   image: prestasi1,
+      // image: prestasi1,
 
       description:
         "Tim mahasiswa Teknik Informatika berhasil meraih juara pertama dalam kompetisi hackathon. Pencapaian ini menjadi salah satu bentuk kontribusi mahasiswa dalam mengembangkan solusi berbasis teknologi.",
@@ -35,7 +35,7 @@ function PrestasiDetail() {
       category: "Web Development",
       competition: "Web Development Competition",
 
-    //   image: prestasi2,
+      // image: prestasi2,
 
       description:
         "Mahasiswa Teknik Informatika berhasil meraih juara kedua dalam kompetisi pengembangan website.",
@@ -51,7 +51,7 @@ function PrestasiDetail() {
       category: "Cybersecurity",
       competition: "Cybersecurity Competition",
 
-    //   image: prestasi3,
+      // image: prestasi3,
 
       description:
         "Tim mahasiswa Teknik Informatika berhasil meraih juara ketiga dalam kompetisi cybersecurity.",
@@ -72,7 +72,6 @@ function PrestasiDetail() {
   // =========================================
 
   if (!selectedPrestasi) {
-
     return (
       <main className="prestasi-not-found">
 
@@ -94,19 +93,30 @@ function PrestasiDetail() {
 
 
   return (
-
     <main className="prestasi-detail-page">
 
       {/* =========================================
           BACK BUTTON
       ========================================= */}
 
-      <Link
-        to="/prestasi"
-        className="prestasi-back"
-      >
-        ← BACK TO PRESTASI
-      </Link>
+      <div className="prestasi-back prestasi-detail-back">
+
+        <Link
+          to="/prestasi"
+          className="prestasi-back-button"
+        >
+
+          <span>
+            ←
+          </span>
+
+          <span>
+            BACK TO PRESTASI
+          </span>
+
+        </Link>
+
+      </div>
 
 
       {/* =========================================
@@ -117,14 +127,17 @@ function PrestasiDetail() {
 
         <motion.div
           className="prestasi-detail-image"
+
           initial={{
             opacity: 0,
             x: -40,
           }}
+
           animate={{
             opacity: 1,
             x: 0,
           }}
+
           transition={{
             duration: 0.8,
           }}
@@ -140,14 +153,17 @@ function PrestasiDetail() {
 
         <motion.div
           className="prestasi-detail-content"
+
           initial={{
             opacity: 0,
             x: 40,
           }}
+
           animate={{
             opacity: 1,
             x: 0,
           }}
+
           transition={{
             duration: 0.8,
             delay: 0.1,
@@ -157,6 +173,7 @@ function PrestasiDetail() {
           <span className="detail-category">
             {selectedPrestasi.category}
           </span>
+
 
           <span className="detail-year">
             {selectedPrestasi.year}

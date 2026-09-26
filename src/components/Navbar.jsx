@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logoUmp from "../assets/logo/logo-ump.png";
@@ -8,6 +9,45 @@ import "../styles/navbar.css";
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  // ============================================
+  // STATE NAVBAR
+  // ============================================
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  // ============================================
+  // DETEKSI ARAH SCROLL
+  // ============================================
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Selalu tampil di bagian paling atas
+      if (currentScrollY <= 20) {
+        setShowNavbar(true);
+      }
+      // Scroll ke bawah
+      else if (currentScrollY > lastScrollY) {
+        setShowNavbar(false);
+      }
+      // Scroll ke atas
+      else if (currentScrollY < lastScrollY) {
+        setShowNavbar(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // ============================================
   // PINDAH KE SECTION DI HOME
@@ -48,14 +88,18 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
-
+    <nav
+      className={`navbar ${
+        showNavbar ? "navbar-visible" : "navbar-hidden"
+      }`}
+    >
       {/* ========================================
           BRAND
       ======================================== */}
 
       <div className="brand-container">
 
+        {/* UMP */}
         <Link to="/" className="brand-ump">
           <img
             src={logoUmp}
@@ -74,8 +118,10 @@ function Navbar() {
           </div>
         </Link>
 
+        {/* DIVIDER */}
         <div className="logo-divider"></div>
 
+        {/* HMTI */}
         <Link to="/" className="brand-if">
           <img
             src={logoIf}
@@ -98,7 +144,6 @@ function Navbar() {
 
       </div>
 
-
       {/* ========================================
           NAVIGATION
       ======================================== */}
@@ -113,7 +158,6 @@ function Navbar() {
           Home
         </button>
 
-
         {/* ASPIRASI */}
         <button
           type="button"
@@ -121,7 +165,6 @@ function Navbar() {
         >
           Aspirasi
         </button>
-
 
         {/* ABOUT */}
         <button
@@ -131,18 +174,15 @@ function Navbar() {
           About
         </button>
 
-
         {/* DIVISI */}
         <Link to="/divisions">
           Divisi
         </Link>
 
-
         {/* PRESTASI */}
         <Link to="/prestasi">
           Prestasi
         </Link>
-
 
         {/* EVENT */}
         <button
@@ -152,7 +192,6 @@ function Navbar() {
           Event
         </button>
 
-
         {/* CONTACT */}
         <button
           type="button"
@@ -161,14 +200,12 @@ function Navbar() {
           Contact
         </button>
 
-
         {/* ANGGOTA */}
         <Link to="/anggota">
           Anggota
         </Link>
 
       </div>
-
     </nav>
   );
 }

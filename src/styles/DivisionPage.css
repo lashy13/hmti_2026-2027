@@ -1,191 +1,684 @@
-/* =========================================================
-   RISTEK / DIVISION PAGE
-========================================================= */
+/* ========================================
+   DIVISION PAGE
+======================================== */
 
 .division-page {
   --accent: #00d9ff;
-  --accent-soft: rgba(0, 217, 255, 0.14);
+  --accent-soft: rgba(0, 217, 255, 0.1);
+  --accent-light: #67e8f9;
+  --accent-border: rgba(0, 217, 255, 0.35);
 
+  position: relative;
+  width: 100%;
   min-height: 100vh;
-  padding: 120px 7% 100px;
 
-  background: #050812;
-  color: #f5f7ff;
+  overflow-x: hidden;
 
-  overflow: hidden;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 217, 255, 0.06),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #07101f 0%,
+      #050b16 48%,
+      #060b15 100%
+    );
 }
 
 
-/* =========================================================
+/* ========================================
+   DIVISION COLORS
+======================================== */
+
+.division-page.ristek-page {
+  --accent: #00d9ff;
+  --accent-soft: rgba(0, 217, 255, 0.1);
+  --accent-light: #67e8f9;
+  --accent-border: rgba(0, 217, 255, 0.35);
+}
+
+.division-page.humas-page {
+  --accent: #a855f7;
+  --accent-soft: rgba(168, 85, 247, 0.1);
+  --accent-light: #c084fc;
+  --accent-border: rgba(168, 85, 247, 0.35);
+}
+
+.division-page.kominfo-page {
+  --accent: #22c55e;
+  --accent-soft: rgba(34, 197, 94, 0.1);
+  --accent-light: #4ade80;
+  --accent-border: rgba(34, 197, 94, 0.35);
+}
+
+.division-page.advokasi-page {
+  --accent: #ff3d81;
+  --accent-soft: rgba(255, 61, 129, 0.1);
+  --accent-light: #fb7185;
+  --accent-border: rgba(255, 61, 129, 0.35);
+}
+
+.division-page.ekraf-page {
+  --accent: #f59e0b;
+  --accent-soft: rgba(245, 158, 11, 0.1);
+  --accent-light: #fbbf24;
+  --accent-border: rgba(245, 158, 11, 0.35);
+}
+
+.division-page.psdm-page {
+  --accent: #1683ff;
+  --accent-soft: rgba(22, 131, 255, 0.1);
+  --accent-light: #60a5fa;
+  --accent-border: rgba(22, 131, 255, 0.35);
+}
+
+
+/* ========================================
+   STAR BACKGROUND
+======================================== */
+
+.division-page::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  opacity: 0.55;
+
+  background-image:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(255, 255, 255, 0.55) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 22% 28%,
+      rgba(255, 255, 255, 0.3) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 37% 8%,
+      rgba(255, 255, 255, 0.4) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 51% 24%,
+      rgba(255, 255, 255, 0.25) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 68% 11%,
+      rgba(255, 255, 255, 0.45) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 84% 27%,
+      rgba(255, 255, 255, 0.28) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 94% 14%,
+      rgba(255, 255, 255, 0.45) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 12% 55%,
+      rgba(255, 255, 255, 0.28) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 30% 68%,
+      rgba(255, 255, 255, 0.38) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 47% 52%,
+      rgba(255, 255, 255, 0.25) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 64% 73%,
+      rgba(255, 255, 255, 0.35) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 79% 58%,
+      rgba(255, 255, 255, 0.28) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 91% 76%,
+      rgba(255, 255, 255, 0.4) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 17% 88%,
+      rgba(255, 255, 255, 0.3) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 41% 92%,
+      rgba(255, 255, 255, 0.38) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 72% 91%,
+      rgba(255, 255, 255, 0.28) 0 1px,
+      transparent 1.5px
+    );
+
+  animation: starsFloat 12s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   SUBTLE GRID
+======================================== */
+
+.division-page::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  opacity: 0.1;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      rgba(0, 0, 0, 0.5) 55%,
+      transparent 100%
+    );
+}
+
+
+/* ========================================
+   STAR ANIMATION
+======================================== */
+
+@keyframes starsFloat {
+  from {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  to {
+    transform: translateY(-8px);
+    opacity: 0.65;
+  }
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.division-back {
+  position: absolute;
+  top: 30px;
+  left: 7%;
+  z-index: 20;
+}
+
+.division-back button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 16px;
+
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+
+  background: rgba(5, 12, 24, 0.65);
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.division-back button span:first-child {
+  color: var(--accent);
+  font-size: 17px;
+}
+
+.division-back button:hover {
+  transform: translateX(4px);
+
+  color: #ffffff;
+
+  border-color: var(--accent);
+
+  background: var(--accent-soft);
+}
+
+
+/* ========================================
    HERO
-========================================================= */
+======================================== */
 
 .division-hero {
-  min-height: 620px;
+  position: relative;
+  z-index: 1;
 
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  width: 100%;
+  min-height: 72vh;
 
+  padding: 130px 7% 100px;
+
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 60px;
+  justify-content: center;
 
-  padding: 60px 0 120px;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
 }
+
+.division-hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: 18%;
+  left: 50%;
+
+  width: 480px;
+  height: 280px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse,
+      var(--accent-soft) 0%,
+      transparent 70%
+    );
+
+  filter: blur(65px);
+
+  opacity: 0.35;
+
+  pointer-events: none;
+}
+
+.division-hero::after {
+  content: "";
+
+  position: absolute;
+
+  top: 34%;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  opacity: 0.45;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   HERO NUMBER
+======================================== */
 
 .division-hero-number {
-  align-self: center;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.division-hero-content {
   position: relative;
+  z-index: 2;
 
-  max-width: 850px;
-}
-
-.division-category {
-  display: block;
-
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 
   color: var(--accent);
 
   font-size: 13px;
   font-weight: 700;
 
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+
+  opacity: 0.9;
 }
 
-.division-hero-content h1 {
-  margin: 0;
+.division-hero-number::before {
+  content: "—";
 
-  color: #f4f6ff;
+  margin-right: 12px;
 
-  font-size: clamp(70px, 9vw, 145px);
-  font-weight: 900;
+  color: var(--accent);
 
-  line-height: 0.85;
-  letter-spacing: -7px;
+  opacity: 0.6;
 }
 
-.division-hero-content h2 {
-  margin: 28px 0 18px;
+.division-hero-number::after {
+  content: "—";
 
-  color: #ffffff;
+  margin-left: 12px;
 
-  font-size: clamp(20px, 2vw, 28px);
+  color: var(--accent);
+
+  opacity: 0.6;
+}
+
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.division-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* ========================================
+   CATEGORY BADGE
+======================================== */
+
+.division-category {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+  padding: 8px 17px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+
+  background: var(--accent-soft);
+
+  color: var(--accent-light);
+
+  font-size: 11px;
   font-weight: 700;
 
-  letter-spacing: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
 }
 
-.division-hero-content p {
-  max-width: 700px;
-
-  margin: 0;
-
-  color: #8d99b1;
-
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   HERO GLOW
-========================================================= */
-
-.division-hero-content::after {
+.division-category::after {
   content: "";
 
   position: absolute;
 
-  width: 350px;
-  height: 350px;
+  top: -30%;
+  left: -80%;
 
-  right: -180px;
-  top: 20px;
+  width: 40%;
+  height: 160%;
 
-  background: var(--accent-soft);
+  transform: skewX(-20deg);
 
-  border-radius: 50%;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
 
-  filter: blur(100px);
+  animation: badgeShimmer 4.5s ease-in-out infinite;
 
   pointer-events: none;
+}
 
-  z-index: -1;
+@keyframes badgeShimmer {
+  0% {
+    left: -80%;
+  }
+
+  45% {
+    left: 140%;
+  }
+
+  100% {
+    left: 140%;
+  }
 }
 
 
-/* =========================================================
+/* ========================================
+   SHIMMER MAIN TITLE
+======================================== */
+
+.division-hero-content h1 {
+  position: relative;
+
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 125px);
+  font-weight: 900;
+
+  line-height: 0.9;
+
+  letter-spacing: -6px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      110deg,
+      #ffffff 0%,
+      #ffffff 35%,
+      var(--accent-light) 47%,
+      #ffffff 54%,
+      #ffffff 100%
+    );
+
+  background-size: 250% 100%;
+  background-position: 200% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleShimmer 5s ease-in-out infinite;
+}
+
+.division-hero-content h1::after {
+  content: "";
+
+  display: block;
+
+  width: 55px;
+  height: 3px;
+
+  margin: 28px auto 0;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  opacity: 0.85;
+}
+
+@keyframes titleShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  45% {
+    background-position: -50% 0;
+  }
+
+  100% {
+    background-position: -50% 0;
+  }
+}
+
+
+/* ========================================
+   HERO SUBTITLE
+======================================== */
+
+.division-hero-content h2 {
+  margin: 28px 0 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: clamp(18px, 2.5vw, 27px);
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+.division-hero-content > p {
+  max-width: 680px;
+
+  margin: 18px auto 0;
+
+  color: rgba(255, 255, 255, 0.56);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+
+/* ========================================
    ABOUT
-========================================================= */
+======================================== */
 
 .division-about {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  padding: 90px 7%;
+}
+
+.division-about-inner {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
   display: grid;
 
   grid-template-columns: 0.7fr 1.3fr;
 
   gap: 100px;
 
-  padding: 110px 0;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: start;
 }
 
-.division-about-title {
-  position: relative;
-}
+.division-about-label {
+  display: inline-block;
 
-.division-about-title span {
-  display: block;
-
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 
   color: var(--accent);
 
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
 }
 
-.division-about-title h2 {
+.division-about h2 {
   margin: 0;
 
-  color: #ffffff;
-
-  font-size: clamp(45px, 5vw, 75px);
-
-  line-height: 0.95;
-
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
 
-  letter-spacing: -3px;
-}
+  line-height: 1.05;
 
-.division-about-text {
-  max-width: 800px;
+  letter-spacing: -2px;
 
-  padding-top: 5px;
+  background:
+    linear-gradient(
+      110deg,
+      #ffffff 0%,
+      #ffffff 35%,
+      var(--accent-light) 48%,
+      #ffffff 56%,
+      #ffffff 100%
+    );
+
+  background-size: 250% 100%;
+  background-position: 200% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleShimmer 5.5s ease-in-out infinite;
 }
 
 .division-about-text p {
-  margin: 0 0 25px;
+  margin: 0 0 18px;
 
-  color: #8d99b1;
+  color: rgba(255, 255, 255, 0.58);
 
-  font-size: 17px;
+  font-size: 15px;
 
-  line-height: 1.9;
+  line-height: 1.85;
 }
 
 .division-about-text p:last-child {
@@ -193,115 +686,239 @@
 }
 
 
-/* =========================================================
+/* ========================================
    PROGRAMS
-========================================================= */
+======================================== */
 
 .division-programs {
-  padding: 110px 0;
+  position: relative;
+  z-index: 1;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+
+  padding: 90px 7%;
 }
 
-.section-heading {
-  margin-bottom: 55px;
+.division-section-inner {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
 }
 
-.section-heading span {
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.division-section-heading {
+  width: 100%;
+
+  margin-bottom: 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.division-section-heading span {
   display: block;
 
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 
   color: var(--accent);
 
   font-size: 11px;
   font-weight: 700;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      110deg,
+      var(--accent) 0%,
+      var(--accent) 35%,
+      #ffffff 50%,
+      var(--accent-light) 60%,
+      var(--accent) 100%
+    );
+
+  background-size: 250% 100%;
+  background-position: 200% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: accentTextShimmer 4.5s ease-in-out infinite;
 }
 
-.section-heading h2 {
+.division-section-heading h2 {
   margin: 0;
 
-  color: #ffffff;
-
-  font-size: clamp(45px, 5vw, 75px);
-
+  font-size: clamp(34px, 5vw, 54px);
   font-weight: 800;
 
-  line-height: 0.95;
+  line-height: 1;
 
-  letter-spacing: -3px;
+  letter-spacing: -2px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      110deg,
+      #ffffff 0%,
+      #ffffff 35%,
+      var(--accent-light) 48%,
+      #ffffff 56%,
+      #ffffff 100%
+    );
+
+  background-size: 250% 100%;
+  background-position: 200% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleShimmer 5s ease-in-out infinite;
+}
+
+@keyframes accentTextShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  45% {
+    background-position: -50% 0;
+  }
+
+  100% {
+    background-position: -50% 0;
+  }
 }
 
 
-/* =========================================================
+/* ========================================
    PROGRAM LIST
-========================================================= */
+
+   1 PROGRAM  = 1 KOLOM
+   2 PROGRAMS = 2 KOLOM
+   3 PROGRAMS = 3 KOLOM
+   4 PROGRAMS = 2 x 2
+======================================== */
 
 .program-list {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 
-  gap: 20px;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+.program-list:has(
+  .program-card:nth-child(1):last-child
+) {
+  grid-template-columns:
+    minmax(0, 1fr);
+}
+
+.program-list:has(
+  .program-card:nth-child(2):last-child
+) {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+.program-list:has(
+  .program-card:nth-child(3):last-child
+) {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+.program-list:has(
+  .program-card:nth-child(4)
+) {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 }
 
 
-/* =========================================================
+/* ========================================
    PROGRAM CARD
-========================================================= */
+======================================== */
 
 .program-card {
   position: relative;
 
-  min-height: 400px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: flex-end;
-
-  padding: 32px;
+  display: block;
 
   overflow: hidden;
 
-  background: #080e1c;
+  min-height: 330px;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.075);
 
-  color: #ffffff;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 15px 45px rgba(0, 0, 0, 0.16);
 
   text-decoration: none;
+
+  backdrop-filter: blur(10px);
 
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
+    background 0.35s ease,
     box-shadow 0.35s ease;
 }
 
 .program-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-7px);
 
-  border-color: var(--accent);
+  border-color: var(--accent-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.025)
+    );
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    0 0 35px var(--accent-soft);
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    0 0 25px var(--accent-soft);
 }
 
 
-/* =========================================================
+/* ========================================
    PROGRAM IMAGE
-========================================================= */
+======================================== */
 
 .program-image {
-  position: absolute;
+  position: relative;
 
-  inset: 0;
-
-  z-index: 0;
+  width: 100%;
+  height: 210px;
 
   overflow: hidden;
 }
@@ -312,205 +929,224 @@
 
   object-fit: cover;
 
-  opacity: 0.55;
-
-  transform: scale(1.02);
-
   transition:
     transform 0.5s ease,
-    opacity 0.5s ease;
+    filter 0.5s ease;
 }
 
 .program-card:hover .program-image img {
-  transform: scale(1.08);
+  transform: scale(1.045);
 
-  opacity: 0.7;
+  filter: brightness(1.06);
 }
 
-
-/* =========================================================
-   PROGRAM OVERLAY
-========================================================= */
-
-.program-card::before {
+.program-image::after {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
-  z-index: 1;
-
   background:
     linear-gradient(
-      to top,
-      rgba(5, 8, 18, 0.98) 0%,
-      rgba(5, 8, 18, 0.85) 45%,
-      rgba(5, 8, 18, 0.35) 100%
+      to bottom,
+      transparent 25%,
+      rgba(5, 8, 18, 0.88) 100%
     );
 
-  transition: 0.4s ease;
-}
-
-.program-card:hover::before {
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 8, 18, 0.96) 0%,
-      rgba(5, 8, 18, 0.7) 45%,
-      rgba(0, 217, 255, 0.1) 100%
-    );
+  pointer-events: none;
 }
 
 
-/* =========================================================
+/* ========================================
    PROGRAM CONTENT
-========================================================= */
+======================================== */
 
 .program-content {
   position: relative;
 
-  z-index: 2;
+  padding: 24px 28px 28px;
 }
 
 .program-category {
-  display: block;
+  display: inline-block;
 
-  margin-bottom: 12px;
-
-  color: var(--accent);
+  margin-bottom: 10px;
 
   font-size: 10px;
   font-weight: 700;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      110deg,
+      var(--accent) 0%,
+      var(--accent) 35%,
+      #ffffff 50%,
+      var(--accent-light) 60%,
+      var(--accent) 100%
+    );
+
+  background-size: 250% 100%;
+  background-position: 200% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: accentTextShimmer 4.5s ease-in-out infinite;
 }
 
-.program-content h3 {
-  margin: 0 0 14px;
+.program-number {
+  position: absolute;
 
-  color: #ffffff;
+  top: 22px;
+  right: 27px;
 
-  font-size: 30px;
-  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+
+  font-size: 38px;
+  font-weight: 900;
 
   line-height: 1;
 
-  letter-spacing: -1px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.program-card:hover .program-number {
+  color: var(--accent-soft);
+
+  transform: translateY(-3px);
+}
+
+.program-content h3 {
+  margin: 0 65px 9px 0;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 750;
+
+  line-height: 1.25;
 }
 
 .program-content p {
   margin: 0;
 
-  color: #aab4c8;
+  color: rgba(255, 255, 255, 0.52);
 
   font-size: 14px;
 
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   PROGRAM NUMBER
-========================================================= */
-
-.program-number {
-  position: absolute;
-
-  top: 25px;
-  right: 28px;
-
-  z-index: 2;
-
-  color: rgba(255, 255, 255, 0.35);
-
-  font-size: 45px;
-
-  font-weight: 800;
-
-  line-height: 1;
-}
-
-
-/* =========================================================
-   PROGRAM ARROW
-========================================================= */
-
 .program-arrow {
-  position: absolute;
+  display: inline-flex;
 
-  right: 30px;
-  bottom: 28px;
-
-  z-index: 3;
+  margin-top: 18px;
 
   color: var(--accent);
 
-  font-size: 28px;
-
-  opacity: 0;
-
-  transform: translateX(-10px);
+  font-size: 19px;
 
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .program-card:hover .program-arrow {
-  opacity: 1;
+  transform: translateX(7px);
 
-  transform: translateX(0);
+  color: var(--accent-light);
 }
 
 
-/* =========================================================
+/* ========================================
    MEMBERS
-========================================================= */
+======================================== */
 
 .division-members {
-  padding: 110px 0;
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  padding: 90px 7% 120px;
 }
 
 .members-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
-  gap: 18px;
-
-  margin-top: 55px;
+  gap: 20px;
 }
 
 .member-card {
   position: relative;
 
-  min-height: 390px;
-
   overflow: hidden;
 
-  background: #080e1c;
+  border: 1px solid rgba(255, 255, 255, 0.07);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 15px 40px rgba(0, 0, 0, 0.16);
 
   transition:
     transform 0.35s ease,
-    border-color 0.35s ease;
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 
-  border-color: var(--accent);
+  border-color: var(--accent-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.022)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 0 22px var(--accent-soft);
 }
 
+
+/* ========================================
+   MEMBER PHOTO
+======================================== */
+
 .member-photo {
+  position: relative;
+
   width: 100%;
-  height: 270px;
+
+  aspect-ratio: 1 / 1;
 
   overflow: hidden;
 
-  background: #101827;
+  background: #080c17;
 }
 
 .member-photo img {
@@ -519,223 +1155,358 @@
 
   object-fit: cover;
 
-  filter: grayscale(100%);
-
   transition:
-    filter 0.4s ease,
-    transform 0.4s ease;
+    transform 0.45s ease,
+    filter 0.45s ease;
 }
 
 .member-card:hover .member-photo img {
-  filter: grayscale(0%);
+  transform: scale(1.04);
 
-  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
+
+/* ========================================
+   MEMBER INFO
+======================================== */
+
 .member-info {
-  padding: 22px;
+  padding: 18px 20px 20px;
 }
 
 .member-info h3 {
-  margin: 0 0 7px;
+  margin: 0 0 6px;
 
   color: #ffffff;
 
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
+
+  transition: color 0.3s ease;
+}
+
+.member-card:hover .member-info h3 {
+  color: var(--accent-light);
 }
 
 .member-info p {
   margin: 0;
 
-  color: #77849d;
+  color: rgba(255, 255, 255, 0.45);
 
   font-size: 12px;
+
+  line-height: 1.5;
 }
 
 
-/* =========================================================
-   RESPONSIVE TABLET
-========================================================= */
+/* ========================================
+   ACCENT LINE
+======================================== */
 
-@media (max-width: 1000px) {
+.program-card::before,
+.member-card::before {
+  content: "";
 
-  .division-page {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+  position: absolute;
 
-  .division-hero {
-    grid-template-columns: 1fr;
+  top: 0;
+  left: 0;
 
-    min-height: auto;
+  width: 0;
+  height: 2px;
 
-    gap: 40px;
+  background: var(--accent);
 
-    padding-top: 50px;
-  }
+  transition: width 0.35s ease;
 
-  .division-hero-number {
-    order: 1;
-  }
+  z-index: 5;
+}
 
-  .division-hero-content {
-    order: 2;
-  }
-
-  .division-about {
-    grid-template-columns: 1fr;
-
-    gap: 40px;
-  }
-
-  .program-list {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .members-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.program-card:hover::before,
+.member-card:hover::before {
+  width: 100%;
 }
 
 
-/* =========================================================
-   RESPONSIVE MOBILE
-========================================================= */
+/* ========================================
+   TABLET
+======================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
 
-  .division-page {
-    padding: 100px 6% 70px;
+  .division-back {
+    left: 6%;
   }
 
   .division-hero {
-    padding-bottom: 80px;
+    min-height: 65vh;
+
+    padding:
+      120px 6% 80px;
   }
 
   .division-hero-content h1 {
-    font-size: 65px;
+    font-size:
+      clamp(55px, 11vw, 85px);
 
     letter-spacing: -4px;
   }
 
-  .division-hero-content h2 {
-    font-size: 18px;
+  .division-about-inner {
+    grid-template-columns: 1fr;
 
-    letter-spacing: 0;
+    gap: 30px;
   }
 
-  .division-hero-content p {
-    font-size: 14px;
-  }
-
-  .division-about {
-    padding: 80px 0;
-  }
-
-  .division-about-title h2 {
-    font-size: 50px;
-  }
-
-  .division-about-text p {
-    font-size: 15px;
-  }
-
-  .division-programs {
-    padding: 80px 0;
-  }
-
-  .section-heading h2 {
-    font-size: 48px;
-  }
-
-  .program-list {
+  .program-list,
+  .program-list:has(
+    .program-card:nth-child(1):last-child
+  ),
+  .program-list:has(
+    .program-card:nth-child(2):last-child
+  ),
+  .program-list:has(
+    .program-card:nth-child(3):last-child
+  ),
+  .program-list:has(
+    .program-card:nth-child(4)
+  ) {
     grid-template-columns: 1fr;
   }
 
+  .members-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .division-about,
+  .division-programs,
+  .division-members {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .division-page::before {
+    opacity: 0.4;
+  }
+
+  .division-page::after {
+    opacity: 0.06;
+  }
+
+  .division-back {
+    top: 20px;
+    left: 5%;
+  }
+
+  .division-back button {
+    padding: 8px 13px;
+
+    font-size: 11px;
+  }
+
+  .division-hero {
+    min-height: 68vh;
+
+    padding:
+      105px 5% 70px;
+  }
+
+  .division-hero::before {
+    width: 300px;
+    height: 180px;
+
+    filter: blur(65px);
+
+    opacity: 0.28;
+  }
+
+  .division-hero-number {
+    margin-bottom: 20px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .division-hero-content h1 {
+    font-size:
+      clamp(48px, 17vw, 72px);
+
+    letter-spacing: -3px;
+  }
+
+  .division-hero-content h1::after {
+    width: 45px;
+    height: 2px;
+
+    margin-top: 22px;
+  }
+
+  .division-hero-content h2 {
+    margin-top: 22px;
+
+    font-size: 18px;
+  }
+
+  .division-hero-content > p {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .division-about,
+  .division-programs,
+  .division-members {
+    padding:
+      65px 5%;
+  }
+
+  .division-about-inner {
+    gap: 25px;
+  }
+
+  .division-about h2,
+  .division-section-heading h2 {
+    font-size: 34px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .division-about-text p {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .division-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .program-list,
+  .program-list:has(
+    .program-card:nth-child(1):last-child
+  ),
+  .program-list:has(
+    .program-card:nth-child(2):last-child
+  ),
+  .program-list:has(
+    .program-card:nth-child(3):last-child
+  ),
+  .program-list:has(
+    .program-card:nth-child(4)
+  ) {
+    grid-template-columns: 1fr;
+  }
+
+  .program-list {
+    gap: 18px;
+  }
+
   .program-card {
-    min-height: 360px;
+    min-height: 0;
+
+    border-radius: 20px;
+  }
+
+  .program-image {
+    height: 190px;
+  }
+
+  .program-content {
+    padding:
+      21px 22px 24px;
+  }
+
+  .program-content h3 {
+    font-size: 19px;
+  }
+
+  .program-number {
+    top: 20px;
+    right: 22px;
+
+    font-size: 32px;
+  }
+
+  .members-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .member-card {
+    border-radius: 18px;
+  }
+
+  .member-info {
+    padding:
+      14px 15px 16px;
+  }
+
+  .member-info h3 {
+    font-size: 14px;
+  }
+
+  .member-info p {
+    font-size: 11px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  .division-hero-content h1 {
+    font-size: 43px;
+  }
+
+  .division-hero-content h2 {
+    font-size: 16px;
   }
 
   .members-grid {
     grid-template-columns: 1fr;
   }
-
-  .member-card {
-    min-height: 400px;
-  }
-}
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
-.division-back {
-  width: 100%;
-  margin-bottom: 35px;
-}
-
-.division-back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  padding: 13px 20px;
-
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.04);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
-
-  text-decoration: none;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-
-  transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.division-back-button span:first-child {
-  font-size: 20px;
-  line-height: 1;
-
-  transition: transform 0.3s ease;
-}
-
-.division-back-button:hover {
-  color: #ffffff;
-
-  background: var(--accent-soft);
-  border-color: var(--accent);
-
-  transform: translateX(-5px);
-}
-
-.division-back-button:hover span:first-child {
-  transform: translateX(-5px);
 }
 
 
-/* =========================================================
-   BACK BUTTON - MOBILE
-========================================================= */
+/* ========================================
+   REDUCE MOTION
+======================================== */
 
-@media (max-width: 650px) {
+@media (prefers-reduced-motion: reduce) {
 
-  .division-back {
-    margin-bottom: 25px;
+  .division-page::before,
+  .division-hero-content h1,
+  .division-about h2,
+  .division-section-heading span,
+  .division-section-heading h2,
+  .program-category,
+  .division-category::after {
+    animation: none;
   }
 
-  .division-back-button {
-    padding: 12px 17px;
-
-    font-size: 11px;
-    letter-spacing: 1px;
+  .program-card,
+  .member-card,
+  .program-image img,
+  .member-photo img {
+    transition: none;
   }
-
 }

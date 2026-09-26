@@ -1,216 +1,294 @@
-/* =========================
+/* =========================================================
    ABOUT SECTION
-========================= */
+========================================================= */
+
 .about-section {
   position: relative;
   min-height: 100vh;
   padding: 140px 6%;
+  overflow: hidden;
 
   background:
-    radial-gradient(
-      circle at 80% 30%,
-      rgba(30, 100, 255, 0.12),
-      transparent 35%
-    ),
     linear-gradient(
       180deg,
-      #03050b 0%,
-      #050816 45%,
-      #070b18 100%
+      #070b14 0%,
+      #09101d 48%,
+      #0a111f 100%
     );
 
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #f1f5f9;
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
 }
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
 .section-label {
   display: flex;
   align-items: center;
   gap: 14px;
+
+  margin-bottom: 65px;
+
+  color: rgba(226, 232, 240, 0.38);
+
   font-size: 9px;
+  font-weight: 500;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 70px;
+  text-transform: uppercase;
 }
 
 .section-label span {
-  color: #1683ff;
+  color: #8bc7ff;
   font-size: 11px;
   letter-spacing: 1px;
 }
 
+
+/* =========================================================
+   ABOUT HEADER
+========================================================= */
+
 .about-header {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 100px;
   align-items: end;
 }
 
 .about-header h2 {
   margin: 0;
-  font-size: clamp(50px, 6vw, 90px);
-  line-height: 0.9;
+
+  color: #f8fafc;
+
+  font-size: clamp(54px, 6.5vw, 92px);
+  line-height: 0.92;
   letter-spacing: -5px;
   font-weight: 800;
 }
 
 .about-header h2 span {
-  color: #1683ff;
+  color: #8bc7ff;
 }
+
+
+/* =========================================================
+   ABOUT DESCRIPTION
+========================================================= */
 
 .about-description {
   display: flex;
   gap: 20px;
-  max-width: 420px;
+
+  max-width: 440px;
 }
 
 .description-line {
   width: 1px;
   min-width: 1px;
-  height: 100px;
+  height: 96px;
+
   background: linear-gradient(
     to bottom,
-    #1683ff,
-    transparent
+    rgba(139, 199, 255, 0.75),
+    rgba(139, 199, 255, 0)
   );
 }
 
 .about-description p {
-  margin: 0 0 20px;
-  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+
+  color: rgba(203, 213, 225, 0.58);
+
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 
-/* =========================
-   INFORMATICS CARDS (ORGANIC STYLE)
-========================= */
+/* =========================================================
+   INFORMATICS CARDS
+========================================================= */
 
 .informatics-grid {
-  margin-top: 100px;
+  margin-top: 105px;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .informatics-card {
   position: relative;
-  min-height: 280px;
-  padding: 32px;
-  
-  /* Efek Glassmorphism */
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  
-  /* Kotak tapi tidak kotak (Squircle / sudut organik yang halus) */
-  border-radius: 32px;
-  border: none;
-  
+
+  min-height: 270px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 24px;
+
   overflow: hidden;
-  transition: 
-    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    box-shadow 0.4s ease,
-    background 0.3s ease;
-  
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
 
-/* Trik border gradien halus */
-.informatics-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 32px;
-  padding: 1px;
-  background: linear-gradient(
-    145deg, 
-    rgba(255, 255, 255, 0.1), 
-    transparent 40%, 
-    transparent 70%, 
-    rgba(22, 131, 255, 0.3)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Efek cahaya glow di sudut saat di-hover */
-.informatics-card::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  right: -40px;
-  bottom: -40px;
-  border-radius: 50%;
-  background: rgba(22, 131, 255, 0.15);
-  filter: blur(35px);
-  transition: 0.5s;
-  opacity: 0;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .informatics-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border-color: rgba(139, 199, 255, 0.25);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   SUBTLE CARD LIGHT
+========================================================= */
+
+.informatics-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 199, 255, 0.035),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD CORNER LIGHT
+========================================================= */
+
+.informatics-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -75px;
+  bottom: -75px;
+
+  border-radius: 50%;
+
+  background: rgba(139, 199, 255, 0.06);
+
+  filter: blur(35px);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
 }
 
 .informatics-card:hover::after {
   opacity: 1;
-  transform: scale(1.8);
 }
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
 
 .informatics-card > span {
   position: absolute;
-  top: 32px;
-  right: 32px;
-  font-size: 10px;
+
+  top: 28px;
+  right: 28px;
+
+  color: rgba(226, 232, 240, 0.28);
+
+  font-size: 9px;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.3);
 }
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
 
 .card-icon {
-  margin-top: 15px;
+  margin-top: 16px;
   margin-bottom: 30px;
-  font-size: 36px;
+
+  color: #9bd0ff;
+
+  font-size: 34px;
   font-weight: 700;
-  color: #4da3ff;
-  text-shadow: 0 0 25px rgba(22, 131, 255, 0.5);
+
+  text-shadow:
+    0 0 22px rgba(139, 199, 255, 0.2);
 }
 
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
 .informatics-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 11px;
+
+  color: #f1f5f9;
+
   font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-weight: 650;
+
+  letter-spacing: -0.4px;
 }
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
 
 .informatics-card p {
   margin: 0;
-  max-width: 90%;
-  color: rgba(255, 255, 255, 0.45);
+
+  max-width: 92%;
+
+  color: rgba(203, 213, 225, 0.48);
+
   font-size: 11.5px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 
-/* =========================
+/* =========================================================
    ABOUT RESPONSIVE
-========================= */
+========================================================= */
 
 @media (max-width: 1000px) {
+
   .about-header {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 45px;
   }
 
   .informatics-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
   }
 }
 
+
 @media (max-width: 600px) {
+
   .about-section {
     padding: 100px 20px;
   }
@@ -222,46 +300,43 @@
 
   .informatics-grid {
     grid-template-columns: 1fr;
-    margin-top: 60px;
+    margin-top: 65px;
   }
 
   .informatics-card {
     min-height: auto;
-    padding: 24px;
-    border-radius: 24px;
-  }
-
-  .informatics-card::before {
-    border-radius: 24px;
+    padding: 25px;
+    border-radius: 20px;
   }
 
   .card-icon {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 }
 
-/* =========================
+
+/* =========================================================
    VISI & MISI
-========================= */
+========================================================= */
 
 .vision-content {
   display: flex;
   flex-direction: column;
   gap: 28px;
+
   margin-top: 30px;
 }
 
 .vision-block {
-  padding-left: 20px;
-  border-left: 2px solid rgba(59, 130, 246, 0.5);
+  padding-left: 0;
 }
 
 .vision-label {
   display: block;
+
   margin-bottom: 10px;
 
-  color: #60a5fa;
+  color: #8bc7ff;
 
   font-size: 10px;
   font-weight: 700;
@@ -281,16 +356,28 @@
 .vision-block p:last-child {
   margin-bottom: 0;
 }
+
+
 /* =========================================================
    HMTI PAGE
 ========================================================= */
 
 .hmti-section {
   position: relative;
+
   min-height: 100vh;
+
   padding: 120px 6% 100px;
-  background: #050816;
-  color: #ffffff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #09101d 0%,
+      #0a111f 100%
+    );
+
+  color: #f8fafc;
+
   overflow: hidden;
 }
 
@@ -304,7 +391,7 @@
   align-items: center;
   gap: 10px;
 
-  margin-bottom: 80px;
+  margin-bottom: 78px;
 
   background: transparent;
   border: none;
@@ -313,17 +400,18 @@
 
   font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 2px;
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .back-button:hover {
-  color: #ffffff;
-  transform: translateX(-5px);
+  color: #dbeafe;
+  transform: translateX(-4px);
 }
 
 
@@ -335,18 +423,19 @@
   width: 100%;
 
   display: grid;
-
   grid-template-columns: 1fr 1fr;
 
   gap: 100px;
 
   align-items: end;
 
-  margin-bottom: 90px;
+  margin-bottom: 85px;
 }
 
 
-/* TITLE */
+/* =========================================================
+   HMTI TITLE
+========================================================= */
 
 .hmti-title {
   position: relative;
@@ -357,44 +446,33 @@
 
   margin-bottom: 20px;
 
-  color: #60a5fa;
+  color: #8bc7ff;
 
   font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 3px;
 }
 
 .hmti-title h2 {
   margin: 0;
 
-  color: #ffffff;
+  color: #f8fafc;
 
-  font-size: clamp(65px, 8vw, 120px);
+  font-size: clamp(62px, 8vw, 116px);
+  line-height: 0.87;
 
-  line-height: 0.85;
-
-  font-weight: 900;
-
-  letter-spacing: -7px;
+  font-weight: 850;
+  letter-spacing: -6px;
 }
 
 .hmti-title h2 span {
-  background: linear-gradient(
-    90deg,
-    #60a5fa,
-    #2563eb,
-    #93c5fd
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
+  color: #8bc7ff;
 }
 
 
-/* DESCRIPTION */
+/* =========================================================
+   HMTI DESCRIPTION
+========================================================= */
 
 .hmti-description {
   max-width: 620px;
@@ -406,8 +484,7 @@
   color: #94a3b8;
 
   font-size: 14px;
-
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .hmti-description p:last-child {
@@ -416,7 +493,7 @@
 
 
 /* =========================================================
-   VISI & MISI
+   VISI MISI
 ========================================================= */
 
 .hmti-visimisi {
@@ -425,11 +502,9 @@
   width: 100%;
 
   margin-top: 20px;
-
-  padding: 45px 32px;
+  padding: 44px 34px;
 
   display: grid;
-
   grid-template-columns: 1fr 1fr;
 
   gap: 70px;
@@ -439,36 +514,36 @@
   background:
     linear-gradient(
       135deg,
-      rgba(15, 23, 42, 0.8),
-      rgba(5, 11, 24, 0.9)
+      rgba(20, 31, 50, 0.78),
+      rgba(10, 17, 31, 0.92)
     );
 
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.075);
 
-  border-radius: 18px;
+  border-radius: 20px;
 
   overflow: hidden;
-
-  backdrop-filter: blur(15px);
 }
 
 
-/* GLOW */
+/* =========================================================
+   SUBTLE VISI MISI LIGHT
+========================================================= */
 
 .hmti-visimisi::before {
   content: "";
 
   position: absolute;
 
-  width: 350px;
-  height: 350px;
+  width: 260px;
+  height: 260px;
 
-  left: -180px;
-  top: -180px;
+  left: -160px;
+  top: -160px;
 
-  background: rgba(37, 99, 235, 0.12);
+  background: rgba(139, 199, 255, 0.035);
 
-  filter: blur(100px);
+  filter: blur(80px);
 
   border-radius: 50%;
 
@@ -476,7 +551,9 @@
 }
 
 
-/* GARIS TENGAH */
+/* =========================================================
+   CENTER LINE
+========================================================= */
 
 .hmti-visimisi::after {
   content: "";
@@ -490,11 +567,13 @@
 
   width: 1px;
 
-  background: rgba(148, 163, 184, 0.14);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 
-/* COLUMN */
+/* =========================================================
+   VISI MISI COLUMN
+========================================================= */
 
 .visimisi-column {
   position: relative;
@@ -505,7 +584,9 @@
 }
 
 
-/* NOMOR */
+/* =========================================================
+   NUMBER
+========================================================= */
 
 .visimisi-number {
   display: block;
@@ -515,50 +596,51 @@
   color: #475569;
 
   font-size: 9px;
-
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
 
-/* JUDUL */
+/* =========================================================
+   TITLE
+========================================================= */
 
 .visimisi-column h3 {
   margin: 0 0 18px;
 
-  color: #3b82f6;
+  color: #9bd0ff;
 
   font-size: 27px;
-
   font-weight: 700;
 
   letter-spacing: -0.5px;
 }
 
 
-/* VISI TEXT */
+/* =========================================================
+   VISI TEXT
+========================================================= */
 
 .visimisi-column p {
   margin: 0;
 
   max-width: 590px;
 
-  color: #9aa6b8;
+  color: #9aa8bb;
 
   font-size: 15px;
-
   line-height: 1.75;
 
-  font-weight: 500;
+  font-weight: 450;
 }
 
 
-/* MISI LIST */
+/* =========================================================
+   MISI LIST
+========================================================= */
 
 .visimisi-column ul {
   margin: 0;
-
   padding-left: 20px;
 
   max-width: 650px;
@@ -566,29 +648,23 @@
 
 .visimisi-column li {
   margin-bottom: 14px;
-
   padding-left: 4px;
 
-  color: #9aa6b8;
+  color: #9aa8bb;
 
   font-size: 15px;
-
   line-height: 1.65;
 
-  font-weight: 500;
+  font-weight: 450;
 }
 
 .visimisi-column li:last-child {
   margin-bottom: 0;
 }
 
-
-/* BULLET */
-
 .visimisi-column li::marker {
-  color: #2563eb;
-
-  font-size: 11px;
+  color: #8bc7ff;
+  font-size: 10px;
 }
 
 
@@ -599,36 +675,18 @@
 .bph-section {
   position: relative;
 
-  padding: 120px 6% 100px;
+  padding: 120px 6% 110px;
 
-  background: #050b18;
+  background:
+    linear-gradient(
+      180deg,
+      #0a111f 0%,
+      #080f1c 100%
+    );
 
-  color: #ffffff;
+  color: #f8fafc;
 
   overflow: hidden;
-}
-
-
-/* BACKGROUND GLOW */
-
-.bph-section::before {
-  content: "";
-
-  position: absolute;
-
-  width: 500px;
-  height: 500px;
-
-  right: -250px;
-  top: 100px;
-
-  background: rgba(37, 99, 235, 0.08);
-
-  filter: blur(130px);
-
-  border-radius: 50%;
-
-  pointer-events: none;
 }
 
 
@@ -638,11 +696,9 @@
 
 .bph-header {
   position: relative;
-
   z-index: 2;
 
   display: grid;
-
   grid-template-columns: 1fr 1fr;
 
   gap: 100px;
@@ -657,41 +713,29 @@
 
   margin-bottom: 20px;
 
-  color: #60a5fa;
+  color: #8bc7ff;
 
   font-size: 10px;
-
   font-weight: 700;
-
   letter-spacing: 3px;
 }
 
 .bph-header h2 {
   margin: 0;
 
-  color: #ffffff;
+  color: #f8fafc;
 
-  font-size: clamp(65px, 8vw, 110px);
+  font-size: clamp(62px, 8vw, 108px);
 
-  line-height: 0.85;
+  line-height: 0.87;
 
-  font-weight: 900;
+  font-weight: 850;
 
   letter-spacing: -6px;
 }
 
 .bph-header h2 span {
-  background: linear-gradient(
-    90deg,
-    #60a5fa,
-    #2563eb
-  );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
+  color: #8bc7ff;
 }
 
 .bph-header > p {
@@ -702,8 +746,7 @@
   color: #94a3b8;
 
   font-size: 14px;
-
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 
@@ -713,11 +756,9 @@
 
 .bph-grid {
   position: relative;
-
   z-index: 2;
 
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
@@ -731,11 +772,11 @@
 .bph-card {
   position: relative;
 
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(255, 255, 255, 0.025);
 
   border: 1px solid rgba(255, 255, 255, 0.07);
 
-  border-radius: 14px;
+  border-radius: 18px;
 
   overflow: hidden;
 
@@ -748,9 +789,9 @@
 .bph-card:hover {
   transform: translateY(-6px);
 
-  border-color: rgba(59, 130, 246, 0.35);
+  border-color: rgba(139, 199, 255, 0.25);
 
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 
@@ -762,12 +803,11 @@
   position: relative;
 
   width: 100%;
-
   height: 300px;
 
   overflow: hidden;
 
-  background: #0b1120;
+  background: #0d1728;
 }
 
 .bph-photo img {
@@ -775,10 +815,9 @@
   height: 100%;
 
   object-fit: cover;
-
   display: block;
 
-  filter: grayscale(20%);
+  filter: grayscale(12%);
 
   transition:
     transform 0.5s ease,
@@ -786,13 +825,14 @@
 }
 
 .bph-card:hover .bph-photo img {
-  transform: scale(1.04);
-
+  transform: scale(1.035);
   filter: grayscale(0%);
 }
 
 
-/* NUMBER */
+/* =========================================================
+   BPH NUMBER
+========================================================= */
 
 .bph-number {
   position: absolute;
@@ -802,18 +842,16 @@
 
   padding: 7px 9px;
 
-  background: rgba(5, 8, 22, 0.75);
+  background: rgba(8, 15, 28, 0.78);
 
   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  border-radius: 6px;
+  border-radius: 7px;
 
-  color: #60a5fa;
+  color: #9bd0ff;
 
   font-size: 9px;
-
   font-weight: 700;
-
   letter-spacing: 1px;
 
   backdrop-filter: blur(8px);
@@ -833,22 +871,19 @@
 
   margin-bottom: 7px;
 
-  color: #3b82f6;
+  color: #8bc7ff;
 
   font-size: 9px;
-
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
 .bph-info h3 {
   margin: 0 0 12px;
 
-  color: #ffffff;
+  color: #f1f5f9;
 
   font-size: 21px;
-
   font-weight: 700;
 
   letter-spacing: -0.4px;
@@ -860,7 +895,6 @@
   color: #64748b;
 
   font-size: 12px;
-
   line-height: 1.7;
 }
 
@@ -871,14 +905,16 @@
 
 .hmti-divisions-cta {
   position: relative;
+
   display: grid;
   grid-template-columns: 1fr;
+
   gap: 65px;
 
   margin-top: 150px;
   padding-top: 80px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
@@ -895,7 +931,7 @@
 
   margin-bottom: 25px;
 
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(226, 232, 240, 0.35);
 
   font-size: 8px;
   font-weight: 500;
@@ -911,20 +947,19 @@
 .hmti-divisions-cta h3 {
   margin: 0;
 
-  color: white;
+  color: #f8fafc;
 
-  font-size: clamp(65px, 8vw, 115px);
-  line-height: 0.78;
+  font-size: clamp(62px, 8vw, 112px);
 
-  letter-spacing: -7px;
+  line-height: 0.8;
 
-  font-weight: 800;
+  letter-spacing: -6px;
+
+  font-weight: 850;
 }
 
 .hmti-divisions-cta h3 span {
-  color: transparent;
-
-  -webkit-text-stroke: 1px #1683ff;
+  color: #8bc7ff;
 }
 
 
@@ -937,7 +972,7 @@
 
   margin: 40px 0 0;
 
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(203, 213, 225, 0.48);
 
   font-size: 12px;
   line-height: 1.9;
@@ -953,7 +988,7 @@
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 16px;
+  gap: 15px;
 
   margin-top: 55px;
 }
@@ -979,43 +1014,21 @@
   background:
     linear-gradient(
       135deg,
-      rgba(22, 131, 255, 0.08),
-      rgba(255, 255, 255, 0.015)
+      rgba(139, 199, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.075);
 
-  border-radius: 14px;
+  border-radius: 16px;
 
   transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.4s ease,
-    background 0.4s ease,
-    box-shadow 0.4s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 
   cursor: default;
-}
-
-/* =========================================================
-   TOP BLUE LINE
-========================================================= */
-
-.division-item::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 45px;
-  height: 2px;
-
-  background: #1683ff;
-
-  transition:
-    width 0.4s ease,
-    box-shadow 0.4s ease;
 }
 
 
@@ -1028,15 +1041,15 @@
 
   position: absolute;
 
-  right: -35px;
-  bottom: -35px;
+  right: -40px;
+  bottom: -40px;
 
   width: 90px;
   height: 90px;
 
-  border: 1px solid rgba(22, 131, 255, 0.18);
+  border: 1px solid rgba(139, 199, 255, 0.12);
 
-  border-radius: 16px;
+  border-radius: 18px;
 
   transform: rotate(45deg);
 
@@ -1045,20 +1058,21 @@
     border-color 0.4s ease;
 }
 
+
 /* =========================================================
    NUMBER
 ========================================================= */
 
 .division-item span {
   position: relative;
+  z-index: 2;
 
   display: flex;
   align-items: center;
+
   gap: 10px;
 
-  padding: 0;
-
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(226, 232, 240, 0.32);
 
   font-size: 9px;
   font-weight: 500;
@@ -1067,7 +1081,9 @@
 }
 
 
-/* BLUE DASH */
+/* =========================================================
+   BLUE DASH
+========================================================= */
 
 .division-item span::before {
   content: "";
@@ -1075,7 +1091,7 @@
   width: 18px;
   height: 1px;
 
-  background: #1683ff;
+  background: #8bc7ff;
 
   transition: width 0.3s ease;
 }
@@ -1091,71 +1107,58 @@
 
   display: block;
 
-  color: white;
+  color: #f1f5f9;
 
-  font-size: clamp(25px, 3vw, 40px);
+  font-size: clamp(24px, 3vw, 38px);
 
   font-weight: 700;
 
-  letter-spacing: -1.5px;
+  letter-spacing: -1.4px;
 
   transition:
-    transform 0.4s ease,
-    color 0.4s ease;
+    transform 0.35s ease,
+    color 0.35s ease;
 }
 
 
 /* =========================================================
-   HOVER
+   DIVISION HOVER
 ========================================================= */
 
 .division-item:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
 
-  border-color: rgba(22, 131, 255, 0.45);
+  border-color: rgba(139, 199, 255, 0.25);
 
   background:
     linear-gradient(
       135deg,
-      rgba(22, 131, 255, 0.15),
-      rgba(255, 255, 255, 0.025)
+      rgba(139, 199, 255, 0.075),
+      rgba(255, 255, 255, 0.02)
     );
 
   box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25),
-    0 0 30px rgba(22, 131, 255, 0.06);
+    0 16px 40px rgba(0, 0, 0, 0.2);
 }
-
-
-.division-item:hover::before {
-  width: 100%;
-
-  box-shadow:
-    0 0 12px rgba(22, 131, 255, 0.7);
-}
-
 
 .division-item:hover::after {
   transform: rotate(45deg) translate(-10px, -10px);
 
-  border-color: rgba(22, 131, 255, 0.35);
+  border-color: rgba(139, 199, 255, 0.24);
 }
-
 
 .division-item:hover span {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(226, 232, 240, 0.65);
 }
-
 
 .division-item:hover span::before {
-  width: 30px;
+  width: 28px;
 }
 
-
 .division-item:hover strong {
-  transform: translateX(6px);
+  transform: translateX(5px);
 
-  color: #1683ff;
+  color: #9bd0ff;
 }
 
 
@@ -1167,7 +1170,6 @@
   justify-self: start;
 
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
@@ -1175,11 +1177,11 @@
 
   min-width: 220px;
 
-  padding: 20px 25px;
+  padding: 18px 24px;
 
-  background: white;
+  background: #edf6ff;
 
-  color: #050812;
+  color: #0a111f;
 
   border: none;
 
@@ -1188,8 +1190,7 @@
   font-family: inherit;
 
   font-size: 9px;
-
-  font-weight: 700;
+  font-weight: 750;
 
   letter-spacing: 2px;
 
@@ -1197,38 +1198,37 @@
 
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
-
 
 .division-button strong {
   font-size: 20px;
 
-  color: #050812;
+  color: #0a111f;
 
   transition:
     transform 0.3s ease,
     color 0.3s ease;
 }
 
-
 .division-button:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+
+  background: #ffffff;
 
   box-shadow:
-    0 15px 35px rgba(22, 131, 255, 0.2);
+    0 14px 35px rgba(0, 0, 0, 0.22);
 }
 
-
 .division-button:hover strong {
-  color: #1683ff;
+  color: #5caeff;
 
   transform: translateX(5px);
 }
 
-
 .division-button:active {
-  transform: translateY(-1px) scale(0.97);
+  transform: translateY(-1px) scale(0.98);
 }
 
 
@@ -1238,132 +1238,42 @@
 
 @media (max-width: 1000px) {
 
-  .hmti-divisions-cta {
-    margin-top: 120px;
-
-    padding-top: 60px;
-
-    gap: 55px;
-  }
-
-
-  .division-list {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 15px;
-  }
-
-
-  .division-item {
-    min-height: 135px;
-  }
-
-
-  .division-item strong {
-    font-size: 30px;
-  }
-
-
-  .hmti-divisions-cta > .division-button {
-    justify-self: start;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .hmti-divisions-cta {
-    margin-top: 100px;
-
-    padding-top: 55px;
-
-    gap: 45px;
-  }
-
-
-  .hmti-divisions-cta h3 {
-    font-size: 55px;
-
-    letter-spacing: -4px;
-  }
-
-
-  .hmti-divisions-cta > .division-cta-content > p {
-    margin-top: 30px;
-
-    font-size: 11px;
-
-    line-height: 1.9;
-  }
-
-
-  .division-list {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-
-    margin-top: 35px;
-  }
-
-
-  .division-item {
-    min-height: 120px;
-
-    padding: 22px;
-  }
-
-
-  .division-item strong {
-    font-size: 32px;
-  }
-
-
-  .division-item span {
-    font-size: 8px;
-  }
-
-
-  .hmti-divisions-cta > .division-button {
-    width: 100%;
-
-    margin-top: 5px;
-  }
-
-}
-
-/* =========================================================
-   RESPONSIVE TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
   .hmti-header,
   .bph-header {
     grid-template-columns: 1fr;
-
-    gap: 40px;
+    gap: 42px;
   }
-
 
   .bph-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-
   .hmti-visimisi {
     gap: 40px;
   }
 
+  .hmti-divisions-cta {
+    margin-top: 120px;
+    padding-top: 60px;
+    gap: 55px;
+  }
+
+  .division-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .division-item {
+    min-height: 135px;
+  }
+
+  .division-item strong {
+    font-size: 30px;
+  }
 }
 
 
 /* =========================================================
-   RESPONSIVE MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
@@ -1372,18 +1282,14 @@
     padding: 90px 5% 70px;
   }
 
-
   .back-button {
     margin-bottom: 55px;
   }
 
-
   .hmti-title h2 {
-    font-size: 65px;
-
+    font-size: 64px;
     letter-spacing: -4px;
   }
-
 
   .hmti-header {
     margin-bottom: 60px;
@@ -1400,29 +1306,24 @@
     padding: 30px 22px;
   }
 
-
   .hmti-visimisi::after {
     display: none;
   }
 
-
   .visimisi-column + .visimisi-column {
     padding-top: 35px;
 
-    border-top: 1px solid rgba(148, 163, 184, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
-
 
   .visimisi-column h3 {
     font-size: 24px;
   }
 
-
   .visimisi-column p,
   .visimisi-column li {
     font-size: 14px;
-
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
 
@@ -1432,23 +1333,18 @@
     padding: 80px 5% 70px;
   }
 
-
   .bph-header {
     margin-bottom: 50px;
   }
 
-
   .bph-header h2 {
-    font-size: 65px;
-
+    font-size: 64px;
     letter-spacing: -4px;
   }
-
 
   .bph-grid {
     grid-template-columns: 1fr;
   }
-
 
   .bph-photo {
     height: 330px;
@@ -1458,20 +1354,50 @@
   /* CTA */
 
   .hmti-divisions-cta {
-    flex-direction: column;
+    margin-top: 90px;
+    padding-top: 55px;
 
-    align-items: flex-start;
-
-    margin-top: 70px;
-
-    gap: 30px;
+    gap: 45px;
   }
 
+  .hmti-divisions-cta h3 {
+    font-size: 54px;
+    letter-spacing: -4px;
+  }
 
-  .division-button {
+  .hmti-divisions-cta > .division-cta-content > p {
+    margin-top: 30px;
+
+    font-size: 11px;
+    line-height: 1.9;
+  }
+
+  .division-list {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 35px;
+  }
+
+  .division-item {
+    min-height: 120px;
+
+    padding: 22px;
+  }
+
+  .division-item strong {
+    font-size: 31px;
+  }
+
+  .division-item span {
+    font-size: 8px;
+  }
+
+  .hmti-divisions-cta > .division-button {
     width: 100%;
+    margin-top: 5px;
   }
-
 }
 
 
@@ -1483,25 +1409,20 @@
 
   .hmti-title h2,
   .bph-header h2 {
-    font-size: 55px;
+    font-size: 54px;
   }
-
 
   .hmti-description p,
   .bph-header > p {
     font-size: 13px;
   }
 
-
   .bph-photo {
     height: 280px;
   }
 
-
   .hmti-divisions-cta h3 {
-    font-size: 40px;
-
+    font-size: 42px;
     letter-spacing: -2px;
   }
-
 }

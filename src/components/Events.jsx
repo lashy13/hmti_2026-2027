@@ -1,104 +1,168 @@
-import imgHackwins from "../assets/logo/image.png";
-import imgMewins from "../assets/logo/image.png";
-import imgWebDesign from "../assets/logo/image.png";
-import imgNetwork from "../assets/logo/image.png";
-import imgHackathon from "../assets/logo/image.png";
 
+import { useNavigate } from "react-router-dom";
+import "../styles/Events.css";
+import eventImage from "../assets/logo/image.png";
 const events = [
   {
     number: "01",
-    category: "RITECH EVENT",
     title: "Hackwins",
-    image: imgHackwins,
+    slug: "event-1",
     date: "12 Oktober 2026",
-    location: "Universitas Muhammadiyah Purwokerto",
-    description: "Hackwins merupakan kegiatan yang berfokus pada pengembangan kemampuan teknologi dan cybersecurity melalui tantangan yang menarik dan kompetitif."
+    location: "UMP",
+    category: "RITECH EVENT",
+    description:
+      "Kompetisi cybersecurity yang mengasah kemampuan dan kreativitas peserta dalam menyelesaikan berbagai tantangan teknologi.",
   },
   {
     number: "02",
-    category: "RITECH EVENT",
     title: "Mewins",
-    image: imgMewins,
+    slug: "event-2",
     date: "20 Oktober 2026",
-    location: "Universitas Muhammadiyah Purwokerto",
-    description: "Mewins menjadi ruang bagi mahasiswa untuk mengembangkan kreativitas dan kemampuan teknologi melalui kegiatan yang interaktif dan kolaboratif."
+    location: "UMP",
+    category: "RITECH EVENT",
+    description:
+      "Ajang kreativitas dan inovasi teknologi yang memberikan ruang bagi peserta untuk menghasilkan karya terbaik.",
   },
   {
     number: "03",
-    category: "COMPETITION",
     title: "Web Design",
-    image: imgWebDesign,
+    slug: "event-3",
     date: "5 November 2026",
-    location: "Universitas Muhammadiyah Purwokerto",
-    description: "Kompetisi desain website yang memberikan kesempatan bagi peserta untuk menunjukkan kreativitas, kemampuan UI/UX, dan pemahaman teknologi web."
+    location: "UMP",
+    category: "COMPETITION",
+    description:
+      "Kompetisi desain website yang menggabungkan kreativitas visual, teknologi, dan pengalaman pengguna.",
   },
   {
     number: "04",
-    category: "TECHNOLOGY",
     title: "Network Competition",
-    image: imgNetwork,
+    slug: "event-4",
     date: "18 November 2026",
-    location: "Universitas Muhammadiyah Purwokerto",
-    description: "Kompetisi jaringan komputer yang dirancang untuk menguji kemampuan peserta dalam memahami dan menyelesaikan berbagai permasalahan jaringan."
+    location: "UMP",
+    category: "TECHNOLOGY",
+    description:
+      "Kompetisi jaringan komputer untuk menguji kemampuan peserta dalam memahami dan menyelesaikan permasalahan jaringan.",
   },
   {
     number: "05",
-    category: "TECHNOLOGY",
     title: "Hackathon",
-    image: imgHackathon,
+    slug: "event-5",
     date: "10 Desember 2026",
-    location: "Universitas Muhammadiyah Purwokerto",
-    description: "Hackathon menjadi wadah untuk membangun solusi teknologi secara kreatif melalui kerja sama tim, problem solving, dan pengembangan produk."
-  }
+    location: "UMP",
+    category: "TECHNOLOGY",
+    description:
+      "Kompetisi pengembangan solusi digital melalui kolaborasi, kreativitas, dan pemanfaatan teknologi.",
+  },
 ];
+
+function EventCard({ event }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/events/${event.slug}`);
+  };
+
+  return (
+    <article
+      className="event-card"
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      aria-label={`Lihat detail ${event.title}`}
+    >
+      {/* IMAGE */}
+      <div className="event-image-box">
+        <img
+          src={eventImage}
+          alt={event.title}
+          className="event-image"
+        />
+
+        <span className="event-number">
+          {event.number}
+        </span>
+
+        <span className="event-category">
+          {event.category}
+        </span>
+      </div>
+
+      {/* CONTENT */}
+      <div className="event-card-content">
+        <h2>{event.title}</h2>
+
+        {/* META */}
+        <div className="event-meta">
+          <div>
+            <span className="meta-icon">◷</span>
+            <span>{event.date}</span>
+          </div>
+
+          <div>
+            <span className="meta-icon">⌖</span>
+            <span>{event.location}</span>
+          </div>
+        </div>
+
+        {/* DESCRIPTION */}
+        <p>{event.description}</p>
+
+        {/* LINE */}
+        <div className="event-card-line" />
+
+        {/* MORE */}
+        <div className="event-more">
+          <span>HMTI EVENT</span>
+          <span className="event-arrow">↗</span>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 function Events() {
   return (
-    <main className="events-page" id="events">
-      <section className="events-hero">
-        <div className="events-hero-content">
-          <h1>Our <span>Events.</span></h1>
-          <p>Berbagai kegiatan dan event yang diselenggarakan untuk mengembangkan kreativitas, teknologi, kolaborasi, dan kemampuan mahasiswa Informatika.</p>
+    <section
+      className="events-page"
+      id="events"
+    >
+      {/* HEADER */}
+      <div className="events-header">
+        <div className="events-header-inner">
+          <span className="events-label">
+            HMTI ACTIVITIES
+          </span>
+
+          <h1>
+            Our <span>Events.</span>
+          </h1>
+
+          <p>
+            Berbagai kegiatan dan event yang diselenggarakan
+            untuk mengembangkan kreativitas, teknologi,
+            kolaborasi, dan kemampuan mahasiswa Informatika.
+          </p>
         </div>
-      </section>
+      </div>
 
-      <section className="events-container">
-        {events.map((event, index) => (
-          <article className={`event-item ${index % 2 !== 0 ? "event-reverse" : ""}`} key={event.number}>
-            <div className="event-image-wrapper">
-              <span className="event-number">{event.number}</span>
-              <img src={event.image} alt={event.title} className="event-image" />
-            </div>
-
-            <div className="event-content">
-              <span className="event-small-title">{event.category}</span>
-              <h2>{event.title}</h2>
-
-              <div className="event-info">
-                <div className="event-info-item">
-                  <div className="info-icon">◷</div>
-                  <div>
-                    <span className="info-label">DATE</span>
-                    <p>{event.date}</p>
-                  </div>
-                </div>
-
-                <div className="event-info-item">
-                  <div className="info-icon">◇</div>
-                  <div>
-                    <span className="info-label">LOCATION</span>
-                    <p>{event.location}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="event-line"></div>
-              <p className="event-description">{event.description}</p>
-            </div>
-          </article>
-        ))}
-      </section>
-    </main>
+      {/* EVENTS */}
+      <div className="events-container">
+        <div className="events-grid">
+          {events.map((event) => (
+            <EventCard
+              key={event.number}
+              event={event}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

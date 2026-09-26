@@ -6,9 +6,7 @@ function ProkerDetail({
   title = "Program Kerja",
   description = "",
   about = "",
-  implementation = "",
-  location = "",
-  participants = "",
+  activityImage = "",
   pj = [],
 }) {
   const navigate = useNavigate();
@@ -24,13 +22,30 @@ function ProkerDetail({
   };
 
   return (
-    <main className="proker-detail">
+    <main className={`proker-detail ${divisionPath}-page`}>
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* BACK BUTTON */}
+
+      <div className="proker-top-back">
+        <button
+          type="button"
+          className="proker-back-button"
+          onClick={handleBack}
+        >
+          <span className="back-arrow">←</span>
+          <span>BACK TO {division}</span>
+        </button>
+      </div>
+
+
+      {/* HERO */}
 
       <section className="proker-hero">
+
+        <div className="proker-orb proker-orb-one"></div>
+        <div className="proker-orb proker-orb-two"></div>
+
+        <div className="proker-grid"></div>
 
         <div className="proker-hero-number">
           {division}
@@ -42,13 +57,9 @@ function ProkerDetail({
             {division} / PROGRAM KERJA
           </span>
 
-          <h1>
-            {title}
-          </h1>
+          <h1>{title}</h1>
 
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
 
         </div>
 
@@ -56,72 +67,61 @@ function ProkerDetail({
 
 
       {/* =====================================================
-          ABOUT PROGRAM
+          ACTIVITY + ABOUT
       ===================================================== */}
 
-      <section className="proker-about">
+      <section className="proker-main-content">
 
-        <div className="proker-section-label">
-          ABOUT PROGRAM
-        </div>
+        {/* KOLOM KIRI — FOTO */}
 
-        <div className="proker-about-content">
+        <div className="proker-activity">
 
-          <h2>
-            {title}
-          </h2>
-
-          <p>
-            {about}
-          </p>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          INFORMATION
-      ===================================================== */}
-
-      <section className="proker-info">
-
-        <div className="proker-section-label">
-          INFORMATION
-        </div>
-
-        <div className="proker-info-grid">
-
-          <div className="proker-info-card">
-            <span>
-              IMPLEMENTATION
-            </span>
-
-            <h3>
-              {implementation}
-            </h3>
+          <div className="proker-section-label">
+            ACTIVITY
           </div>
 
+          <div className="proker-activity-wrapper">
 
-          <div className="proker-info-card">
-            <span>
-              LOCATION
-            </span>
+            {activityImage ? (
+              <>
+                <div className="proker-activity-shine"></div>
 
-            <h3>
-              {location}
-            </h3>
+                <img
+                  src={activityImage}
+                  alt={`${title} activity`}
+                  className="proker-activity-image"
+                />
+
+                <div className="proker-activity-overlay">
+                  <span>{title}</span>
+                </div>
+              </>
+            ) : (
+              <div className="proker-activity-placeholder">
+                <span>ACTIVITY PHOTO</span>
+                <small>Foto kegiatan belum tersedia</small>
+              </div>
+            )}
+
           </div>
 
+        </div>
 
-          <div className="proker-info-card">
-            <span>
-              PARTICIPANTS
-            </span>
 
-            <h3>
-              {participants}
-            </h3>
+        {/* KOLOM KANAN — PENJELASAN */}
+
+        <div className="proker-about">
+
+          <div className="proker-section-label">
+            ABOUT PROGRAM
+          </div>
+
+          <div className="proker-about-content">
+
+            <h2>{title}</h2>
+
+            <p>{about}</p>
+
           </div>
 
         </div>
@@ -129,9 +129,7 @@ function ProkerDetail({
       </section>
 
 
-      {/* =====================================================
-          PERSON IN CHARGE
-      ===================================================== */}
+      {/* PERSON IN CHARGE */}
 
       {pj.length > 0 && (
         <section className="proker-pj-section">
@@ -139,6 +137,11 @@ function ProkerDetail({
           <div className="proker-section-label">
             PERSON IN CHARGE
           </div>
+
+          <h2 className="proker-pj-title">
+            The People Behind
+            <span> {title}</span>
+          </h2>
 
           <div className="proker-pj-grid">
 
@@ -148,34 +151,36 @@ function ProkerDetail({
                 key={index}
               >
 
-                <div className="proker-pj-photo">
+                <div className="proker-pj-photo-wrapper">
 
-                  {person.photo ? (
-                    <img
-                      src={person.photo}
-                      alt={person.name}
-                    />
-                  ) : (
-                    <div className="proker-pj-placeholder">
-                      PJ
-                    </div>
-                  )}
+                  <div className="proker-pj-ring"></div>
+
+                  <div className="proker-pj-photo">
+
+                    {person.photo ? (
+                      <img
+                        src={person.photo}
+                        alt={person.name}
+                      />
+                    ) : (
+                      <div className="proker-pj-placeholder">
+                        {person.name
+                          ? person.name.charAt(0).toUpperCase()
+                          : "P"}
+                      </div>
+                    )}
+
+                  </div>
 
                 </div>
 
                 <div className="proker-pj-info">
 
-                  <span>
-                    PENANGGUNG JAWAB
-                  </span>
+                  <span>PENANGGUNG JAWAB</span>
 
-                  <h3>
-                    {person.name}
-                  </h3>
+                  <h3>{person.name}</h3>
 
-                  <p>
-                    {person.position}
-                  </p>
+                  <p>{person.position}</p>
 
                 </div>
 
@@ -186,23 +191,6 @@ function ProkerDetail({
 
         </section>
       )}
-
-
-      {/* =====================================================
-          BACK TO DIVISION
-      ===================================================== */}
-
-      <section className="proker-back">
-
-        <button
-          type="button"
-          className="proker-back-button"
-          onClick={handleBack}
-        >
-          ← BACK TO {division}
-        </button>
-
-      </section>
 
     </main>
   );
