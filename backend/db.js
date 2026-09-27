@@ -15,7 +15,10 @@ const db = mysql.createPool({
 
 db.getConnection((err, connection) => {
   if (err) {
-    console.error("❌ Gagal terhubung ke MySQL:", err.message);
+    console.error(
+      "❌ Gagal terhubung ke MySQL:",
+      err.message
+    );
     return;
   }
 
