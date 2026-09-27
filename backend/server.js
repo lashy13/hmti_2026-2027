@@ -5,6 +5,10 @@ import db from "./db.js";
 
 const app = express();
 
+// ================================
+// MIDDLEWARE
+// ================================
+
 app.use(
   cors({
     origin: "*",
@@ -13,11 +17,19 @@ app.use(
 
 app.use(express.json());
 
+// ================================
+// TEST BACKEND
+// ================================
+
 app.get("/", (req, res) => {
   res.json({
     message: "Backend HMTI berhasil berjalan",
   });
 });
+
+// ================================
+// POST ASPIRASI
+// ================================
 
 app.post("/api/aspirasi", (req, res) => {
   const {
@@ -62,6 +74,10 @@ app.post("/api/aspirasi", (req, res) => {
   );
 });
 
+// ================================
+// GET SEMUA ASPIRASI
+// ================================
+
 app.get("/api/aspirasi", (req, res) => {
   const sql = `
     SELECT *
@@ -85,10 +101,14 @@ app.get("/api/aspirasi", (req, res) => {
   });
 });
 
+// ================================
+// START SERVER
+// ================================
+
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(
-    `🚀 Backend berjalan di port ${PORT}`
+    `🚀 Backend HMTI berjalan di port ${PORT}`
   );
 });
