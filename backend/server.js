@@ -28,6 +28,32 @@ app.get("/", (req, res) => {
 });
 
 // ========================================
+// TEST DATABASE
+// ========================================
+
+app.get("/api/test-db", (req, res) => {
+  db.query("SHOW TABLES", (err, results) => {
+    if (err) {
+      console.error(
+        "❌ Database error:",
+        err.message
+      );
+
+      return res.status(500).json({
+        success: false,
+        error: err.message,
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Database berhasil diakses.",
+      tables: results,
+    });
+  });
+});
+
+// ========================================
 // POST ASPIRASI
 // ========================================
 
@@ -39,7 +65,6 @@ app.post("/api/aspirasi", (req, res) => {
     aspirasi,
   } = req.body;
 
-  // Validasi data
   if (!nama || !nim || !email || !aspirasi) {
     return res.status(400).json({
       message: "Semua data wajib diisi.",
@@ -64,6 +89,7 @@ app.post("/api/aspirasi", (req, res) => {
 
         return res.status(500).json({
           message: "Gagal menyimpan aspirasi.",
+          error: err.message,
         });
       }
 
@@ -95,6 +121,7 @@ app.get("/api/aspirasi", (req, res) => {
 
       return res.status(500).json({
         message: "Gagal mengambil data.",
+        error: err.message,
       });
     }
 
