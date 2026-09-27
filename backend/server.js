@@ -54,6 +54,46 @@ app.get("/api/test-db", (req, res) => {
 });
 
 // ========================================
+// SETUP DATABASE
+// ========================================
+
+app.get("/api/setup-db", (req, res) => {
+  const sql = `
+    CREATE TABLE IF NOT EXISTS aspirasi (
+      id INT NOT NULL AUTO_INCREMENT,
+      nama VARCHAR(100) NOT NULL,
+      nim VARCHAR(30) NOT NULL,
+      email VARCHAR(150) NOT NULL,
+      aspirasi TEXT NOT NULL,
+      created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_unicode_ci
+  `;
+
+  db.query(sql, (err) => {
+    if (err) {
+      console.error(
+        "❌ Gagal membuat tabel:",
+        err.message
+      );
+
+      return res.status(500).json({
+        success: false,
+        error: err.message,
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Tabel aspirasi berhasil dibuat!",
+    });
+  });
+});
+
+// ========================================
 // POST ASPIRASI
 // ========================================
 
@@ -104,24 +144,31 @@ app.post("/api/aspirasi", (req, res) => {
 // ========================================
 // GET SEMUA ASPIRASI
 // ========================================
-app.get("/api/test-db", (req, res) => {
-  db.query("SELECT 1 AS test", (err, results) => {
+
+app.get("/api/aspirasi", (req, res) => {
+  const sql = `
+    SELECT *
+    FROM aspirasi
+    ORDER BY created_at DESC
+  `;
+
+  db.query(sql, (err, results) => {
     if (err) {
-      console.error("❌ TEST DB:", err.message);
+      console.error(
+        "❌ Gagal mengambil data:",
+        err.message
+      );
 
       return res.status(500).json({
-        success: false,
+        message: "Gagal mengambil data.",
         error: err.message,
       });
     }
 
-    res.json({
-      success: true,
-      message: "Database berhasil terhubung!",
-      result: results,
-    });
+    res.json(results);
   });
 });
+
 // ========================================
 // START SERVER
 // ========================================
