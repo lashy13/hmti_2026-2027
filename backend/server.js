@@ -170,6 +170,47 @@ app.get("/api/aspirasi", (req, res) => {
 });
 
 // ========================================
+// DELETE ASPIRASI
+// ========================================
+
+app.delete("/api/aspirasi/:id", (req, res) => {
+  const { id } = req.params;
+
+  const sql = `
+    DELETE FROM aspirasi
+    WHERE id = ?
+  `;
+
+  db.query(sql, [id], (err, result) => {
+    if (err) {
+      console.error(
+        "❌ Gagal menghapus aspirasi:",
+        err.message
+      );
+
+      return res.status(500).json({
+        success: false,
+        message: "Gagal menghapus aspirasi.",
+        error: err.message,
+      });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Aspirasi tidak ditemukan.",
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Aspirasi berhasil dihapus.",
+      id: Number(id),
+    });
+  });
+});
+
+// ========================================
 // START SERVER
 // ========================================
 
