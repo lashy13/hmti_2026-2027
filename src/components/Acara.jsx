@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import "../styles/Events.css";
+import "../styles/events.css";
 import eventImage from "../assets/logo/image.png";
 const events = [
   {
