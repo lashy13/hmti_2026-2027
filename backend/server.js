@@ -104,31 +104,24 @@ app.post("/api/aspirasi", (req, res) => {
 // ========================================
 // GET SEMUA ASPIRASI
 // ========================================
-
-app.get("/api/aspirasi", (req, res) => {
-  const sql = `
-    SELECT *
-    FROM aspirasi
-    ORDER BY created_at DESC
-  `;
-
-  db.query(sql, (err, results) => {
+app.get("/api/test-db", (req, res) => {
+  db.query("SELECT 1 AS test", (err, results) => {
     if (err) {
-      console.error(
-        "❌ Gagal mengambil data:",
-        err.message
-      );
+      console.error("❌ TEST DB:", err.message);
 
       return res.status(500).json({
-        message: "Gagal mengambil data.",
+        success: false,
         error: err.message,
       });
     }
 
-    res.json(results);
+    res.json({
+      success: true,
+      message: "Database berhasil terhubung!",
+      result: results,
+    });
   });
 });
-
 // ========================================
 // START SERVER
 // ========================================
