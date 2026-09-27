@@ -1,8 +1,9 @@
-// Aspirasi.jsx
 
 import { useState } from "react";
-
 import "../styles/aspirasi.css";
+
+// URL backend
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Aspirasi() {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ function Aspirasi() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/aspirasi",
+        `${API_URL}/api/aspirasi`,
         {
           method: "POST",
           headers: {
@@ -58,14 +59,12 @@ function Aspirasi() {
         email: "",
         aspirasi: "",
       });
-
     } catch (error) {
-      console.error(error);
+      console.error("Gagal mengirim aspirasi:", error);
 
       setStatus(
         "✕ Gagal mengirim aspirasi. Coba lagi."
       );
-
     } finally {
       setLoading(false);
     }
@@ -76,21 +75,17 @@ function Aspirasi() {
       className="aspirasi-page"
       id="aspirasi"
     >
-
       {/* BACKGROUND */}
 
       <div className="aspirasi-glow glow-one"></div>
       <div className="aspirasi-glow glow-two"></div>
 
-
       {/* MAIN */}
 
       <main className="aspirasi-main">
-
         {/* HEADER */}
 
         <div className="aspirasi-heading">
-
           <span className="aspirasi-eyebrow">
             YOUR VOICE MATTERS
           </span>
@@ -106,18 +101,13 @@ function Aspirasi() {
             untuk HMTI? Sampaikan pendapatmu melalui
             form di bawah.
           </p>
-
         </div>
-
 
         {/* FORM */}
 
         <section className="aspirasi-card">
-
           <div className="aspirasi-card-header">
-
             <div>
-
               <span>
                 ASPIRATION FORM
               </span>
@@ -125,27 +115,21 @@ function Aspirasi() {
               <h2>
                 Ceritakan kepada kami.
               </h2>
-
             </div>
 
             <div className="aspirasi-number">
               01
             </div>
-
           </div>
-
 
           <form
             className="aspirasi-form"
             onSubmit={handleSubmit}
           >
-
             {/* NAMA + NIM */}
 
             <div className="aspirasi-form-row">
-
               <div className="aspirasi-field">
-
                 <label htmlFor="nama">
                   NAMA
                 </label>
@@ -159,12 +143,9 @@ function Aspirasi() {
                   onChange={handleChange}
                   required
                 />
-
               </div>
 
-
               <div className="aspirasi-field">
-
                 <label htmlFor="nim">
                   NIM
                 </label>
@@ -178,16 +159,12 @@ function Aspirasi() {
                   onChange={handleChange}
                   required
                 />
-
               </div>
-
             </div>
-
 
             {/* EMAIL */}
 
             <div className="aspirasi-field">
-
               <label htmlFor="email">
                 EMAIL
               </label>
@@ -201,14 +178,11 @@ function Aspirasi() {
                 onChange={handleChange}
                 required
               />
-
             </div>
-
 
             {/* ASPIRASI */}
 
             <div className="aspirasi-field">
-
               <label htmlFor="aspirasi">
                 ASPIRASI / PESAN
               </label>
@@ -222,14 +196,11 @@ function Aspirasi() {
                 rows="9"
                 required
               />
-
             </div>
-
 
             {/* BOTTOM */}
 
             <div className="aspirasi-form-bottom">
-
               <p>
                 Masukan kamu akan membantu HMTI
                 berkembang menjadi lebih baik.
@@ -240,20 +211,15 @@ function Aspirasi() {
                 className="aspirasi-submit"
                 disabled={loading}
               >
-
                 {loading
                   ? "MENGIRIM..."
-                  : "KIRIM ASPIRASI"
-                }
+                  : "KIRIM ASPIRASI"}
 
                 <span>
                   →
                 </span>
-
               </button>
-
             </div>
-
 
             {/* STATUS */}
 
@@ -268,13 +234,9 @@ function Aspirasi() {
                 {status}
               </div>
             )}
-
           </form>
-
         </section>
-
       </main>
-
     </section>
   );
 }
