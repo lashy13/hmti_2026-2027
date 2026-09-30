@@ -9,17 +9,31 @@
   overflow: hidden;
 
   background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(37, 99, 235, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 25%,
+      rgba(96, 165, 250, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 65%,
+      rgba(59, 130, 246, 0.06),
+      transparent 35%
+    ),
     linear-gradient(
       180deg,
-      #070b14 0%,
-      #09101d 48%,
-      #0a111f 100%
+      #020617 0%,
+      #06132a 45%,
+      #071a35 100%
     );
 
-  color: #f1f5f9;
-  border-top: 1px solid rgba(255, 255, 255, 0.045);
+  color: #f8fafc;
+  border-top: 1px solid rgba(147, 197, 253, 0.08);
 }
-
 
 /* =========================================================
    SECTION LABEL
@@ -29,11 +43,9 @@
   display: flex;
   align-items: center;
   gap: 14px;
-
   margin-bottom: 65px;
 
   color: rgba(226, 232, 240, 0.38);
-
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -41,11 +53,10 @@
 }
 
 .section-label span {
-  color: #8bc7ff;
+  color: #93c5fd;
   font-size: 11px;
   letter-spacing: 1px;
 }
-
 
 /* =========================================================
    ABOUT HEADER
@@ -62,7 +73,6 @@
   margin: 0;
 
   color: #f8fafc;
-
   font-size: clamp(54px, 6.5vw, 92px);
   line-height: 0.92;
   letter-spacing: -5px;
@@ -70,9 +80,24 @@
 }
 
 .about-header h2 span {
-  color: #8bc7ff;
-}
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #dbeafe 18%,
+    #93c5fd 38%,
+    #38bdf8 58%,
+    #2563eb 78%,
+    #ffffff 100%
+  );
 
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: communityGradient 5s ease infinite;
+}
 
 /* =========================================================
    ABOUT DESCRIPTION
@@ -81,7 +106,6 @@
 .about-description {
   display: flex;
   gap: 20px;
-
   max-width: 440px;
 }
 
@@ -92,8 +116,9 @@
 
   background: linear-gradient(
     to bottom,
-    rgba(139, 199, 255, 0.75),
-    rgba(139, 199, 255, 0)
+    rgba(147, 197, 253, 0.9),
+    rgba(37, 99, 235, 0.35),
+    rgba(147, 197, 253, 0)
   );
 }
 
@@ -101,14 +126,80 @@
   margin: 0;
 
   color: rgba(203, 213, 225, 0.58);
-
   font-size: 14px;
   line-height: 1.85;
 }
 
+/* =========================================================
+   COMMUNITY TEXT
+========================================================= */
+
+.community,
+.community-title,
+.community-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #dbeafe 18%,
+    #93c5fd 38%,
+    #38bdf8 58%,
+    #2563eb 78%,
+    #ffffff 100%
+  );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation:
+    communityGradient 4.5s ease infinite,
+    communityBlink 2.5s ease-in-out infinite;
+}
 
 /* =========================================================
-   INFORMATICS CARDS
+   GRADIENT ANIMATION
+========================================================= */
+
+@keyframes communityGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================================================
+   TEXT BLINK
+========================================================= */
+
+@keyframes communityBlink {
+  0%,
+  100% {
+    filter: brightness(1);
+
+    text-shadow:
+      0 0 0 rgba(56, 189, 248, 0);
+  }
+
+  50% {
+    filter: brightness(1.25);
+
+    text-shadow:
+      0 0 12px rgba(56, 189, 248, 0.35),
+      0 0 25px rgba(37, 99, 235, 0.2);
+  }
+}
+
+/* =========================================================
+   INFORMATICS GRID
 ========================================================= */
 
 .informatics-grid {
@@ -119,15 +210,23 @@
   gap: 20px;
 }
 
+/* =========================================================
+   INFORMATICS CARD
+========================================================= */
+
 .informatics-card {
   position: relative;
-
   min-height: 270px;
   padding: 30px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(147, 197, 253, 0.055),
+      rgba(255, 255, 255, 0.012)
+    );
 
-  border: 1px solid rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(96, 165, 250, 0.14);
   border-radius: 24px;
 
   overflow: hidden;
@@ -139,23 +238,42 @@
     box-shadow 0.4s ease;
 }
 
-.informatics-card:hover {
-  transform: translateY(-5px);
-
-  background: rgba(255, 255, 255, 0.045);
-
-  border-color: rgba(139, 199, 255, 0.25);
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.22);
-}
-
-
 /* =========================================================
-   SUBTLE CARD LIGHT
+   MOVING LIGHT AROUND CARD
 ========================================================= */
 
 .informatics-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  top: 0;
+  left: 0;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 8px #38bdf8,
+    0 0 20px rgba(56, 189, 248, 0.85),
+    0 0 35px rgba(37, 99, 235, 0.5);
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  animation: informaticsOrbit 5s linear infinite;
+}
+
+/* =========================================================
+   SOFT CARD LIGHT
+========================================================= */
+
+.informatics-card::after {
   content: "";
 
   position: absolute;
@@ -164,44 +282,84 @@
   background:
     linear-gradient(
       135deg,
-      rgba(139, 199, 255, 0.035),
+      rgba(147, 197, 253, 0.045),
       transparent 45%
     );
 
   pointer-events: none;
 }
 
-
 /* =========================================================
-   CARD CORNER LIGHT
+   INFORMATICS HOVER
 ========================================================= */
 
-.informatics-card::after {
-  content: "";
+.informatics-card:hover {
+  transform: translateY(-6px);
 
-  position: absolute;
+  border-color: rgba(56, 189, 248, 0.38);
 
-  width: 130px;
-  height: 130px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37, 99, 235, 0.08),
+      rgba(147, 197, 253, 0.025)
+    );
 
-  right: -75px;
-  bottom: -75px;
-
-  border-radius: 50%;
-
-  background: rgba(139, 199, 255, 0.06);
-
-  filter: blur(35px);
-
-  opacity: 0;
-
-  transition: opacity 0.4s ease;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(37, 99, 235, 0.08);
 }
 
-.informatics-card:hover::after {
-  opacity: 1;
-}
+/* =========================================================
+   INFORMATICS ORBIT
+========================================================= */
 
+@keyframes informaticsOrbit {
+  0% {
+    top: 0;
+    left: 0;
+    background: #38bdf8;
+  }
+
+  24% {
+    top: 0;
+    left: calc(100% - 14px);
+    background: #60a5fa;
+  }
+
+  25% {
+    top: 0;
+    left: calc(100% - 14px);
+  }
+
+  49% {
+    top: calc(100% - 14px);
+    left: calc(100% - 14px);
+    background: #2563eb;
+  }
+
+  50% {
+    top: calc(100% - 14px);
+    left: calc(100% - 14px);
+  }
+
+  74% {
+    top: calc(100% - 14px);
+    left: 0;
+    background: #93c5fd;
+  }
+
+  75% {
+    top: calc(100% - 14px);
+    left: 0;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    background: #38bdf8;
+  }
+}
 
 /* =========================================================
    CARD NUMBER
@@ -217,32 +375,38 @@
 
   font-size: 9px;
   letter-spacing: 2px;
-}
 
+  z-index: 3;
+}
 
 /* =========================================================
    CARD ICON
 ========================================================= */
 
 .card-icon {
+  position: relative;
+  z-index: 2;
+
   margin-top: 16px;
   margin-bottom: 30px;
 
-  color: #9bd0ff;
+  color: #93c5fd;
 
   font-size: 34px;
   font-weight: 700;
 
   text-shadow:
-    0 0 22px rgba(139, 199, 255, 0.2);
+    0 0 22px rgba(96, 165, 250, 0.25);
 }
-
 
 /* =========================================================
    CARD TITLE
 ========================================================= */
 
 .informatics-card h3 {
+  position: relative;
+  z-index: 2;
+
   margin: 0 0 11px;
 
   color: #f1f5f9;
@@ -253,14 +417,15 @@
   letter-spacing: -0.4px;
 }
 
-
 /* =========================================================
    CARD DESCRIPTION
 ========================================================= */
 
 .informatics-card p {
-  margin: 0;
+  position: relative;
+  z-index: 2;
 
+  margin: 0;
   max-width: 92%;
 
   color: rgba(203, 213, 225, 0.48);
@@ -269,59 +434,14 @@
   line-height: 1.75;
 }
 
-
 /* =========================================================
-   ABOUT RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-  .about-header {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .informatics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-@media (max-width: 600px) {
-
-  .about-section {
-    padding: 100px 20px;
-  }
-
-  .about-header h2 {
-    font-size: 48px;
-    letter-spacing: -3px;
-  }
-
-  .informatics-grid {
-    grid-template-columns: 1fr;
-    margin-top: 65px;
-  }
-
-  .informatics-card {
-    min-height: auto;
-    padding: 25px;
-    border-radius: 20px;
-  }
-
-  .card-icon {
-    margin-bottom: 22px;
-  }
-}
-
-
-/* =========================================================
-   VISI & MISI
+   VISION CONTENT
 ========================================================= */
 
 .vision-content {
   display: flex;
   flex-direction: column;
+
   gap: 28px;
 
   margin-top: 30px;
@@ -336,15 +456,17 @@
 
   margin-bottom: 10px;
 
-  color: #8bc7ff;
+  color: #93c5fd;
 
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 3px;
 }
 
 .vision-block p {
   max-width: 700px;
+
   margin: 0 0 12px;
 
   color: #94a3b8;
@@ -356,7 +478,6 @@
 .vision-block p:last-child {
   margin-bottom: 0;
 }
-
 
 /* =========================================================
    HMTI PAGE
@@ -370,17 +491,26 @@
   padding: 120px 6% 100px;
 
   background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(37, 99, 235, 0.1),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 95% 80%,
+      rgba(96, 165, 250, 0.07),
+      transparent 28%
+    ),
     linear-gradient(
       180deg,
-      #09101d 0%,
-      #0a111f 100%
+      #06132a 0%,
+      #071a35 100%
     );
 
   color: #f8fafc;
 
   overflow: hidden;
 }
-
 
 /* =========================================================
    BACK TO HOME
@@ -389,6 +519,7 @@
 .back-button {
   display: inline-flex;
   align-items: center;
+
   gap: 10px;
 
   margin-bottom: 78px;
@@ -400,6 +531,7 @@
 
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 2px;
 
   cursor: pointer;
@@ -414,7 +546,6 @@
   transform: translateX(-4px);
 }
 
-
 /* =========================================================
    HMTI HEADER
 ========================================================= */
@@ -423,6 +554,7 @@
   width: 100%;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   gap: 100px;
@@ -431,7 +563,6 @@
 
   margin-bottom: 85px;
 }
-
 
 /* =========================================================
    HMTI TITLE
@@ -446,10 +577,11 @@
 
   margin-bottom: 20px;
 
-  color: #8bc7ff;
+  color: #93c5fd;
 
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 3px;
 }
 
@@ -459,16 +591,34 @@
   color: #f8fafc;
 
   font-size: clamp(62px, 8vw, 116px);
+
   line-height: 0.87;
 
   font-weight: 850;
+
   letter-spacing: -6px;
 }
 
 .hmti-title h2 span {
-  color: #8bc7ff;
-}
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #dbeafe,
+    #93c5fd,
+    #38bdf8,
+    #2563eb,
+    #ffffff
+  );
 
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation: communityGradient 5s ease infinite;
+}
 
 /* =========================================================
    HMTI DESCRIPTION
@@ -491,7 +641,6 @@
   margin-bottom: 0;
 }
 
-
 /* =========================================================
    VISI MISI
 ========================================================= */
@@ -502,9 +651,11 @@
   width: 100%;
 
   margin-top: 20px;
+
   padding: 44px 34px;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   gap: 70px;
@@ -514,21 +665,16 @@
   background:
     linear-gradient(
       135deg,
-      rgba(20, 31, 50, 0.78),
-      rgba(10, 17, 31, 0.92)
+      rgba(30, 64, 175, 0.18),
+      rgba(10, 24, 48, 0.92)
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(147, 197, 253, 0.1);
 
   border-radius: 20px;
 
   overflow: hidden;
 }
-
-
-/* =========================================================
-   SUBTLE VISI MISI LIGHT
-========================================================= */
 
 .hmti-visimisi::before {
   content: "";
@@ -541,7 +687,7 @@
   left: -160px;
   top: -160px;
 
-  background: rgba(139, 199, 255, 0.035);
+  background: rgba(59, 130, 246, 0.08);
 
   filter: blur(80px);
 
@@ -549,11 +695,6 @@
 
   pointer-events: none;
 }
-
-
-/* =========================================================
-   CENTER LINE
-========================================================= */
 
 .hmti-visimisi::after {
   content: "";
@@ -567,9 +708,8 @@
 
   width: 1px;
 
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(147, 197, 253, 0.08);
 }
-
 
 /* =========================================================
    VISI MISI COLUMN
@@ -583,11 +723,6 @@
   padding: 0;
 }
 
-
-/* =========================================================
-   NUMBER
-========================================================= */
-
 .visimisi-number {
   display: block;
 
@@ -597,29 +732,20 @@
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 2px;
 }
-
-
-/* =========================================================
-   TITLE
-========================================================= */
 
 .visimisi-column h3 {
   margin: 0 0 18px;
 
-  color: #9bd0ff;
+  color: #93c5fd;
 
   font-size: 27px;
   font-weight: 700;
 
   letter-spacing: -0.5px;
 }
-
-
-/* =========================================================
-   VISI TEXT
-========================================================= */
 
 .visimisi-column p {
   margin: 0;
@@ -634,13 +760,9 @@
   font-weight: 450;
 }
 
-
-/* =========================================================
-   MISI LIST
-========================================================= */
-
 .visimisi-column ul {
   margin: 0;
+
   padding-left: 20px;
 
   max-width: 650px;
@@ -648,6 +770,7 @@
 
 .visimisi-column li {
   margin-bottom: 14px;
+
   padding-left: 4px;
 
   color: #9aa8bb;
@@ -663,10 +786,9 @@
 }
 
 .visimisi-column li::marker {
-  color: #8bc7ff;
+  color: #60a5fa;
   font-size: 10px;
 }
-
 
 /* =========================================================
    BPH SECTION
@@ -678,10 +800,15 @@
   padding: 120px 6% 110px;
 
   background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(37, 99, 235, 0.09),
+      transparent 25%
+    ),
     linear-gradient(
       180deg,
-      #0a111f 0%,
-      #080f1c 100%
+      #071a35 0%,
+      #041226 100%
     );
 
   color: #f8fafc;
@@ -689,16 +816,17 @@
   overflow: hidden;
 }
 
-
 /* =========================================================
    BPH HEADER
 ========================================================= */
 
 .bph-header {
   position: relative;
+
   z-index: 2;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   gap: 100px;
@@ -713,10 +841,11 @@
 
   margin-bottom: 20px;
 
-  color: #8bc7ff;
+  color: #93c5fd;
 
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 3px;
 }
 
@@ -735,7 +864,24 @@
 }
 
 .bph-header h2 span {
-  color: #8bc7ff;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #dbeafe,
+    #93c5fd,
+    #38bdf8,
+    #2563eb,
+    #ffffff
+  );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation: communityGradient 5s ease infinite;
 }
 
 .bph-header > p {
@@ -749,21 +895,21 @@
   line-height: 1.85;
 }
 
-
 /* =========================================================
    BPH GRID
 ========================================================= */
 
 .bph-grid {
   position: relative;
+
   z-index: 2;
 
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 }
-
 
 /* =========================================================
    BPH CARD
@@ -772,9 +918,14 @@
 .bph-card {
   position: relative;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(147, 197, 253, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
 
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(96, 165, 250, 0.14);
 
   border-radius: 18px;
 
@@ -783,17 +934,97 @@
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
-    background 0.35s ease;
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+/* =========================================================
+   BPH MOVING DOT
+========================================================= */
+
+.bph-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 13px;
+  height: 13px;
+
+  top: 0;
+  left: 0;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 8px #38bdf8,
+    0 0 20px rgba(56, 189, 248, 0.85),
+    0 0 35px rgba(37, 99, 235, 0.5);
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  animation: bphOrbit 5s linear infinite;
+}
+
+/* =========================================================
+   BPH HOVER
+========================================================= */
 
 .bph-card:hover {
   transform: translateY(-6px);
 
-  border-color: rgba(139, 199, 255, 0.25);
+  border-color: rgba(56, 189, 248, 0.35);
 
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37, 99, 235, 0.07),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(37, 99, 235, 0.07);
 }
 
+/* =========================================================
+   BPH ORBIT
+========================================================= */
+
+@keyframes bphOrbit {
+  0% {
+    top: 0;
+    left: 0;
+    background: #38bdf8;
+  }
+
+  25% {
+    top: 0;
+    left: calc(100% - 13px);
+    background: #60a5fa;
+  }
+
+  50% {
+    top: calc(100% - 13px);
+    left: calc(100% - 13px);
+    background: #2563eb;
+  }
+
+  75% {
+    top: calc(100% - 13px);
+    left: 0;
+    background: #93c5fd;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    background: #38bdf8;
+  }
+}
 
 /* =========================================================
    BPH PHOTO
@@ -807,7 +1038,7 @@
 
   overflow: hidden;
 
-  background: #0d1728;
+  background: #0a1b34;
 }
 
 .bph-photo img {
@@ -815,6 +1046,7 @@
   height: 100%;
 
   object-fit: cover;
+
   display: block;
 
   filter: grayscale(12%);
@@ -826,9 +1058,9 @@
 
 .bph-card:hover .bph-photo img {
   transform: scale(1.035);
+
   filter: grayscale(0%);
 }
-
 
 /* =========================================================
    BPH NUMBER
@@ -842,21 +1074,21 @@
 
   padding: 7px 9px;
 
-  background: rgba(8, 15, 28, 0.78);
+  background: rgba(3, 12, 28, 0.78);
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(147, 197, 253, 0.14);
 
   border-radius: 7px;
 
-  color: #9bd0ff;
+  color: #93c5fd;
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 1px;
 
   backdrop-filter: blur(8px);
 }
-
 
 /* =========================================================
    BPH INFO
@@ -871,10 +1103,11 @@
 
   margin-bottom: 7px;
 
-  color: #8bc7ff;
+  color: #93c5fd;
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
@@ -898,7 +1131,6 @@
   line-height: 1.7;
 }
 
-
 /* =========================================================
    DIVISION SECTION
 ========================================================= */
@@ -907,16 +1139,17 @@
   position: relative;
 
   display: grid;
+
   grid-template-columns: 1fr;
 
   gap: 65px;
 
   margin-top: 150px;
+
   padding-top: 80px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(147, 197, 253, 0.08);
 }
-
 
 /* =========================================================
    DIVISION HEADER
@@ -939,7 +1172,6 @@
   letter-spacing: 4px;
 }
 
-
 /* =========================================================
    DIVISION TITLE
 ========================================================= */
@@ -959,9 +1191,27 @@
 }
 
 .hmti-divisions-cta h3 span {
-  color: #8bc7ff;
-}
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #dbeafe,
+    #93c5fd,
+    #38bdf8,
+    #2563eb,
+    #ffffff
+  );
 
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    communityGradient 5s ease infinite,
+    communityBlink 2.5s ease-in-out infinite;
+}
 
 /* =========================================================
    DIVISION DESCRIPTION
@@ -978,7 +1228,6 @@
   line-height: 1.9;
 }
 
-
 /* =========================================================
    DIVISION LIST
 ========================================================= */
@@ -993,7 +1242,6 @@
   margin-top: 55px;
 }
 
-
 /* =========================================================
    DIVISION ITEM
 ========================================================= */
@@ -1006,7 +1254,9 @@
   padding: 25px 28px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
 
   overflow: hidden;
@@ -1014,11 +1264,11 @@
   background:
     linear-gradient(
       135deg,
-      rgba(139, 199, 255, 0.045),
+      rgba(96, 165, 250, 0.06),
       rgba(255, 255, 255, 0.012)
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(96, 165, 250, 0.14);
 
   border-radius: 16px;
 
@@ -1031,6 +1281,72 @@
   cursor: default;
 }
 
+/* =========================================================
+   MOVING LIGHT
+========================================================= */
+
+.division-item::before {
+  content: "";
+
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  top: 0;
+  left: 0;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 8px #38bdf8,
+    0 0 18px rgba(56, 189, 248, 0.75),
+    0 0 30px rgba(37, 99, 235, 0.5);
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  animation: divisionOrbit 4.8s linear infinite;
+}
+
+/* =========================================================
+   DIVISION ORBIT
+========================================================= */
+
+@keyframes divisionOrbit {
+  0% {
+    top: 0;
+    left: 0;
+    background: #38bdf8;
+  }
+
+  25% {
+    top: 0;
+    left: calc(100% - 12px);
+    background: #60a5fa;
+  }
+
+  50% {
+    top: calc(100% - 12px);
+    left: calc(100% - 12px);
+    background: #2563eb;
+  }
+
+  75% {
+    top: calc(100% - 12px);
+    left: 0;
+    background: #93c5fd;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    background: #38bdf8;
+  }
+}
 
 /* =========================================================
    CORNER DETAIL
@@ -1047,7 +1363,7 @@
   width: 90px;
   height: 90px;
 
-  border: 1px solid rgba(139, 199, 255, 0.12);
+  border: 1px solid rgba(147, 197, 253, 0.12);
 
   border-radius: 18px;
 
@@ -1058,16 +1374,17 @@
     border-color 0.4s ease;
 }
 
-
 /* =========================================================
-   NUMBER
+   DIVISION NUMBER
 ========================================================= */
 
 .division-item span {
   position: relative;
+
   z-index: 2;
 
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -1080,22 +1397,16 @@
   letter-spacing: 3px;
 }
 
-
-/* =========================================================
-   BLUE DASH
-========================================================= */
-
 .division-item span::before {
   content: "";
 
   width: 18px;
   height: 1px;
 
-  background: #8bc7ff;
+  background: #93c5fd;
 
   transition: width 0.3s ease;
 }
-
 
 /* =========================================================
    DIVISION NAME
@@ -1103,6 +1414,7 @@
 
 .division-item strong {
   position: relative;
+
   z-index: 2;
 
   display: block;
@@ -1120,7 +1432,6 @@
     color 0.35s ease;
 }
 
-
 /* =========================================================
    DIVISION HOVER
 ========================================================= */
@@ -1128,23 +1439,24 @@
 .division-item:hover {
   transform: translateY(-6px);
 
-  border-color: rgba(139, 199, 255, 0.25);
+  border-color: rgba(56, 189, 248, 0.3);
 
   background:
     linear-gradient(
       135deg,
-      rgba(139, 199, 255, 0.075),
-      rgba(255, 255, 255, 0.02)
+      rgba(37, 99, 235, 0.09),
+      rgba(96, 165, 250, 0.025)
     );
 
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.2);
+    0 16px 40px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(37, 99, 235, 0.06);
 }
 
 .division-item:hover::after {
   transform: rotate(45deg) translate(-10px, -10px);
 
-  border-color: rgba(139, 199, 255, 0.24);
+  border-color: rgba(147, 197, 253, 0.25);
 }
 
 .division-item:hover span {
@@ -1158,9 +1470,8 @@
 .division-item:hover strong {
   transform: translateX(5px);
 
-  color: #9bd0ff;
+  color: #93c5fd;
 }
-
 
 /* =========================================================
    DIVISION BUTTON
@@ -1170,6 +1481,7 @@
   justify-self: start;
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
@@ -1179,7 +1491,7 @@
 
   padding: 18px 24px;
 
-  background: #edf6ff;
+  background: #eff6ff;
 
   color: #0a111f;
 
@@ -1222,7 +1534,7 @@
 }
 
 .division-button:hover strong {
-  color: #5caeff;
+  color: #2563eb;
 
   transform: translateX(5px);
 }
@@ -1231,12 +1543,19 @@
   transform: translateY(-1px) scale(0.98);
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  .about-header {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .informatics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .hmti-header,
   .bph-header {
@@ -1271,39 +1590,183 @@
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
+  .about-section {
+    min-height: auto;
+
+    padding: 80px 5% 70px;
+  }
+
+  .section-label {
+    margin-bottom: 38px;
+
+    gap: 10px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .section-label span {
+    font-size: 9px;
+  }
+
+  .about-header {
+    gap: 30px;
+  }
+
+  .about-header h2 {
+    font-size: 46px;
+    letter-spacing: -3px;
+  }
+
+  .about-description {
+    gap: 14px;
+    max-width: 100%;
+  }
+
+  .description-line {
+    height: 78px;
+  }
+
+  .about-description p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+     ABOUT CARDS
+  ===================================================== */
+
+  .informatics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 11px;
+
+    margin-top: 55px;
+  }
+
+  .informatics-card {
+    min-height: 190px;
+
+    padding: 17px;
+
+    border-radius: 17px;
+  }
+
+  .informatics-card > span {
+    top: 14px;
+    right: 14px;
+
+    font-size: 7px;
+  }
+
+  .card-icon {
+    margin-top: 10px;
+    margin-bottom: 17px;
+
+    font-size: 25px;
+  }
+
+  .informatics-card h3 {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+  }
+
+  .informatics-card p {
+    max-width: 100%;
+
+    font-size: 9.5px;
+
+    line-height: 1.55;
+  }
+
+  .informatics-card::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* =====================================================
+     VISI MISI
+  ===================================================== */
+
+  .vision-content {
+    gap: 22px;
+
+    margin-top: 25px;
+  }
+
+  .vision-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .vision-block p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+     HMTI
+  ===================================================== */
 
   .hmti-section {
-    padding: 90px 5% 70px;
+    min-height: auto;
+
+    padding: 80px 5% 70px;
   }
 
   .back-button {
+    margin-bottom: 48px;
+
+    font-size: 8px;
+  }
+
+  .hmti-header {
     margin-bottom: 55px;
   }
 
   .hmti-title h2 {
-    font-size: 64px;
+    font-size: 58px;
+
     letter-spacing: -4px;
   }
 
-  .hmti-header {
-    margin-bottom: 60px;
+  .hmti-mini {
+    margin-bottom: 15px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
   }
 
+  .hmti-description p {
+    margin-bottom: 15px;
 
-  /* VISI MISI */
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+     VISI MISI MOBILE
+  ===================================================== */
 
   .hmti-visimisi {
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 28px;
 
-    padding: 30px 22px;
+    padding: 25px 20px;
+
+    border-radius: 17px;
   }
 
   .hmti-visimisi::after {
@@ -1311,118 +1774,373 @@
   }
 
   .visimisi-column + .visimisi-column {
-    padding-top: 35px;
+    padding-top: 28px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(147, 197, 253, 0.08);
   }
 
   .visimisi-column h3 {
-    font-size: 24px;
+    font-size: 22px;
+
+    margin-bottom: 13px;
   }
 
   .visimisi-column p,
   .visimisi-column li {
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 12px;
+
+    line-height: 1.65;
   }
 
+  .visimisi-column li {
+    margin-bottom: 9px;
+  }
 
-  /* BPH */
+  /* =====================================================
+     BPH
+  ===================================================== */
 
   .bph-section {
     padding: 80px 5% 70px;
   }
 
   .bph-header {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
 
   .bph-header h2 {
-    font-size: 64px;
+    font-size: 58px;
+
     letter-spacing: -4px;
   }
 
+  .bph-header > p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+     BPH 2 COLUMN
+  ===================================================== */
+
   .bph-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 11px;
+  }
+
+  .bph-card {
+    border-radius: 15px;
   }
 
   .bph-photo {
-    height: 330px;
+    height: 205px;
   }
 
+  .bph-number {
+    top: 9px;
+    right: 9px;
 
-  /* CTA */
+    padding: 5px 6px;
+
+    font-size: 7px;
+  }
+
+  .bph-info {
+    padding: 13px 13px 15px;
+  }
+
+  .bph-info > span {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .bph-info h3 {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+  }
+
+  .bph-info p {
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+  .bph-card::before {
+    width: 9px;
+    height: 9px;
+  }
+
+  /* =====================================================
+     DIVISION CTA
+  ===================================================== */
 
   .hmti-divisions-cta {
-    margin-top: 90px;
-    padding-top: 55px;
+    margin-top: 80px;
 
-    gap: 45px;
+    padding-top: 50px;
+
+    gap: 35px;
+  }
+
+  .division-mini {
+    margin-bottom: 18px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
   }
 
   .hmti-divisions-cta h3 {
-    font-size: 54px;
-    letter-spacing: -4px;
+    font-size: 48px;
+
+    letter-spacing: -3px;
   }
 
   .hmti-divisions-cta > .division-cta-content > p {
-    margin-top: 30px;
+    margin-top: 25px;
 
-    font-size: 11px;
-    line-height: 1.9;
+    font-size: 10px;
+
+    line-height: 1.75;
   }
 
+  /* =====================================================
+     DIVISION 2 COLUMN
+  ===================================================== */
+
   .division-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-top: 35px;
+    margin-top: 30px;
   }
 
   .division-item {
-    min-height: 120px;
+    min-height: 105px;
 
-    padding: 22px;
-  }
+    padding: 17px;
 
-  .division-item strong {
-    font-size: 31px;
+    border-radius: 13px;
   }
 
   .division-item span {
-    font-size: 8px;
+    gap: 6px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .division-item span::before {
+    width: 12px;
+  }
+
+  .division-item strong {
+    font-size: 21px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .division-item::before {
+    width: 9px;
+    height: 9px;
   }
 
   .hmti-divisions-cta > .division-button {
     width: 100%;
-    margin-top: 5px;
+
+    min-width: 0;
+
+    padding: 15px 20px;
+
+    margin-top: 0;
+
+    font-size: 8px;
   }
 }
-
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 420px) {
+  .about-section,
+  .hmti-section,
+  .bph-section {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .about-header h2 {
+    font-size: 40px;
+  }
 
   .hmti-title h2,
   .bph-header h2 {
-    font-size: 54px;
+    font-size: 50px;
   }
 
   .hmti-description p,
   .bph-header > p {
+    font-size: 11px;
+  }
+
+  /* tetap 2 kolom */
+
+  .informatics-grid,
+  .bph-grid,
+  .division-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .informatics-grid {
+    gap: 8px;
+  }
+
+  .informatics-card {
+    min-height: 175px;
+
+    padding: 14px;
+
+    border-radius: 15px;
+  }
+
+  .informatics-card h3 {
     font-size: 13px;
   }
 
+  .informatics-card p {
+    font-size: 8.5px;
+  }
+
+  .card-icon {
+    font-size: 22px;
+
+    margin-bottom: 14px;
+  }
+
+  .bph-grid {
+    gap: 8px;
+  }
+
   .bph-photo {
-    height: 280px;
+    height: 175px;
+  }
+
+  .bph-info {
+    padding: 11px;
+  }
+
+  .bph-info h3 {
+    font-size: 12px;
+  }
+
+  .bph-info p {
+    font-size: 8px;
   }
 
   .hmti-divisions-cta h3 {
-    font-size: 42px;
+    font-size: 40px;
+
     letter-spacing: -2px;
+  }
+
+  .division-list {
+    gap: 8px;
+  }
+
+  .division-item {
+    min-height: 95px;
+
+    padding: 14px;
+  }
+
+  .division-item strong {
+    font-size: 18px;
+  }
+
+  .division-item span {
+    font-size: 6.5px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 340px) {
+  .about-header h2 {
+    font-size: 36px;
+  }
+
+  .hmti-title h2,
+  .bph-header h2 {
+    font-size: 44px;
+  }
+
+  .informatics-card {
+    min-height: 160px;
+
+    padding: 12px;
+  }
+
+  .informatics-card h3 {
+    font-size: 12px;
+  }
+
+  .informatics-card p {
+    font-size: 8px;
+  }
+
+  .bph-photo {
+    height: 155px;
+  }
+
+  .bph-info h3 {
+    font-size: 11px;
+  }
+
+  .division-item {
+    min-height: 88px;
+
+    padding: 12px;
+  }
+
+  .division-item strong {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .informatics-card::before,
+  .bph-card::before,
+  .division-item::before,
+  .community,
+  .community-title,
+  .community-text,
+  .about-header h2 span,
+  .hmti-title h2 span,
+  .bph-header h2 span,
+  .hmti-divisions-cta h3 span {
+    animation: none;
+  }
+
+  .informatics-card,
+  .bph-card,
+  .division-item,
+  .back-button,
+  .division-button {
+    transition: none;
   }
 }

@@ -912,29 +912,225 @@
    RESPONSIVE — 600px
 ========================================================= */
 
-@media (max-width: 600px) {
+/* =========================================================
+   RESPONSIVE — 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  /* =========================
+     BPH
+  ========================= */
+
+  .bph-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  /*
+    Pola:
+
+    [ 1 ]   [ 2 ↓ ]   [ 3 ]
+    [ 4 ]   [ 5 ↓ ]   [ 6 ]
+  */
+
+  .bph-card:nth-child(2),
+  .bph-card:nth-child(5) {
+    margin-top: 45px;
+  }
+
+  .bph-card:nth-child(4),
+  .bph-card:nth-child(6) {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  /* =========================
+     VISI MISI
+  ========================= */
+
+  .hmti-visimisi {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+  }
 
   .visimisi-column {
-    min-height: 320px;
-
-    padding: 35px 25px;
+    min-height: 340px;
+    padding: 42px 30px;
   }
 
   .visimisi-column + .visimisi-column {
     padding:
-      35px 25px;
+      42px 30px;
+
+    border-left:
+      1px solid rgba(255, 255, 255, 0.075);
+  }
+
+
+  /* =========================
+     BPH SECTION
+  ========================= */
+
+  .bph-section {
+    padding:
+      120px 6% 100px;
+  }
+
+  .bph-header {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+
+  /* =========================
+     BPH GRID
+  ========================= */
+
+  .bph-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 35px 22px;
+
+    padding-bottom: 40px;
+  }
+
+
+  /*
+    ZIG-ZAG
+
+    [ 1 ]       [ 2 ↓ ]
+
+    [ 3 ]       [ 4 ↓ ]
+
+    [ 5 ]       [ 6 ↓ ]
+  */
+
+  .bph-card:nth-child(1),
+  .bph-card:nth-child(3),
+  .bph-card:nth-child(5) {
+    margin-top: 0;
+  }
+
+  .bph-card:nth-child(2),
+  .bph-card:nth-child(4),
+  .bph-card:nth-child(6) {
+    margin-top: 40px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  /* =========================
+     VISI MISI
+  ========================= */
+
+  .hmti-visimisi {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .visimisi-column {
+    min-height: 0;
+    height: auto;
+
+    padding:
+      24px 17px 25px;
+
+    border-radius: 14px;
+  }
+
+  .visimisi-column + .visimisi-column {
+    padding:
+      24px 17px 25px;
+
+    border-left:
+      1px solid rgba(255, 255, 255, 0.075);
+  }
+
+  .visimisi-column::before {
+    left: 18px;
+    right: 18px;
+  }
+
+  .visimisi-column::after {
+    right: 10px;
+    bottom: 10px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  .visimisi-number {
+    margin-bottom: 20px;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .visimisi-number::before {
+    width: 18px;
+    height: 1px;
+    margin-right: 7px;
   }
 
   .visimisi-column h3 {
-    font-size: 35px;
+    margin-bottom: 16px;
 
-    letter-spacing: -2px;
+    font-size: 27px;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
   }
 
-  .visimisi-column p,
+  .visimisi-column h3::after {
+    width: 30px;
+    margin-top: 11px;
+  }
+
+  .visimisi-column p {
+    font-size: 9.5px;
+    line-height: 1.7;
+  }
+
+  .visimisi-column ul {
+    gap: 6px;
+  }
+
   .visimisi-column li {
-    font-size: 11px;
+    padding:
+      9px 7px 9px 22px;
+
+    font-size: 9px;
+    line-height: 1.55;
+
+    border-radius: 7px;
   }
+
+  .visimisi-column li::before {
+    left: 7px;
+    font-size: 9px;
+  }
+
+
+  /* =========================
+     BPH SECTION
+  ========================= */
 
   .bph-section {
     padding:
@@ -943,13 +1139,11 @@
 
   .bph-header {
     gap: 30px;
-
-    margin-bottom: 65px;
+    margin-bottom: 55px;
   }
 
   .bph-header h2 {
     font-size: 68px;
-
     letter-spacing: -5px;
   }
 
@@ -957,23 +1151,308 @@
     font-size: 11px;
   }
 
-  .bph-grid {
-    grid-template-columns: 1fr;
 
-    gap: 40px;
+  /* =========================
+     BPH GRID
+  ========================= */
+
+  .bph-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 30px 12px;
+
+    padding-bottom: 0;
   }
 
-  .bph-card:nth-child(2),
+
+  /*
+    Di HP zig-zag tetap ada:
+
+    [ 1 ]       [ 2 ↓ ]
+
+    [ 3 ]       [ 4 ↓ ]
+
+    [ 5 ]       [ 6 ↓ ]
+  */
+
+  .bph-card:nth-child(1),
+  .bph-card:nth-child(3),
   .bph-card:nth-child(5) {
     margin-top: 0;
   }
 
+  .bph-card:nth-child(2),
+  .bph-card:nth-child(4),
+  .bph-card:nth-child(6) {
+    margin-top: 30px;
+  }
+
+
+  /* =========================
+     BPH INFO
+  ========================= */
+
   .bph-info {
-    padding-bottom: 25px;
+    padding:
+      15px 0 25px;
   }
 
   .bph-info h3 {
-    font-size: 18px;
+    font-size: 15px;
+  }
+
+  .bph-info p {
+    font-size: 8.5px;
+  }
+
+  .bph-info > span {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 420px
+========================================================= */
+
+@media (max-width: 420px) {
+
+  /* =========================
+     VISI MISI
+  ========================= */
+
+  .hmti-visimisi {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .visimisi-column {
+    min-height: 0;
+    height: auto;
+
+    padding:
+      20px 13px 21px;
+
+    border-radius: 12px;
+  }
+
+  .visimisi-column + .visimisi-column {
+    padding:
+      20px 13px 21px;
+  }
+
+  .visimisi-column::before {
+    left: 14px;
+    right: 14px;
+  }
+
+  .visimisi-column::after {
+    right: 7px;
+    bottom: 7px;
+
+    width: 22px;
+    height: 22px;
+  }
+
+  .visimisi-number {
+    margin-bottom: 17px;
+
+    font-size: 6.5px;
+    letter-spacing: 1.3px;
+  }
+
+  .visimisi-number::before {
+    width: 15px;
+    margin-right: 6px;
+  }
+
+  .visimisi-column h3 {
+    font-size: 23px;
+    letter-spacing: -1px;
+    margin-bottom: 13px;
+  }
+
+  .visimisi-column h3::after {
+    width: 25px;
+    margin-top: 9px;
+  }
+
+  .visimisi-column p {
+    font-size: 8.5px;
+    line-height: 1.6;
+  }
+
+  .visimisi-column ul {
+    gap: 5px;
+  }
+
+  .visimisi-column li {
+    padding:
+      8px 6px 8px 19px;
+
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .visimisi-column li::before {
+    left: 6px;
+    font-size: 8px;
+  }
+
+
+  /* =========================
+     BPH
+  ========================= */
+
+  .bph-section {
+    padding:
+      80px 12px 65px;
+  }
+
+  .bph-header {
+    margin-bottom: 50px;
+  }
+
+  .bph-header h2 {
+    font-size: 52px;
+    letter-spacing: -4px;
+  }
+
+  .bph-header > p {
+    font-size: 9.5px;
+    line-height: 1.8;
+  }
+
+  .bph-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 25px 9px;
+  }
+
+
+  /* =========================
+     BPH ZIG-ZAG
+  ========================= */
+
+  .bph-card:nth-child(1),
+  .bph-card:nth-child(3),
+  .bph-card:nth-child(5) {
+    margin-top: 0;
+  }
+
+  .bph-card:nth-child(2),
+  .bph-card:nth-child(4),
+  .bph-card:nth-child(6) {
+    margin-top: 25px;
+  }
+
+
+  /* =========================
+     BPH INFO
+  ========================= */
+
+  .bph-info {
+    padding:
+      15px 0 20px;
+  }
+
+  .bph-info h3 {
+    font-size: 13px;
+  }
+
+  .bph-info p {
+    font-size: 7.5px;
+  }
+
+  .bph-info > span {
+    font-size: 6px;
+    letter-spacing: 1.4px;
+  }
+
+  .bph-number {
+    top: 9px;
+    right: 9px;
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 340px
+========================================================= */
+
+@media (max-width: 340px) {
+
+  /* =========================
+     VISI MISI
+  ========================= */
+
+  .hmti-visimisi {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .visimisi-column {
+    padding:
+      18px 10px 19px;
+  }
+
+  .visimisi-column + .visimisi-column {
+    padding:
+      18px 10px 19px;
+  }
+
+  .visimisi-column h3 {
+    font-size: 21px;
+    letter-spacing: -0.8px;
+  }
+
+  .visimisi-column p,
+  .visimisi-column li {
+    font-size: 8px;
+  }
+
+  .visimisi-column li {
+    padding:
+      8px 5px 8px 18px;
+  }
+
+  .visimisi-column li::before {
+    left: 5px;
+    font-size: 8px;
+  }
+
+
+  /* =========================
+     BPH
+  ========================= */
+
+  .bph-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px 7px;
+  }
+
+  .bph-card:nth-child(2),
+  .bph-card:nth-child(4),
+  .bph-card:nth-child(6) {
+    margin-top: 20px;
+  }
+
+  .bph-info h3 {
+    font-size: 12px;
+  }
+
+  .bph-info p {
+    font-size: 7px;
   }
 }
 
