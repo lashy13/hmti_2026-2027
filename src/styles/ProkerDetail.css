@@ -1,6 +1,12 @@
+
 /* =========================================================
    PROKER DETAIL
+   RESPONSIVE VERSION
 ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
 
 .proker-detail {
   --accent: #00d9ff;
@@ -8,6 +14,7 @@
   --accent-light: #8beaff;
 
   position: relative;
+
   width: 100%;
   min-height: 100vh;
 
@@ -26,218 +33,12 @@
       rgba(255, 255, 255, 0.035),
       transparent 18%
     ),
-    radial-gradient(
-      circle at 50% 85%,
-      rgba(255, 255, 255, 0.025),
-      transparent 25%
-    ),
     linear-gradient(
       180deg,
       #02050b 0%,
       #050a13 45%,
       #030711 100%
     );
-}
-
-
-/* =========================================================
-   RANDOM STAR FIELD
-========================================================= */
-
-.proker-detail::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 7% 13%,
-      rgba(255, 255, 255, 0.7) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 19% 42%,
-      rgba(255, 255, 255, 0.45) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 31% 8%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 43% 27%,
-      rgba(255, 255, 255, 0.35) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 57% 12%,
-      rgba(255, 255, 255, 0.6) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 68% 34%,
-      rgba(255, 255, 255, 0.45) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 81% 9%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 94% 25%,
-      rgba(255, 255, 255, 0.4) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 12% 67%,
-      rgba(255, 255, 255, 0.35) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 27% 83%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 39% 61%,
-      rgba(255, 255, 255, 0.3) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 53% 76%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 64% 55%,
-      rgba(255, 255, 255, 0.35) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 76% 88%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 88% 64%,
-      rgba(255, 255, 255, 0.35) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 97% 91%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 1.5px
-    );
-
-  opacity: 0.45;
-
-  animation:
-    randomStarsFloat 18s ease-in-out infinite alternate;
-}
-
-@keyframes randomStarsFloat {
-  0% {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.35;
-  }
-
-  50% {
-    opacity: 0.55;
-  }
-
-  100% {
-    transform: translate3d(-8px, 6px, 0);
-    opacity: 0.4;
-  }
-}
-
-
-/* =========================================================
-   RANDOM GLOWING STARS
-========================================================= */
-
-.proker-detail::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 14% 29%,
-      rgba(255, 255, 255, 0.9) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 36% 18%,
-      rgba(255, 255, 255, 0.75) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 61% 23%,
-      rgba(255, 255, 255, 0.8) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 84% 39%,
-      rgba(255, 255, 255, 0.7) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 22% 72%,
-      rgba(255, 255, 255, 0.65) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 47% 91%,
-      rgba(255, 255, 255, 0.7) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 73% 67%,
-      rgba(255, 255, 255, 0.75) 0 1.5px,
-      transparent 3px
-    ),
-    radial-gradient(
-      circle at 92% 82%,
-      rgba(255, 255, 255, 0.6) 0 1.5px,
-      transparent 3px
-    );
-
-  opacity: 0.5;
-
-  animation:
-    starsBlink 5s ease-in-out infinite;
-}
-
-@keyframes starsBlink {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-
-  25% {
-    opacity: 0.55;
-  }
-
-  50% {
-    opacity: 0.35;
-  }
-
-  75% {
-    opacity: 0.65;
-  }
 }
 
 
@@ -283,20 +84,197 @@
 
 
 /* =========================================================
+   STAR FIELD
+========================================================= */
+
+.proker-detail::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 7% 13%,
+      rgba(255,255,255,.7) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 19% 42%,
+      rgba(255,255,255,.45) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 31% 8%,
+      rgba(255,255,255,.55) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 43% 27%,
+      rgba(255,255,255,.35) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 57% 12%,
+      rgba(255,255,255,.6) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 68% 34%,
+      rgba(255,255,255,.45) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 81% 9%,
+      rgba(255,255,255,.55) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 94% 25%,
+      rgba(255,255,255,.4) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 12% 67%,
+      rgba(255,255,255,.35) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 27% 83%,
+      rgba(255,255,255,.55) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 39% 61%,
+      rgba(255,255,255,.3) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 53% 76%,
+      rgba(255,255,255,.5) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 64% 55%,
+      rgba(255,255,255,.35) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 76% 88%,
+      rgba(255,255,255,.5) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 88% 64%,
+      rgba(255,255,255,.35) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 97% 91%,
+      rgba(255,255,255,.55) 0 1px,
+      transparent 1.5px);
+
+  opacity: .45;
+
+  animation:
+    randomStarsFloat 18s ease-in-out infinite alternate;
+}
+
+@keyframes randomStarsFloat {
+  0% {
+    transform: translate3d(0,0,0);
+    opacity: .35;
+  }
+
+  50% {
+    opacity: .55;
+  }
+
+  100% {
+    transform: translate3d(-8px,6px,0);
+    opacity: .4;
+  }
+}
+
+
+/* =========================================================
+   GLOWING STARS
+========================================================= */
+
+.proker-detail::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 14% 29%,
+      rgba(255,255,255,.9) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 36% 18%,
+      rgba(255,255,255,.75) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 61% 23%,
+      rgba(255,255,255,.8) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 84% 39%,
+      rgba(255,255,255,.7) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 22% 72%,
+      rgba(255,255,255,.65) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 47% 91%,
+      rgba(255,255,255,.7) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 73% 67%,
+      rgba(255,255,255,.75) 0 1.5px,
+      transparent 3px),
+
+    radial-gradient(circle at 92% 82%,
+      rgba(255,255,255,.6) 0 1.5px,
+      transparent 3px);
+
+  opacity: .5;
+
+  animation: starsBlink 5s ease-in-out infinite;
+}
+
+@keyframes starsBlink {
+  0%,100% {
+    opacity: .25;
+  }
+
+  25% {
+    opacity: .55;
+  }
+
+  50% {
+    opacity: .35;
+  }
+
+  75% {
+    opacity: .65;
+  }
+}
+
+
+/* =========================================================
    BACK BUTTON
 ========================================================= */
 
 .proker-top-back {
   position: relative;
+
   z-index: 20;
 
-  width: min(1200px, 86%);
+  width: min(1200px, calc(100% - 40px));
+
   margin: 0 auto;
 
-  padding-top: 105px;
+  padding-top: clamp(85px, 10vw, 105px);
 }
 
 .proker-back-button {
+  position: relative;
+
   display: inline-flex;
 
   align-items: center;
@@ -304,25 +282,78 @@
 
   gap: 10px;
 
+  min-height: 42px;
+
   padding: 10px 17px;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255,255,255,.12);
+
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(255,255,255,.035);
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255,255,255,.7);
 
   font-size: 10px;
   font-weight: 800;
 
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
 
   cursor: pointer;
 
   backdrop-filter: blur(12px);
 
-  transition: 0.3s ease;
+  transition:
+    color .3s ease,
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SPLIT BORDER EFFECT
+========================================================= */
+
+.proker-back-button::before,
+.proker-back-button::after {
+  content: "";
+
+  position: absolute;
+
+  height: 1px;
+
+  width: 35%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 10px var(--accent);
+
+  opacity: .7;
+
+  transition:
+    width .4s ease,
+    opacity .4s ease;
+}
+
+.proker-back-button::before {
+  top: -1px;
+  left: 10%;
+}
+
+.proker-back-button::after {
+  bottom: -1px;
+  right: 10%;
+}
+
+.proker-back-button:hover::before,
+.proker-back-button:hover::after {
+  width: 42%;
+  opacity: 1;
 }
 
 .proker-back-button:hover {
@@ -345,7 +376,7 @@
 
   line-height: 1;
 
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 
 .proker-back-button:hover .back-arrow {
@@ -360,14 +391,17 @@
 .proker-hero {
   position: relative;
 
-  min-height: 570px;
+  min-height: clamp(470px, 65vh, 570px);
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  padding: 70px 7% 100px;
+  padding:
+    clamp(60px, 7vw, 80px)
+    clamp(20px, 7vw, 7%)
+    clamp(80px, 10vw, 100px);
 
   overflow: hidden;
 
@@ -381,22 +415,23 @@
 
 .proker-grid {
   position: absolute;
+
   inset: 0;
 
   z-index: 1;
 
   pointer-events: none;
 
-  opacity: 0.2;
+  opacity: .2;
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.035) 1px,
+      rgba(255,255,255,.035) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.035) 1px,
+      rgba(255,255,255,.035) 1px,
       transparent 1px
     );
 
@@ -405,27 +440,22 @@
   mask-image:
     linear-gradient(
       to bottom,
-      transparent 0%,
+      transparent,
       black 18%,
       black 65%,
-      transparent 100%
+      transparent
     );
 
-  animation:
-    gridMove 18s linear infinite;
+  animation: gridMove 18s linear infinite;
 }
 
 @keyframes gridMove {
   from {
-    background-position:
-      0 0,
-      0 0;
+    background-position: 0 0,0 0;
   }
 
   to {
-    background-position:
-      55px 55px,
-      55px 55px;
+    background-position: 55px 55px,55px 55px;
   }
 }
 
@@ -443,14 +473,14 @@
 
   filter: blur(80px);
 
-  opacity: 0.1;
+  opacity: .1;
 
   z-index: 1;
 }
 
 .proker-orb-one {
-  width: 360px;
-  height: 360px;
+  width: min(360px, 65vw);
+  height: min(360px, 65vw);
 
   top: -120px;
   left: 50%;
@@ -459,28 +489,25 @@
 
   background: var(--accent);
 
-  animation:
-    orbOne 8s ease-in-out infinite;
+  animation: orbOne 8s ease-in-out infinite;
 }
 
 .proker-orb-two {
-  width: 220px;
-  height: 220px;
+  width: min(220px, 40vw);
+  height: min(220px, 40vw);
 
   right: 8%;
   bottom: 8%;
 
   background: var(--accent);
 
-  opacity: 0.055;
+  opacity: .055;
 
-  animation:
-    orbTwo 10s ease-in-out infinite;
+  animation: orbTwo 10s ease-in-out infinite;
 }
 
 @keyframes orbOne {
-  0%,
-  100% {
+  0%,100% {
     transform:
       translateX(-50%)
       translateY(0)
@@ -496,8 +523,7 @@
 }
 
 @keyframes orbTwo {
-  0%,
-  100% {
+  0%,100% {
     transform:
       translateY(0)
       scale(1);
@@ -512,7 +538,7 @@
 
 
 /* =========================================================
-   LARGE BACKGROUND TEXT
+   HERO NUMBER
 ========================================================= */
 
 .proker-hero-number {
@@ -526,17 +552,19 @@
 
   z-index: 2;
 
+  max-width: 100%;
+
   font-size:
-    clamp(110px, 19vw, 280px);
+    clamp(90px, 19vw, 280px);
 
   font-weight: 900;
 
-  letter-spacing: -0.07em;
+  letter-spacing: -.07em;
 
   color: transparent;
 
   -webkit-text-stroke:
-    1px rgba(255, 255, 255, 0.025);
+    1px rgba(255,255,255,.025);
 
   white-space: nowrap;
 
@@ -566,10 +594,14 @@
 ========================================================= */
 
 .proker-label {
+  position: relative;
+
   display: inline-flex;
 
   align-items: center;
   justify-content: center;
+
+  max-width: 100%;
 
   padding: 8px 15px;
 
@@ -585,16 +617,14 @@
 
   font-weight: 800;
 
-  letter-spacing: 0.16em;
+  letter-spacing: .16em;
 
-  animation:
-    labelBlink 3s ease-in-out infinite;
+  animation: labelBlink 3s ease-in-out infinite;
 }
 
 @keyframes labelBlink {
-  0%,
-  100% {
-    opacity: 0.7;
+  0%,100% {
+    opacity: .7;
   }
 
   50% {
@@ -608,23 +638,32 @@
 ========================================================= */
 
 .proker-hero-content h1 {
-  margin: 25px auto 0;
+  width: 100%;
+
+  margin: clamp(20px, 3vw, 25px) auto 0;
 
   max-width: 1000px;
 
   font-size:
-    clamp(42px, 6vw, 82px);
+    clamp(38px, 6vw, 82px);
 
-  line-height: 0.98;
+  line-height: .98;
 
   font-weight: 900;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -.05em;
 
   color: #ffffff;
 
   text-wrap: balance;
+
+  overflow-wrap: anywhere;
 }
+
+
+/* =========================================================
+   TITLE SPLIT LINE
+========================================================= */
 
 .proker-hero-content h1::after {
   content: "";
@@ -638,20 +677,26 @@
 
   border-radius: 999px;
 
-  background: var(--accent);
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      #ffffff,
+      var(--accent),
+      transparent
+    );
 
   box-shadow:
     0 0 14px var(--accent);
 
-  animation:
-    titleLine 2.5s ease-in-out infinite;
+  animation: titleLine 2.5s ease-in-out infinite;
 }
 
 @keyframes titleLine {
-  0%,
-  100% {
+  0%,100% {
     width: 60px;
-    opacity: 0.6;
+    opacity: .6;
   }
 
   50% {
@@ -666,14 +711,17 @@
 ========================================================= */
 
 .proker-hero-content p {
+  width: 100%;
+
   max-width: 750px;
 
   margin: 25px auto 0;
 
   color:
-    rgba(255, 255, 255, 0.6);
+    rgba(255,255,255,.6);
 
-  font-size: 16px;
+  font-size:
+    clamp(13px, 1.5vw, 16px);
 
   line-height: 1.8;
 }
@@ -681,8 +729,6 @@
 
 /* =========================================================
    MAIN CONTENT
-   FOTO = KIRI
-   ABOUT = KANAN
 ========================================================= */
 
 .proker-main-content {
@@ -690,7 +736,7 @@
 
   z-index: 5;
 
-  width: min(1200px, 86%);
+  width: min(1200px, calc(100% - 40px));
 
   margin: 0 auto;
 
@@ -700,18 +746,19 @@
     minmax(0, 1fr)
     minmax(0, 1fr);
 
-  gap: 75px;
+  gap: clamp(40px, 6vw, 75px);
 
   align-items: center;
 
   padding:
-    70px 0
-    110px;
+    clamp(50px, 7vw, 70px)
+    0
+    clamp(80px, 10vw, 110px);
 }
 
 
 /* =========================================================
-   MAIN CONTENT AMBIENT LIGHT
+   MAIN AMBIENT LIGHT
 ========================================================= */
 
 .proker-main-content::before {
@@ -719,14 +766,13 @@
 
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: min(500px, 80vw);
+  height: min(500px, 80vw);
 
   top: 10%;
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   pointer-events: none;
 
@@ -737,7 +783,7 @@
       transparent 65%
     );
 
-  opacity: 0.18;
+  opacity: .18;
 
   filter: blur(40px);
 
@@ -764,7 +810,7 @@
 
   font-weight: 800;
 
-  letter-spacing: 0.2em;
+  letter-spacing: .2em;
 }
 
 .proker-section-label::before {
@@ -785,11 +831,13 @@
 
 
 /* =========================================================
-   ACTIVITY - LEFT
+   ACTIVITY
 ========================================================= */
 
 .proker-activity {
   width: 100%;
+
+  min-width: 0;
 
   grid-column: 1;
 }
@@ -803,33 +851,84 @@
 
   overflow: hidden;
 
-  border-radius: 24px;
+  border-radius: clamp(16px, 2vw, 24px);
 
-  border:
-    1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,.1);
 
-  background:
-    #07101d;
+  background: #07101d;
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 20px 60px rgba(0,0,0,.35),
     0 0 30px var(--accent-soft);
 
   transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+
+/* =========================================================
+   ACTIVITY SPLIT BORDER
+========================================================= */
+
+.proker-activity-wrapper::before,
+.proker-activity-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 6;
+
+  width: 28%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 12px var(--accent);
+
+  opacity: .75;
+
+  transition:
+    width .5s ease,
+    opacity .5s ease;
+}
+
+.proker-activity-wrapper::before {
+  top: 0;
+  left: 7%;
+}
+
+.proker-activity-wrapper::after {
+  right: 7%;
+  bottom: 0;
+
+  transform: rotate(180deg);
+}
+
+.proker-activity-wrapper:hover::before,
+.proker-activity-wrapper:hover::after {
+  width: 40%;
+  opacity: 1;
 }
 
 .proker-activity-wrapper:hover {
-  transform:
-    translateY(-5px);
+  transform: translateY(-5px);
 
-  border-color:
-    var(--accent);
+  border-color: var(--accent);
 
   box-shadow:
-    0 25px 65px rgba(0, 0, 0, 0.4),
+    0 25px 65px rgba(0,0,0,.4),
     0 0 40px var(--accent-soft);
 }
 
@@ -847,17 +946,15 @@
   object-fit: cover;
 
   transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
+    transform .6s ease,
+    filter .6s ease;
 }
 
 .proker-activity-wrapper:hover
 .proker-activity-image {
-  transform:
-    scale(1.05);
+  transform: scale(1.05);
 
-  filter:
-    brightness(1.06);
+  filter: brightness(1.06);
 }
 
 
@@ -890,19 +987,17 @@
 }
 
 .proker-activity-placeholder span {
-  color:
-    var(--accent-light);
+  color: var(--accent-light);
 
   font-size: 12px;
 
   font-weight: 800;
 
-  letter-spacing: 0.16em;
+  letter-spacing: .16em;
 }
 
 .proker-activity-placeholder small {
-  color:
-    rgba(255, 255, 255, 0.4);
+  color: rgba(255,255,255,.4);
 
   font-size: 12px;
 }
@@ -930,12 +1025,11 @@
     linear-gradient(
       100deg,
       transparent,
-      rgba(255, 255, 255, 0.18),
+      rgba(255,255,255,.18),
       transparent
     );
 
-  transform:
-    skewX(-18deg);
+  transform: skewX(-18deg);
 
   animation:
     activityShine 6s ease-in-out infinite;
@@ -946,8 +1040,7 @@
     left: -80%;
   }
 
-  45%,
-  100% {
+  45%,100% {
     left: 150%;
   }
 }
@@ -973,7 +1066,7 @@
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.8),
+      rgba(0,0,0,.8),
       transparent
     );
 }
@@ -985,21 +1078,20 @@
 
   font-weight: 800;
 
-  letter-spacing: 0.14em;
+  letter-spacing: .14em;
 }
 
 
 /* =========================================================
-   ABOUT - RIGHT
+   ABOUT
 ========================================================= */
 
 .proker-about {
   width: 100%;
 
-  grid-column: 2;
+  min-width: 0;
 
-  margin: 0;
-  padding: 0;
+  grid-column: 2;
 }
 
 .proker-about-content {
@@ -1019,18 +1111,23 @@
 
   line-height: 1.05;
 
-  letter-spacing: -0.045em;
+  letter-spacing: -.045em;
+
+  overflow-wrap: anywhere;
 }
 
 .proker-about-content p {
+  width: 100%;
+
   max-width: 540px;
 
   margin: 0;
 
   color:
-    rgba(255, 255, 255, 0.62);
+    rgba(255,255,255,.62);
 
-  font-size: 16px;
+  font-size:
+    clamp(13px, 1.5vw, 16px);
 
   line-height: 1.9;
 }
@@ -1045,35 +1142,29 @@
 
   z-index: 5;
 
-  width: min(1200px, 86%);
+  width: min(1200px, calc(100% - 40px));
 
   margin: 0 auto;
 
   padding:
     30px 0
-    130px;
+    clamp(80px, 12vw, 130px);
 
   text-align: center;
 }
-
-
-/* =========================================================
-   PJ AMBIENT LIGHT
-========================================================= */
 
 .proker-pj-section::before {
   content: "";
 
   position: absolute;
 
-  width: 450px;
+  width: min(450px, 80vw);
   height: 300px;
 
   top: 10%;
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   pointer-events: none;
 
@@ -1084,7 +1175,7 @@
       transparent 70%
     );
 
-  opacity: 0.12;
+  opacity: .12;
 
   filter: blur(45px);
 
@@ -1099,7 +1190,7 @@
 .proker-pj-title {
   margin:
     10px auto
-    55px;
+    clamp(35px, 5vw, 55px);
 
   color: #ffffff;
 
@@ -1110,12 +1201,11 @@
 
   line-height: 1.05;
 
-  letter-spacing: -0.045em;
+  letter-spacing: -.045em;
 }
 
 .proker-pj-title span {
-  color:
-    var(--accent-light);
+  color: var(--accent-light);
 }
 
 
@@ -1130,7 +1220,7 @@
 
   justify-content: center;
 
-  gap: 35px;
+  gap: clamp(18px, 3vw, 35px);
 
   flex-wrap: wrap;
 }
@@ -1143,41 +1233,92 @@
 .proker-pj {
   position: relative;
 
-  width: 280px;
+  width: min(280px, 100%);
 
   padding:
-    35px 25px;
+    clamp(28px, 4vw, 35px)
+    clamp(20px, 3vw, 25px);
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+    1px solid rgba(255,255,255,.08);
 
-  border-radius: 24px;
+  border-radius: clamp(18px, 2vw, 24px);
 
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.015)
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.015)
     );
 
-  backdrop-filter:
-    blur(14px);
+  backdrop-filter: blur(14px);
+
+  overflow: hidden;
 
   transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+
+/* =========================================================
+   PJ SPLIT BORDER
+========================================================= */
+
+.proker-pj::before,
+.proker-pj::after {
+  content: "";
+
+  position: absolute;
+
+  height: 1px;
+
+  width: 32%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 12px var(--accent);
+
+  opacity: .65;
+
+  transition:
+    width .4s ease,
+    opacity .4s ease;
+}
+
+.proker-pj::before {
+  top: 0;
+  left: 8%;
+}
+
+.proker-pj::after {
+  bottom: 0;
+  right: 8%;
+
+  transform: rotate(180deg);
+}
+
+.proker-pj:hover::before,
+.proker-pj:hover::after {
+  width: 42%;
+  opacity: 1;
 }
 
 .proker-pj:hover {
-  transform:
-    translateY(-8px);
+  transform: translateY(-8px);
 
-  border-color:
-    var(--accent);
+  border-color: var(--accent);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 20px 50px rgba(0,0,0,.35),
     0 0 30px var(--accent-soft);
 }
 
@@ -1189,12 +1330,12 @@
 .proker-pj-photo-wrapper {
   position: relative;
 
-  width: 160px;
-  height: 160px;
+  width: clamp(130px, 18vw, 160px);
+  height: clamp(130px, 18vw, 160px);
 
   margin:
     0 auto
-    28px;
+    clamp(22px, 3vw, 28px);
 
   display: flex;
 
@@ -1204,7 +1345,7 @@
 
 
 /* =========================================================
-   PJ ROTATING RING
+   PJ RING
 ========================================================= */
 
 .proker-pj-ring {
@@ -1225,7 +1366,7 @@
       transparent 340deg
     );
 
-  opacity: 0.85;
+  opacity: .85;
 
   animation:
     pjRotate 4s linear infinite;
@@ -1233,8 +1374,7 @@
 
 @keyframes pjRotate {
   to {
-    transform:
-      rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -1248,8 +1388,8 @@
 
   z-index: 2;
 
-  width: 148px;
-  height: 148px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
 
   overflow: hidden;
 
@@ -1258,8 +1398,7 @@
   border:
     4px solid #050b16;
 
-  background:
-    #07101d;
+  background: #07101d;
 
   box-shadow:
     0 0 25px var(--accent-soft);
@@ -1288,10 +1427,9 @@
   align-items: center;
   justify-content: center;
 
-  color:
-    var(--accent-light);
+  color: var(--accent-light);
 
-  font-size: 50px;
+  font-size: clamp(40px, 6vw, 50px);
 
   font-weight: 900;
 
@@ -1313,14 +1451,13 @@
 
   margin-bottom: 10px;
 
-  color:
-    var(--accent-light);
+  color: var(--accent-light);
 
   font-size: 9px;
 
   font-weight: 800;
 
-  letter-spacing: 0.18em;
+  letter-spacing: .18em;
 }
 
 .proker-pj-info h3 {
@@ -1332,13 +1469,15 @@
   font-size: 20px;
 
   line-height: 1.3;
+
+  overflow-wrap: anywhere;
 }
 
 .proker-pj-info p {
   margin: 0;
 
   color:
-    rgba(255, 255, 255, 0.52);
+    rgba(255,255,255,.52);
 
   font-size: 13px;
 
@@ -1347,13 +1486,13 @@
 
 
 /* =========================================================
-   RESPONSIVE - TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
 
   .proker-top-back {
-    width: 90%;
+    width: calc(100% - 36px);
 
     padding-top: 90px;
   }
@@ -1367,33 +1506,58 @@
   }
 
   .proker-main-content {
-    width: 90%;
+    width: calc(100% - 36px);
 
-    gap: 55px;
+    gap: 45px;
   }
 
   .proker-pj-section {
-    width: 90%;
+    width: calc(100% - 36px);
   }
 }
 
 
 /* =========================================================
-   RESPONSIVE - MOBILE
+   TABLET / LARGE PHONE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
   .proker-top-back {
-    padding-top: 80px;
+    width: calc(100% - 32px);
+
+    padding-top: 82px;
+  }
+
+  .proker-hero {
+    min-height: 500px;
+
+    padding:
+      55px 20px
+      80px;
+  }
+
+  .proker-hero-number {
+    font-size: clamp(90px, 22vw, 170px);
+  }
+
+  .proker-hero-content h1 {
+    font-size:
+      clamp(36px, 9vw, 58px);
+  }
+
+  .proker-hero-content p {
+    max-width: 620px;
+
+    font-size: 14px;
   }
 
   .proker-main-content {
-    width: 90%;
+    width: calc(100% - 32px);
 
     grid-template-columns: 1fr;
 
-    gap: 60px;
+    gap: 55px;
 
     padding:
       50px 0
@@ -1408,56 +1572,105 @@
     grid-column: 1;
   }
 
-  .proker-about-content p {
-    max-width: none;
+  .proker-about-content {
+    text-align: center;
   }
 
-  .proker-activity-wrapper {
-    border-radius: 20px;
+  .proker-section-label {
+    justify-content: center;
+  }
+
+  .proker-section-label::before {
+    display: none;
+  }
+
+  .proker-about-content p {
+    max-width: 700px;
+
+    margin: 0 auto;
   }
 
   .proker-pj-section {
-    width: 90%;
+    width: calc(100% - 32px);
 
     padding-bottom: 90px;
   }
 
-  .proker-pj-title {
-    margin-bottom: 40px;
+  .proker-pj-grid {
+    gap: 22px;
   }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
 ========================================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
+
+  .proker-top-back {
+    width: calc(100% - 28px);
+
+    padding-top: 76px;
+  }
+
+  .proker-back-button {
+    padding:
+      9px 14px;
+
+    font-size: 9px;
+
+    letter-spacing: .09em;
+  }
 
   .proker-hero {
-    min-height: 470px;
+    min-height: 460px;
 
     padding:
-      50px 5%
-      75px;
+      45px 16px
+      70px;
   }
 
   .proker-hero-number {
-    font-size: 85px;
+    font-size: 90px;
+  }
+
+  .proker-label {
+    padding:
+      7px 12px;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
   }
 
   .proker-hero-content h1 {
-    font-size: 35px;
+    font-size:
+      clamp(34px, 11vw, 48px);
+
+    letter-spacing: -.04em;
+  }
+
+  .proker-hero-content h1::after {
+    margin-top: 20px;
   }
 
   .proker-hero-content p {
-    font-size: 14px;
+    margin-top: 20px;
 
-    line-height: 1.7;
+    font-size: 13px;
+
+    line-height: 1.75;
   }
 
   .proker-main-content {
-    width: 90%;
+    width: calc(100% - 28px);
+
+    gap: 45px;
+
+    padding:
+      45px 0
+      75px;
   }
 
   .proker-activity-wrapper {
@@ -1466,24 +1679,197 @@
     border-radius: 18px;
   }
 
+  .proker-activity-overlay {
+    padding:
+      55px 18px
+      18px;
+  }
+
+  .proker-activity-overlay span {
+    font-size: 9px;
+  }
+
   .proker-about-content h2 {
-    font-size: 32px;
+    font-size:
+      clamp(28px, 9vw, 38px);
   }
 
   .proker-about-content p {
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.8;
   }
 
   .proker-pj-section {
-    width: 90%;
+    width: calc(100% - 28px);
+
+    padding-bottom: 75px;
+  }
+
+  .proker-pj-title {
+    font-size:
+      clamp(28px, 9vw, 40px);
+
+    margin-bottom: 35px;
+  }
+
+  .proker-pj {
+    width: min(100%, 320px);
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .proker-top-back {
+    width: calc(100% - 24px);
+
+    padding-top: 70px;
+  }
+
+  .proker-hero {
+    min-height: 430px;
+
+    padding:
+      40px 14px
+      65px;
+  }
+
+  .proker-hero-number {
+    font-size: 75px;
+  }
+
+  .proker-hero-content h1 {
+    font-size:
+      clamp(31px, 10.5vw, 43px);
+  }
+
+  .proker-hero-content p {
+    font-size: 12.5px;
+  }
+
+  .proker-main-content {
+    width: calc(100% - 24px);
+
+    gap: 40px;
+
+    padding:
+      40px 0
+      65px;
+  }
+
+  .proker-activity-wrapper {
+    border-radius: 16px;
+  }
+
+  .proker-about-content h2 {
+    font-size: 30px;
+  }
+
+  .proker-about-content p {
+    font-size: 12.5px;
+  }
+
+  .proker-pj-section {
+    width: calc(100% - 24px);
   }
 
   .proker-pj {
     width: 100%;
 
     max-width: 300px;
+  }
+
+  .proker-pj-photo-wrapper {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .proker-top-back {
+    width: calc(100% - 20px);
+
+    padding-top: 65px;
+  }
+
+  .proker-back-button {
+    padding:
+      8px 12px;
+
+    font-size: 8px;
+  }
+
+  .proker-hero {
+    min-height: 410px;
+
+    padding:
+      35px 10px
+      60px;
+  }
+
+  .proker-hero-number {
+    font-size: 65px;
+  }
+
+  .proker-hero-content h1 {
+    font-size: 29px;
+  }
+
+  .proker-hero-content p {
+    font-size: 12px;
+  }
+
+  .proker-main-content {
+    width: calc(100% - 20px);
+  }
+
+  .proker-activity-wrapper {
+    aspect-ratio: 1 / .82;
+  }
+
+  .proker-about-content h2 {
+    font-size: 27px;
+  }
+
+  .proker-pj-section {
+    width: calc(100% - 20px);
+  }
+
+  .proker-pj {
+    max-width: 280px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .proker-top-back {
+    padding-top: 60px;
+  }
+
+  .proker-hero {
+    min-height: 500px;
+
+    padding-top: 50px;
+  }
+
+  .proker-main-content {
+    padding-top: 45px;
   }
 }
 
@@ -1504,5 +1890,12 @@
   .proker-activity-shine,
   .proker-pj-ring {
     animation: none;
+  }
+
+  .proker-pj,
+  .proker-activity-wrapper,
+  .proker-back-button,
+  .proker-activity-image {
+    transition: none;
   }
 }

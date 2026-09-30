@@ -70,6 +70,17 @@ function Hero() {
           </Link>
 
 
+          {/* CERENITY */}
+
+          <Link
+            to="/cerenity"
+            className="hero-action secondary"
+          >
+            CERENITY
+            <span>↗</span>
+          </Link>
+
+
           {/* PRESTASI */}
 
           <Link
@@ -148,6 +159,7 @@ function Hero() {
         {/* ROTATING TEXT */}
 
         <div className="rotating-text">
+
           <svg viewBox="0 0 500 500">
 
             <defs>
@@ -165,12 +177,15 @@ function Hero() {
             </defs>
 
             <text>
+
               <textPath href="#circlePath">
                 TECHNOLOGY • CREATIVITY • INNOVATION • HMTI •
               </textPath>
+
             </text>
 
           </svg>
+
         </div>
 
 
@@ -200,10 +215,12 @@ function Hero() {
           <div className="logo-glow"></div>
 
           <div className="logo-card">
+
             <img
               src={hmtiLogo}
               alt="Logo HMTI"
             />
+
           </div>
 
         </motion.div>
@@ -212,7 +229,9 @@ function Hero() {
         {/* FLOATING DOTS */}
 
         <div className="floating-dot dot-one"></div>
+
         <div className="floating-dot dot-two"></div>
+
         <div className="floating-dot dot-three"></div>
 
 
@@ -246,7 +265,9 @@ function Hero() {
         <div></div>
 
         <div className="scroll-indicator">
+
           <div className="scroll-line"></div>
+
         </div>
 
         <div className="year">
@@ -257,8 +278,15 @@ function Hero() {
           />
 
           <div>
-            <strong>Est. 2007</strong>
-            <span>UMP Purwokerto</span>
+
+            <strong>
+              Est. 2007
+            </strong>
+
+            <span>
+              UMP Purwokerto
+            </span>
+
           </div>
 
         </div>

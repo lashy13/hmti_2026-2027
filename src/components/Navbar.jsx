@@ -174,6 +174,11 @@ function Navbar() {
           About
         </button>
 
+        {/* CERENITY */}
+        <Link to="/cerenity">
+          Cerenity
+        </Link>
+
         {/* DIVISI */}
         <Link to="/divisions">
           Divisi
