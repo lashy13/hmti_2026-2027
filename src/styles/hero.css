@@ -1,10 +1,13 @@
 /* =========================================================
    HERO — PREMIUM BLUE / CYAN
-   ========================================================= */
+========================================================= */
 
 .hero {
   position: relative;
+
+  width: 100%;
   min-height: 100vh;
+
   padding: 90px 6% 60px;
 
   display: flex;
@@ -34,17 +37,20 @@
 
   border: none;
   box-shadow: none;
+
+  isolation: isolate;
 }
 
 
 /* =========================================================
    AMBIENT LIGHT
-   ========================================================= */
+========================================================= */
 
 .hero::before {
   content: "";
 
   position: absolute;
+
   top: -180px;
   left: -180px;
 
@@ -64,7 +70,8 @@
   filter: blur(75px);
 
   pointer-events: none;
-  z-index: 1;
+
+  z-index: -1;
 }
 
 
@@ -72,6 +79,7 @@
   content: "";
 
   position: absolute;
+
   right: -180px;
   bottom: -220px;
 
@@ -91,28 +99,33 @@
   filter: blur(90px);
 
   pointer-events: none;
-  z-index: 1;
+
+  z-index: -1;
 }
 
 
 /* =========================================================
    HERO CONTENT
-   ========================================================= */
+========================================================= */
 
 .hero-content {
   position: relative;
+
   width: 46%;
+
   z-index: 5;
 }
 
 
 /* =========================================================
    EYEBROW
-   ========================================================= */
+========================================================= */
 
 .eyebrow {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   margin-bottom: 28px;
@@ -120,8 +133,11 @@
   color: #9aabc0;
 
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 4px;
+
   text-transform: uppercase;
 }
 
@@ -131,6 +147,8 @@
 
   width: 38px;
   height: 2px;
+
+  flex-shrink: 0;
 
   border-radius: 999px;
 
@@ -149,15 +167,17 @@
 
 /* =========================================================
    HERO TITLE
-   ========================================================= */
+========================================================= */
 
 .hero h1 {
   margin: 0;
 
   font-size: clamp(60px, 7vw, 110px);
+
   line-height: 0.84;
 
   letter-spacing: -6px;
+
   font-weight: 800;
 
   color: #f4f8fc;
@@ -172,7 +192,8 @@
 
   color: transparent;
 
-  -webkit-text-stroke: 1px rgba(186, 230, 253, 0.48);
+  -webkit-text-stroke:
+    1px rgba(186, 230, 253, 0.48);
 
   background:
     linear-gradient(
@@ -191,10 +212,13 @@
   -webkit-background-clip: text;
   background-clip: text;
 
-  animation: heroTitleShine 5s linear infinite;
+  animation:
+    heroTitleShine 5s linear infinite;
 
   filter:
-    drop-shadow(0 0 12px rgba(56, 189, 248, 0.12));
+    drop-shadow(
+      0 0 12px rgba(56, 189, 248, 0.12)
+    );
 }
 
 
@@ -211,7 +235,7 @@
 
 /* =========================================================
    DESCRIPTION
-   ========================================================= */
+========================================================= */
 
 .hero-content > p {
   max-width: 460px;
@@ -221,6 +245,7 @@
   color: #9aacbf;
 
   font-size: 14px;
+
   line-height: 1.85;
 
   letter-spacing: 0.15px;
@@ -229,11 +254,13 @@
 
 /* =========================================================
    HERO ACTIONS
-   ========================================================= */
+========================================================= */
 
 .hero-actions {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
 
   margin-top: 35px;
@@ -244,8 +271,10 @@
   position: relative;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 16px;
 
   min-height: 48px;
@@ -257,7 +286,9 @@
   text-decoration: none;
 
   font-size: 9px;
+
   font-weight: 800;
+
   letter-spacing: 1.8px;
 
   white-space: nowrap;
@@ -283,7 +314,7 @@
 
 /* =========================================================
    PRIMARY BUTTON
-   ========================================================= */
+========================================================= */
 
 .hero-action.primary {
   background:
@@ -294,7 +325,8 @@
       #38bdf8 100%
     );
 
-  border: 1px solid rgba(186, 230, 253, 0.8);
+  border:
+    1px solid rgba(186, 230, 253, 0.8);
 
   color: #06111f;
 
@@ -330,17 +362,19 @@
 
 /* =========================================================
    SECONDARY BUTTON
-   ========================================================= */
+========================================================= */
 
 .hero-action.secondary {
   background:
     rgba(14, 28, 47, 0.72);
 
-  border: 1px solid rgba(125, 211, 252, 0.18);
+  border:
+    1px solid rgba(125, 211, 252, 0.18);
 
   color: #cfe3f7;
 
   backdrop-filter: blur(12px);
+
   -webkit-backdrop-filter: blur(12px);
 
   box-shadow:
@@ -366,13 +400,14 @@
 
 
 .hero-action.secondary:hover span {
-  transform: translate(3px, -3px);
+  transform:
+    translate(3px, -3px);
 }
 
 
 /* =========================================================
    HERO STATS
-   ========================================================= */
+========================================================= */
 
 .hero-stats {
   display: grid;
@@ -391,6 +426,7 @@
   background: transparent;
 
   backdrop-filter: none;
+
   -webkit-backdrop-filter: none;
 
   box-shadow: none;
@@ -399,24 +435,28 @@
 
 /* =========================================================
    STAT CARD
-   ========================================================= */
+========================================================= */
 
 .hero-stat {
   position: relative;
 
   min-width: 120px;
 
-  padding: 18px 20px 17px;
+  padding:
+    18px 20px 17px;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 7px;
 
   overflow: hidden;
 
   border-radius: 15px;
 
-  border: 1px solid rgba(96, 165, 250, 0.20);
+  border:
+    1px solid rgba(96, 165, 250, 0.20);
 
   background:
     linear-gradient(
@@ -439,7 +479,7 @@
 
 /* =========================================================
    STAT TOP LIGHT
-   ========================================================= */
+========================================================= */
 
 .hero-stat::before {
   content: "";
@@ -447,12 +487,14 @@
   position: absolute;
 
   top: 0;
+
   left: 16px;
   right: 16px;
 
   height: 2px;
 
-  border-radius: 0 0 999px 999px;
+  border-radius:
+    0 0 999px 999px;
 
   background:
     linear-gradient(
@@ -471,7 +513,7 @@
 
 /* =========================================================
    STAT AMBIENT SPOT
-   ========================================================= */
+========================================================= */
 
 .hero-stat::after {
   content: "";
@@ -499,7 +541,7 @@
 
 /* =========================================================
    STAT HOVER
-   ========================================================= */
+========================================================= */
 
 .hero-stat:hover {
   transform: translateY(-7px);
@@ -523,10 +565,11 @@
 
 /* =========================================================
    STAT NUMBER
-   ========================================================= */
+========================================================= */
 
 .hero-stat strong {
   position: relative;
+
   z-index: 2;
 
   background:
@@ -544,6 +587,7 @@
   -webkit-text-fill-color: transparent;
 
   font-size: 27px;
+
   line-height: 1;
 
   font-weight: 800;
@@ -551,28 +595,33 @@
   letter-spacing: -1px;
 
   filter:
-    drop-shadow(0 0 8px rgba(56, 189, 248, 0.20));
+    drop-shadow(
+      0 0 8px rgba(56, 189, 248, 0.20)
+    );
 }
 
 
 /* =========================================================
    STAT LABEL
-   ========================================================= */
+========================================================= */
 
 .hero-stat span {
   position: relative;
+
   z-index: 2;
 
   color: #8499b2;
 
   font-size: 7px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
 
   text-transform: uppercase;
 
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease;
 }
 
 
@@ -583,7 +632,7 @@
 
 /* =========================================================
    LOGO SCENE
-   ========================================================= */
+========================================================= */
 
 .logo-scene {
   position: relative;
@@ -592,14 +641,17 @@
   height: 650px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 }
 
 
 /* =========================================================
    OUTER RING
-   ========================================================= */
+========================================================= */
 
 .outer-ring {
   position: absolute;
@@ -648,7 +700,7 @@
 
 /* =========================================================
    ROTATING TEXT
-   ========================================================= */
+========================================================= */
 
 .rotating-text {
   position: absolute;
@@ -691,10 +743,11 @@
 
 /* =========================================================
    LOGO
-   ========================================================= */
+========================================================= */
 
 .logo-wrapper {
   position: relative;
+
   z-index: 5;
 }
 
@@ -704,6 +757,7 @@
   height: 250px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -748,7 +802,7 @@
 
 /* =========================================================
    LOGO GLOW
-   ========================================================= */
+========================================================= */
 
 .logo-glow {
   position: absolute;
@@ -790,7 +844,7 @@
 
 /* =========================================================
    ORBITS
-   ========================================================= */
+========================================================= */
 
 .orbit {
   position: absolute;
@@ -848,7 +902,7 @@
 
 /* =========================================================
    FLOATING DOTS
-   ========================================================= */
+========================================================= */
 
 .floating-dot {
   position: absolute;
@@ -901,11 +955,13 @@
   0%,
   100% {
     opacity: 0.35;
+
     transform: scale(0.85);
   }
 
   50% {
     opacity: 1;
+
     transform: scale(1.18);
   }
 }
@@ -913,7 +969,7 @@
 
 /* =========================================================
    LOGO CAPTION
-   ========================================================= */
+========================================================= */
 
 .logo-caption {
   position: absolute;
@@ -921,7 +977,9 @@
   bottom: 15px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   text-align: center;
@@ -934,6 +992,7 @@
   color: #8398b0;
 
   font-size: 8px;
+
   letter-spacing: 3.5px;
 }
 
@@ -942,6 +1001,7 @@
   margin-top: 4px;
 
   font-size: 15px;
+
   letter-spacing: 3.5px;
 
   background:
@@ -965,13 +1025,14 @@
   color: #60758e;
 
   font-size: 7px;
+
   letter-spacing: 1.8px;
 }
 
 
 /* =========================================================
    HERO BOTTOM
-   ========================================================= */
+========================================================= */
 
 .hero-bottom {
   position: absolute;
@@ -982,7 +1043,9 @@
   right: 6%;
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: flex-end;
 
   z-index: 5;
@@ -991,7 +1054,9 @@
 
 .hero-bottom > div:first-child {
   display: flex;
+
   align-items: center;
+
   gap: 20px;
 }
 
@@ -1000,6 +1065,7 @@
   color: #8398b0;
 
   font-size: 10px;
+
   letter-spacing: 2px;
 }
 
@@ -1010,6 +1076,7 @@
   color: #d6e7f7;
 
   font-size: 11px;
+
   line-height: 1.45;
 
   letter-spacing: 1.8px;
@@ -1020,11 +1087,13 @@
 
 /* =========================================================
    YEAR
-   ========================================================= */
+========================================================= */
 
 .year {
   display: flex;
+
   align-items: center;
+
   gap: 9px;
 
   width: fit-content;
@@ -1054,6 +1123,7 @@
   cursor: pointer;
 
   backdrop-filter: blur(10px);
+
   -webkit-backdrop-filter: blur(10px);
 }
 
@@ -1082,7 +1152,7 @@
 
 /* =========================================================
    YEAR LOGO
-   ========================================================= */
+========================================================= */
 
 .year img {
   width: 27px;
@@ -1094,7 +1164,8 @@
 
   border-radius: 7px;
 
-  background: rgba(255, 255, 255, 0.055);
+  background:
+    rgba(255, 255, 255, 0.055);
 
   transition:
     transform 0.35s ease,
@@ -1118,10 +1189,11 @@
 
 /* =========================================================
    YEAR TEXT
-   ========================================================= */
+========================================================= */
 
 .year div {
   display: flex;
+
   flex-direction: column;
 
   line-height: 1;
@@ -1132,6 +1204,7 @@
   color: #eef7ff;
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 0.4px;
@@ -1156,15 +1229,17 @@
 
 /* =========================================================
    SCROLL INDICATOR
-   ========================================================= */
+========================================================= */
 
 .scroll-indicator {
   position: absolute;
 
   left: 50%;
+
   bottom: 0;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 }
 
 
@@ -1189,11 +1264,13 @@
 @keyframes scrollDown {
   0% {
     transform: scaleY(0);
+
     transform-origin: top;
   }
 
   50% {
     transform: scaleY(1);
+
     transform-origin: top;
   }
 
@@ -1203,24 +1280,61 @@
 
   100% {
     transform: scaleY(0);
+
     transform-origin: bottom;
   }
 }
 
 
 /* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-content {
+    width: 48%;
+  }
+
+  .logo-scene {
+    width: 50%;
+
+    transform:
+      scale(0.88);
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      55px,
+      7vw,
+      82px
+    );
+  }
+}
+
+
+/* =========================================================
    TABLET
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 900px) {
-
   .hero {
+    min-height: auto;
+
+    padding:
+      120px 5% 100px;
+
     flex-direction: column;
+
     justify-content: center;
 
-    padding-top: 70px;
-    padding-bottom: 120px;
+    gap: 0;
   }
+
 
   .hero-content {
     width: 100%;
@@ -1228,144 +1342,710 @@
     text-align: center;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
   }
 
+
   .eyebrow {
     justify-content: center;
+
+    margin-bottom: 24px;
   }
 
-  .hero-content > p {
-    max-width: 500px;
+
+  .hero h1 {
+    font-size:
+      clamp(
+        58px,
+        10vw,
+        82px
+      );
+
+    line-height: 0.9;
   }
+
+
+  .hero-content > p {
+    max-width: 560px;
+
+    margin-top: 28px;
+  }
+
 
   .hero-actions {
     justify-content: center;
   }
 
+
   .hero-stats {
     justify-content: center;
+
+    margin-top: 42px;
   }
+
 
   .logo-scene {
     width: 100%;
-    height: 500px;
 
-    margin-top: 20px;
+    height: 520px;
+
+    margin-top: 10px;
+
+    transform:
+      scale(0.88);
   }
+
 
   .hero-bottom {
     display: none;
+  }
+
+
+  .scroll-indicator {
+    bottom: 12px;
   }
 }
 
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 600px) {
-
   .hero {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 50px;
+    width: 100%;
+
+    min-height: 100svh;
+
+    padding:
+      95px 16px 75px;
+
+    justify-content: flex-start;
+
+    overflow: hidden;
   }
+
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+
+  .hero-content {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+
+  /* -----------------------------------------
+     EYEBROW
+  ----------------------------------------- */
+
+  .eyebrow {
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    font-size: 7px;
+
+    letter-spacing: 2.2px;
+  }
+
+
+  .eyebrow span {
+    width: 24px;
+
+    height: 1px;
+  }
+
+
+  /* -----------------------------------------
+     TITLE
+  ----------------------------------------- */
 
   .hero h1 {
-    font-size: 58px;
-    letter-spacing: -4px;
+    width: 100%;
+
+    font-size:
+      clamp(
+        45px,
+        14vw,
+        65px
+      );
+
+    line-height: 0.92;
+
+    letter-spacing: -3px;
+
+    overflow-wrap: anywhere;
   }
+
+
+  .hero h1 span {
+    -webkit-text-stroke:
+      0.7px rgba(186, 230, 253, 0.48);
+  }
+
+
+  /* -----------------------------------------
+     DESCRIPTION
+  ----------------------------------------- */
 
   .hero-content > p {
-    font-size: 12px;
-    line-height: 1.8;
+    width: 100%;
+
+    max-width: 430px;
+
+    margin-top: 22px;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+
+    letter-spacing: 0;
   }
 
 
-  /* ACTION */
+  /* -----------------------------------------
+     ACTIONS
+  ----------------------------------------- */
 
   .hero-actions {
     width: 100%;
 
-    flex-direction: column;
-  }
+    max-width: 360px;
 
-  .hero-action {
-    width: 100%;
-  }
-
-
-  /* STATS */
-
-  .hero-stats {
-    width: 100%;
+    margin-top: 25px;
 
     display: grid;
 
     grid-template-columns:
-      repeat(3, 1fr);
+      1fr 1fr;
 
-    gap: 8px;
+    gap: 9px;
   }
 
-  .hero-stat {
-    min-width: 0;
 
-    padding: 16px 8px;
+  .hero-action {
+    width: 100%;
 
-    border-radius: 12px;
-  }
+    min-height: 44px;
 
-  .hero-stat::before {
-    left: 10px;
-    right: 10px;
-  }
+    padding:
+      0 10px;
 
-  .hero-stat strong {
-    font-size: 20px;
-  }
+    gap: 7px;
 
-  .hero-stat span {
-    font-size: 6px;
+    border-radius: 11px;
+
+    font-size: 7px;
+
     letter-spacing: 1px;
   }
 
 
-  /* LOGO */
+  .hero-action span {
+    font-size: 13px;
+  }
+
+
+  /* -----------------------------------------
+     STATS
+  ----------------------------------------- */
+
+  .hero-stats {
+    width: 100%;
+
+    max-width: 380px;
+
+    margin-top: 30px;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+
+  .hero-stat {
+    min-width: 0;
+
+    width: 100%;
+
+    padding:
+      13px 6px 12px;
+
+    gap: 6px;
+
+    border-radius: 11px;
+  }
+
+
+  .hero-stat::before {
+    left: 8px;
+    right: 8px;
+
+    height: 1px;
+  }
+
+
+  .hero-stat strong {
+    font-size:
+      clamp(
+        17px,
+        5vw,
+        22px
+      );
+
+    letter-spacing: -0.6px;
+  }
+
+
+  .hero-stat span {
+    font-size: 5.5px;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+  }
+
+
+  /* -----------------------------------------
+     LOGO SCENE
+  ----------------------------------------- */
 
   .logo-scene {
-    transform: scale(0.72);
+    width: 100%;
 
-    margin-top: -30px;
-    margin-bottom: -70px;
+    height: 390px;
+
+    margin-top: 0;
+
+    margin-bottom: -30px;
+
+    transform:
+      scale(0.72);
   }
+
+
+  /* -----------------------------------------
+     OUTER RING
+  ----------------------------------------- */
 
   .outer-ring {
-    width: 390px;
-    height: 390px;
+    width: 380px;
+    height: 380px;
   }
+
+
+  .outer-ring::before {
+    inset: 18px;
+  }
+
+
+  /* -----------------------------------------
+     ROTATING TEXT
+  ----------------------------------------- */
 
   .rotating-text {
     width: 450px;
     height: 450px;
   }
 
+
+  .rotating-text text {
+    font-size: 11px;
+
+    letter-spacing: 6px;
+  }
+
+
+  /* -----------------------------------------
+     LOGO
+  ----------------------------------------- */
+
+  .logo-card {
+    width: 215px;
+    height: 215px;
+  }
+
+
+  .logo-glow {
+    inset: -30px;
+
+    filter: blur(38px);
+  }
+
+
+  /* -----------------------------------------
+     ORBITS
+  ----------------------------------------- */
+
   .orbit-one,
   .orbit-two {
     width: 450px;
-    height: 170px;
+    height: 165px;
+  }
+
+
+  /* -----------------------------------------
+     DOTS
+  ----------------------------------------- */
+
+  .dot-one {
+    top: 90px;
+    right: 60px;
+  }
+
+
+  .dot-two {
+    bottom: 95px;
+    left: 55px;
+  }
+
+
+  .dot-three {
+    top: 135px;
+    left: 55px;
+  }
+
+
+  /* -----------------------------------------
+     CAPTION
+  ----------------------------------------- */
+
+  .logo-caption {
+    bottom: 20px;
+  }
+
+
+  .logo-caption span {
+    font-size: 7px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .logo-caption strong {
+    font-size: 13px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .logo-caption small {
+    font-size: 6px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  /* -----------------------------------------
+     SCROLL
+  ----------------------------------------- */
+
+  .scroll-indicator {
+    bottom: 3px;
+  }
+
+
+  .scroll-line {
+    height: 28px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+  .hero {
+    padding:
+      88px 13px 65px;
+  }
+
+
+  .eyebrow {
+    font-size: 6.5px;
+
+    letter-spacing: 1.8px;
+  }
+
+
+  .eyebrow span {
+    width: 20px;
+  }
+
+
+  .hero h1 {
+    font-size:
+      clamp(
+        40px,
+        14vw,
+        55px
+      );
+
+    letter-spacing: -2.5px;
+  }
+
+
+  .hero-content > p {
+    font-size: 10px;
+
+    line-height: 1.7;
+  }
+
+
+  .hero-actions {
+    max-width: 330px;
+
+    gap: 7px;
+  }
+
+
+  .hero-action {
+    min-height: 42px;
+
+    padding:
+      0 7px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 0.7px;
+  }
+
+
+  .hero-action span {
+    font-size: 12px;
+  }
+
+
+  .hero-stats {
+    max-width: 340px;
+
+    gap: 6px;
+
+    margin-top: 26px;
+  }
+
+
+  .hero-stat {
+    padding:
+      12px 5px 11px;
+
+    border-radius: 10px;
+  }
+
+
+  .hero-stat strong {
+    font-size: 17px;
+  }
+
+
+  .hero-stat span {
+    font-size: 5px;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  .logo-scene {
+    height: 350px;
+
+    margin-top: -5px;
+
+    margin-bottom: -45px;
+
+    transform:
+      scale(0.63);
+  }
+
+
+  .outer-ring {
+    width: 370px;
+    height: 370px;
+  }
+
+
+  .rotating-text {
+    width: 425px;
+    height: 425px;
+  }
+
+
+  .orbit-one,
+  .orbit-two {
+    width: 425px;
+    height: 155px;
+  }
+
+
+  .logo-card {
+    width: 205px;
+    height: 205px;
+  }
+
+
+  .logo-caption {
+    bottom: 18px;
+  }
+
+
+  .logo-caption strong {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 350px) {
+  .hero {
+    padding:
+      80px 10px 60px;
+  }
+
+
+  .eyebrow {
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .hero h1 {
+    font-size: 38px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .hero-content > p {
+    font-size: 9px;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-actions {
+    max-width: 300px;
+
+    gap: 6px;
+  }
+
+
+  .hero-action {
+    min-height: 40px;
+
+    padding:
+      0 5px;
+
+    font-size: 5.8px;
+  }
+
+
+  .hero-action span {
+    font-size: 11px;
+  }
+
+
+  .hero-stats {
+    gap: 5px;
+
+    margin-top: 23px;
+  }
+
+
+  .hero-stat {
+    padding:
+      10px 4px;
+
+    border-radius: 9px;
+  }
+
+
+  .hero-stat strong {
+    font-size: 15px;
+  }
+
+
+  .hero-stat span {
+    font-size: 4.5px;
+
+    letter-spacing: 0.3px;
+  }
+
+
+  .logo-scene {
+    height: 320px;
+
+    margin-top: -15px;
+
+    margin-bottom: -60px;
+
+    transform:
+      scale(0.56);
+  }
+
+
+  .outer-ring {
+    width: 360px;
+    height: 360px;
+  }
+
+
+  .rotating-text {
+    width: 410px;
+    height: 410px;
+  }
+
+
+  .orbit-one,
+  .orbit-two {
+    width: 410px;
+    height: 145px;
+  }
+
+
+  .logo-card {
+    width: 195px;
+    height: 195px;
+  }
+
+
+  .logo-caption span {
+    font-size: 6px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .logo-caption strong {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .logo-caption small {
+    font-size: 5px;
+
+    letter-spacing: 1px;
   }
 }
 
 
 /* =========================================================
    REDUCED MOTION
-   ========================================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .hero h1 span,
   .outer-ring,
   .rotating-text,
@@ -1375,5 +2055,13 @@
   .floating-dot,
   .scroll-line {
     animation: none;
+  }
+
+  .hero-action,
+  .hero-stat,
+  .logo-card img,
+  .year,
+  .year img {
+    transition: none;
   }
 }

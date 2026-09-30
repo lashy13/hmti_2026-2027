@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -15,19 +16,14 @@
 
   z-index: 1000;
 
-  width: calc(100% - 60px);
-  max-width: 1350px;
+  width: min(1350px, calc(100% - 60px));
   min-height: 72px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 26px;
-
-  /* =====================================================
-     PREMIUM GRADIENT
-  ===================================================== */
+  padding: 0 clamp(16px, 2vw, 26px);
 
   background:
     linear-gradient(
@@ -37,32 +33,16 @@
       rgba(8, 18, 42, 0.97) 100%
     );
 
-  /* =====================================================
-     BORDER
-  ===================================================== */
-
   border: 1px solid rgba(90, 170, 255, 0.22);
 
   border-radius: 18px;
 
-  /* =====================================================
-     GLASS EFFECT
-  ===================================================== */
-
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-
-  /* =====================================================
-     SHADOW
-  ===================================================== */
 
   box-shadow:
     0 12px 35px rgba(0, 0, 0, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.055);
-
-  /* =====================================================
-     ANIMATION
-  ===================================================== */
 
   transition:
     transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
@@ -76,7 +56,7 @@
 
 
 /* =========================================================
-   GARIS GRADIENT HALUS DI BAGIAN ATAS
+   TOP LIGHT
 ========================================================= */
 
 .navbar::before {
@@ -107,7 +87,7 @@
 
 
 /* =========================================================
-   EFEK GRADIENT SANGAT HALUS DI DALAM NAVBAR
+   AMBIENT LIGHT
 ========================================================= */
 
 .navbar::after {
@@ -133,7 +113,7 @@
 
 
 /* =========================================================
-   NAVBAR TERLIHAT
+   NAVBAR STATE
 ========================================================= */
 
 .navbar-visible {
@@ -144,11 +124,6 @@
     translateX(-50%)
     translateY(0);
 }
-
-
-/* =========================================================
-   NAVBAR TERSEMBUNYI SAAT SCROLL KE BAWAH
-========================================================= */
 
 .navbar-hidden {
   opacity: 0;
@@ -168,14 +143,17 @@
 
 .brand-container {
   position: relative;
+
   z-index: 2;
 
   display: flex;
   align-items: center;
 
-  gap: 14px;
+  gap: clamp(8px, 1vw, 14px);
 
   flex-shrink: 0;
+
+  min-width: 0;
 }
 
 
@@ -260,6 +238,8 @@
   justify-content: center;
 
   line-height: 1.15;
+
+  min-width: 0;
 }
 
 .ump-text strong {
@@ -267,8 +247,6 @@
 
   font-size: 13px;
   font-weight: 700;
-
-  letter-spacing: 0.1px;
 
   white-space: nowrap;
 }
@@ -317,6 +295,8 @@
 
   cursor: pointer;
 
+  flex-shrink: 0;
+
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
@@ -357,6 +337,8 @@
   justify-content: center;
 
   line-height: 1.15;
+
+  min-width: 0;
 }
 
 .brand-text strong {
@@ -399,14 +381,17 @@
 
 .nav-links {
   position: relative;
+
   z-index: 2;
 
   display: flex;
   align-items: center;
 
-  gap: 24px;
+  gap: clamp(10px, 1.7vw, 24px);
 
   margin-left: auto;
+
+  flex-shrink: 0;
 }
 
 
@@ -426,7 +411,13 @@
   color: rgba(220, 235, 255, 0.62);
 
   font-family: inherit;
-  font-size: 12.5px;
+
+  /*
+     Ukuran mengikuti viewport,
+     tapi tetap punya batas minimum & maksimum.
+  */
+  font-size: clamp(9px, 0.85vw, 12.5px);
+
   font-weight: 500;
 
   letter-spacing: 0.1px;
@@ -499,7 +490,7 @@
 
 
 /* =========================================================
-   ACTIVE LINK
+   ACTIVE
 ========================================================= */
 
 .nav-links a.active,
@@ -514,7 +505,7 @@
 
 
 /* =========================================================
-   RESPONSIVE 1100px
+   1100px
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -522,16 +513,12 @@
   .navbar {
     width: calc(100% - 40px);
 
-    padding: 0 21px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .nav-links {
-    gap: 18px;
-  }
-
-  .nav-links a,
-  .nav-links button {
-    font-size: 12px;
+    gap: 16px;
   }
 
   .ump-text small,
@@ -542,7 +529,7 @@
 
 
 /* =========================================================
-   TABLET
+   900px
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -550,30 +537,32 @@
   .navbar {
     width: calc(100% - 30px);
 
-    min-height: 68px;
+    min-height: 66px;
 
-    padding: 0 18px;
+    padding:
+      0
+      clamp(14px, 2.5vw, 20px);
 
     border-radius: 16px;
   }
 
+  .brand-container {
+    gap: 8px;
+  }
+
   .nav-links {
-    gap: 14px;
+    gap: clamp(9px, 1.7vw, 15px);
   }
 
   .nav-links a,
   .nav-links button {
-    font-size: 11px;
-  }
-
-  .brand-container {
-    gap: 10px;
+    font-size: clamp(9px, 1.3vw, 11px);
   }
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE — 768px
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -583,53 +572,67 @@
 
     width: calc(100% - 20px);
 
-    min-height: 62px;
+    min-height: 60px;
 
-    padding: 0 15px;
+    padding:
+      0
+      clamp(11px, 3vw, 16px);
 
     border-radius: 15px;
   }
 
-  /* UMP */
 
-  .brand-ump {
-    display: none;
-  }
+  /* =====================================
+     HILANGKAN BRAND UMP
+  ===================================== */
 
+  .brand-ump,
   .logo-divider {
     display: none;
   }
 
-  /* HMTI */
+
+  /* =====================================
+     HMTI
+  ===================================== */
 
   .brand-if {
     gap: 8px;
   }
 
   .logo-if {
-    width: 32px !important;
-    height: 32px !important;
+    width: clamp(29px, 8vw, 34px) !important;
+    height: clamp(29px, 8vw, 34px) !important;
   }
 
   .brand-text strong {
-    font-size: 11px;
+    font-size: clamp(10px, 2.7vw, 12px);
   }
 
   .if-tagline {
-    font-size: 6.5px;
+    font-size: clamp(6px, 1.6vw, 7px);
+
+    letter-spacing:
+      clamp(0.5px, 0.2vw, 1px);
   }
 
-  /* MENU */
+
+  /* =====================================
+     NAV LINKS
+  ===================================== */
 
   .nav-links {
-    gap: 11px;
+    gap: clamp(7px, 2.5vw, 13px);
+
+    margin-left: auto;
   }
 
   .nav-links a,
   .nav-links button {
     height: 32px;
 
-    font-size: 10px;
+    font-size:
+      clamp(8px, 2.35vw, 10.5px);
   }
 
   .nav-links a::after,
@@ -640,59 +643,169 @@
 
 
 /* =========================================================
-   MOBILE KECIL
+   HP KECIL — 480px
 ========================================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 480px) {
 
   .navbar {
-    min-height: 57px;
+    top: 10px;
 
-    padding: 0 12px;
+    width: calc(100% - 16px);
+
+    min-height: 56px;
+
+    padding:
+      0
+      clamp(8px, 2.8vw, 12px);
 
     border-radius: 13px;
   }
+
+
+  /* =====================================
+     LOGO
+  ===================================== */
+
+  .logo-if {
+    width: clamp(27px, 8vw, 31px) !important;
+    height: clamp(27px, 8vw, 31px) !important;
+  }
+
+  .brand-if {
+    gap: 6px;
+  }
+
+
+  /* =====================================
+     BRAND TEXT
+  ===================================== */
+
+  .brand-text strong {
+    font-size:
+      clamp(9px, 2.8vw, 10.5px);
+  }
+
+  .if-tagline {
+    font-size:
+      clamp(5px, 1.7vw, 6.5px);
+
+    letter-spacing:
+      clamp(0.3px, 0.15vw, 0.8px);
+  }
+
+
+  /* =====================================
+     NAV
+  ===================================== */
+
+  .nav-links {
+    gap:
+      clamp(5px, 2vw, 9px);
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size:
+      clamp(7.5px, 2.15vw, 9px);
+  }
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    width: calc(100% - 12px);
+
+    min-height: 53px;
+
+    padding:
+      0
+      8px;
+
+    border-radius: 11px;
+  }
+
+
+  /* =====================================
+     SEMBUNYIKAN TEKS BRAND
+     
+     Supaya navbar tidak bertabrakan
+     dengan menu pada layar sempit.
+  ===================================== */
 
   .brand-text {
     display: none;
   }
 
   .logo-if {
-    width: 29px !important;
-    height: 29px !important;
+    width: 27px !important;
+    height: 27px !important;
   }
 
+
+  /* =====================================
+     NAV LINKS
+  ===================================== */
+
   .nav-links {
-    gap: 9px;
+    gap: 6px;
   }
 
   .nav-links a,
   .nav-links button {
-    font-size: 9px;
+    height: 30px;
+
+    font-size: 8px;
+
+    letter-spacing: 0;
   }
 }
 
 
 /* =========================================================
-   EXTRA SMALL
+   HP SUPER KECIL — 320px
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 330px) {
 
   .navbar {
-    width: calc(100% - 14px);
+    width: calc(100% - 10px);
 
-    padding: 0 9px;
+    padding: 0 7px;
+  }
 
-    border-radius: 12px;
+  .logo-if {
+    width: 25px !important;
+    height: 25px !important;
   }
 
   .nav-links {
-    gap: 7px;
+    gap: 5px;
   }
 
   .nav-links a,
   .nav-links button {
-    font-size: 8px;
+    font-size: 7.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .brand-ump,
+  .brand-if,
+  .nav-links a,
+  .nav-links button {
+    transition: none;
   }
 }

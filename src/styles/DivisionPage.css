@@ -11,9 +11,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-
   overflow-x: hidden;
-
   color: #ffffff;
 
   background:
@@ -29,7 +27,6 @@
       #060b15 100%
     );
 }
-
 
 /* ========================================
    DIVISION COLORS
@@ -77,20 +74,16 @@
   --accent-border: rgba(22, 131, 255, 0.35);
 }
 
-
 /* ========================================
    STAR BACKGROUND
 ======================================== */
 
 .division-page::before {
   content: "";
-
   position: fixed;
   inset: 0;
-
   z-index: 0;
   pointer-events: none;
-
   opacity: 0.55;
 
   background-image:
@@ -178,20 +171,16 @@
   animation: starsFloat 12s ease-in-out infinite alternate;
 }
 
-
 /* ========================================
    SUBTLE GRID
 ======================================== */
 
 .division-page::after {
   content: "";
-
   position: fixed;
   inset: 0;
-
   z-index: 0;
   pointer-events: none;
-
   opacity: 0.1;
 
   background-image:
@@ -216,7 +205,6 @@
     );
 }
 
-
 /* ========================================
    STAR ANIMATION
 ======================================== */
@@ -232,7 +220,6 @@
     opacity: 0.65;
   }
 }
-
 
 /* ========================================
    BACK BUTTON
@@ -281,14 +268,10 @@
 
 .division-back button:hover {
   transform: translateX(4px);
-
   color: #ffffff;
-
   border-color: var(--accent);
-
   background: var(--accent-soft);
 }
-
 
 /* ========================================
    HERO
@@ -315,7 +298,6 @@
   content: "";
 
   position: absolute;
-
   top: 18%;
   left: 50%;
 
@@ -332,7 +314,6 @@
     );
 
   filter: blur(65px);
-
   opacity: 0.35;
 
   pointer-events: none;
@@ -342,7 +323,6 @@
   content: "";
 
   position: absolute;
-
   top: 34%;
   left: 50%;
 
@@ -352,14 +332,12 @@
   transform: translate(-50%, -50%);
 
   border-radius: 50%;
-
   background: var(--accent);
 
   opacity: 0.45;
 
   pointer-events: none;
 }
-
 
 /* ========================================
    HERO NUMBER
@@ -375,7 +353,6 @@
 
   font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 4px;
 
   opacity: 0.9;
@@ -383,24 +360,17 @@
 
 .division-hero-number::before {
   content: "—";
-
   margin-right: 12px;
-
   color: var(--accent);
-
   opacity: 0.6;
 }
 
 .division-hero-number::after {
   content: "—";
-
   margin-left: 12px;
-
   color: var(--accent);
-
   opacity: 0.6;
 }
-
 
 /* ========================================
    HERO CONTENT
@@ -419,7 +389,6 @@
 
   text-align: center;
 }
-
 
 /* ========================================
    CATEGORY BADGE
@@ -441,12 +410,10 @@
   border-radius: 999px;
 
   background: var(--accent-soft);
-
   color: var(--accent-light);
 
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 2px;
   text-transform: uppercase;
 
@@ -457,7 +424,6 @@
   content: "";
 
   position: absolute;
-
   top: -30%;
   left: -80%;
 
@@ -493,7 +459,6 @@
   }
 }
 
-
 /* ========================================
    SHIMMER MAIN TITLE
 ======================================== */
@@ -505,9 +470,7 @@
 
   font-size: clamp(60px, 9vw, 125px);
   font-weight: 900;
-
   line-height: 0.9;
-
   letter-spacing: -6px;
 
   text-align: center;
@@ -564,7 +527,6 @@
   }
 }
 
-
 /* ========================================
    HERO SUBTITLE
 ======================================== */
@@ -576,7 +538,6 @@
 
   font-size: clamp(18px, 2.5vw, 27px);
   font-weight: 500;
-
   line-height: 1.4;
 
   text-align: center;
@@ -590,12 +551,10 @@
   color: rgba(255, 255, 255, 0.56);
 
   font-size: 15px;
-
   line-height: 1.8;
 
   text-align: center;
 }
-
 
 /* ========================================
    ABOUT
@@ -617,7 +576,6 @@
   margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: 0.7fr 1.3fr;
 
   gap: 100px;
@@ -634,9 +592,7 @@
 
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 2px;
-
   text-transform: uppercase;
 }
 
@@ -645,9 +601,7 @@
 
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
-
   line-height: 1.05;
-
   letter-spacing: -2px;
 
   background:
@@ -677,14 +631,12 @@
   color: rgba(255, 255, 255, 0.58);
 
   font-size: 15px;
-
   line-height: 1.85;
 }
 
 .division-about-text p:last-child {
   margin-bottom: 0;
 }
-
 
 /* ========================================
    PROGRAMS
@@ -705,7 +657,6 @@
 
   margin: 0 auto;
 }
-
 
 /* ========================================
    SECTION HEADING
@@ -732,9 +683,7 @@
 
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 2px;
-
   text-transform: uppercase;
 
   background:
@@ -763,9 +712,7 @@
 
   font-size: clamp(34px, 5vw, 54px);
   font-weight: 800;
-
   line-height: 1;
-
   letter-spacing: -2px;
 
   text-align: center;
@@ -805,14 +752,8 @@
   }
 }
 
-
 /* ========================================
    PROGRAM LIST
-
-   1 PROGRAM  = 1 KOLOM
-   2 PROGRAMS = 2 KOLOM
-   3 PROGRAMS = 3 KOLOM
-   4 PROGRAMS = 2 x 2
 ======================================== */
 
 .program-list {
@@ -852,7 +793,6 @@
     repeat(2, minmax(0, 1fr));
 }
 
-
 /* ========================================
    PROGRAM CARD
 ======================================== */
@@ -867,7 +807,6 @@
   min-height: 330px;
 
   border: 1px solid rgba(255, 255, 255, 0.075);
-
   border-radius: 24px;
 
   background:
@@ -909,7 +848,6 @@
     0 0 25px var(--accent-soft);
 }
 
-
 /* ========================================
    PROGRAM IMAGE
 ======================================== */
@@ -936,7 +874,6 @@
 
 .program-card:hover .program-image img {
   transform: scale(1.045);
-
   filter: brightness(1.06);
 }
 
@@ -956,7 +893,6 @@
   pointer-events: none;
 }
 
-
 /* ========================================
    PROGRAM CONTENT
 ======================================== */
@@ -974,9 +910,7 @@
 
   font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 1.5px;
-
   text-transform: uppercase;
 
   background:
@@ -1010,7 +944,6 @@
 
   font-size: 38px;
   font-weight: 900;
-
   line-height: 1;
 
   transition:
@@ -1020,7 +953,6 @@
 
 .program-card:hover .program-number {
   color: var(--accent-soft);
-
   transform: translateY(-3px);
 }
 
@@ -1031,7 +963,6 @@
 
   font-size: 21px;
   font-weight: 750;
-
   line-height: 1.25;
 }
 
@@ -1041,7 +972,6 @@
   color: rgba(255, 255, 255, 0.52);
 
   font-size: 14px;
-
   line-height: 1.7;
 }
 
@@ -1061,10 +991,8 @@
 
 .program-card:hover .program-arrow {
   transform: translateX(7px);
-
   color: var(--accent-light);
 }
-
 
 /* ========================================
    MEMBERS
@@ -1094,7 +1022,6 @@
   overflow: hidden;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
-
   border-radius: 22px;
 
   background:
@@ -1132,7 +1059,6 @@
     0 0 22px var(--accent-soft);
 }
 
-
 /* ========================================
    MEMBER PHOTO
 ======================================== */
@@ -1162,10 +1088,8 @@
 
 .member-card:hover .member-photo img {
   transform: scale(1.04);
-
   filter: brightness(1.05);
 }
-
 
 /* ========================================
    MEMBER INFO
@@ -1196,10 +1120,8 @@
   color: rgba(255, 255, 255, 0.45);
 
   font-size: 12px;
-
   line-height: 1.5;
 }
-
 
 /* ========================================
    ACCENT LINE
@@ -1229,13 +1151,38 @@
   width: 100%;
 }
 
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .division-about-inner {
+    gap: 60px;
+  }
+
+  .members-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .division-about,
+  .division-programs,
+  .division-members {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .division-hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
 
 /* ========================================
    TABLET
 ======================================== */
 
 @media (max-width: 900px) {
-
   .division-back {
     left: 6%;
   }
@@ -1289,19 +1236,18 @@
   }
 }
 
-
 /* ========================================
    MOBILE
 ======================================== */
 
 @media (max-width: 600px) {
-
   .division-page::before {
     opacity: 0.4;
   }
 
   .division-page::after {
     opacity: 0.06;
+    background-size: 55px 55px;
   }
 
   .division-back {
@@ -1311,7 +1257,6 @@
 
   .division-back button {
     padding: 8px 13px;
-
     font-size: 11px;
   }
 
@@ -1327,7 +1272,6 @@
     height: 180px;
 
     filter: blur(65px);
-
     opacity: 0.28;
   }
 
@@ -1335,15 +1279,35 @@
     margin-bottom: 20px;
 
     font-size: 10px;
-
     letter-spacing: 3px;
   }
 
+  .division-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .division-category {
+    max-width: 90%;
+    padding: 7px 14px;
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+  }
+
   .division-hero-content h1 {
+    width: 100%;
+
     font-size:
       clamp(48px, 17vw, 72px);
 
     letter-spacing: -3px;
+
+    line-height: 0.95;
+
+    overflow-wrap: anywhere;
   }
 
   .division-hero-content h1::after {
@@ -1357,13 +1321,15 @@
     margin-top: 22px;
 
     font-size: 18px;
+    line-height: 1.35;
   }
 
   .division-hero-content > p {
+    width: 100%;
+
     margin-top: 15px;
 
     font-size: 13px;
-
     line-height: 1.75;
   }
 
@@ -1383,11 +1349,12 @@
     font-size: 34px;
 
     letter-spacing: -1.5px;
+
+    line-height: 1.05;
   }
 
   .division-about-text p {
     font-size: 14px;
-
     line-height: 1.8;
   }
 
@@ -1416,6 +1383,7 @@
   }
 
   .program-card {
+    width: 100%;
     min-height: 0;
 
     border-radius: 20px;
@@ -1432,6 +1400,12 @@
 
   .program-content h3 {
     font-size: 19px;
+
+    margin-right: 55px;
+  }
+
+  .program-content p {
+    font-size: 13px;
   }
 
   .program-number {
@@ -1449,6 +1423,7 @@
   }
 
   .member-card {
+    width: 100%;
     border-radius: 18px;
   }
 
@@ -1459,20 +1434,121 @@
 
   .member-info h3 {
     font-size: 14px;
+
+    overflow-wrap: anywhere;
   }
 
   .member-info p {
     font-size: 11px;
+
+    overflow-wrap: anywhere;
   }
 }
 
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .division-back {
+    top: 17px;
+    left: 4%;
+  }
+
+  .division-back button {
+    padding: 7px 11px;
+    gap: 6px;
+
+    font-size: 10px;
+  }
+
+  .division-back button span:first-child {
+    font-size: 14px;
+  }
+
+  .division-hero {
+    padding:
+      100px 4% 65px;
+  }
+
+  .division-hero-number {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+  .division-category {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .division-hero-content h1 {
+    font-size:
+      clamp(43px, 16vw, 65px);
+
+    letter-spacing: -2.5px;
+  }
+
+  .division-hero-content h2 {
+    font-size: 17px;
+  }
+
+  .division-hero-content > p {
+    font-size: 12.5px;
+  }
+
+  .division-about,
+  .division-programs,
+  .division-members {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .division-about h2,
+  .division-section-heading h2 {
+    font-size: 31px;
+  }
+
+  .program-content {
+    padding:
+      20px 19px 22px;
+  }
+
+  .program-content h3 {
+    font-size: 18px;
+  }
+
+  .program-content p {
+    font-size: 12.5px;
+  }
+
+  .program-number {
+    right: 19px;
+    font-size: 29px;
+  }
+
+  .members-grid {
+    gap: 12px;
+  }
+
+  .member-info {
+    padding:
+      12px 12px 14px;
+  }
+
+  .member-info h3 {
+    font-size: 13px;
+  }
+
+  .member-info p {
+    font-size: 10px;
+  }
+}
 
 /* ========================================
    VERY SMALL MOBILE
 ======================================== */
 
 @media (max-width: 380px) {
-
   .division-hero-content h1 {
     font-size: 43px;
   }
@@ -1484,15 +1560,58 @@
   .members-grid {
     grid-template-columns: 1fr;
   }
+
+  .program-image {
+    height: 175px;
+  }
+
+  .program-content h3 {
+    font-size: 17px;
+  }
 }
 
+/* ========================================
+   EXTRA SMALL DEVICES
+======================================== */
+
+@media (max-width: 340px) {
+  .division-back {
+    left: 3%;
+  }
+
+  .division-back button {
+    padding: 6px 9px;
+    font-size: 9px;
+  }
+
+  .division-hero {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .division-about,
+  .division-programs,
+  .division-members {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .division-hero-content h1 {
+    font-size: 39px;
+    letter-spacing: -2px;
+  }
+
+  .division-about h2,
+  .division-section-heading h2 {
+    font-size: 28px;
+  }
+}
 
 /* ========================================
    REDUCE MOTION
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
   .division-page::before,
   .division-hero-content h1,
   .division-about h2,
