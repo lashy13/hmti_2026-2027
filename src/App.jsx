@@ -37,7 +37,7 @@ import Event1 from "./Pages/Events/Event1";
 import Event2 from "./Pages/Events/Event2";
 import Event3 from "./Pages/Events/Event3";
 import Event4 from "./Pages/Events/Event4";
-import Event5 from "./Pages/Events/Event5";
+
 
 // =====================================================
 // DIVISIONS
@@ -210,11 +210,6 @@ function App() {
         <Route
           path="/events/event-4"
           element={<Event4 />}
-        />
-
-        <Route
-          path="/events/event-5"
-          element={<Event5 />}
         />
 
 

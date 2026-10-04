@@ -106,7 +106,7 @@ function Kominfo() {
           photo: "/images/member-6.jpg",
         },
         {
-          id: 6,
+          id: 7,
           name: "Lukman Nur Fadhilah",
           role: "PJ MEDPART",
           photo: "/images/member-6.jpg",
