@@ -9,15 +9,12 @@ function PSDM() {
       category="HUMAN RESOURCE"
       subtitle="PENGEMBANGAN SUMBER DAYA MAHASISWA"
       description="PSDM merupakan divisi HMTI yang berfokus pada pengembangan potensi, kapasitas, dan kualitas anggota organisasi."
-
       aboutTitle="HUMAN DEVELOPMENT"
-
       aboutText={[
         "PSDM menjadi ruang pengembangan anggota HMTI melalui kegiatan yang mendukung peningkatan kemampuan, pengalaman, dan proses pengembangan mahasiswa.",
 
         "Melalui berbagai program kerja, PSDM berupaya membangun anggota yang aktif, bertanggung jawab, memiliki kemampuan berorganisasi, serta mampu berkembang bersama HMTI.",
       ]}
-
       programs={[
         {
           number: "01",
@@ -59,32 +56,55 @@ function PSDM() {
           link: "/divisions/psdm/it-esport",
         },
       ]}
-
       members={[
         {
           id: 1,
-          name: "Nama Anggota 1",
+          name: "Raynald Salsa Saputra",
           role: "Head of Division",
           photo: "/images/member-1.jpg",
         },
 
         {
           id: 2,
-          name: "Nama Anggota 2",
+          name: "Rafi Ikhwan Ma’ruf",
           role: "Secretary",
           photo: "/images/member-2.jpg",
         },
 
         {
           id: 3,
-          name: "Nama Anggota 3",
+          name: "Kinanti",
           role: "Development Staff",
           photo: "/images/member-3.jpg",
         },
 
         {
           id: 4,
-          name: "Nama Anggota 4",
+          name: "Assifa Ramadan Kurniawan",
+          role: "Training Staff",
+          photo: "/images/member-4.jpg",
+        },
+        {
+          id: 5,
+          name: "Yoga Aditia Saputra",
+          role: "Training Staff",
+          photo: "/images/member-4.jpg",
+        },
+        {
+          id: 6,
+          name: "Hanif Jundi Prasetyo",
+          role: "Training Staff",
+          photo: "/images/member-4.jpg",
+        },
+        {
+          id: 7,
+          name: "Seva Ayu Salsabila",
+          role: "Training Staff",
+          photo: "/images/member-4.jpg",
+        },
+        {
+          id: 8,
+          name: "Muhammad Himamul Haq",
           role: "Training Staff",
           photo: "/images/member-4.jpg",
         },

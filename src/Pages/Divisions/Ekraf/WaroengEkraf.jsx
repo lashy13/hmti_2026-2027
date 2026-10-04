@@ -22,7 +22,7 @@ function WaroengEkraf() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Rangga Isnata Sibkhan",
           position: "Penanggung Jawab Waroeng Ekraf",
           // photo: fotoPJ,
         },

@@ -22,7 +22,7 @@ function OpenPoPdhKorsa() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "A Nugraha Hoiri Irobbani",
           position: "Penanggung Jawab Open PO PDH / Korsa",
           // photo: fotoPJ,
         },

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import "../../styles/Prestasi.css";
+import prestasi from "../../assets/Prestasi/VidioKretatif2.png";
 
 function Prestasi() {
 
@@ -11,20 +12,21 @@ function Prestasi() {
       title: "Juara 1 Hackathon",
       year: "2026",
       category: "Technology Competition",
+      image: prestasi
     },
 
     {
-      id: 2,
-      title: "Juara 2 Web Development",
-      year: "2026",
-      category: "Web Development",
+      // id: 2,
+      // title: "Juara 2 Web Development",
+      // year: "2026",
+      // category: "Web Development",
     },
 
     {
-      id: 3,
-      title: "Juara 3 Cybersecurity Competition",
-      year: "2026",
-      category: "Cybersecurity",
+      // id: 3,
+      // title: "Juara 3 Cybersecurity Competition",
+      // year: "2026",
+      // category: "Cybersecurity",
     },
   ];
 

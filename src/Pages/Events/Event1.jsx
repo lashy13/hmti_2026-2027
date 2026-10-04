@@ -1,16 +1,15 @@
-
 import EventDetail from "../../components/EventDetail";
 
 function Event1() {
   return (
     <EventDetail
       number="01"
-      title="Hackwins"
+      title="Coming Soon"
       category="RITECH EVENT"
-      date="12 Oktober 2026"
+      date="Coming Soon"
       location="UMP"
-      description="Kompetisi cybersecurity yang mengasah kemampuan dan kreativitas peserta dalam menyelesaikan berbagai tantangan teknologi."
-      about="Hackwins merupakan kegiatan yang berfokus pada pengembangan kemampuan cybersecurity melalui berbagai tantangan teknologi. Kegiatan ini dirancang untuk memberikan pengalaman bagi peserta dalam memahami, menganalisis, dan menyelesaikan permasalahan keamanan digital."
+      description="Informasi mengenai event RITECH akan segera hadir."
+      about="Event RITECH sedang dipersiapkan. Nantikan informasi selengkapnya mengenai waktu, tempat, dan rangkaian kegiatan yang akan dilaksanakan."
     />
   );
 }

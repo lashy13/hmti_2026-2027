@@ -13,10 +13,19 @@ function WebHmti() {
       implementation="Berkala"
       location="UMP"
       participants="Anggota HMTI"
-
       pj={[
         {
-          name: "Nama PJ",
+          name: "Arkan Rosif Ashshofa",
+          position: "Penanggung Jawab WEB HMTI",
+          // photo: fotoPJ,
+        },
+        {
+          name: "Habiburrahim Mu’awwadz",
+          position: "Penanggung Jawab WEB HMTI",
+          // photo: fotoPJ,
+        },
+        {
+          name: "Adna Afiansyah",
           position: "Penanggung Jawab WEB HMTI",
           // photo: fotoPJ,
         },

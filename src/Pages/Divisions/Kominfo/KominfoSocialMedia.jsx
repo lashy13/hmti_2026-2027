@@ -8,16 +8,17 @@ function KominfoSocialMedia() {
     <ProkerDetail
       division="KOMINFO"
       title="PENGELOLAAN SOSIAL MEDIA HMTI"
-
       description="Pengelolaan media sosial HMTI sebagai media informasi, publikasi, edukasi, dan komunikasi digital organisasi."
-
       about="Program ini berfokus pada perencanaan, pembuatan, dan publikasi konten HMTI melalui media sosial secara kreatif, informatif, dan konsisten."
-
       activityImage=""
-
       pj={[
         {
-          name: "Dewi Safira Haidar",
+          name: "Haidar Aflathun",
+          position: "Penanggung Jawab Pengelolaan Sosial Media HMTI",
+          // photo: fotoPJ,
+        },
+        {
+          name: "Dwi Safira Aulia",
           position: "Penanggung Jawab Pengelolaan Sosial Media HMTI",
           // photo: fotoPJ,
         },

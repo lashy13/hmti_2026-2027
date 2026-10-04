@@ -9,42 +9,42 @@ function AboutHmti() {
 
   const bphMembers = [
     {
-      name: "Nama Ketua",
+      name: "Agil Rifaldi",
       position: "KETUA HMTI",
       image: imgPlaceholder,
       description:
         "Memimpin dan mengarahkan organisasi serta memastikan seluruh kegiatan HMTI berjalan sesuai tujuan.",
     },
     {
-      name: "Nama Wakil",
+      name: "Fiona Aulia WIjaya",
       position: "WAKIL KETUA",
       image: imgPlaceholder,
       description:
         "Mendampingi ketua dalam menjalankan organisasi serta membantu koordinasi antar bagian dalam HMTI.",
     },
     {
-      name: "Nama Sekretaris 1",
+      name: "Nasha Widya Putri",
       position: "SEKRETARIS 1",
       image: imgPlaceholder,
       description:
         "Mengelola administrasi, dokumentasi, dan kebutuhan kesekretariatan organisasi secara umum.",
     },
     {
-      name: "Nama Sekretaris 2",
+      name: "Neifi Ayunda Tristianti",
       position: "SEKRETARIS 2",
       image: imgPlaceholder,
       description:
         "Membantu pengelolaan administrasi serta kearsipan dokumen organisasi.",
     },
     {
-      name: "Nama Bendahara 1",
+      name: "Dias Wahyu Widayati",
       position: "BENDAHARA 1",
       image: imgPlaceholder,
       description:
         "Mengelola keuangan organisasi secara tertib, transparan, dan bertanggung jawab.",
     },
     {
-      name: "Nama Bendahara 2",
+      name: "Salwa Humayroh",
       position: "BENDAHARA 2",
       image: imgPlaceholder,
       description:

@@ -11,15 +11,12 @@ function Kominfo() {
       category="INFORMATION & MEDIA"
       subtitle="KOMUNIKASI DAN INFORMASI"
       description="KOMINFO merupakan divisi HMTI yang berfokus pada pengelolaan informasi, media digital, dokumentasi, dan publikasi kegiatan organisasi."
-
       aboutTitle="DIGITAL MEDIA"
-
       aboutText={[
         "KOMINFO bertanggung jawab dalam mengelola informasi dan media digital HMTI agar dapat tersampaikan secara efektif kepada mahasiswa maupun masyarakat umum.",
 
         "Melalui pengelolaan media sosial, dokumentasi, dan hubungan media partner, KOMINFO menjadi pusat informasi sekaligus representasi digital HMTI.",
       ]}
-
       programs={[
         {
           number: "01",
@@ -66,47 +63,52 @@ function Kominfo() {
           link: "/divisions/kominfo/medpart",
         },
       ]}
-
       members={[
         {
           id: 1,
-          name: "Nama Anggota 1",
+          name: "Bondan Pratama Firdaus",
           role: "Head of Division",
           photo: "/images/member-1.jpg",
         },
 
         {
           id: 2,
-          name: "Nama Anggota 2",
-          role: "Secretary",
+          name: "Muhammad Diva Iyan Nur Alif",
+          role: "PJ DOKUTI",
           photo: "/images/member-2.jpg",
         },
 
         {
           id: 3,
-          name: "Nama Anggota 3",
-          role: "Social Media Staff",
+          name: "Nadhif Aufaa Pratama",
+          role: "PJ DOKUTI",
           photo: "/images/member-3.jpg",
         },
 
         {
           id: 4,
-          name: "Nama Anggota 4",
-          role: "Documentation Staff",
+          name: "Haidar Aflathun",
+          role: "PJ KOMINFO SOSIAL MEDIA",
           photo: "/images/member-4.jpg",
         },
 
         {
           id: 5,
-          name: "Nama Anggota 5",
-          role: "Content Creator",
+          name: "Fatino Aziz Fadhilah",
+          role: "PJ MEDPART",
           photo: "/images/member-5.jpg",
         },
 
         {
           id: 6,
-          name: "Nama Anggota 6",
-          role: "Media Partner Staff",
+          name: "Dwi Safira Aulia",
+          role: "PJ KOMINFO SOSIAL MEDIA",
+          photo: "/images/member-6.jpg",
+        },
+        {
+          id: 6,
+          name: "Lukman Nur Fadhilah",
+          role: "PJ MEDPART",
           photo: "/images/member-6.jpg",
         },
       ]}

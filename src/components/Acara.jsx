@@ -1,57 +1,46 @@
-
 import { useNavigate } from "react-router-dom";
 import "../styles/events.css";
 import eventImage from "../assets/logo/image.png";
 const events = [
   {
     number: "01",
-    title: "Hackwins",
+    title: "Coming Soon",
     slug: "event-1",
-    date: "12 Oktober 2026",
+    date: "Coming Soon",
     location: "UMP",
     category: "RITECH EVENT",
     description:
-      "Kompetisi cybersecurity yang mengasah kemampuan dan kreativitas peserta dalam menyelesaikan berbagai tantangan teknologi.",
+      "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
   {
-    number: "02",
-    title: "Mewins",
-    slug: "event-2",
-    date: "20 Oktober 2026",
+    number: "01",
+    title: "Coming Soon",
+    slug: "event-1",
+    date: "Coming Soon",
     location: "UMP",
     category: "RITECH EVENT",
     description:
-      "Ajang kreativitas dan inovasi teknologi yang memberikan ruang bagi peserta untuk menghasilkan karya terbaik.",
+      "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
   {
-    number: "03",
-    title: "Web Design",
-    slug: "event-3",
-    date: "5 November 2026",
+    number: "01",
+    title: "Coming Soon",
+    slug: "event-1",
+    date: "Coming Soon",
     location: "UMP",
-    category: "COMPETITION",
+    category: "RITECH EVENT",
     description:
-      "Kompetisi desain website yang menggabungkan kreativitas visual, teknologi, dan pengalaman pengguna.",
+      "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
   {
-    number: "04",
-    title: "Network Competition",
-    slug: "event-4",
-    date: "18 November 2026",
+    number: "01",
+    title: "Coming Soon",
+    slug: "event-1",
+    date: "Coming Soon",
     location: "UMP",
-    category: "TECHNOLOGY",
+    category: "RITECH EVENT",
     description:
-      "Kompetisi jaringan komputer untuk menguji kemampuan peserta dalam memahami dan menyelesaikan permasalahan jaringan.",
-  },
-  {
-    number: "05",
-    title: "Hackathon",
-    slug: "event-5",
-    date: "10 Desember 2026",
-    location: "UMP",
-    category: "TECHNOLOGY",
-    description:
-      "Kompetisi pengembangan solusi digital melalui kolaborasi, kreativitas, dan pemanfaatan teknologi.",
+      "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
 ];
 
@@ -78,19 +67,11 @@ function EventCard({ event }) {
     >
       {/* IMAGE */}
       <div className="event-image-box">
-        <img
-          src={eventImage}
-          alt={event.title}
-          className="event-image"
-        />
+        <img src={eventImage} alt={event.title} className="event-image" />
 
-        <span className="event-number">
-          {event.number}
-        </span>
+        <span className="event-number">{event.number}</span>
 
-        <span className="event-category">
-          {event.category}
-        </span>
+        <span className="event-category">{event.category}</span>
       </div>
 
       {/* CONTENT */}
@@ -128,25 +109,20 @@ function EventCard({ event }) {
 
 function Events() {
   return (
-    <section
-      className="events-page"
-      id="events"
-    >
+    <section className="events-page" id="events">
       {/* HEADER */}
       <div className="events-header">
         <div className="events-header-inner">
-          <span className="events-label">
-            HMTI ACTIVITIES
-          </span>
+          <span className="events-label">HMTI ACTIVITIES</span>
 
           <h1>
             Our <span>Events.</span>
           </h1>
 
           <p>
-            Berbagai kegiatan dan event yang diselenggarakan
-            untuk mengembangkan kreativitas, teknologi,
-            kolaborasi, dan kemampuan mahasiswa Informatika.
+            Berbagai kegiatan dan event yang diselenggarakan untuk mengembangkan
+            kreativitas, teknologi, kolaborasi, dan kemampuan mahasiswa
+            Informatika.
           </p>
         </div>
       </div>
@@ -155,10 +131,7 @@ function Events() {
       <div className="events-container">
         <div className="events-grid">
           {events.map((event) => (
-            <EventCard
-              key={event.number}
-              event={event}
-            />
+            <EventCard key={event.number} event={event} />
           ))}
         </div>
       </div>

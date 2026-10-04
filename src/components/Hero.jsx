@@ -66,7 +66,7 @@ function Hero() {
             className="hero-action primary"
           >
             OUR DIVISIONS
-            <span>→</span>
+            <span></span>
           </Link>
 
 
@@ -77,7 +77,7 @@ function Hero() {
             className="hero-action secondary"
           >
             CERENITY
-            <span>↗</span>
+            <span></span>
           </Link>
 
 
@@ -88,7 +88,7 @@ function Hero() {
             className="hero-action secondary"
           >
             PRESTASI
-            <span>↗</span>
+            <span></span>
           </Link>
 
 
@@ -99,7 +99,7 @@ function Hero() {
             className="hero-action secondary"
           >
             ANGGOTA
-            <span>↗</span>
+            <span></span>
           </Link>
 
         </motion.div>

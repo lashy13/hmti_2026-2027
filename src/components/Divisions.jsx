@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import ristekLogo from "../assets/Divisions/ristek.png";
+import humasLogo from "../assets/Divisions/humas.png";
+import ekraf from "../assets/Divisions/ekraf.png";
 
 function Divisions() {
   const navigate = useNavigate();
 
   return (
     <section id="divisions" className="divisions-section">
-
       {/* =========================
           BACK TO HMTI
       ========================= */}
-      <button
-        className="back-hmti-button"
-        onClick={() => navigate("/hmti")}
-      >
+      <button className="back-hmti-button" onClick={() => navigate("/hmti")}>
         <span>←</span>
         BACK TO HMTI
       </button>
@@ -23,9 +22,7 @@ function Divisions() {
       ========================= */}
       <div className="divisions-header">
         <div>
-          <span className="division-mini">
-            ORGANIZATIONAL STRUCTURE
-          </span>
+          <span className="division-mini">ORGANIZATIONAL STRUCTURE</span>
           <h2>
             SIX
             <br />
@@ -44,7 +41,6 @@ function Divisions() {
           DIVISION GRID
       ========================= */}
       <div className="divisions-grid">
-
         {/* =========================
             01. PSDM
         ========================= */}
@@ -79,23 +75,39 @@ function Divisions() {
             {/* Program Kerja Asli */}
             <div className="division-mini-programs">
               <div className="division-mini-program">
-                <span>LKMM</span>
+                <span>OSMA</span>
                 <small>DEVELOPMENT</small>
               </div>
               <div className="division-mini-program">
-                <span>UPGRADING</span>
+                <span>PENGURUS MUDA</span>
                 <small>LEARNING</small>
               </div>
               <div className="division-mini-program">
-                <span>MENTORING</span>
-                <small>CAPACITY</small>
+                <span>LATIHAN DASAR ORGANISASI</span>
+                <small>LEARNING</small>
+              </div>
+              <div className="division-mini-program">
+                <span>IT SPORT</span>
+                <small>DEVELOPMENT</small>
               </div>
             </div>
 
             {/* Tombol Explore */}
-            <button className="division-explore-btn" onClick={() => navigate("/divisions/psdm")}>
+            <button
+              className="division-explore-btn"
+              onClick={() => navigate("/divisions/psdm")}
+            >
               <span>Explore Division</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -121,37 +133,51 @@ function Divisions() {
           </div>
 
           <div className="division-symbol-img">
-            <img src="/images/ekraf-logo.png" alt="Ekraf Logo" />
+            <img src={ekraf} alt="ekraf Logo" />
           </div>
 
           <div className="division-content">
             <h3>EKRAF</h3>
-            <span className="division-full">
-              EKONOMI KREATIF
-            </span>
+            <span className="division-full">EKONOMI KREATIF</span>
             <p>
-              Mendorong kreativitas mahasiswa dalam menghasilkan ide, karya,
-              dan peluang melalui kegiatan kreatif dan inovatif.
+              Mendorong kreativitas mahasiswa dalam menghasilkan ide, karya, dan
+              peluang melalui kegiatan kreatif dan inovatif.
             </p>
 
             <div className="division-mini-programs">
               <div className="division-mini-program">
-                <span>LKMM</span>
+                <span>PDH/KORSA</span>
                 <small>DEVELOPMENT</small>
               </div>
               <div className="division-mini-program">
-                <span>UPGRADING</span>
+                <span>MANAJEMEN MEDIA SOSIAL</span>
                 <small>LEARNING</small>
               </div>
               <div className="division-mini-program">
-                <span>MENTORING</span>
+                <span>MAERCHANDISE</span>
                 <small>CAPACITY</small>
+              </div>
+               <div className="division-mini-program">
+                <span>WAROENG EKRAF</span>
+                <small>DEVELOPMENT</small>
               </div>
             </div>
 
-            <button className="division-explore-btn" onClick={() => navigate("/divisions/ekraf")}>
+            <button
+              className="division-explore-btn"
+              onClick={() => navigate("/divisions/ekraf")}
+            >
               <span>Explore Division</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -182,9 +208,7 @@ function Divisions() {
 
           <div className="division-content">
             <h3>ADVOKASI</h3>
-            <span className="division-full">
-              ADVOKASI MAHASISWA
-            </span>
+            <span className="division-full">ADVOKASI MAHASISWA</span>
             <p>
               Menjadi wadah bagi mahasiswa untuk menyampaikan aspirasi,
               kebutuhan, dan berbagai persoalan yang berkaitan dengan kehidupan
@@ -193,22 +217,42 @@ function Divisions() {
 
             <div className="division-mini-programs">
               <div className="division-mini-program">
-                <span>LKMM</span>
+                <span>DISKUSI UMUM</span>
                 <small>DEVELOPMENT</small>
               </div>
               <div className="division-mini-program">
-                <span>UPGRADING</span>
+                <span>SAKTI</span>
                 <small>LEARNING</small>
               </div>
               <div className="division-mini-program">
-                <span>MENTORING</span>
+                <span>HARI WAJIB PDH</span>
+                <small>CAPACITY</small>
+              </div>
+               <div className="division-mini-program">
+                <span>LDP</span>
+                <small>CAPACITY</small>
+              </div>
+               <div className="division-mini-program">
+                <span>KOTAK ASPIRASI</span>
                 <small>CAPACITY</small>
               </div>
             </div>
 
-            <button className="division-explore-btn" onClick={() => navigate("/divisions/advokasi")}>
+            <button
+              className="division-explore-btn"
+              onClick={() => navigate("/divisions/advokasi")}
+            >
               <span>Explore Division</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -239,9 +283,7 @@ function Divisions() {
 
           <div className="division-content">
             <h3>KOMINFO</h3>
-            <span className="division-full">
-              KOMUNIKASI DAN INFORMASI
-            </span>
+            <span className="division-full">KOMUNIKASI DAN INFORMASI</span>
             <p>
               Mengelola informasi, publikasi, dan media digital HMTI agar
               informasi organisasi dapat tersampaikan dengan baik kepada
@@ -250,22 +292,34 @@ function Divisions() {
 
             <div className="division-mini-programs">
               <div className="division-mini-program">
-                <span>LKMM</span>
+                <span>PENGELOLAAN SOSIAL MEDIA HMTI</span>
                 <small>DEVELOPMENT</small>
               </div>
               <div className="division-mini-program">
-                <span>UPGRADING</span>
+                <span>DOKUTI</span>
                 <small>LEARNING</small>
               </div>
               <div className="division-mini-program">
-                <span>MENTORING</span>
+                <span>MEDPART</span>
                 <small>CAPACITY</small>
               </div>
             </div>
 
-            <button className="division-explore-btn" onClick={() => navigate("/divisions/kominfo")}>
+            <button
+              className="division-explore-btn"
+              onClick={() => navigate("/divisions/kominfo")}
+            >
               <span>Explore Division</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -291,14 +345,12 @@ function Divisions() {
           </div>
 
           <div className="division-symbol-img">
-            <img src="/images/humas-logo.png" alt="Humas Logo" />
+           <img src={humasLogo} alt="Humas Logo" />
           </div>
 
           <div className="division-content">
             <h3>HUMAS</h3>
-            <span className="division-full">
-              HUBUNGAN MASYARAKAT
-            </span>
+            <span className="division-full">HUBUNGAN MASYARAKAT</span>
             <p>
               Membangun dan menjaga hubungan yang baik antara HMTI dengan
               mahasiswa, organisasi lain, serta pihak eksternal.
@@ -306,22 +358,34 @@ function Divisions() {
 
             <div className="division-mini-programs">
               <div className="division-mini-program">
-                <span>LKMM</span>
+                <span>STUDI BANDING</span>
                 <small>DEVELOPMENT</small>
               </div>
               <div className="division-mini-program">
-                <span>UPGRADING</span>
+                <span>SAFARI HUMAS</span>
                 <small>LEARNING</small>
               </div>
               <div className="division-mini-program">
-                <span>MENTORING</span>
+                <span>BAKTI SOSIAL</span>
                 <small>CAPACITY</small>
               </div>
             </div>
 
-            <button className="division-explore-btn" onClick={() => navigate("/divisions/humas")}>
+            <button
+              className="division-explore-btn"
+              onClick={() => navigate("/divisions/humas")}
+            >
               <span>Explore Division</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -347,14 +411,12 @@ function Divisions() {
           </div>
 
           <div className="division-symbol-img">
-            <img src="/images/ristek-logo.png" alt="Ristek Logo" />
+           <img src={ristekLogo} alt="Ristek Logo" />
           </div>
 
           <div className="division-content">
             <h3>RISTEK</h3>
-            <span className="division-full">
-              RISET DAN TEKNOLOGI
-            </span>
+            <span className="division-full">RISET DAN TEKNOLOGI</span>
             <p>
               Berfokus pada pengembangan teknologi, riset, dan peningkatan
               kemampuan mahasiswa dalam bidang informatika.
@@ -362,22 +424,34 @@ function Divisions() {
 
             <div className="division-mini-programs">
               <div className="division-mini-program">
-                <span>LKMM</span>
+                <span>WEB HMTI</span>
                 <small>DEVELOPMENT</small>
               </div>
               <div className="division-mini-program">
-                <span>UPGRADING</span>
+                <span>NITRO</span>
                 <small>LEARNING</small>
               </div>
               <div className="division-mini-program">
-                <span>MENTORING</span>
+                <span>STUDY CLUB</span>
                 <small>CAPACITY</small>
               </div>
             </div>
 
-            <button className="division-explore-btn" onClick={() => navigate("/divisions/ristek")}>
+            <button
+              className="division-explore-btn"
+              onClick={() => navigate("/divisions/ristek")}
+            >
               <span>Explore Division</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -386,7 +460,6 @@ function Divisions() {
             <span>RISTEK</span>
           </div>
         </motion.article>
-
       </div>
 
       {/* =========================
@@ -406,7 +479,6 @@ function Divisions() {
           DIFFERENT ROLES. ONE ORGANIZATION.
         </span>
       </div>
-
     </section>
   );
 }

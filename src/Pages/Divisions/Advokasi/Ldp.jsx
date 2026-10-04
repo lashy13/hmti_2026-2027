@@ -22,7 +22,7 @@ function Ldp() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Muhammad Lutfi Bachtiar",
           position: "Penanggung Jawab LDP",
           // photo: fotoPJ,
         },

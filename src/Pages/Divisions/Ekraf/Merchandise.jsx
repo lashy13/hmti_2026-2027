@@ -22,7 +22,7 @@ function Merchandise() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Hasna Salsabila",
           position: "Penanggung Jawab Merchandise",
           // photo: fotoPJ,
         },

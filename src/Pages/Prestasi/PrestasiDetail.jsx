@@ -3,29 +3,26 @@ import { Link, useParams } from "react-router-dom";
 
 import "../../styles/Prestasi.css";
 
-// import prestasi1 from "../../assets/prestasi/prestasi-1.jpg";
-// import prestasi2 from "../../assets/prestasi/prestasi-2.jpg";
-// import prestasi3 from "../../assets/prestasi/prestasi-3.jpg";
+import prestasi from "../../assets/Prestasi/VidioKretatif2.png";
 
 function PrestasiDetail() {
-
   const { id } = useParams();
 
   const prestasiData = [
     {
       id: "1",
-      title: "Juara 1 Hackathon",
+      title: "Juara 2 Video Kreatif KSEIYIF",
       year: "2026",
       category: "Technology Competition",
-      competition: "National Hackathon Competition",
+      competition: "KSEI YOUTH INNOVATION FESTIVAL 2026",
 
-      // image: prestasi1,
+      image: prestasi,
 
       description:
-        "Tim mahasiswa Teknik Informatika berhasil meraih juara pertama dalam kompetisi hackathon. Pencapaian ini menjadi salah satu bentuk kontribusi mahasiswa dalam mengembangkan solusi berbasis teknologi.",
+        "Tim mahasiswa Teknik Informatika Universitas Muhammadiyah Purwokerto yang terdiri dari Habiburrahim Mu'awwadz, Adna Afiansyah, dan Firman Hidayah berhasil meraih Juara 2 dalam Lomba Video Kreatif.",
 
       details:
-        "Dalam kompetisi ini, tim mengembangkan sebuah solusi digital dengan menggabungkan kemampuan pemrograman, problem solving, UI/UX, dan kerja sama tim.",
+        "Kompetisi ini merupakan ajang bagi mahasiswa untuk menuangkan ide dan kreativitas melalui karya video dengan mengangkat konsep yang inovatif dan menarik. Dalam prosesnya, tim mengembangkan sebuah karya dengan menggabungkan kemampuan dalam penyusunan konsep, storytelling, pengambilan dan penyuntingan video, serta kerja sama tim.",
     },
 
     {
@@ -35,7 +32,7 @@ function PrestasiDetail() {
       category: "Web Development",
       competition: "Web Development Competition",
 
-      // image: prestasi2,
+      image: prestasi,
 
       description:
         "Mahasiswa Teknik Informatika berhasil meraih juara kedua dalam kompetisi pengembangan website.",
@@ -51,7 +48,7 @@ function PrestasiDetail() {
       category: "Cybersecurity",
       competition: "Cybersecurity Competition",
 
-      // image: prestasi3,
+      image: prestasi,
 
       description:
         "Tim mahasiswa Teknik Informatika berhasil meraih juara ketiga dalam kompetisi cybersecurity.",
@@ -61,23 +58,14 @@ function PrestasiDetail() {
     },
   ];
 
-
   const selectedPrestasi = prestasiData.find(
     (item) => item.id === id
   );
 
-
-  // =========================================
-  // JIKA DATA TIDAK DITEMUKAN
-  // =========================================
-
   if (!selectedPrestasi) {
     return (
       <main className="prestasi-not-found">
-
-        <h1>
-          Prestasi Tidak Ditemukan
-        </h1>
+        <h1>Prestasi Tidak Ditemukan</h1>
 
         <p>
           Data prestasi yang kamu cari tidak tersedia.
@@ -86,119 +74,86 @@ function PrestasiDetail() {
         <Link to="/prestasi">
           ← Kembali ke Prestasi
         </Link>
-
       </main>
     );
   }
 
-
   return (
     <main className="prestasi-detail-page">
 
-      {/* =========================================
-          BACK BUTTON
-      ========================================= */}
-
+      {/* BACK BUTTON */}
       <div className="prestasi-back prestasi-detail-back">
-
         <Link
           to="/prestasi"
           className="prestasi-back-button"
         >
+          <span>←</span>
 
-          <span>
-            ←
-          </span>
-
-          <span>
-            BACK TO PRESTASI
-          </span>
-
+          <span>BACK TO PRESTASI</span>
         </Link>
-
       </div>
 
-
-      {/* =========================================
-          DETAIL
-      ========================================= */}
-
+      {/* DETAIL */}
       <section className="prestasi-detail">
 
         <motion.div
           className="prestasi-detail-image"
-
           initial={{
             opacity: 0,
             x: -40,
           }}
-
           animate={{
             opacity: 1,
             x: 0,
           }}
-
           transition={{
             duration: 0.8,
           }}
         >
-
           <img
             src={selectedPrestasi.image}
             alt={selectedPrestasi.title}
           />
-
         </motion.div>
-
 
         <motion.div
           className="prestasi-detail-content"
-
           initial={{
             opacity: 0,
             x: 40,
           }}
-
           animate={{
             opacity: 1,
             x: 0,
           }}
-
           transition={{
             duration: 0.8,
             delay: 0.1,
           }}
         >
-
           <span className="detail-category">
             {selectedPrestasi.category}
           </span>
-
 
           <span className="detail-year">
             {selectedPrestasi.year}
           </span>
 
-
           <h1>
             {selectedPrestasi.title}
           </h1>
-
 
           <h3>
             {selectedPrestasi.competition}
           </h3>
 
-
           <p>
             {selectedPrestasi.description}
           </p>
 
-
           <p>
             {selectedPrestasi.details}
           </p>
-
 
           <Link
             to="/prestasi"
@@ -206,11 +161,9 @@ function PrestasiDetail() {
           >
             ← LIHAT PRESTASI LAINNYA
           </Link>
-
         </motion.div>
 
       </section>
-
     </main>
   );
 }

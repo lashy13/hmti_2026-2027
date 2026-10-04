@@ -13,10 +13,14 @@ function StudyClub() {
       implementation="Berkala"
       location="UMP"
       participants="Mahasiswa TI"
-
       pj={[
         {
-          name: "Nama PJ",
+          name: "Muhammad Reza Fahlevi",
+          position: "Penanggung Jawab Study Club",
+          // photo: fotoPJ,
+        },
+        {
+          name: "Ega Juanda Putra",
           position: "Penanggung Jawab Study Club",
           // photo: fotoPJ,
         },

@@ -20,14 +20,9 @@ function Sakti() {
 
       pj={[
         {
-          name: "Nama PJ 1",
-          position: "Ketua PJ",
+          name: "Naoyama Daneela Rahma",
+          position: "Penanggung Jawab Diskusi Umum",
           // photo: fotoPJ1,
-        },
-        {
-          name: "Nama PJ 2",
-          position: "Anggota PJ",
-          // photo: fotoPJ2,
         },
       ]}
     />

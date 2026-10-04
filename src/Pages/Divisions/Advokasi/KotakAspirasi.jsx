@@ -1,7 +1,7 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
 // import foto PJ
-// import fotoPJ from "../../../assets/pj/kotak-aspirasi.jpg";
+import Asif from "../../../assets/Anggota/Advokasi/Asif.jpg";
 
 function KotakAspirasi() {
   return (
@@ -22,9 +22,9 @@ function KotakAspirasi() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Muhammad Asif Mahdiyansah",
           position: "Penanggung Jawab Kotak Aspirasi",
-          // photo: fotoPJ,
+          photo: Asif,
         },
       ]}
     />

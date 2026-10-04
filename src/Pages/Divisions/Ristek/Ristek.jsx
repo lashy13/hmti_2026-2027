@@ -64,57 +64,57 @@ function Ristek() {
       members={[
         {
           id: 1,
-          name: "Ahmad Fauzi",
+          name: "Firman Hidayah",
           role: "Head of Division",
           photo: webHmti,
         },
 
         {
           id: 2,
-          name: "Siti Rahma",
-          role: "Secretary & Treasurer",
+          name: "Habiburrahim Mu’awwadz",
+          role: "PJ WEB HMTI",
           photo: "/images/member-2.jpg",
         },
 
         {
           id: 3,
-          name: "Rizky Pratama",
-          role: "Ketua PJ Web HMTI",
+          name: "Arkan Rosif Ashshofa",
+          role: "PJ WEB HMTI",
           photo: "/images/member-3.jpg",
         },
 
         {
           id: 4,
-          name: "Dinda Lestari",
-          role: "UI/UX Designer",
+          name: "Adna Afiansyah",
+          role: "PJ WEB HMTI",
           photo: "/images/member-4.jpg",
         },
 
         {
           id: 5,
-          name: "Budi Santoso",
-          role: "Research Lead",
+          name: "Muhammad Reza Fahlevi",
+          role: "PJ STUDY CLUB",
           photo: "/images/member-5.jpg",
         },
 
         {
           id: 6,
-          name: "Anisa Putri",
-          role: "Nitro Competition Staff",
+          name: "Ega Juanda Putra",
+          role: "PJ STUDY CLUB",
           photo: "/images/member-6.jpg",
         },
 
         {
           id: 7,
-          name: "Fajar Nugraha",
-          role: "Study Club Coordinator",
+          name: "Akbar Faitu Rahman",
+          role: "PJ NITRO",
           photo: "/images/member-7.jpg",
         },
 
         {
           id: 8,
-          name: "Dewi Melati",
-          role: "Technology Staff",
+          name: "Muhammad Dzaki Arkaan",
+          role: "PJ NITRO",
           photo: "/images/member-8.jpg",
         },
       ]}
