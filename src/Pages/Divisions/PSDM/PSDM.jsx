@@ -60,7 +60,7 @@ function PSDM() {
         {
           id: 1,
           name: "Raynald Salsa Saputra",
-          role: "Head of Division",
+          role: "Head of Division And PJ OSMA / OSPEK Prodi",
           photo: "/images/member-1.jpg",
         },
 
@@ -74,14 +74,14 @@ function PSDM() {
         {
           id: 3,
           name: "Kinanti",
-          role: "Development Staff",
+          role: "PJ PENGURUS MUDA",
           photo: "/images/member-3.jpg",
         },
 
         {
           id: 4,
           name: "Assifa Ramadan Kurniawan",
-          role: "Training Staff",
+          role: "PJ IT ESPORT",
           photo: "/images/member-4.jpg",
         },
         {
@@ -99,13 +99,13 @@ function PSDM() {
         {
           id: 7,
           name: "Seva Ayu Salsabila",
-          role: "Training Staff",
+          role: "Sekertaris LPJ",
           photo: "/images/member-4.jpg",
         },
         {
           id: 8,
           name: "Muhammad Himamul Haq",
-          role: "Training Staff",
+          role: "PJ LATIHAN DASAR ORGANISASI",
           photo: "/images/member-4.jpg",
         },
       ]}

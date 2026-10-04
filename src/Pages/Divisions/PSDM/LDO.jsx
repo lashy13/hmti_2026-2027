@@ -18,7 +18,7 @@ function LDO() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Muhammad Himamul Haq",
           position: "Penanggung Jawab Latihan Dasar Organisasi",
           // photo: fotoPJ,
         },

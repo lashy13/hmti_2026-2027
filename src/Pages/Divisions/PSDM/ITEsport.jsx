@@ -18,7 +18,7 @@ function ITEsport() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Assifa Ramadan Kurniawan",
           position: "Penanggung Jawab IT Esport",
           // photo: fotoPJ,
         },

@@ -18,7 +18,7 @@ function OSMA() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Raynald Salsa Saputra",
           position: "Penanggung Jawab OSMA / OSPEK Prodi",
           // photo: fotoPJ,
         },

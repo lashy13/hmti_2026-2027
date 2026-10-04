@@ -18,7 +18,7 @@ function PengurusMuda() {
 
       pj={[
         {
-          name: "Nama PJ",
+          name: "Kinanti",
           position: "Penanggung Jawab Pengurus Muda",
           // photo: fotoPJ,
         },
