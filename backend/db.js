@@ -1,5 +1,6 @@
 import mysql from "mysql2";
 import "dotenv/config";
+import process from "process";
 
 const db = mysql.createPool({
   host: process.env.DB_HOST,
@@ -15,10 +16,7 @@ const db = mysql.createPool({
 
 db.getConnection((err, connection) => {
   if (err) {
-    console.error(
-      "❌ Gagal terhubung ke MySQL:",
-      err.message
-    );
+    console.error("❌ Gagal terhubung ke MySQL:", err.message);
     return;
   }
 

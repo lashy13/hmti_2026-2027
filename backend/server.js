@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import process from "node:process";
 import "dotenv/config";
 import db from "./db.js";
 
@@ -12,7 +13,7 @@ const app = express();
 app.use(
   cors({
     origin: "*",
-  })
+  }),
 );
 
 app.use(express.json());
@@ -34,10 +35,7 @@ app.get("/", (req, res) => {
 app.get("/api/test-db", (req, res) => {
   db.query("SHOW TABLES", (err, results) => {
     if (err) {
-      console.error(
-        "❌ Database error:",
-        err.message
-      );
+      console.error("❌ Database error:", err.message);
 
       return res.status(500).json({
         success: false,
@@ -75,10 +73,7 @@ app.get("/api/setup-db", (req, res) => {
 
   db.query(sql, (err) => {
     if (err) {
-      console.error(
-        "❌ Gagal membuat tabel:",
-        err.message
-      );
+      console.error("❌ Gagal membuat tabel:", err.message);
 
       return res.status(500).json({
         success: false,
@@ -98,12 +93,7 @@ app.get("/api/setup-db", (req, res) => {
 // ========================================
 
 app.post("/api/aspirasi", (req, res) => {
-  const {
-    nama,
-    nim,
-    email,
-    aspirasi,
-  } = req.body;
+  const { nama, nim, email, aspirasi } = req.body;
 
   if (!nama || !nim || !email || !aspirasi) {
     return res.status(400).json({
@@ -117,28 +107,21 @@ app.post("/api/aspirasi", (req, res) => {
     VALUES (?, ?, ?, ?)
   `;
 
-  db.query(
-    sql,
-    [nama, nim, email, aspirasi],
-    (err, result) => {
-      if (err) {
-        console.error(
-          "❌ Gagal menyimpan aspirasi:",
-          err.message
-        );
+  db.query(sql, [nama, nim, email, aspirasi], (err, result) => {
+    if (err) {
+      console.error("❌ Gagal menyimpan aspirasi:", err.message);
 
-        return res.status(500).json({
-          message: "Gagal menyimpan aspirasi.",
-          error: err.message,
-        });
-      }
-
-      res.status(201).json({
-        message: "Aspirasi berhasil dikirim!",
-        id: result.insertId,
+      return res.status(500).json({
+        message: "Gagal menyimpan aspirasi.",
+        error: err.message,
       });
     }
-  );
+
+    res.status(201).json({
+      message: "Aspirasi berhasil dikirim!",
+      id: result.insertId,
+    });
+  });
 });
 
 // ========================================
@@ -154,10 +137,7 @@ app.get("/api/aspirasi", (req, res) => {
 
   db.query(sql, (err, results) => {
     if (err) {
-      console.error(
-        "❌ Gagal mengambil data:",
-        err.message
-      );
+      console.error("❌ Gagal mengambil data:", err.message);
 
       return res.status(500).json({
         message: "Gagal mengambil data.",
@@ -176,7 +156,5 @@ app.get("/api/aspirasi", (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(
-    `🚀 Backend HMTI berjalan di port ${PORT}`
-  );
+  console.log(`🚀 Backend HMTI berjalan di port ${PORT}`);
 });
