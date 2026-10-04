@@ -148,7 +148,31 @@ app.get("/api/aspirasi", (req, res) => {
     res.json(results);
   });
 });
+// ========================================
+// DELETE SEMUA ASPIRASI
+// ========================================
 
+app.delete("/api/aspirasi", (req, res) => {
+  const sql = "DELETE FROM aspirasi";
+
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.error("❌ Gagal menghapus semua aspirasi:", err.message);
+
+      return res.status(500).json({
+        success: false,
+        message: "Gagal menghapus semua aspirasi.",
+        error: err.message,
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Semua aspirasi berhasil dihapus.",
+      deleted: result.affectedRows,
+    });
+  });
+});
 // ========================================
 // START SERVER
 // ========================================
