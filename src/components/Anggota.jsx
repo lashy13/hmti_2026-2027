@@ -97,7 +97,7 @@ function Anggota() {
     },
     {
       id: 11,
-      nama: "NMuhammad Reza Fahlevi",
+      nama: "Muhammad Reza Fahlevi",
       jabatan: "Staf Divisi Ristek",
       divisi: "RISTEK",
       // foto: anggota9,
