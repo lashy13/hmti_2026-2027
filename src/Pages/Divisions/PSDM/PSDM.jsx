@@ -71,44 +71,37 @@ function PSDM() {
 
         {
           id: 2,
-          name: "Rafi Ikhwan Ma’ruf",
-          role: "Secretary",
-          photo: "/images/member-2.jpg",
-        },
-
-        {
-          id: 3,
           name: "Kinanti",
           role: "PJ PENGURUS MUDA",
           photo: Kinanti,
         },
 
         {
-          id: 4,
+          id: 3,
           name: "Assifa Ramadan Kurniawan",
           role: "PJ IT ESPORT",
           photo: Assifa,
         },
         {
-          id: 5,
+          id: 4,
           name: "Yoga Aditia Saputra",
           role: "PJ AGENDA UPGRADING",
           photo: Yoga,
         },
         {
-          id: 6,
+          id: 5,
           name: "Hanif Jundi Prasetyo",
           role: "PJ AGENDA UPGRADING",
           photo: "/images/member-4.jpg",
         },
         {
-          id: 7,
+          id: 6,
           name: "Seva Ayu Salsabila",
           role: "Sekertaris LPJ",
           photo: "/images/member-4.jpg",
         },
         {
-          id: 8,
+          id: 7,
           name: "Muhammad Himamul Haq",
           role: "PJ LATIHAN DASAR ORGANISASI",
           photo: Himam,
