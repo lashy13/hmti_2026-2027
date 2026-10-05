@@ -3,6 +3,7 @@ import "../../../styles/Warnadiv.css";
 
 import kominfoImage from "../../../assets/logo/image.png";
 import Fatino from "../../../assets/Anggota/Kominfo/Fatino.png";
+import Haidar from "../../../assets/Anggota/Kominfo/Haidar.png";
 
 function Kominfo() {
   return (
@@ -90,7 +91,7 @@ function Kominfo() {
           id: 4,
           name: "Haidar Aflathun",
           role: "PJ KOMINFO SOSIAL MEDIA",
-          photo: "/images/member-4.jpg",
+          photo: Haidar,
         },
 
         {

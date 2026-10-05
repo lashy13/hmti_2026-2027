@@ -4,6 +4,10 @@ import "../../../styles/Warnadiv.css";
 import webHmti from "../../../assets/logo/image.png";
 import Firman from "../../../assets/Anggota/Ristek/Firman.png";
 import Arkan from "../../../assets/Anggota/Ristek/Arkan.png";
+import Dzaki from "../../../assets/Anggota/Ristek/Dzaki.png";
+import Habib from "../../../assets/Anggota/Ristek/Habib.png";
+import Reza from "../../../assets/Anggota/Ristek/Reza.png";
+import Adna from "../../../assets/Anggota/Ristek/Adna.png";
 function Ristek() {
   return (
     <DivisionPage
@@ -74,7 +78,7 @@ function Ristek() {
           id: 2,
           name: "Habiburrahim Mu’awwadz",
           role: "PJ WEB HMTI",
-          photo: "/images/member-2.jpg",
+          photo: Habib,
         },
 
         {
@@ -88,14 +92,14 @@ function Ristek() {
           id: 4,
           name: "Adna Afiansyah",
           role: "PJ WEB HMTI",
-          photo: "/images/member-4.jpg",
+          photo: Adna,
         },
 
         {
           id: 5,
           name: "Muhammad Reza Fahlevi",
           role: "PJ STUDY CLUB",
-          photo: "/images/member-5.jpg",
+          photo: Reza,
         },
 
         {
@@ -116,7 +120,7 @@ function Ristek() {
           id: 8,
           name: "Muhammad Dzaki Arkaan",
           role: "PJ NITRO",
-          photo: "/images/member-8.jpg",
+          photo: Dzaki,
         },
       ]}
     />

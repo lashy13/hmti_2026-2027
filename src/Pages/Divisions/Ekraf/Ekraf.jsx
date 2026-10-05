@@ -1,6 +1,7 @@
 import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
 import Jona from "../../../assets/Anggota/Ekraf/Jona.png";
+import Nugraha from "../../../assets/Anggota/Ekraf/Nugraha.png";
 function Ekraf() {
   return (
     <DivisionPage
@@ -89,7 +90,7 @@ function Ekraf() {
           id: 5,
           name: "A Nugraha Hoiri Irobbani",
           role: "PJ OPEN PO PDH/KORSA",
-          photo: "/images/member-4.jpg",
+          photo: Nugraha,
         },
 
         {

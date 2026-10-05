@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/study-club.jpg";
+import Reza from "../../../assets/Anggota/Ristek/Reza.png";
 
 function StudyClub() {
   return (
@@ -17,7 +16,7 @@ function StudyClub() {
         {
           name: "Muhammad Reza Fahlevi",
           position: "Penanggung Jawab Study Club",
-          // photo: fotoPJ,
+          photo: Reza,
         },
         {
           name: "Ega Juanda Putra",

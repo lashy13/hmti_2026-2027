@@ -5,13 +5,44 @@ import "../styles/Anggota.css";
 // =====================================================
 // FOTO ANGGOTA
 // =====================================================
+//BPH
+import nasha from "../assets/Anggota/BPH/Nasha.png";
 
-// import ketua from "../assets/anggota/ketua.jpg";
-// import wakil from "../assets/anggota/wakil.jpg";
-// import anggota1 from "../assets/anggota/anggota-1.jpg";
-// import anggota2 from "../assets/anggota/anggota-2.jpg";
-// import anggota3 from "../assets/anggota/anggota-3.jpg";
-// import anggota4 from "../assets/anggota/anggota-4.jpg";
+// ADVOKASI
+import Asif from "../assets/Anggota/Advokasi/Asif.png";
+import Lutfi from "../assets/Anggota/Advokasi/Luthfi.png";
+import Naoyama from "../assets/Anggota/Advokasi/Naoyama.png";
+import Rahma from "../assets/Anggota/Advokasi/Rahma.png";
+
+// RISTEK
+import Firman from "../assets/Anggota/Ristek/Firman.png";
+import Arkan from "../assets/Anggota/Ristek/Arkan.png";
+import Dzaki from "../assets/Anggota/Ristek/Dzaki.png";
+import Habib from "../assets/Anggota/Ristek/Habib.png";
+import Adna from "../assets/Anggota/Ristek/Adna.png";
+import Reza from "../assets/Anggota/Ristek/Reza.png";
+
+//PSDM
+import Assifa from "../assets/Anggota/PSDM/Assifa.png";
+import Reynald from "../assets/Anggota/PSDM/reynald.png";
+import Yoga from "../assets/Anggota/PSDM/Yoga.png";
+import Himam from "../assets/Anggota/PSDM/Himam.png";
+import Kinanti from "../assets/Anggota/PSDM/Kinanti.png";
+
+
+//KOMINFO
+import Fatino from "../assets/Anggota/Kominfo/Fatino.png";
+import Haidar from "../assets/Anggota/Kominfo/Haidar.png";
+
+//Ekraf
+import Jona from "../assets/Anggota/Ekraf/Jona.png";
+import Nugraha from "../assets/Anggota/Ekraf/Nugraha.png";
+
+//Humas
+import Agis from "../assets/Anggota/Humas/Agis.png";
+import Nayla from "../assets/Anggota/Humas/Nayla.png";
+import Tiara from "../assets/Anggota/Humas/Tiara.png";
+import Wildan from "../assets/Anggota/Humas/Wildan.png";
 
 // =====================================================
 // COMPONENT
@@ -31,7 +62,7 @@ function Anggota() {
       jabatan: "Ketua HMTI",
       divisi: "BPH",
       // foto: ketua,
-    },
+    },  
     {
       id: 2,
       nama: "Fiona Aulia WIjaya",
@@ -44,7 +75,7 @@ function Anggota() {
       nama: "Nasha Widya Putri",
       jabatan: "Sekretaris 1",
       divisi: "BPH",
-      // foto: anggota1,
+      foto: nasha,
     },
     {
       id: 4,
@@ -72,21 +103,21 @@ function Anggota() {
       nama: "Firman Hidayah",
       jabatan: "Ketua Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota5,
+      foto: Firman,
     },
     {
       id: 8,
       nama: "Habiburrahim Mu’awwadz",
       jabatan: "Staf Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota6,
+      foto: Habib,
     },
     {
       id: 9,
       nama: "Arkan Rosif Ashshofa",
       jabatan: "Staf Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota7,
+      foto: Arkan,
     },
     {
       id: 10,
@@ -100,21 +131,21 @@ function Anggota() {
       nama: "Muhammad Reza Fahlevi",
       jabatan: "Staf Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota9,
+      foto: Reza,
     },
     {
       id: 12,
       nama: "Muhammad Dzaki Arkaan",
       jabatan: "Staf Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota10,
+      foto: Dzaki,
     },
     {
       id: 13,
       nama: "Adna Afiansyah",
       jabatan: "Staff Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota11,
+      foto: Adna,
     },
     {
       id: 14,
@@ -128,7 +159,7 @@ function Anggota() {
       nama: "Agis Aditya",
       jabatan: "Ketua Divisi Humas",
       divisi: "HUMAS",
-      // foto: anggota13,
+      foto: Agis,
     },
     {
       id: 16,
@@ -142,7 +173,7 @@ function Anggota() {
       nama: "Wildan Imanuddin",
       jabatan: "Staff Divisi Humas",
       divisi: "HUMAS",
-      // foto: anggota15,
+      foto: Wildan,
     },
     {
       id: 18,
@@ -156,7 +187,7 @@ function Anggota() {
       nama: "Tiara Ayuningtyas",
       jabatan: "Staff Divisi Humas",
       divisi: "HUMAS",
-      // foto: anggota17,
+      foto: Tiara,
     },
     {
       id: 20,
@@ -170,7 +201,7 @@ function Anggota() {
       nama: "Nayla Cikha Safira",
       jabatan: "Staff Divisi Humas",
       divisi: "HUMAS",
-      // foto: anggota19,
+      foto: Nayla,
     },
     {
       id: 22,
@@ -198,14 +229,14 @@ function Anggota() {
       nama: "Haidar Aflathun",
       jabatan: "Staff Divisi Kominfo",
       divisi: "KOMINFO",
-      // foto: anggota23,
+      foto: Haidar,
     },
     {
       id: 26,
       nama: "Fatino Aziz Fadhilah",
       jabatan: "Staff Divisi Kominfo",
       divisi: "KOMINFO",
-      // foto: anggota24,
+      foto: Fatino,
     },
     {
       id: 27,
@@ -226,143 +257,136 @@ function Anggota() {
       nama: "Raynald Salsa Saputra",
       jabatan: "Ketua Divisi PSDM",
       divisi: "PSDM",
-      // foto: anggota27,
+      foto: Reynald,
     },
     {
       id: 30,
-      nama: "Rafi Ikhwan Ma’ruf",
-      jabatan: "Staff Divisi PSDM",
-      divisi: "PSDM",
-      // foto: anggota28,
-    },
-    {
-      id: 31,
       nama: "Kinanti",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
-      // foto: anggota29,
+      foto: Kinanti,
     },
     {
-      id: 32,
+      id: 31,
       nama: "Assifa Ramadan Kurniawan",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
-      // foto: anggota30,
+      foto: Assifa,
     },
     {
-      id: 33,
+      id: 32,
       nama: "Yoga Aditia Saputra",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
-      // foto: anggota31,
+      foto: Yoga,
     },
     {
-      id: 34,
+      id: 33,
       nama: "Hanif Jundi Prasetyo",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
       // foto: anggota32,
     },
     {
-      id: 35,
+      id: 34,
       nama: "Seva Ayu Salsabila",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
       // foto: anggota33,
     },
     {
-      id: 36,
+      id: 35,
       nama: "Muhammad Himamul Haq",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
-      // foto: anggota34,
+      foto: Himam,
     },
     {
-      id: 37,
+      id: 36,
       nama: "Raya Putra Indra",
       jabatan: "Ketua Divisi Ekraf",
       divisi: "EKRAF",
       // foto: anggota35,
     },
     {
-      id: 38,
+      id: 37,
       nama: "Rangga Isnata Sibkhan",
       jabatan: "Staff Divisi Ekraf",
       divisi: "EKRAF",
       // foto: anggota36,
     },
     {
-      id: 39,
+      id: 38,
       nama: "Hasna Salsabila",
       jabatan: "Staff Divisi Ekraf",
       divisi: "EKRAF",
       // foto: anggota37,
     },
     {
-      id: 40,
+      id: 39,
       nama: "A Nugraha Hoiri Irobbani",
       jabatan: "Staff Divisi Ekraf",
       divisi: "EKRAF",
-      // foto: anggota38,
+      foto: Nugraha,
     },
     {
-      id: 41,
+      id: 40,
       nama: "Zaki Wijdan Rajendra",
       jabatan: "Staff Divisi Ekraf",
       divisi: "EKRAF",
       // foto: anggota39,
     },
     {
-      id: 42,
+      id: 41,
       nama: "Jona Faozan Saputra",
       jabatan: "Staff Divisi Ekraf",
       divisi: "EKRAF",
-      // foto: anggota40,
+      foto: Jona,
     },
     {
-      id: 43,
-      nama: "NAditya Resya Saputra",
+      id: 42,
+      nama: "Aditya Resya Saputra",
       jabatan: "Ketua Divisi Advokasi",
       divisi: "ADVOKASI",
       // foto: anggota41,
     },
     {
-      id: 44,
+      id: 43,
       nama: "Muhammad Lutfi Bachtiar",
       jabatan: "Staff Divisi Advokasi",
       divisi: "ADVOKASI",
-      // foto: anggota42,
+      foto: Lutfi,
     },
     {
-      id: 45,
+      id: 44,
       nama: "Agranto Bahy Rahma",
       jabatan: "Staff Divisi Advokasi",
       divisi: "ADVOKASI",
       // foto: anggota43,
     },
     {
-      id: 46,
+      id: 45,
       nama: "Rahma Syariah",
       jabatan: "Staff Divisi Advokasi",
       divisi: "ADVOKASI",
-      // foto: anggota44,
+      foto: Rahma,
     },
     {
-      id: 47,
+      id: 46,
       nama: "Muhammad Asif Mardiansyah",
       jabatan: "Staff Divisi Advokasi",
       divisi: "ADVOKASI",
-      // foto: anggota45,
+      foto: Asif,
     },
     {
-      id: 48,
+      id: 47,
       nama: "Naoyama Daneela Rahma",
       jabatan: "Staff Divisi Advokasi",
       divisi: "ADVOKASI",
-      // foto: anggota46,
+      foto: Naoyama,
     },
     {
-      id: 49,
+      id: 48,
       nama: "Maghfira Mani Riaha Putri",
       jabatan: "Staff Divisi Advokasi",
       divisi: "ADVOKASI",

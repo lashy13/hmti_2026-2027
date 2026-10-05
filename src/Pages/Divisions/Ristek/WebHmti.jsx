@@ -1,7 +1,8 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/web-hmti.jpg";
+import Adna from "../../../assets/Anggota/Ristek/Adna.png";
+import Habib from "../../../assets/Anggota/Ristek/Habib.png";
+import Arkan from "../../../assets/Anggota/Ristek/Arkan.png";
 
 function WebHmti() {
   return (
@@ -17,17 +18,17 @@ function WebHmti() {
         {
           name: "Arkan Rosif Ashshofa",
           position: "Penanggung Jawab WEB HMTI",
-          // photo: fotoPJ,
+          photo: Arkan,
         },
         {
           name: "Habiburrahim Mu’awwadz",
           position: "Penanggung Jawab WEB HMTI",
-          // photo: fotoPJ,
+          photo: Habib,
         },
         {
           name: "Adna Afiansyah",
           position: "Penanggung Jawab WEB HMTI",
-          // photo: fotoPJ,
+          photo: Adna,
         },
       ]}
     />

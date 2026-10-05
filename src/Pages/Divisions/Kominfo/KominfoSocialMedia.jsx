@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/kominfo-social-media.jpg";
+import Haidar from "../../../assets/Anggota/Kominfo/Haidar.png";
 
 function KominfoSocialMedia() {
   return (
@@ -15,7 +14,7 @@ function KominfoSocialMedia() {
         {
           name: "Haidar Aflathun",
           position: "Penanggung Jawab Pengelolaan Sosial Media HMTI",
-          // photo: fotoPJ,
+          photo: Haidar,
         },
         {
           name: "Dwi Safira Aulia",
