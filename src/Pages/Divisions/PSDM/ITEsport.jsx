@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/it-esport.jpg";
+import Assifa from "../../../assets/Anggota/PSDM/Assifa.png";
 
 function ITEsport() {
   return (
@@ -20,7 +19,7 @@ function ITEsport() {
         {
           name: "Assifa Ramadan Kurniawan",
           position: "Penanggung Jawab IT Esport",
-          // photo: fotoPJ,
+          photo: Assifa,
         },
       ]}
     />

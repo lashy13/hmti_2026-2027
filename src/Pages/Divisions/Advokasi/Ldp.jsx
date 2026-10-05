@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/ldp.jpg";
+import Lutfi from "../../../assets/Anggota/Advokasi/Luthfi.png";
 
 function Ldp() {
   return (
@@ -24,7 +23,7 @@ function Ldp() {
         {
           name: "Muhammad Lutfi Bachtiar",
           position: "Penanggung Jawab LDP",
-          // photo: fotoPJ,
+          photo: Lutfi,
         },
       ]}
     />

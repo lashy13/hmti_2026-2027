@@ -1,7 +1,7 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
 // import foto PJ
-import Asif from "../../../assets/Anggota/Advokasi/Asif.jpg";
+import Asif from "../../../assets/Anggota/Advokasi/Asif.png";
 
 function KotakAspirasi() {
   return (

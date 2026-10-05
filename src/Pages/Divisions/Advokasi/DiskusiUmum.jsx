@@ -1,6 +1,5 @@
 import ProkerDetail from "../../../components/ProkerDetail";
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/hari-wajib-pdh.jpg";
+import Naoyama from "../../../assets/Anggota/Advokasi/Naoyama.png";
 function Sakti() {
   return (
     <ProkerDetail
@@ -22,7 +21,7 @@ function Sakti() {
         {
           name: "Naoyama Daneela Rahma",
           position: "Penanggung Jawab Diskusi Umum",
-          // photo: fotoPJ1,
+          photo: Naoyama,
         },
       ]}
     />

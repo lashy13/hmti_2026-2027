@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/pengurus-muda.jpg";
+import Kinanti from "../../../assets/Anggota/PSDM/Kinanti.png";
 
 function PengurusMuda() {
   return (
@@ -20,7 +19,7 @@ function PengurusMuda() {
         {
           name: "Kinanti",
           position: "Penanggung Jawab Pengurus Muda",
-          // photo: fotoPJ,
+          photo: Kinanti,
         },
       ]}
     />

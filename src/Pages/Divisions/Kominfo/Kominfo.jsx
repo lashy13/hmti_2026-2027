@@ -2,6 +2,7 @@ import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
 
 import kominfoImage from "../../../assets/logo/image.png";
+import Fatino from "../../../assets/Anggota/Kominfo/Fatino.png";
 
 function Kominfo() {
   return (
@@ -96,7 +97,7 @@ function Kominfo() {
           id: 5,
           name: "Fatino Aziz Fadhilah",
           role: "PJ MEDPART",
-          photo: "/images/member-5.jpg",
+          photo: Fatino,
         },
 
         {

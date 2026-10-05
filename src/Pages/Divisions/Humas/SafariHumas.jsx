@@ -1,7 +1,7 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/safari-humas.jpg";
+import Nayla from "../../../assets/Anggota/Humas/Nayla.png";
+import Wildan from "../../../assets/Anggota/Humas/Wildan.png";
 
 function SafariHumas() {
   return (
@@ -17,12 +17,12 @@ function SafariHumas() {
         {
           name: "Nayla Cikha Safira",
           position: "Penanggung Jawab Safari Humas",
-          // photo: fotoPJ,
+          photo: Nayla,
         },
         {
           name: "Wildan Imanuddin",
           position: "Penanggung Jawab Safari Humas",
-          // photo: fotoPJ,
+          photo: Wildan,
         },
       ]}
     />

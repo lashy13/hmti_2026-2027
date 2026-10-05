@@ -1,5 +1,10 @@
 import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
+import Assifa from "../../../assets/Anggota/PSDM/Assifa.png";
+import Reynald from "../../../assets/Anggota/PSDM/reynald.png";
+import Yoga from "../../../assets/Anggota/PSDM/Yoga.png";
+import Himam from "../../../assets/Anggota/PSDM/Himam.png";
+import Kinanti from "../../../assets/Anggota/PSDM/Kinanti.png";
 
 function PSDM() {
   return (
@@ -61,7 +66,7 @@ function PSDM() {
           id: 1,
           name: "Raynald Salsa Saputra",
           role: "Head of Division And PJ OSMA / OSPEK Prodi",
-          photo: "/images/member-1.jpg",
+          photo: Reynald,
         },
 
         {
@@ -75,25 +80,25 @@ function PSDM() {
           id: 3,
           name: "Kinanti",
           role: "PJ PENGURUS MUDA",
-          photo: "/images/member-3.jpg",
+          photo: Kinanti,
         },
 
         {
           id: 4,
           name: "Assifa Ramadan Kurniawan",
           role: "PJ IT ESPORT",
-          photo: "/images/member-4.jpg",
+          photo: Assifa,
         },
         {
           id: 5,
           name: "Yoga Aditia Saputra",
-          role: "Training Staff",
-          photo: "/images/member-4.jpg",
+          role: "PJ AGENDA UPGRADING",
+          photo: Yoga,
         },
         {
           id: 6,
           name: "Hanif Jundi Prasetyo",
-          role: "Training Staff",
+          role: "PJ AGENDA UPGRADING",
           photo: "/images/member-4.jpg",
         },
         {
@@ -106,7 +111,7 @@ function PSDM() {
           id: 8,
           name: "Muhammad Himamul Haq",
           role: "PJ LATIHAN DASAR ORGANISASI",
-          photo: "/images/member-4.jpg",
+          photo: Himam,
         },
       ]}
     />

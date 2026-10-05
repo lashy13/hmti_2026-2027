@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/sakti.jpg";
+import Rahma from "../../../assets/Anggota/Advokasi/Rahma.png";
 
 function Sakti() {
   return (
@@ -17,7 +16,7 @@ function Sakti() {
         {
           name: "Rahma Syariah",
           position: "Penanggung Jawab SAKTI",
-          // photo: fotoPJ,
+          photo: Rahma,
         },
         {
           name: "Maghfira Mani Riaha Putri",

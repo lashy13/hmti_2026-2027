@@ -13,7 +13,7 @@ const events = [
       "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
   {
-    number: "01",
+    number: "02",
     title: "Coming Soon",
     slug: "event-1",
     date: "Coming Soon",
@@ -23,7 +23,7 @@ const events = [
       "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
   {
-    number: "01",
+    number: "03",
     title: "Coming Soon",
     slug: "event-1",
     date: "Coming Soon",
@@ -33,7 +33,7 @@ const events = [
       "Event RITECH akan segera hadir. Nantikan informasi selengkapnya dan persiapkan dirimu untuk mengikuti keseruannya.",
   },
   {
-    number: "01",
+    number: "04",
     title: "Coming Soon",
     slug: "event-1",
     date: "Coming Soon",

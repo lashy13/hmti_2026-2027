@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/osma-ospek-prodi.jpg";
+import Reynald from "../../../assets/Anggota/PSDM/reynald.png";
 
 function OSMA() {
   return (
@@ -20,7 +19,7 @@ function OSMA() {
         {
           name: "Raynald Salsa Saputra",
           position: "Penanggung Jawab OSMA / OSPEK Prodi",
-          // photo: fotoPJ,
+          photo: Reynald,
         },
       ]}
     />

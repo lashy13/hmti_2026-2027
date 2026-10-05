@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/ldo.jpg";
+import Himam from "../../../assets/Anggota/PSDM/Himam.png";
 
 function LDO() {
   return (
@@ -20,7 +19,7 @@ function LDO() {
         {
           name: "Muhammad Himamul Haq",
           position: "Penanggung Jawab Latihan Dasar Organisasi",
-          // photo: fotoPJ,
+          photo: Himam,
         },
       ]}
     />

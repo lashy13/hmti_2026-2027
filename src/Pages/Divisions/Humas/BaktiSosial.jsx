@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/bakti-sosial.jpg";
+import Tiara from "../../../assets/Anggota/Humas/Tiara.png";
 
 function BaktiSosial() {
   return (
@@ -17,7 +16,7 @@ function BaktiSosial() {
         {
           name: "Tiara Ayuningtyas",
           position: "Penanggung Jawab Bakti Sosial",
-          // photo: fotoPJ,
+          photo: Tiara,
         },
         {
           name: "Fakhrul Zakaria",

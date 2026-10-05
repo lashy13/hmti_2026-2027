@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import imgPlaceholder from "../assets/logo/image.png";
-import "../styles/about.css";
+import "../styles/hmti.css";
+import nasha from "../assets/Anggota/BPH/Nasha.png";
 
 function AboutHmti() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ function AboutHmti() {
     {
       name: "Nasha Widya Putri",
       position: "SEKRETARIS 1",
-      image: imgPlaceholder,
+      image: nasha,
       description:
         "Mengelola administrasi, dokumentasi, dan kebutuhan kesekretariatan organisasi secara umum.",
     },

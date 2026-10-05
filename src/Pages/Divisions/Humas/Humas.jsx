@@ -5,6 +5,7 @@ import humasImage from "../../../assets/logo/image.png";
 import Agis from "../../../assets/Anggota/Humas/Agis.png";
 import Nayla from "../../../assets/Anggota/Humas/Nayla.png";
 import Tiara from "../../../assets/Anggota/Humas/Tiara.png";
+import Wildan from "../../../assets/Anggota/Humas/Wildan.png";
 function Humas() {
   return (
     <DivisionPage
@@ -82,7 +83,7 @@ function Humas() {
           id: 5,
           name: "Wildan Imanuddin",
           role: "PJ SAFARI HUMAS",
-          photo: "/images/member-4.jpg",
+          photo: Wildan,
         },
         {
           id: 6,

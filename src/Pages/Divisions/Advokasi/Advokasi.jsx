@@ -1,7 +1,10 @@
 import DivisionPage from "../../../components/DivisionPage";
 
 import "../../../styles/Warnadiv.css";
-import Asif from "../../../assets/Anggota/Advokasi/Asif.jpg";
+import Asif from "../../../assets/Anggota/Advokasi/Asif.png";
+import Lutfi from "../../../assets/Anggota/Advokasi/Luthfi.png";
+import Naoyama from "../../../assets/Anggota/Advokasi/Naoyama.png";
+import Rahma from "../../../assets/Anggota/Advokasi/Rahma.png";
 
 function Advokasi() {
   return (
@@ -112,7 +115,7 @@ function Advokasi() {
           id: 3,
           name: "Muhammad Lutfi Bachtiar",
           role: "PJ LDP",
-          photo: "/images/member-3.jpg",
+          photo: Lutfi,
         },
 
         {
@@ -125,13 +128,13 @@ function Advokasi() {
           id: 5,
           name: "Rahma Syariah",
           role: "PJ SAKTI",
-          photo: "/images/member-4.jpg",
+          photo: Rahma,
         },
         {
           id: 6,
           name: "Naoyama Daneela Rahma",
           role: "PJ DISKUSI UMUM",
-          photo: "/images/member-4.jpg",
+          photo: Naoyama,
         },
         {
           id: 7,

@@ -1,7 +1,6 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/med-part.jpg";
+import Fatino from "../../../assets/Anggota/Kominfo/Fatino.png";
 
 function MedPart() {
   return (
@@ -20,7 +19,7 @@ function MedPart() {
         {
           name: "Fatino Aziz Fadhilah",
           position: "Penanggung Jawab Media Partner",
-          // photo: fotoPJ,
+          photo: Fatino,
         },
       ]}
     />
