@@ -2,7 +2,8 @@ import DivisionPage from "../../../components/DivisionPage";
 import "../../../styles/Warnadiv.css";
 
 import webHmti from "../../../assets/logo/image.png";
-
+import Firman from "../../../assets/Anggota/Ristek/Firman.png";
+import Arkan from "../../../assets/Anggota/Ristek/Arkan.png";
 function Ristek() {
   return (
     <DivisionPage
@@ -66,7 +67,7 @@ function Ristek() {
           id: 1,
           name: "Firman Hidayah",
           role: "Head of Division",
-          photo: webHmti,
+          photo: Firman,
         },
 
         {
@@ -80,7 +81,7 @@ function Ristek() {
           id: 3,
           name: "Arkan Rosif Ashshofa",
           role: "PJ WEB HMTI",
-          photo: "/images/member-3.jpg",
+          photo: Arkan,
         },
 
         {
