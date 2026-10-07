@@ -9,6 +9,7 @@ import Habib from "../../../assets/Anggota/Ristek/Habib.png";
 import Reza from "../../../assets/Anggota/Ristek/Reza.png";
 import Adna from "../../../assets/Anggota/Ristek/Adna.png";
 import Akbar from "../../../assets/Anggota/Ristek/Akbar.png";
+import Ega from "../../../assets/Anggota/Ristek/Ega.png";
 function Ristek() {
   return (
     <DivisionPage
@@ -107,7 +108,7 @@ function Ristek() {
           id: 6,
           name: "Ega Juanda Putra",
           role: "PJ STUDY CLUB",
-          photo: "/images/member-6.jpg",
+          photo: Ega,
         },
 
         {

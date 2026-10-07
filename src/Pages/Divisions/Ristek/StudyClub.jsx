@@ -1,6 +1,7 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
 import Reza from "../../../assets/Anggota/Ristek/Reza.png";
+import Ega from "../../../assets/Anggota/Ristek/Ega.png";
 
 function StudyClub() {
   return (
@@ -21,7 +22,7 @@ function StudyClub() {
         {
           name: "Ega Juanda Putra",
           position: "Penanggung Jawab Study Club",
-          // photo: fotoPJ,
+          photo: Ega,
         },
       ]}
     />

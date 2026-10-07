@@ -22,6 +22,7 @@ import Habib from "../assets/Anggota/Ristek/Habib.png";
 import Adna from "../assets/Anggota/Ristek/Adna.png";
 import Reza from "../assets/Anggota/Ristek/Reza.png";
 import Akbar from "../assets/Anggota/Ristek/Akbar.png";
+import Ega from "../assets/Anggota/Ristek/Ega.png";
 
 //PSDM
 import Assifa from "../assets/Anggota/PSDM/Assifa.png";
@@ -126,7 +127,7 @@ function Anggota() {
       nama: "Ega Juanda Putra",
       jabatan: "Staf Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota8,
+      foto: Ega,
     },
     {
       id: 11,
