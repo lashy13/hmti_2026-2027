@@ -1,7 +1,5 @@
 import ProkerDetail from "../../../components/ProkerDetail";
-
-// import foto PJ
-// import fotoPJ from "../../../assets/pj/dokuti.jpg";
+import Ian from "../../../assets/Anggota/Kominfo/Ian.png";
 
 function Dokuti() {
   return (
@@ -15,7 +13,7 @@ function Dokuti() {
         {
           name: "Muhammad Diva Iyan Nur Alif",
           position: "Penanggung Jawab DOKUTI",
-          // photo: fotoPJ,
+          photo: Ian,
         },
         {
           name: "Nadhif Aufaa Pratama",

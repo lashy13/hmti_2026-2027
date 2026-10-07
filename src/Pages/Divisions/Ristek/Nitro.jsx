@@ -1,6 +1,7 @@
 import ProkerDetail from "../../../components/ProkerDetail";
 
 import Dzaki from "../../../assets/Anggota/Ristek/Dzaki.png";
+import Akbar from "../../../assets/Anggota/Ristek/Akbar.png";
 
 function Nitro() {
   return (
@@ -16,7 +17,7 @@ function Nitro() {
         {
           name: "Akbar Faitu Rahman",
           position: "Penanggung Jawab NITRO",
-          // photo: fotoPJ,
+          photo: Akbar,
         },
         {
           name: "Muhammad Dzaki Arkaan",

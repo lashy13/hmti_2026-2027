@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import imgPlaceholder from "../assets/logo/image.png";
 import "../styles/hmti.css";
 import nasha from "../assets/Anggota/BPH/Nasha.png";
+// import Agil from "../assets/Anggota/BPH/Agil.png";
 
 function AboutHmti() {
   const navigate = useNavigate();

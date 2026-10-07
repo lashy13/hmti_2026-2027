@@ -1,17 +1,13 @@
+
 /* =========================================================
    ANGGOTA PAGE
-   HMTI UMP — PREMIUM CYBER GRADIENT
+   HMTI UMP — CLEAN CYBER / LIGHTWEIGHT
 ========================================================= */
 
 .anggota-page {
   --accent: #00e5ff;
   --accent-blue: #4f7cff;
   --accent-purple: #9b5cff;
-  --accent-pink: #ff4fd8;
-  --accent-green: #35f2b5;
-
-  /* Kecepatan orb */
-  --orbit-speed: 4.8s;
 
   position: relative;
   width: 100%;
@@ -22,120 +18,22 @@
 
   background:
     radial-gradient(
-      circle at 5% 8%,
-      rgba(0, 229, 255, 0.20),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 92% 10%,
-      rgba(139, 92, 246, 0.24),
-      transparent 27%
-    ),
-    radial-gradient(
-      circle at 52% 42%,
-      rgba(236, 72, 153, 0.11),
+      circle at 5% 5%,
+      rgba(0, 229, 255, 0.08),
       transparent 25%
     ),
     radial-gradient(
-      circle at 78% 72%,
-      rgba(79, 70, 229, 0.18),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 12% 88%,
-      rgba(16, 185, 129, 0.12),
+      circle at 95% 10%,
+      rgba(79, 124, 255, 0.09),
       transparent 25%
-    ),
-    radial-gradient(
-      circle at 50% 105%,
-      rgba(14, 165, 233, 0.15),
-      transparent 35%
     ),
     linear-gradient(
       135deg,
-      #02030a 0%,
-      #071226 18%,
-      #111638 38%,
-      #0b102b 55%,
-      #180d2b 73%,
-      #050713 88%,
-      #010207 100%
+      #02040b 0%,
+      #071226 45%,
+      #0a1024 70%,
+      #03050d 100%
     );
-
-  background-size: 180% 180%;
-  animation: pageBackground 18s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   AMBIENT LIGHT — TOP
-========================================================= */
-
-.anggota-page::before {
-  content: "";
-
-  position: fixed;
-
-  width: 560px;
-  height: 560px;
-
-  top: -230px;
-  left: -210px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0, 229, 255, 0.22) 0%,
-      rgba(59, 130, 246, 0.12) 32%,
-      rgba(139, 92, 246, 0.07) 48%,
-      transparent 72%
-    );
-
-  filter: blur(30px);
-
-  pointer-events: none;
-
-  z-index: 0;
-
-  animation: ambientTop 13s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   AMBIENT LIGHT — BOTTOM
-========================================================= */
-
-.anggota-page::after {
-  content: "";
-
-  position: fixed;
-
-  width: 650px;
-  height: 650px;
-
-  right: -320px;
-  bottom: -320px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(139, 92, 246, 0.19) 0%,
-      rgba(236, 72, 153, 0.09) 35%,
-      rgba(0, 229, 255, 0.06) 52%,
-      transparent 72%
-    );
-
-  filter: blur(35px);
-
-  pointer-events: none;
-
-  z-index: 0;
-
-  animation: ambientBottom 15s ease-in-out infinite;
 }
 
 
@@ -163,52 +61,27 @@
   font-size: 13px;
   font-weight: 600;
 
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(0, 229, 255, 0.20);
 
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(0, 229, 255, 0.06),
-      rgba(139, 92, 246, 0.08),
-      rgba(236, 72, 153, 0.05)
-    ),
-    rgba(4, 7, 20, 0.68);
-
-  backdrop-filter: blur(14px);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 10px 35px rgba(0, 0, 0, 0.25);
+  background: rgba(5, 10, 25, 0.90);
 
   cursor: pointer;
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 
 .anggota-back-button:hover {
-  transform: translateX(-4px);
+  transform: translateX(-3px);
 
   border-color: rgba(0, 229, 255, 0.55);
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(0, 229, 255, 0.10),
-      rgba(139, 92, 246, 0.13),
-      rgba(236, 72, 153, 0.08)
-    );
-
-  box-shadow:
-    0 0 25px rgba(0, 229, 255, 0.10),
-    0 0 35px rgba(139, 92, 246, 0.08),
-    0 12px 40px rgba(0, 0, 0, 0.35);
+  background: rgba(0, 229, 255, 0.07);
 }
 
 
@@ -216,7 +89,7 @@
   font-size: 17px;
   line-height: 1;
 
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 
@@ -242,98 +115,12 @@
     clamp(20px, 7vw, 100px)
     clamp(80px, 9vw, 130px);
 
-  overflow: hidden;
-
   background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(0, 229, 255, 0.07),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 45%,
-      rgba(139, 92, 246, 0.07),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 10% 70%,
-      rgba(16, 185, 129, 0.05),
-      transparent 25%
-    ),
     linear-gradient(
       180deg,
       rgba(5, 10, 25, 0.25),
-      rgba(2, 3, 12, 0.70)
+      rgba(2, 4, 12, 0.75)
     );
-}
-
-
-/* =========================================================
-   SECTION TOP LIGHT
-========================================================= */
-
-.anggota-section::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 50%;
-
-  width: min(720px, 75%);
-  height: 1px;
-
-  transform: translateX(-50%);
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 229, 255, 0.45),
-      rgba(139, 92, 246, 0.75),
-      rgba(255, 79, 216, 0.55),
-      rgba(0, 229, 255, 0.45),
-      transparent
-    );
-
-  box-shadow:
-    0 0 18px rgba(0, 229, 255, 0.25),
-    0 0 28px rgba(139, 92, 246, 0.15);
-
-  animation: sectionLine 5s ease-in-out infinite;
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   SECTION SIDE LIGHT
-========================================================= */
-
-.anggota-section::after {
-  content: "";
-
-  position: absolute;
-
-  width: 420px;
-  height: 560px;
-
-  right: -210px;
-  top: 25%;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(139, 92, 246, 0.10),
-      rgba(236, 72, 153, 0.04),
-      transparent 70%
-    );
-
-  filter: blur(35px);
-
-  pointer-events: none;
 }
 
 
@@ -387,12 +174,6 @@
   letter-spacing: 0.20em;
 
   text-transform: uppercase;
-
-  text-shadow:
-    0 0 10px rgba(0, 229, 255, 0.45),
-    0 0 22px rgba(139, 92, 246, 0.25);
-
-  animation: labelPulse 3.5s ease-in-out infinite;
 }
 
 
@@ -422,26 +203,16 @@
   background:
     linear-gradient(
       100deg,
-      #ffffff 5%,
-      #00e5ff 24%,
-      #4f7cff 42%,
-      #9b5cff 60%,
-      #ff4fd8 76%,
-      #ffffff 95%
+      #ffffff,
+      #00e5ff 35%,
+      #4f7cff 65%,
+      #9b5cff
     );
-
-  background-size: 300% auto;
 
   -webkit-background-clip: text;
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
-
-  animation: titleGradient 7s ease-in-out infinite;
-
-  filter:
-    drop-shadow(0 0 14px rgba(0, 229, 255, 0.10))
-    drop-shadow(0 0 20px rgba(139, 92, 246, 0.08));
 }
 
 
@@ -493,35 +264,32 @@
 
   overflow: hidden;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
   border:
     1px solid
-    rgba(139, 92, 246, 0.20);
+    rgba(79, 124, 255, 0.20);
 
   background:
     linear-gradient(
       145deg,
-      rgba(15, 26, 58, 0.96),
-      rgba(9, 11, 30, 0.98) 48%,
-      rgba(20, 8, 30, 0.96)
+      #0d1933,
+      #080d1e 55%,
+      #100c24
     );
 
   box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-
-  isolation: isolate;
+    0 10px 28px rgba(0, 0, 0, 0.28);
 
   transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 
 /* =========================================================
-   ORB
+   CARD TOP ACCENT
 ========================================================= */
 
 .anggota-card::before {
@@ -529,68 +297,25 @@
 
   position: absolute;
 
-  width: 17px;
-  height: 17px;
+  top: 0;
+  left: 0;
 
-  top: -8px;
-  left: -8px;
-
-  z-index: 30;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 32% 28%,
-      #ffffff 0%,
-      #e8ffff 12%,
-      #7df5ff 27%,
-      #00e5ff 44%,
-      #6d5cff 64%,
-      rgba(255, 79, 216, 0.22) 80%,
-      transparent 100%
-    );
-
-  box-shadow:
-    0 0 7px rgba(0, 229, 255, 1),
-    0 0 18px rgba(0, 229, 255, 0.75),
-    0 0 28px rgba(139, 92, 246, 0.55),
-    0 0 42px rgba(255, 79, 216, 0.22);
-
-  pointer-events: none;
-
-  animation:
-    cardOrbit var(--orbit-speed) linear infinite,
-    orbPulse 2.5s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   CARD INNER EDGE
-========================================================= */
-
-.anggota-card::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 1px;
-
-  z-index: -1;
-
-  border-radius: 19px;
+  width: 100%;
+  height: 2px;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(0, 229, 255, 0.045),
-      transparent 30%,
-      rgba(139, 92, 246, 0.045) 58%,
-      rgba(255, 79, 216, 0.035) 82%,
+      90deg,
+      transparent,
+      rgba(0, 229, 255, 0.75),
+      rgba(79, 124, 255, 0.75),
+      rgba(155, 92, 255, 0.65),
       transparent
     );
 
   pointer-events: none;
+
+  z-index: 5;
 }
 
 
@@ -599,24 +324,13 @@
 ========================================================= */
 
 .anggota-card:hover {
-  transform:
-    translateY(-8px);
+  transform: translateY(-5px);
 
   border-color:
     rgba(0, 229, 255, 0.38);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.42),
-    0 0 30px rgba(0, 229, 255, 0.08),
-    0 0 45px rgba(139, 92, 246, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.055);
-}
-
-
-.anggota-card:hover::before {
-  animation:
-    cardOrbit 3.4s linear infinite,
-    orbPulse 1.8s ease-in-out infinite;
+    0 16px 35px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -633,13 +347,7 @@
 
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      135deg,
-      #071a32,
-      #161333 48%,
-      #210d27
-    );
+  background: #071326;
 }
 
 
@@ -656,23 +364,22 @@
   object-fit: cover;
 
   filter:
-    saturate(0.92)
-    contrast(1.04);
+    saturate(0.95)
+    contrast(1.03);
 
   transition:
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.5s ease;
+    transform 0.35s ease,
+    filter 0.35s ease;
 }
 
 
 .anggota-card:hover
 .anggota-photo img {
-  transform:
-    scale(1.055);
+  transform: scale(1.035);
 
   filter:
-    saturate(1.08)
-    contrast(1.07);
+    saturate(1.04)
+    contrast(1.05);
 }
 
 
@@ -690,9 +397,8 @@
   background:
     linear-gradient(
       180deg,
-      transparent 42%,
-      rgba(3, 7, 18, 0.08) 58%,
-      rgba(4, 5, 17, 0.68) 100%
+      transparent 50%,
+      rgba(3, 7, 18, 0.58) 100%
     );
 
   pointer-events: none;
@@ -738,20 +444,7 @@
   border-radius: 999px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(0, 229, 255, 0.08),
-      rgba(139, 92, 246, 0.10),
-      rgba(255, 79, 216, 0.07)
-    ),
-    rgba(2, 7, 19, 0.74);
-
-  backdrop-filter:
-    blur(10px);
-
-  box-shadow:
-    0 0 14px
-    rgba(0, 229, 255, 0.07);
+    rgba(2, 7, 19, 0.88);
 }
 
 
@@ -788,10 +481,6 @@
   letter-spacing: 0.15em;
 
   text-transform: uppercase;
-
-  text-shadow:
-    0 0 10px
-    rgba(0, 229, 255, 0.30);
 }
 
 
@@ -829,188 +518,6 @@
   font-size: 13px;
 
   line-height: 1.65;
-}
-
-
-/* =========================================================
-   ORBIT ANIMATION
-========================================================= */
-
-@keyframes cardOrbit {
-
-  0% {
-    top: -8px;
-    left: -8px;
-  }
-
-  25% {
-    top: -8px;
-    left: calc(100% - 9px);
-  }
-
-  50% {
-    top: calc(100% - 9px);
-    left: calc(100% - 9px);
-  }
-
-  75% {
-    top: calc(100% - 9px);
-    left: -8px;
-  }
-
-  100% {
-    top: -8px;
-    left: -8px;
-  }
-}
-
-
-/* =========================================================
-   ORB PULSE
-========================================================= */
-
-@keyframes orbPulse {
-
-  0%,
-  100% {
-    transform:
-      scale(0.90);
-
-    opacity: 0.78;
-  }
-
-  50% {
-    transform:
-      scale(1.12);
-
-    opacity: 1;
-  }
-}
-
-
-/* =========================================================
-   BACKGROUND ANIMATION
-========================================================= */
-
-@keyframes pageBackground {
-
-  0% {
-    background-position:
-      0% 0%;
-  }
-
-  50% {
-    background-position:
-      100% 100%;
-  }
-
-  100% {
-    background-position:
-      0% 0%;
-  }
-}
-
-
-/* =========================================================
-   AMBIENT TOP
-========================================================= */
-
-@keyframes ambientTop {
-
-  0%,
-  100% {
-    transform:
-      translate(0, 0);
-  }
-
-  50% {
-    transform:
-      translate(70px, 50px);
-  }
-}
-
-
-/* =========================================================
-   AMBIENT BOTTOM
-========================================================= */
-
-@keyframes ambientBottom {
-
-  0%,
-  100% {
-    transform:
-      translate(0, 0);
-  }
-
-  50% {
-    transform:
-      translate(-70px, -45px);
-  }
-}
-
-
-/* =========================================================
-   SECTION LINE
-========================================================= */
-
-@keyframes sectionLine {
-
-  0%,
-  100% {
-    opacity: 0.35;
-
-    transform:
-      translateX(-50%)
-      scaleX(0.75);
-  }
-
-  50% {
-    opacity: 0.90;
-
-    transform:
-      translateX(-50%)
-      scaleX(1);
-  }
-}
-
-
-/* =========================================================
-   LABEL
-========================================================= */
-
-@keyframes labelPulse {
-
-  0%,
-  100% {
-    opacity: 0.65;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-
-/* =========================================================
-   TITLE
-========================================================= */
-
-@keyframes titleGradient {
-
-  0% {
-    background-position:
-      0% 50%;
-  }
-
-  50% {
-    background-position:
-      100% 50%;
-  }
-
-  100% {
-    background-position:
-      0% 50%;
-  }
 }
 
 
@@ -1055,10 +562,6 @@
   }
 
   .anggota-card {
-    border-radius: 18px;
-  }
-
-  .anggota-card::after {
     border-radius: 17px;
   }
 
@@ -1085,40 +588,6 @@
 ========================================================= */
 
 @media (max-width: 640px) {
-
-  .anggota-page {
-    --orbit-speed: 4.5s;
-
-    background-size:
-      230% 230%;
-  }
-
-
-  /* AMBIENT */
-
-  .anggota-page::before {
-    width: 350px;
-    height: 350px;
-
-    top: -120px;
-    left: -130px;
-
-    opacity: 0.65;
-  }
-
-
-  .anggota-page::after {
-    width: 400px;
-    height: 400px;
-
-    right: -180px;
-    bottom: -150px;
-
-    opacity: 0.65;
-  }
-
-
-  /* BACK */
 
   .anggota-back-button {
     top: 17px;
@@ -1187,52 +656,20 @@
   /* GRID */
 
   .anggota-grid {
-    display: grid;
-
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
-    gap:
-      12px;
-
-    width: 100%;
-
-    max-width: none;
-
-    margin: 0 auto;
+    gap: 12px;
   }
 
 
   /* CARD */
 
   .anggota-card {
-    border-radius: 15px;
-
-    box-shadow:
-      0 12px 28px rgba(0, 0, 0, 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  }
-
-
-  .anggota-card::after {
     border-radius: 14px;
-  }
-
-
-  /* ORB */
-
-  .anggota-card::before {
-    width: 13px;
-    height: 13px;
-
-    top: -6px;
-    left: -6px;
 
     box-shadow:
-      0 0 5px rgba(0, 229, 255, 1),
-      0 0 13px rgba(0, 229, 255, 0.75),
-      0 0 21px rgba(139, 92, 246, 0.50),
-      0 0 30px rgba(255, 79, 216, 0.20);
+      0 8px 20px rgba(0, 0, 0, 0.28);
   }
 
 
@@ -1299,14 +736,9 @@
 
 /* =========================================================
    HP KECIL
-   TETAP 2 KOLOM
 ========================================================= */
 
 @media (max-width: 380px) {
-
-  .anggota-page {
-    --orbit-speed: 4s;
-  }
 
   .anggota-section {
     padding-left: 11px;
@@ -1326,10 +758,6 @@
   }
 
   .anggota-card {
-    border-radius: 14px;
-  }
-
-  .anggota-card::after {
     border-radius: 13px;
   }
 
@@ -1360,7 +788,6 @@
 
 /* =========================================================
    EXTRA SMALL PHONE
-   CONTOH 320px
 ========================================================= */
 
 @media (max-width: 330px) {
@@ -1401,19 +828,10 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .anggota-page,
-  .anggota-page::before,
-  .anggota-page::after,
-  .anggota-section::before,
-  .anggota-section-header h2 strong,
-  .section-label,
-  .anggota-card::before {
-    animation: none !important;
-  }
-
   .anggota-card,
   .anggota-photo img,
   .anggota-back-button {
     transition: none !important;
   }
 }
+

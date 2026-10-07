@@ -21,6 +21,7 @@ import Dzaki from "../assets/Anggota/Ristek/Dzaki.png";
 import Habib from "../assets/Anggota/Ristek/Habib.png";
 import Adna from "../assets/Anggota/Ristek/Adna.png";
 import Reza from "../assets/Anggota/Ristek/Reza.png";
+import Akbar from "../assets/Anggota/Ristek/Akbar.png";
 
 //PSDM
 import Assifa from "../assets/Anggota/PSDM/Assifa.png";
@@ -28,11 +29,13 @@ import Reynald from "../assets/Anggota/PSDM/reynald.png";
 import Yoga from "../assets/Anggota/PSDM/Yoga.png";
 import Himam from "../assets/Anggota/PSDM/Himam.png";
 import Kinanti from "../assets/Anggota/PSDM/Kinanti.png";
+import Seva from "../assets/Anggota/PSDM/Seva.png";
 
 
 //KOMINFO
 import Fatino from "../assets/Anggota/Kominfo/Fatino.png";
 import Haidar from "../assets/Anggota/Kominfo/Haidar.png";
+import Ian from "../assets/Anggota/Kominfo/Ian.png";
 
 //Ekraf
 import Jona from "../assets/Anggota/Ekraf/Jona.png";
@@ -152,7 +155,7 @@ function Anggota() {
       nama: "Akbar Faitu Rahman",
       jabatan: "Staff Divisi Ristek",
       divisi: "RISTEK",
-      // foto: anggota12,
+      foto: Akbar,
     },
     {
       id: 15,
@@ -215,7 +218,7 @@ function Anggota() {
       nama: "Muhammad Diva Iyan Nur Alif ",
       jabatan: "Staff Divisi Kominfo",
       divisi: "KOMINFO",
-      // foto: anggota21,
+      foto: Ian,
     },
     {
       id: 24,
@@ -292,7 +295,7 @@ function Anggota() {
       nama: "Seva Ayu Salsabila",
       jabatan: "Staff Divisi PSDM",
       divisi: "PSDM",
-      // foto: anggota33,
+      foto: Seva,
     },
     {
       id: 35,

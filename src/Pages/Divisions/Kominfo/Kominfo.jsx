@@ -4,6 +4,7 @@ import "../../../styles/Warnadiv.css";
 import kominfoImage from "../../../assets/logo/image.png";
 import Fatino from "../../../assets/Anggota/Kominfo/Fatino.png";
 import Haidar from "../../../assets/Anggota/Kominfo/Haidar.png";
+import Ian from "../../../assets/Anggota/Kominfo/Ian.png";
 
 function Kominfo() {
   return (
@@ -77,7 +78,7 @@ function Kominfo() {
           id: 2,
           name: "Muhammad Diva Iyan Nur Alif",
           role: "PJ DOKUTI",
-          photo: "/images/member-2.jpg",
+          photo: Ian,
         },
 
         {

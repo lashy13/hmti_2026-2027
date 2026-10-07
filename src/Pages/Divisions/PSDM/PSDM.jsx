@@ -5,6 +5,7 @@ import Reynald from "../../../assets/Anggota/PSDM/reynald.png";
 import Yoga from "../../../assets/Anggota/PSDM/Yoga.png";
 import Himam from "../../../assets/Anggota/PSDM/Himam.png";
 import Kinanti from "../../../assets/Anggota/PSDM/Kinanti.png";
+import Seva from "../../../assets/Anggota/PSDM/Seva.png";
 
 function PSDM() {
   return (
@@ -98,7 +99,7 @@ function PSDM() {
           id: 6,
           name: "Seva Ayu Salsabila",
           role: "Sekertaris LPJ",
-          photo: "/images/member-4.jpg",
+          photo: Seva,
         },
         {
           id: 7,

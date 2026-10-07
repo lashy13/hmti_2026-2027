@@ -8,6 +8,7 @@ import Dzaki from "../../../assets/Anggota/Ristek/Dzaki.png";
 import Habib from "../../../assets/Anggota/Ristek/Habib.png";
 import Reza from "../../../assets/Anggota/Ristek/Reza.png";
 import Adna from "../../../assets/Anggota/Ristek/Adna.png";
+import Akbar from "../../../assets/Anggota/Ristek/Akbar.png";
 function Ristek() {
   return (
     <DivisionPage
@@ -113,7 +114,7 @@ function Ristek() {
           id: 7,
           name: "Akbar Faitu Rahman",
           role: "PJ NITRO",
-          photo: "/images/member-7.jpg",
+          photo: Akbar,
         },
 
         {
