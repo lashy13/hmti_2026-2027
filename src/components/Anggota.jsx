@@ -31,7 +31,6 @@ import Himam from "../assets/Anggota/PSDM/Himam.png";
 import Kinanti from "../assets/Anggota/PSDM/Kinanti.png";
 import Seva from "../assets/Anggota/PSDM/Seva.png";
 
-
 //KOMINFO
 import Fatino from "../assets/Anggota/Kominfo/Fatino.png";
 import Haidar from "../assets/Anggota/Kominfo/Haidar.png";
@@ -65,7 +64,7 @@ function Anggota() {
       jabatan: "Ketua HMTI",
       divisi: "BPH",
       // foto: ketua,
-    },  
+    },
     {
       id: 2,
       nama: "Fiona Aulia WIjaya",
@@ -449,7 +448,7 @@ function Anggota() {
                 key={item.id}
                 initial={{
                   opacity: 0,
-                  y: 40,
+                  y: 18,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -457,11 +456,12 @@ function Anggota() {
                 }}
                 viewport={{
                   once: true,
-                  amount: 0.15,
+                  amount: 0.05,
                 }}
                 transition={{
-                  duration: 0.5,
-                  delay: index * 0.05,
+                  duration: 0.3,
+                  delay: index * 0.02,
+                  ease: "easeOut",
                 }}
               >
                 {/* FOTO */}
