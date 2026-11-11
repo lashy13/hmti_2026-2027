@@ -3,9 +3,7 @@ import "../../../styles/Warnadiv.css";
 
 import webHmti from "../../../assets/logo/image.png";
 import Firman from "../../../assets/Anggota/Ristek/Firman.png";
-import Arkan from "../../../assets/Anggota/Ristek/Arkan.png";
 import Dzaki from "../../../assets/Anggota/Ristek/Dzaki.png";
-import Habib from "../../../assets/Anggota/Ristek/Habib.png";
 import Reza from "../../../assets/Anggota/Ristek/Reza.png";
 import Adna from "../../../assets/Anggota/Ristek/Adna.png";
 import Akbar from "../../../assets/Anggota/Ristek/Akbar.png";
@@ -78,48 +76,34 @@ function Ristek() {
 
         {
           id: 2,
-          name: "Habiburrahim Mu’awwadz",
-          role: "PJ WEB HMTI",
-          photo: Habib,
-        },
-
-        {
-          id: 3,
-          name: "Arkan Rosif Ashshofa",
-          role: "PJ WEB HMTI",
-          photo: Arkan,
-        },
-
-        {
-          id: 4,
           name: "Adna Afiansyah",
           role: "PJ WEB HMTI",
           photo: Adna,
         },
 
         {
-          id: 5,
+          id: 3,
           name: "Muhammad Reza Fahlevi",
           role: "PJ STUDY CLUB",
           photo: Reza,
         },
 
         {
-          id: 6,
+          id: 4,
           name: "Ega Juanda Putra",
           role: "PJ STUDY CLUB",
           photo: Ega,
         },
 
         {
-          id: 7,
+          id: 5,
           name: "Akbar Faitu Rahman",
           role: "PJ NITRO",
           photo: Akbar,
         },
 
         {
-          id: 8,
+          id: 6,
           name: "Muhammad Dzaki Arkaan",
           role: "PJ NITRO",
           photo: Dzaki,

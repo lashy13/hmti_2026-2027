@@ -5,6 +5,8 @@ import kominfoImage from "../../../assets/logo/image.png";
 import Fatino from "../../../assets/Anggota/Kominfo/Fatino.png";
 import Haidar from "../../../assets/Anggota/Kominfo/Haidar.png";
 import Ian from "../../../assets/Anggota/Kominfo/Ian.png";
+import Arkan from "../../../assets/Anggota/Ristek/Arkan.png";
+import Habib from "../../../assets/Anggota/Ristek/Habib.png";
 
 function Kominfo() {
   return (
@@ -69,9 +71,9 @@ function Kominfo() {
       members={[
         {
           id: 1,
-          name: "Bondan Pratama Firdaus",
+          name: "Habiburrahim Mu’awwadz",
           role: "Head of Division",
-          photo: "/images/member-1.jpg",
+          photo: Habib,
         },
 
         {
@@ -114,6 +116,12 @@ function Kominfo() {
           role: "PJ MEDPART",
           photo: "/images/member-6.jpg",
         },
+        {
+          id: 8,
+          name: "Arkan Roshifa",
+          role: "-",
+          photo: Arkan,
+        }
       ]}
     />
   );
