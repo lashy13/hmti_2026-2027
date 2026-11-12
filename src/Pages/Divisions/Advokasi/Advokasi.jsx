@@ -6,6 +6,10 @@ import Lutfi from "../../../assets/Anggota/Advokasi/Luthfi.png";
 import Naoyama from "../../../assets/Anggota/Advokasi/Naoyama.png";
 import Rahma from "../../../assets/Anggota/Advokasi/Rahma.png";
 
+//PROKER
+import PDH from "../../../assets/Proker/Advokasi/PDH.jpeg";
+import Aspirasi from "../../../assets/Proker/Advokasi/Aspirasi.jpeg";
+
 function Advokasi() {
   return (
     <DivisionPage
@@ -61,7 +65,7 @@ function Advokasi() {
           description:
             "Program untuk menguatkan kebersamaan dan identitas mahasiswa Teknik Informatika.",
 
-          image: "/images/study-club.jpg",
+          image: PDH,
 
           link: "/divisions/advokasi/hari-wajib-pdh",
         },
@@ -91,7 +95,7 @@ function Advokasi() {
           description:
             "Media untuk menampung saran, masukan, dan aspirasi mahasiswa Teknik Informatika.",
 
-          image: "/images/study-club.jpg",
+          image: Aspirasi,
 
           link: "/divisions/advokasi/kotak-aspirasi",
         },

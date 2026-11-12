@@ -1,4 +1,5 @@
 import ProkerDetail from "../../../components/ProkerDetail";
+import PDH from "../../../assets/Proker/Advokasi/PDH.jpeg";
 
 // import foto PJ
 // import fotoPJ from "../../../assets/pj/hari-wajib-pdh.jpg";
@@ -13,6 +14,8 @@ function HariWajibPDH() {
       description="Program yang bertujuan untuk menguatkan kebersamaan dan identitas mahasiswa Teknik Informatika."
 
       about="Hari Wajib PDH merupakan program kerja yang bertujuan untuk menguatkan kebersamaan antar mahasiswa Teknik Informatika FTS UMP. Program ini dilaksanakan melalui penggunaan PDH Korsa TI sebagai bentuk identitas bersama serta sarana untuk membangun rasa kebersamaan dan solidaritas mahasiswa Teknik Informatika."
+
+      activityImage={PDH}
 
       implementation="Penyebaran informasi dan himbauan penggunaan PDH melalui Instagram HMTI serta WhatsApp Group angkatan."
 
