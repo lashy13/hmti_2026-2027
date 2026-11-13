@@ -84,13 +84,6 @@ function Kominfo() {
         },
 
         {
-          id: 3,
-          name: "Nadhif Aufaa Pratama",
-          role: "PJ DOKUTI",
-          photo: "/images/member-3.jpg",
-        },
-
-        {
           id: 4,
           name: "Haidar Aflathun",
           role: "PJ KOMINFO SOSIAL MEDIA",

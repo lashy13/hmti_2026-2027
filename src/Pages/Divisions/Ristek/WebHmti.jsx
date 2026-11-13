@@ -16,16 +16,6 @@ function WebHmti() {
       participants="Anggota HMTI"
       pj={[
         {
-          name: "Arkan Rosif Ashshofa",
-          position: "Penanggung Jawab WEB HMTI",
-          photo: Arkan,
-        },
-        {
-          name: "Habiburrahim Mu’awwadz",
-          position: "Penanggung Jawab WEB HMTI",
-          photo: Habib,
-        },
-        {
           name: "Adna Afiansyah",
           position: "Penanggung Jawab WEB HMTI",
           photo: Adna,

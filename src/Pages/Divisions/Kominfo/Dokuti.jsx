@@ -15,11 +15,6 @@ function Dokuti() {
           position: "Penanggung Jawab DOKUTI",
           photo: Ian,
         },
-        {
-          name: "Nadhif Aufaa Pratama",
-          position: "Penanggung Jawab DOKUTI",
-          // photo: fotoPJ,
-        },
       ]}
     />
   );
