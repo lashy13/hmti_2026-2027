@@ -25,7 +25,7 @@ function HariWajibPDH() {
 
       pj={[
         {
-          name: "Agranto Bahy Rahma",
+          name: "Agranto Bahy Pratama",
           position: "Penanggung Jawab Hari Wajib PDH",
           // photo: fotoPJ,
         },

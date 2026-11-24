@@ -19,7 +19,7 @@ function Sakti() {
           photo: Rahma,
         },
         {
-          name: "Maghfira Mani Riaha Putri",
+          name: "Maghfira Izzani R.P",
           position: "Penanggung Jawab SAKTI",
           // photo: fotoPJ,
         },

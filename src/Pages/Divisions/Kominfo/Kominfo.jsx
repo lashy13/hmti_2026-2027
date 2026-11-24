@@ -105,13 +105,7 @@ function Kominfo() {
         },
         {
           id: 7,
-          name: "Lukman Nur Fadhilah",
-          role: "PJ MEDPART",
-          photo: "/images/member-6.jpg",
-        },
-        {
-          id: 8,
-          name: "Arkan Roshifa",
+          name: "Arkan Roshif Ashshofa",
           role: "-",
           photo: Arkan,
         }

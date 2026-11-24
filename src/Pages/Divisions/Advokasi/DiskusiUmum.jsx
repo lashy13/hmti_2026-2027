@@ -5,12 +5,10 @@ function Sakti() {
     <ProkerDetail
       division="ADVOKASI"
 
-      title="SAKTI"
+      title="DISKUSI UMUM"
 
-      description="Program yang memberikan informasi dan pendampingan mengenai kebutuhan serta tahapan akademik mahasiswa Teknik Informatika."
-
-      about="SAKTI merupakan agenda Departemen Advokasi yang bertujuan memberikan informasi mengenai kebutuhan dan tahapan akademik mahasiswa Teknik Informatika, seperti Kerja Praktik (KP), KKN, dan berbagai informasi akademik lainnya."
-
+      description=" Diskusi Umum merupakan program kerja departemen Advokasi yang bertujuan sebagai platform untuk mengkomodasi aspirasi mahasiswa yang sebelumnya sudah dikumpulkan melalui kotak Aspirasi."
+      about="Penyampaian aspirasi secara langsung melalui acara yang dihadiri bersama mahasiswa TI UMP, dan menyampaikan berkala dengan bertemu langsung dengan kaprodi."
       implementation="Dilaksanakan secara online maupun offline melalui penyampaian materi dan sesi diskusi bersama mahasiswa."
 
       location="Universitas Muhammadiyah Purwokerto"

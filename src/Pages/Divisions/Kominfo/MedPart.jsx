@@ -11,11 +11,11 @@ function MedPart() {
       about="Program ini berfokus pada kerja sama publikasi, mulai dari komunikasi dan penyesuaian bentuk kerja sama hingga pelaksanaan publikasi sesuai kesepakatan."
       activityImage=""
       pj={[
-        {
-          name: "Lukman Nur Fadhilah",
-          position: "Penanggung Jawab Media Partner",
+        //{
+          //name: "-",
+          //position: "Penanggung Jawab Media Partner",
           // photo: fotoPJ,
-        },
+        //},
         {
           name: "Fatino Aziz Fadhilah",
           position: "Penanggung Jawab Media Partner",
