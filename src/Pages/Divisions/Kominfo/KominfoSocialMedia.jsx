@@ -1,0 +1,24 @@
+import ProkerDetail from "../../../components/ProkerDetail";
+
+import Haidar from "../../../assets/Anggota/Kominfo/Haidar.png";
+
+function KominfoSocialMedia() {
+  return (
+    <ProkerDetail
+      division="KOMINFO"
+      title="PENGELOLAAN SOSIAL MEDIA HMTI"
+      description="Pengelolaan media sosial HMTI sebagai media informasi, publikasi, edukasi, dan komunikasi digital organisasi."
+      about="Program ini berfokus pada perencanaan, pembuatan, dan publikasi konten HMTI melalui media sosial secara kreatif, informatif, dan konsisten."
+      activityImage=""
+      pj={[
+        {
+          name: "Haidar Aflathun",
+          position: "Penanggung Jawab Pengelolaan Sosial Media HMTI",
+          photo: Haidar,
+        },
+      ]}
+    />
+  );
+}
+
+export default KominfoSocialMedia;

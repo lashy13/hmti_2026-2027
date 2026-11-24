@@ -1,0 +1,843 @@
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   NAVBAR UTAMA
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+
+  z-index: 1000;
+
+  width: min(1350px, calc(100% - 60px));
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 clamp(16px, 2vw, 26px);
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(5, 14, 32, 0.97) 0%,
+      rgba(7, 25, 55, 0.96) 45%,
+      rgba(8, 18, 42, 0.97) 100%
+    );
+
+  border: 1px solid rgba(90, 170, 255, 0.22);
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+
+  transition:
+    transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP LIGHT
+========================================================= */
+
+.navbar::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 7%;
+  right: 7%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(70, 170, 255, 0.55),
+      rgba(255, 255, 255, 0.18),
+      rgba(70, 170, 255, 0.55),
+      transparent
+    );
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  top: -80px;
+  right: -100px;
+
+  width: 250px;
+  height: 180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVBAR STATE
+========================================================= */
+
+.navbar-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+.navbar-hidden {
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateX(-50%)
+    translateY(-130%);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BRAND CONTAINER
+========================================================= */
+
+.brand-container {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: clamp(8px, 1vw, 14px);
+
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   BRAND UMP
+========================================================= */
+
+.brand-ump {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  background: none;
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.brand-ump:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGO UMP
+========================================================= */
+
+.logo-ump {
+  width: 37px;
+  height: 37px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  filter:
+    drop-shadow(
+      0 2px 8px rgba(255, 255, 255, 0.08)
+    );
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.logo-divider {
+  width: 1px;
+  height: 34px;
+
+  margin: 0 3px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(120, 180, 255, 0.35),
+      transparent
+    );
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TEKS UMP
+========================================================= */
+
+.ump-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.ump-text strong {
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.ump-muhammadiyah {
+  margin-top: 2px;
+
+  font-size: 7.5px;
+  font-weight: 600;
+
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+
+  color: rgba(155, 200, 255, 0.65);
+
+  white-space: nowrap;
+}
+
+.ump-text small {
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   BRAND HMTI
+========================================================= */
+
+.brand-if {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  background: none;
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.brand-if:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGO HMTI
+========================================================= */
+
+.logo-if {
+  width: 37px !important;
+  height: 37px !important;
+
+  object-fit: contain !important;
+
+  flex-shrink: 0 !important;
+
+  filter:
+    drop-shadow(
+      0 3px 10px rgba(37, 130, 255, 0.14)
+    );
+}
+
+
+/* =========================================================
+   TEKS TEKNIK INFORMATIKA
+========================================================= */
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.brand-text strong {
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.if-tagline {
+  margin-top: 2px;
+
+  color: rgba(125, 190, 255, 0.68);
+
+  font-size: 7.5px;
+  font-weight: 600;
+
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.brand-text small {
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: clamp(10px, 1.7vw, 24px);
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LINK & BUTTON
+========================================================= */
+
+.nav-links a,
+.nav-links button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  height: 36px;
+
+  color: rgba(220, 235, 255, 0.62);
+
+  font-family: inherit;
+  font-size: clamp(9px, 0.85vw, 12.5px);
+
+  font-weight: 500;
+
+  letter-spacing: 0.1px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  background: transparent;
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   GARIS BAWAH
+========================================================= */
+
+.nav-links a::after,
+.nav-links button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 1px;
+
+  width: 0;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #1683ff,
+      #55c8ff
+    );
+
+  border-radius: 10px;
+
+  transition:
+    width 0.28s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links button:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.nav-links a.active,
+.nav-links button.active {
+  color: #ffffff;
+}
+
+.nav-links a.active::after,
+.nav-links button.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    width: calc(100% - 40px);
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .ump-text small,
+  .brand-text small {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    width: calc(100% - 30px);
+
+    min-height: 66px;
+
+    padding:
+      0
+      clamp(14px, 2.5vw, 20px);
+
+    border-radius: 16px;
+  }
+
+  .brand-container {
+    gap: 8px;
+  }
+
+  .nav-links {
+    gap: clamp(9px, 1.7vw, 15px);
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: clamp(9px, 1.3vw, 11px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 768px
+   MENU BISA SCROLL KE SAMPING
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    top: 12px;
+
+    width: calc(100% - 20px);
+
+    min-height: 60px;
+
+    padding:
+      0
+      clamp(11px, 3vw, 16px);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+  }
+
+
+  /* =====================================
+     HILANGKAN BRAND UMP
+  ===================================== */
+
+  .brand-ump,
+  .logo-divider {
+    display: none;
+  }
+
+
+  /* =====================================
+     HMTI
+  ===================================== */
+
+  .brand-if {
+    gap: 8px;
+
+    flex-shrink: 0;
+  }
+
+  .logo-if {
+    width: clamp(29px, 8vw, 34px) !important;
+    height: clamp(29px, 8vw, 34px) !important;
+  }
+
+  .brand-text strong {
+    font-size:
+      clamp(10px, 2.7vw, 12px);
+
+    white-space: nowrap;
+  }
+
+  .if-tagline {
+    font-size:
+      clamp(6px, 1.6vw, 7px);
+
+    letter-spacing:
+      clamp(0.5px, 0.2vw, 1px);
+
+    white-space: nowrap;
+  }
+
+
+  /* =====================================
+     NAV LINKS
+     HORIZONTAL SCROLL
+  ===================================== */
+
+  .nav-links {
+    flex-shrink: 0;
+
+    max-width: calc(100% - 120px);
+
+    margin-left: auto;
+
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    gap:
+      clamp(10px, 2.5vw, 15px);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* =====================================
+     LINK
+  ===================================== */
+
+  .nav-links a,
+  .nav-links button {
+    flex-shrink: 0;
+
+    height: 32px;
+
+    font-size:
+      clamp(9px, 2.5vw, 11px);
+
+    white-space: nowrap;
+  }
+
+  .nav-links a::after,
+  .nav-links button::after {
+    bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   HP KECIL — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    top: 10px;
+
+    width: calc(100% - 16px);
+
+    min-height: 56px;
+
+    padding:
+      0 10px;
+
+    border-radius: 13px;
+  }
+
+
+  /* =====================================
+     LOGO
+  ===================================== */
+
+  .logo-if {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .brand-if {
+    gap: 6px;
+  }
+
+
+  /* =====================================
+     BRAND TEXT
+  ===================================== */
+
+  .brand-text strong {
+    font-size: 10px;
+  }
+
+  .if-tagline {
+    font-size: 6px;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  /* =====================================
+     NAV SCROLL
+  ===================================== */
+
+  .nav-links {
+    max-width: calc(100% - 95px);
+
+    gap: 12px;
+
+    padding-right: 4px;
+  }
+
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 8.5px;
+
+    height: 30px;
+  }
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    width: calc(100% - 12px);
+
+    min-height: 53px;
+
+    padding:
+      0 8px;
+
+    border-radius: 11px;
+  }
+
+
+  /* =====================================
+     SEMBUNYIKAN TEKS BRAND
+  ===================================== */
+
+  .brand-text {
+    display: none;
+  }
+
+  .logo-if {
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+
+  /* =====================================
+     NAV SCROLL
+  ===================================== */
+
+  .nav-links {
+    max-width: calc(100% - 40px);
+
+    gap: 11px;
+
+    padding-right: 8px;
+  }
+
+
+  .nav-links a,
+  .nav-links button {
+    flex-shrink: 0;
+
+    font-size: 8px;
+
+    height: 29px;
+  }
+}
+
+
+/* =========================================================
+   HP SUPER KECIL — 320px
+========================================================= */
+
+@media (max-width: 330px) {
+
+  .navbar {
+    width: calc(100% - 10px);
+
+    padding:
+      0 7px;
+  }
+
+  .logo-if {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .nav-links {
+    max-width: calc(100% - 35px);
+
+    gap: 10px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 7.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .brand-ump,
+  .brand-if,
+  .nav-links a,
+  .nav-links button {
+    transition: none;
+  }
+}

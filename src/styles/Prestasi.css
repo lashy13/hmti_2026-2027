@@ -1,0 +1,1770 @@
+
+/* =========================================================
+   PRESTASI PAGE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.prestasi-page {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(91, 192, 255, 0.08),
+      transparent 35%
+    ),
+    #080a0e;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.prestasi-hero {
+  position: relative;
+
+  min-height: 65vh;
+  min-height: 65svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(120px, 15vh, 150px) clamp(20px, 8vw, 8%) clamp(70px, 10vh, 100px);
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(74, 184, 255, 0.09),
+      transparent 40%
+    ),
+    linear-gradient(180deg, #080a0e 0%, #0d1015 100%);
+}
+
+/* =========================================================
+   HERO DECORATION
+========================================================= */
+
+.prestasi-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: min(650px, 90vw);
+  height: min(650px, 90vw);
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(91, 192, 255, 0.06),
+    transparent 68%
+  );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO BOTTOM LINE
+========================================================= */
+
+.prestasi-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: clamp(20px, 10%, 10%);
+  right: clamp(20px, 10%, 10%);
+  bottom: 0;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(120, 205, 255, 0.2),
+    rgba(255, 255, 255, 0.5),
+    rgba(120, 205, 255, 0.2),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.prestasi-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.prestasi-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100%;
+
+  margin-bottom: clamp(18px, 3vw, 25px);
+
+  padding: 8px 17px;
+
+  color: #9edfff;
+
+  font-size: clamp(9px, 1vw, 11px);
+
+  font-weight: 700;
+
+  letter-spacing: clamp(1.5px, 0.4vw, 3px);
+
+  border: 1px solid rgba(111, 202, 255, 0.25);
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(71, 171, 235, 0.09),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+
+  animation: eyebrowPulse 4s ease-in-out infinite;
+}
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.prestasi-hero h1 {
+  margin: 0;
+
+  font-size: clamp(50px, 9vw, 130px);
+
+  line-height: 0.9;
+
+  font-weight: 800;
+
+  letter-spacing: clamp(-5px, -0.4vw, -2px);
+
+  color: #f5f7fa;
+
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+
+  animation: titleBlink 5s ease-in-out infinite;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   HERO TITLE ACCENT
+========================================================= */
+
+.prestasi-hero h1 span {
+  position: relative;
+
+  color: #9cddff;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #a9ddff 25%,
+    #dff5ff 45%,
+    #62c8ff 60%,
+    #ffffff 78%,
+    #8ed8ff 100%
+  );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  animation: textShimmer 4s linear infinite;
+}
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.prestasi-hero p {
+  width: 100%;
+  max-width: 600px;
+
+  margin: clamp(25px, 4vw, 35px) auto 0;
+
+  color: #929aa6;
+
+  font-size: clamp(13px, 1.5vw, 16px);
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   PRESTASI SECTION
+========================================================= */
+
+.prestasi-section {
+  position: relative;
+
+  padding:
+    clamp(70px, 9vw, 100px)
+    clamp(18px, 8vw, 8%)
+    clamp(90px, 12vw, 140px);
+
+  background: linear-gradient(
+    180deg,
+    #0d1015 0%,
+    #090b0f 100%
+  );
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.prestasi-section-header {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  gap: clamp(14px, 2vw, 20px);
+
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.prestasi-section-header > div span {
+  display: inline-block;
+
+  color: #83d5ff;
+
+  font-size: clamp(9px, 1vw, 11px);
+
+  font-weight: 700;
+
+  letter-spacing: clamp(1.5px, 0.4vw, 3px);
+
+  animation: softBlink 3.5s ease-in-out infinite;
+}
+
+.prestasi-section-header h2 {
+  margin: 10px 0 0;
+
+  font-size: clamp(32px, 5vw, 65px);
+
+  line-height: 1;
+
+  letter-spacing: clamp(-2px, -0.2vw, -1px);
+
+  color: #f1f3f5;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   SECTION TITLE ACCENT
+========================================================= */
+
+.prestasi-section-header h2 strong {
+  color: #a7e2ff;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #9bdcff,
+    #dff6ff,
+    #65caff,
+    #ffffff
+  );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  animation: textShimmer 4.5s linear infinite;
+}
+
+.prestasi-section-header > p {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 5px auto 0;
+
+  color: #777f8b;
+
+  line-height: 1.8;
+
+  text-align: center;
+
+  font-size: clamp(13px, 1.4vw, 16px);
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.prestasi-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: clamp(18px, 2vw, 25px);
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.prestasi-card {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(24, 28, 34, 0.98),
+    rgba(11, 13, 17, 0.99)
+  );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* =========================================================
+   CARD TOP BLUE LINE
+========================================================= */
+
+.prestasi-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 10%;
+  right: 10%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(112, 208, 255, 0.75),
+    rgba(255, 255, 255, 0.45),
+    rgba(112, 208, 255, 0.75),
+    transparent
+  );
+
+  opacity: 0.75;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD SHINE
+========================================================= */
+
+.prestasi-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -130%;
+
+  width: 65%;
+  height: 100%;
+
+  z-index: 5;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.025),
+    rgba(143, 219, 255, 0.16),
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+.prestasi-card:hover::before {
+  left: 150%;
+}
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.prestasi-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(111, 204, 255, 0.35);
+
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.42),
+    0 0 30px rgba(75, 191, 255, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.prestasi-card-link {
+  display: block;
+
+  width: 100%;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.prestasi-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #11151a;
+}
+
+.prestasi-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.prestasi-card:hover .prestasi-image img {
+  transform: scale(1.07);
+
+  filter: brightness(1.08) contrast(1.02);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.prestasi-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(3, 8, 13, 0.82),
+    rgba(14, 34, 46, 0.7)
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+.prestasi-card:hover .prestasi-overlay {
+  opacity: 1;
+}
+
+.prestasi-overlay span {
+  font-size: clamp(9px, 1vw, 11px);
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #e6f7ff;
+}
+
+.prestasi-overlay strong {
+  font-size: 20px;
+
+  color: #82d9ff;
+
+  transition: transform 0.3s ease;
+}
+
+.prestasi-card:hover .prestasi-overlay strong {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.prestasi-card-content {
+  padding: clamp(18px, 2vw, 25px);
+
+  text-align: center;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.prestasi-meta {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px 15px;
+
+  margin-bottom: 15px;
+
+  color: #91d8f8;
+
+  font-size: clamp(8px, 0.8vw, 10px);
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.prestasi-meta span:last-child {
+  color: #666e79;
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.prestasi-card-content h3 {
+  margin: 0;
+
+  font-size: clamp(18px, 2vw, 23px);
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  color: #eef2f5;
+
+  background: linear-gradient(
+    120deg,
+    #f4f6f8,
+    #b6bdc5,
+    #ffffff,
+    #a7dfff,
+    #f4f6f8
+  );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  animation: textShimmer 6s linear infinite;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   CARD ARROW
+========================================================= */
+
+.prestasi-arrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+  color: #777f8a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.prestasi-arrow span {
+  color: #87d9ff;
+
+  font-size: 20px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.prestasi-card:hover .prestasi-arrow span {
+  transform: translateX(6px);
+
+  color: #c9f1ff;
+}
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+.prestasi-detail-page {
+  min-height: 100vh;
+  width: 100%;
+
+  padding:
+    clamp(120px, 12vw, 140px)
+    clamp(20px, 8vw, 8%)
+    clamp(80px, 10vw, 120px);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(76, 190, 255, 0.065),
+      transparent 35%
+    ),
+    linear-gradient(180deg, #080a0e, #0c0f13);
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   BACK BUTTON AREA
+========================================================= */
+
+.prestasi-back {
+  width: 100%;
+
+  padding:
+    clamp(85px, 10vw, 110px)
+    clamp(20px, 7vw, 7%)
+    0;
+
+  position: relative;
+
+  z-index: 50;
+}
+
+.prestasi-back-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 20px;
+
+  color: #d8e8ef;
+
+  background: linear-gradient(
+    135deg,
+    rgba(89, 188, 239, 0.08),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(119, 204, 247, 0.2);
+
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 25px rgba(0, 0, 0, 0.2);
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.prestasi-back-button:hover {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    rgba(86, 194, 255, 0.14),
+    rgba(255, 255, 255, 0.035)
+  );
+
+  border-color: rgba(116, 211, 255, 0.48);
+
+  transform: translateX(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28),
+    0 0 20px rgba(75, 191, 255, 0.05);
+}
+
+.prestasi-back-button span:first-child {
+  font-size: 20px;
+
+  line-height: 1;
+
+  color: #8edcff;
+
+  transition: transform 0.3s ease;
+}
+
+.prestasi-back-button:hover span:first-child {
+  transform: translateX(-5px);
+}
+
+/* =========================================================
+   DETAIL CONTENT
+========================================================= */
+
+.prestasi-detail {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
+
+  gap: clamp(35px, 5vw, 80px);
+
+  align-items: center;
+}
+
+/* =========================================================
+   DETAIL IMAGE
+========================================================= */
+
+.prestasi-detail-image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(114, 204, 255, 0.18);
+
+  border-radius: 18px;
+
+  background: #11151a;
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.prestasi-detail-image::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 50%;
+  height: 100%;
+
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(155, 226, 255, 0.14),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+.prestasi-detail-image:hover::before {
+  left: 150%;
+}
+
+.prestasi-detail-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.32);
+}
+
+.prestasi-detail-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-height: 650px;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   DETAIL TEXT
+========================================================= */
+
+.prestasi-detail-content {
+  width: 100%;
+  max-width: 650px;
+
+  text-align: left;
+}
+
+.detail-category {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #8edcff;
+
+  font-size: clamp(9px, 1vw, 11px);
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  animation: softBlink 4s ease-in-out infinite;
+}
+
+.detail-year {
+  display: inline-block;
+
+  margin-bottom: 25px;
+
+  color: #6f7782;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.prestasi-detail-content h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 6vw, 80px);
+
+  line-height: 0.95;
+
+  letter-spacing: clamp(-3px, -0.3vw, -1px);
+
+  color: #f5f7f9;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #a7ddfa,
+    #ffffff,
+    #8bd5fa,
+    #ffffff
+  );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  animation: textShimmer 5s linear infinite;
+
+  overflow-wrap: anywhere;
+}
+
+.prestasi-detail-content h3 {
+  margin: 30px 0 20px;
+
+  color: #d9e1e6;
+
+  font-size: clamp(16px, 1.5vw, 18px);
+}
+
+.prestasi-detail-content p {
+  color: #929ba6;
+
+  font-size: clamp(13px, 1.3vw, 15px);
+
+  line-height: 1.9;
+}
+
+/* =========================================================
+   DETAIL BACK BUTTON
+========================================================= */
+
+.detail-back-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-top: 25px;
+
+  padding: 14px 20px;
+
+  border: 1px solid rgba(105, 199, 246, 0.2);
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(83, 188, 243, 0.07),
+    rgba(255, 255, 255, 0.015)
+  );
+
+  color: #e9f6fc;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   NOT FOUND
+========================================================= */
+
+.prestasi-not-found {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(25px, 5vw, 40px);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(91, 195, 255, 0.055),
+      transparent 45%
+    ),
+    #080a0e;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.prestasi-not-found h1 {
+  margin-bottom: 10px;
+}
+
+.prestasi-not-found p {
+  color: #777f89;
+}
+
+.prestasi-not-found a {
+  margin-top: 20px;
+
+  color: #86d9ff;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   TEXT ANIMATIONS
+========================================================= */
+
+@keyframes textShimmer {
+  0% {
+    background-position: 250% center;
+  }
+
+  100% {
+    background-position: -250% center;
+  }
+}
+
+@keyframes softBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.62;
+  }
+}
+
+@keyframes titleBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes eyebrowPulse {
+  0%,
+  100% {
+    border-color: rgba(111, 202, 255, 0.2);
+  }
+
+  50% {
+    border-color: rgba(111, 202, 255, 0.4);
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .prestasi-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .prestasi-detail {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .prestasi-detail-content {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .prestasi-hero {
+    min-height: 58svh;
+
+    padding:
+      120px
+      clamp(18px, 6vw, 30px)
+      70px;
+  }
+
+  .prestasi-hero h1 {
+    font-size:
+      clamp(48px, 13vw, 70px);
+
+    letter-spacing: -3px;
+  }
+
+  .prestasi-hero p {
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .prestasi-section {
+    padding:
+      75px
+      clamp(18px, 5vw, 30px)
+      95px;
+  }
+
+
+  /* =========================
+     2 COLUMN
+  ========================= */
+
+  .prestasi-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+
+  /* =========================
+     CARD
+  ========================= */
+
+  .prestasi-card {
+    border-radius: 16px;
+  }
+
+  .prestasi-card-content {
+    padding: 18px;
+  }
+
+  .prestasi-card-content h3 {
+    font-size: 19px;
+  }
+
+  .prestasi-meta {
+    gap: 8px 12px;
+
+    font-size: 8px;
+  }
+
+  .prestasi-arrow {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    font-size: 9px;
+  }
+
+  .prestasi-arrow span {
+    font-size: 17px;
+  }
+
+
+  /* =========================
+     DETAIL
+  ========================= */
+
+  .prestasi-detail-page {
+    padding:
+      110px
+      clamp(18px, 6vw, 30px)
+      80px;
+  }
+
+  .prestasi-detail {
+    gap: 40px;
+  }
+
+  .prestasi-detail-content {
+    text-align: center;
+  }
+
+  .prestasi-detail-content h1 {
+    font-size:
+      clamp(42px, 11vw, 58px);
+  }
+
+  .detail-category {
+    text-align: center;
+  }
+
+  .detail-year {
+    margin-bottom: 20px;
+  }
+
+  .prestasi-detail-content h3 {
+    font-size: 17px;
+  }
+
+  .prestasi-detail-content p {
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     BACK BUTTON
+  ========================= */
+
+  .prestasi-back {
+    padding:
+      88px
+      clamp(18px, 6vw, 30px)
+      0;
+  }
+
+  .prestasi-back-button {
+    padding: 12px 17px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   2 CARD BERDAMPINGAN
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .prestasi-hero {
+    min-height: 55svh;
+
+    padding-top: 110px;
+  }
+
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .prestasi-eyebrow {
+    padding: 7px 13px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .prestasi-hero h1 {
+    font-size:
+      clamp(44px, 14vw, 62px);
+
+    letter-spacing: -2.5px;
+  }
+
+  .prestasi-hero p {
+    max-width: 95%;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .prestasi-section-header h2 {
+    font-size:
+      clamp(30px, 9vw, 45px);
+  }
+
+  .prestasi-section-header > p {
+    font-size: 13px;
+  }
+
+
+  /* =========================
+     PRESTASI GRID
+     TETAP 2 KOLOM
+  ========================= */
+
+  .prestasi-grid {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+
+  /* =========================
+     CARD
+  ========================= */
+
+  .prestasi-card {
+    width: 100%;
+
+    min-width: 0;
+
+    border-radius: 14px;
+  }
+
+
+  /* =========================
+     IMAGE
+  ========================= */
+
+  .prestasi-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 0.78;
+  }
+
+
+  /* =========================
+     CARD CONTENT
+  ========================= */
+
+  .prestasi-card-content {
+    padding: 14px 10px 15px;
+  }
+
+
+  /* =========================
+     META
+  ========================= */
+
+  .prestasi-meta {
+    gap: 5px 8px;
+
+    margin-bottom: 10px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  /* =========================
+     TITLE
+  ========================= */
+
+  .prestasi-card-content h3 {
+    font-size: 14px;
+
+    line-height: 1.25;
+  }
+
+
+  /* =========================
+     ARROW
+  ========================= */
+
+  .prestasi-arrow {
+    gap: 7px;
+
+    margin-top: 14px;
+
+    padding-top: 11px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .prestasi-arrow span {
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     DETAIL
+  ========================= */
+
+  .prestasi-detail-page {
+    padding-top: 105px;
+  }
+
+  .prestasi-detail-image {
+    border-radius: 15px;
+  }
+
+  .prestasi-detail-content h1 {
+    font-size:
+      clamp(38px, 12vw, 52px);
+
+    letter-spacing: -2px;
+  }
+
+  .prestasi-detail-content p {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   TETAP 2 KOLOM
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .prestasi-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    padding-top: 105px;
+  }
+
+  .prestasi-hero h1 {
+    font-size:
+      clamp(40px, 14vw, 52px);
+  }
+
+  .prestasi-hero p {
+    font-size: 12.5px;
+  }
+
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .prestasi-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .prestasi-section-header h2 {
+    font-size:
+      clamp(28px, 9vw, 40px);
+  }
+
+
+  /* =========================
+     2 COLUMN CARD
+  ========================= */
+
+  .prestasi-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+
+  /* =========================
+     CARD
+  ========================= */
+
+  .prestasi-card {
+    border-radius: 12px;
+  }
+
+
+  .prestasi-card-content {
+    padding: 12px 8px 13px;
+  }
+
+
+  .prestasi-card-content h3 {
+    font-size: 12.5px;
+
+    line-height: 1.25;
+  }
+
+
+  .prestasi-meta {
+    gap: 4px 6px;
+
+    margin-bottom: 8px;
+
+    font-size: 5.5px;
+
+    letter-spacing: 0.6px;
+  }
+
+
+  .prestasi-arrow {
+    gap: 5px;
+
+    margin-top: 11px;
+
+    padding-top: 9px;
+
+    font-size: 5.5px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .prestasi-arrow span {
+    font-size: 12px;
+  }
+
+
+  /* =========================
+     DETAIL
+  ========================= */
+
+  .prestasi-detail-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .prestasi-back {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .prestasi-back-button {
+    padding: 10px 14px;
+
+    font-size: 10px;
+  }
+
+  .prestasi-detail-content h1 {
+    font-size:
+      clamp(35px, 12vw, 48px);
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   2 COLUMN — TETAP
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .prestasi-hero {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .prestasi-hero h1 {
+    font-size: 36px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .prestasi-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .prestasi-section-header h2 {
+    font-size: 26px;
+  }
+
+
+  /* =========================
+     2 COLUMN
+  ========================= */
+
+  .prestasi-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+
+  /* =========================
+     CARD
+  ========================= */
+
+  .prestasi-card {
+    border-radius: 10px;
+  }
+
+  .prestasi-card-content {
+    padding: 10px 6px 11px;
+  }
+
+  .prestasi-card-content h3 {
+    font-size: 11px;
+  }
+
+
+  .prestasi-meta {
+    font-size: 5px;
+
+    gap: 3px 5px;
+  }
+
+
+  .prestasi-arrow {
+    margin-top: 9px;
+
+    padding-top: 8px;
+
+    font-size: 5px;
+  }
+
+  .prestasi-arrow span {
+    font-size: 10px;
+  }
+
+
+  /* =========================
+     DETAIL
+  ========================= */
+
+  .prestasi-detail-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .prestasi-back {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .prestasi-detail-content h1 {
+    font-size: 32px;
+  }
+}
+
+
+/* =========================================================
+   DETAIL BACK POSITION
+========================================================= */
+
+.prestasi-detail-back {
+  position: relative;
+  width: 100%;
+  padding-top: 0;
+  margin-bottom: 45px;
+}
+
+.prestasi-detail-back .prestasi-back {
+  width: 100%;
+  padding: 0;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .prestasi-hero h1,
+  .prestasi-hero h1 span,
+  .prestasi-eyebrow,
+  .prestasi-section-header > div span,
+  .prestasi-section-header h2 strong,
+  .prestasi-card-content h3,
+  .detail-category {
+    animation: none;
+  }
+
+  .prestasi-card,
+  .prestasi-image img,
+  .prestasi-card::before,
+  .prestasi-detail-image::before {
+    transition: none;
+  }
+}
+.prestasi-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background: #0b1220;
+}
+
+.prestasi-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transition: transform 0.5s ease;
+}
+
+.prestasi-card:hover .prestasi-image img {
+  transform: scale(1.05);
+}
