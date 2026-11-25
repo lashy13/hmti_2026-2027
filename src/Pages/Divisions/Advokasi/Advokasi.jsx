@@ -9,6 +9,7 @@ import Rahma from "../../../assets/Anggota/Advokasi/Rahma.png";
 //PROKER
 import PDH from "../../../assets/Proker/Advokasi/PDH.jpeg";
 import Aspirasi from "../../../assets/Proker/Advokasi/Aspirasi.jpeg";
+import SaktiImage from "../../../assets/Proker/Advokasi/Sakti.jpeg"
 
 function Advokasi() {
   return (
@@ -50,7 +51,7 @@ function Advokasi() {
           description:
             "Memberikan informasi mengenai kebutuhan dan tahapan akademik mahasiswa Teknik Informatika.",
 
-          image: "/images/study-club.jpg",
+          image: SaktiImage,
 
           link: "/divisions/advokasi/sakti",
         },
